@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
     if (argc > 3)
     {
         printf("Too many arguments!\n");
+        return 1;
     }
 
     if (argc == 1)
@@ -107,8 +108,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    printf("[INFO] %s %d\n", flag, number);
-
     if (number < 1)
     {
         printf("Number must be positive!\n");
@@ -130,7 +129,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
     
@@ -143,7 +143,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
     
@@ -156,7 +157,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
 
@@ -187,7 +189,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
 
@@ -200,7 +203,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
 
@@ -213,7 +217,8 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error");
+            printf("Error\n");
+            return -1;
         }
     }
 
