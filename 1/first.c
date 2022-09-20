@@ -116,80 +116,111 @@ int main(int argc, char *argv[])
     }
 
     ++flag;
-
-
-    switch (*flag)
+    
+    if (*flag == 'h')
     {
-        case 'h':
-            multiply_less_hundred(number);
-            break;
+        int mult_array[100];
+        if (multiply_less_hundred(number, mult_array) == 0)
+        {
+            int i = 0;
+            while (mult_array[i] != 0)
+            {
+                printf("%d ", mult_array[i++]);
+            }
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
+    
+    else if (*flag == 'p')
+    {
+        int prime;
+        if (is_prime(number, &prime) == 0)
+        {
+            printf("%s", prime ? "Prime" : "Composite");
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
+    
+    else if (*flag == 's')
+    {
+        char *spelled_number[30];
+        if (spell(number, *spelled_number) == 0)
+        {
+            printf("%s", *spelled_number);
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
 
-        case 'p':
-        ;
-            int prime;
-            if (is_prime(number, &prime) == 0)
-            {
-                printf("%s", prime ? "Prime" : "Composite");
-            }
-            else
-            {
-                printf("Error");
-            }
-            break;
-
-        case 's':
-        ;
-            char *spelled_number[30];
-            if (spell(number, *spelled_number) == 0)
-            {
-                printf("%s", *spelled_number);
-            }
-            else
-            {
-                printf("Error");
-            }
-            break;
-
-        case 'e':
-            if (number > 10)
-            {
-                printf("Number must be less or equal to 10 for this flag!\n");
-                return 1;
-            }
-             
-            int extents_of_nums[10][number];
-            extents(number, extents_of_nums);
-            break;
-
-        case 'a':
-        ;
-            int sum;
-            if(progression(number, &sum))
-            {
-                printf("%d", sum);
-            }
-            else
-            {
-                printf("Error");
-            }
-            break;
-
-        case 'f':
-        ;
-            int fact;
-            if (factorial(number, &fact))
-            {
-                printf("%d", fact);
-            }
-            else
-            {
-                printf("Error");
-            }
-            break;
-
-        default:
-            printf("This flag is not exists!\n");
+    else if (*flag == 'e')
+    {
+        if (number > 10)
+        {
+            printf("Number must be less or equal to 10 for this flag!\n");
             return 1;
+        }
+        int **arr = malloc(sizeof(int *) * number);
+        int i;
+        for (i = 0; i < 10; ++i)
+        {
+            arr[i] = malloc(sizeof(int) * 10);
+        }
+
+        if (extents(number, arr) == 0)
+        {
+            int i, j;
+            for (i = 0; i < 10; ++i)
+            {
+                for (j = 0; j < number; ++j)
+                {
+                    printf("%d ", arr[i][j]);
+                } printf("\n");
+            }
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
+
+    else if (*flag == 'a')
+    {
+        int sum;
+        if(progression(number, &sum))
+        {
+            printf("%d", sum);
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
+
+    else if (*flag == 'f')
+    {
+        int fact;
+        if (factorial(number, &fact))
+        {
+            printf("%d", fact);
+        }
+        else
+        {
+            printf("Error");
+        }
+    }
+
+    else
+    {
+        printf("This flag is not exists!\n");
+        return 1;
     }
 
     printf("\n");

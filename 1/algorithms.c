@@ -18,22 +18,24 @@ int power(int number, int extent)
 }
 
 
-int multiply_less_hundred(int number)
+int multiply_less_hundred(int number, int *arr)
 {
     int exsist = 0;
-    for (int i = 1; i < 101; ++i)
+    int i, count = 0;
+    for (i = 1; i < 101; ++i)
     {
         if (i % number == 0)
         {
-            printf("%d ", i);
+            arr[count++] = i;
             exsist = 1;
         }
     }
 
     if (!exsist)
     {
-        printf("There are no numbers within 100 multiplies of the entered number!");
+        arr = 0;
     }
+    return 0;
 }
 
 
@@ -51,7 +53,7 @@ int is_prime(int number, int *prime)
 }
 
 
-char *spell(int number, char *str)
+int spell(int number, char *str)
 {
     int lenght = 0;
     int number_copy = number;
@@ -75,19 +77,18 @@ char *spell(int number, char *str)
 }
 
 
-void extents(int number, int (*ext_arr)[number])
+int extents(int number, int **ext_arr)
 {
     int i;
     int j;
-    for (i = 1; i < 11; ++i)
+    for (i = 0; i < 10; ++i)
     {
-        for (j = 1; j < number + 1; ++j)
+        for (j = 0; j < number; ++j)
         {
-            ext_arr[i][j] = power(i, j);
-            // printf("%d ", power(i, j));
+            ext_arr[i][j] = power(i + 1, j + 1);
         }
-        printf("\n");
     }
+    return 0;
 }
 
 
