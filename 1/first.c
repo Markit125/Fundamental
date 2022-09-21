@@ -186,9 +186,17 @@ int main(int argc, char *argv[])
                     printf("%d ", arr[i][j]);
                 } printf("\n");
             }
+            for (i = 0; i < 10; ++i)
+            {
+                free(arr[i]);
+            }
         }
         else
         {
+            for (i = 0; i < 10; ++i)
+            {
+                free(arr[i]);
+            }
             printf("Error\n");
             return -1;
         }
@@ -197,7 +205,7 @@ int main(int argc, char *argv[])
     else if (*flag == 'a')
     {
         int sum;
-        if(progression(number, &sum))
+        if (progression(number, &sum))
         {
             printf("%d", sum);
         }
