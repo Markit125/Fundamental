@@ -115,6 +115,7 @@ int main(int argc, char *argv[])
     }
 
     ++flag;
+    int success = 1;
     
     if (*flag == 'h')
     {
@@ -129,8 +130,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
     
@@ -143,8 +143,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
     
@@ -157,8 +156,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -197,8 +195,7 @@ int main(int argc, char *argv[])
             {
                 free(arr[i]);
             }
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -211,8 +208,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -225,8 +221,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -234,6 +229,12 @@ int main(int argc, char *argv[])
     {
         printf("This flag is not exists!\n");
         return 1;
+    }
+
+    if (!success)
+    {
+        printf("Error\n");
+        return -1;
     }
 
     printf("\n");

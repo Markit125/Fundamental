@@ -24,12 +24,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // if (argc > 5)
-    // {
-    //     printf("Too many arguments!\n");
-    //     return 1;
-    // }
-
     char *flag = NULL;
 
     if (is_flag(argv[1]))
@@ -43,6 +37,7 @@ int main(int argc, char *argv[])
     }
 
     ++flag;
+    int success = 1;
 
     if (*flag == 'q')
     {
@@ -85,8 +80,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -147,8 +141,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Error\n");
-            return -1;
+            success = 0;
         }
     }
 
@@ -156,6 +149,12 @@ int main(int argc, char *argv[])
     {
         printf("This flag is not exists!\n");
         return 1;
+    }
+
+    if (!success)
+    {
+        printf("Error\n");
+        return -1;
     }
 
 
