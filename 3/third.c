@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
             fclose(out_file);
         }
 
-        printf("Input file isn't exists!\n");
+        printf("Input file doesn't exists!\n");
         return 1;
     }
 
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
     {
         fclose(in_file);
 
-        printf("Output file isn't exists!\n");
+        printf("Output file doesn't exists!\n");
         return 1;
     }
 
