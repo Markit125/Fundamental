@@ -71,6 +71,12 @@ int main(int argc, char *argv[])
                 {
                     printf("Not enough memory!\n");
                     fclose(file);
+                    int i;
+                    for (i = 0; i < 3; ++i)
+                    {
+                        free(columns[i]);
+                    }
+                    free(columns);
                     return 1;
                 }
             }
@@ -101,6 +107,14 @@ int main(int argc, char *argv[])
         fseek(file, -(strlen(columns[0]) + strlen(columns[1]) + strlen(columns[2]) + 4), SEEK_CUR);
         fprintf(file, "\n%s %s %s\n", columns[2], columns[0], columns[1]);
     }
+
+    int i;
+    for (i = 0; i < 3; ++i)
+    {
+        free(columns[i]);
+    }
+    free(columns);
+
     printf("Success\n");
 
     fclose(file);
