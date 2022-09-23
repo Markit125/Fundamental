@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
     char **columns = (char **) malloc(sizeof(char) * 3);
 
     int it = 0;
-
-    printf("1\n");
+    int cur_len = START_LEN;
     
     while ((c = fgetc(file)) != EOF)
     {
@@ -43,13 +42,9 @@ int main(int argc, char *argv[])
         {
             if (columns[0])
             {
-                printf("lens = %lu + %lu + %lu\n", strlen(columns[0]), strlen(columns[1]), strlen(columns[2]));
-                printf("|%s %s %s|\n", columns[0], columns[1], columns[2]);
-
                 fseek(file, -(strlen(columns[0]) + strlen(columns[1]) + strlen(columns[2]) + 4), SEEK_CUR);
                 fprintf(file, "%s %s %s\n", columns[2], columns[0], columns[1]);
                 fseek(file, 1, SEEK_CUR);
-                printf("wrote\n");
             }
 
             else
@@ -67,19 +62,25 @@ int main(int argc, char *argv[])
 
         if (c != ' ' && c != '\n')
         {
-            printf("====== col_num: %d, iter: %d, string: %s\n", number_column, it, columns[number_column]);
-            // if (columns[number_column][it] == '\0')
-            // {
-            //     columns[number_column] = realloc(columns[number_column], sizeof(char) * strlen(columns[number_column]) * 2);
-            // }
+            if (strlen(columns[number_column]) == cur_len)
+            {
+                cur_len *= 2;
+                columns[number_column] = realloc(columns[number_column], sizeof(char) * cur_len);
+
+                if (columns[number_column] == NULL)
+                {
+                    printf("Not enough memory!\n");
+                    fclose(file);
+                    return 1;
+                }
+            }
 
             sscanf(&c, "%c", &columns[number_column][it++]);
         }
         else
         {
-            printf("c0, c1, c2: %s %s %s\n", columns[0], columns[1], columns[2]);
-
             columns[number_column][it++] = '\0';
+            cur_len = START_LEN;
             it = 0;
             number_column = (number_column + 1) % 3;
             if (number_column == 0)
@@ -100,7 +101,7 @@ int main(int argc, char *argv[])
         fseek(file, -(strlen(columns[0]) + strlen(columns[1]) + strlen(columns[2]) + 4), SEEK_CUR);
         fprintf(file, "\n%s %s %s\n", columns[2], columns[0], columns[1]);
     }
-    printf("wrote last\n");
+    printf("Success\n");
 
     fclose(file);
 
