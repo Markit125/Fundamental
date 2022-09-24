@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
         if (c != ' ' && c != '\n')
         {
-            if (strlen(columns[number_column]) == cur_len)
+            if (strlen(columns[number_column]) - 1 == cur_len)
             {
                 cur_len *= 2;
                 columns[number_column] = realloc(columns[number_column], sizeof(char) * cur_len);
