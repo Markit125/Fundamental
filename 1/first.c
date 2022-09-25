@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
     else if (*flag == 'a')
     {
         int sum;
-        if (progression(number, &sum))
+        if (progression(number, &sum) == 0)
         {
             printf("%d", sum);
         }
@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
     else if (*flag == 'f')
     {
         int fact;
-        if (factorial(number, &fact))
+        if (factorial(number, &fact) == 0)
         {
             printf("%d", fact);
         }
