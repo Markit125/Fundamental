@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "algorithms.c"
 
@@ -13,8 +14,15 @@ int is_number(char const* arg)
 
 int is_integer(char const* arg)
 {
-    double d;
-    return !(sscanf(arg, "%lf", &d) == 1);
+    int i;
+    for (i = 0; i < strlen(arg); ++i)
+    {
+        if (!is_number(&arg[i]))
+        {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int is_flag(char const* arg)
@@ -50,7 +58,6 @@ int main(int argc, char *argv[])
             return 1;
         }
         number = atoi(argv[1]);
-        printf("int %d\n", number);        
     }
     
     else if (is_flag(argv[1]))

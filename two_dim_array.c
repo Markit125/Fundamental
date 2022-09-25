@@ -18,7 +18,7 @@ int main(void)
     int **double_dim = (int**) malloc(sizeof(int*) * n);
     for (int i = 0; i < n; ++i)
     {
-        double_dim[i] = malloc(sizeof(int));
+        double_dim[i] = malloc(sizeof(int) * m);
         for (int j = 0; j < m; ++j)
         {
             double_dim[i][j] = i * m + j;
