@@ -20,18 +20,19 @@ int power(int number, int extent)
 
 int multiply_less_hundred(int number, int *arr)
 {
-    int exsist = 0;
+    int exist = 0;
     int i, count = 0;
     for (i = 1; i < 101; ++i)
     {
         if (i % number == 0)
         {
             arr[count++] = i;
-            exsist = 1;
+            exist = 1;
         }
     }
+    arr[count] = 0;
 
-    if (!exsist)
+    if (!exist)
     {
         arr = 0;
     }
