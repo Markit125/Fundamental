@@ -55,8 +55,6 @@ int main(int argc, char *argv[])
                 num = realloc(num, num_len);
             }
 
-            // printf("%c ", c);
-
             sscanf(&c, "%c", &num[it++]);
         }
         else if (it != 0)
