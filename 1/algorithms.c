@@ -47,6 +47,7 @@ int is_prime(int number, int *prime)
         if (number % i == 0)
         {
             *prime = 0;
+            return 0;
         }
     }
     *prime = 1;

@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "algorithms.c"
 
 
@@ -40,6 +41,7 @@ int main(int argc, char *argv[])
     char *flag = NULL;
 
 
+
     if (is_number(argv[1]))
     {
         if (!is_integer(argv[1]))
@@ -48,8 +50,7 @@ int main(int argc, char *argv[])
             return 1;
         }
         number = atoi(argv[1]);
-        printf("int %d\n", number);
-        
+        printf("int %d\n", number);        
     }
     
     else if (is_flag(argv[1]))
@@ -74,7 +75,6 @@ int main(int argc, char *argv[])
 
     if (flag == NULL)
     {
-
         if (is_flag(argv[2]))
         {
             flag = argv[2];
@@ -85,12 +85,10 @@ int main(int argc, char *argv[])
             printf("Flag is incorrect!\n");
             return 1;
         }
-
     }
     
     else
     {
-
         if (is_number(argv[2]))
         {
             if (!is_integer(argv[1]))
@@ -149,10 +147,10 @@ int main(int argc, char *argv[])
     
     else if (*flag == 's')
     {
-        char *spelled_number[30];
-        if (spell(number, *spelled_number) == 0)
+        char *spelled_number = malloc(sizeof(char) * 15);
+        if (spell(number, spelled_number) == 0)
         {
-            printf("%s", *spelled_number);
+            printf("%s", spelled_number);
         }
         else
         {
