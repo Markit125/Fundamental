@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        while ((c = getc(file)) != EOF)
+        while ((c = fgetc(file)) != EOF)
         {
             putc(c, out);
         }
