@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
     }
 
     ++flag;
-    int success = 1;
+    int success = 0;
     
     if (*flag == 'h')
     {
@@ -125,10 +125,7 @@ int main(int argc, char *argv[])
             {
                 printf("%d ", mult_array[i++]);
             }
-        }
-        else
-        {
-            success = 0;
+            success = 1;
         }
     }
     
@@ -138,10 +135,7 @@ int main(int argc, char *argv[])
         if (is_prime(number, &prime) == 0)
         {
             printf("%s", prime ? "Prime" : "Composite");
-        }
-        else
-        {
-            success = 0;
+            success = 1;
         }
     }
     
@@ -151,10 +145,7 @@ int main(int argc, char *argv[])
         if (spell(number, spelled_number) == 0)
         {
             printf("%s", spelled_number);
-        }
-        else
-        {
-            success = 0;
+            success = 1;
         }
     }
 
@@ -203,10 +194,7 @@ int main(int argc, char *argv[])
         if (progression(number, &sum) == 0)
         {
             printf("%d", sum);
-        }
-        else
-        {
-            success = 0;
+            success = 1;
         }
     }
 
@@ -216,10 +204,7 @@ int main(int argc, char *argv[])
         if (factorial(number, &fact) == 0)
         {
             printf("%d", fact);
-        }
-        else
-        {
-            success = 0;
+            success = 1;
         }
     }
 
