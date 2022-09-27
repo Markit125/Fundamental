@@ -15,6 +15,11 @@ enum input
 };
 
 
+int is_space(char c)
+{
+    return c == '\n' || c == ' ' || c == '\t' || c == EOF;
+}
+
 int is_flag(char const* arg)
 {
     return arg[0] == '-' || arg[0] == '/';
@@ -107,7 +112,7 @@ int main(int argc, char *argv[])
 
         while (_c != EOF)
         {
-            if (c != '\n' && c != ' ' && c != EOF)
+            if (!is_space(c))
             {
                 if (cur_len == it - 1)
                 {

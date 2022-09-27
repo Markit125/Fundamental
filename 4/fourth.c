@@ -6,6 +6,12 @@
 #define START_LEN 20
 
 
+int is_space(char c)
+{
+    return c == '\n' || c == ' ' || c == '\t';
+}
+
+
 int main(int argc, char *argv[])
 {
     if (argc > 2)
@@ -60,7 +66,7 @@ int main(int argc, char *argv[])
         }
 
 
-        if (c != ' ' && c != '\n')
+        if (!is_space(c))
         {
             if (strlen(columns[number_column]) - 1 == cur_len)
             {

@@ -5,6 +5,11 @@
 #define NUM_LEN 10
 
 
+int is_space(char c)
+{
+    return c == '\n' || c == ' ' || c == '\t' || c == EOF;
+}
+
 int main(int argc, char *argv[])
 {
     if (argc == 1)
@@ -44,7 +49,7 @@ int main(int argc, char *argv[])
 
     while (_c != EOF)
     {
-        if (c != ' ' && c != '\n' && c != '\t' && c != EOF)
+        if (!is_space(c))
         {
             if (it == num_len)
             {

@@ -6,6 +6,11 @@
 #define ABS 1000
 
 
+int is_space(char c)
+{
+    return c == '\n' || c == ' ' || c == '\t' || c == EOF;
+}
+
 int is_flag(char const* arg)
 {
     return arg[0] == '-' || arg[0] == '/';
@@ -92,7 +97,7 @@ int main(int argc, char *argv[])
 
     while (_c != EOF)
     {
-        if (c != ' ' && c != '\n' && c != '\t' && c != EOF)
+        if (!is_space(c))
         {
             if (it == cur_len)
             {
