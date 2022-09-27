@@ -1,9 +1,6 @@
-#include <ctype.h>
+#include "numberizm.c"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-#include "numberizm.c"
 
 #define NUM_LEN 10
 

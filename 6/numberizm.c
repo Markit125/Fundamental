@@ -1,6 +1,4 @@
 #include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 
 int number_system(int *num_sys, char *number)

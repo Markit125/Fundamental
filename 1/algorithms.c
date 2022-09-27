@@ -1,6 +1,5 @@
 
 #include <math.h>
-#include <stdio.h>
 
 
 int power(int number, int extent)

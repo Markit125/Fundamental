@@ -1,6 +1,5 @@
 
 #include <math.h>
-#include <stdio.h>
 
 int solve_square_equation(float a, float b, float c, float *x1, float *x2, int *result)
 {

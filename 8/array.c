@@ -1,5 +1,3 @@
-#include <ctype.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 #define INT_MAX 2147483647

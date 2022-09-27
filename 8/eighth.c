@@ -1,12 +1,6 @@
-
-#include <bits/pthreadtypes.h>
-#include <ctype.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "array.c"
+#include <stdio.h>
+
 
 #define START_LEN 8
 #define ABS 1000
