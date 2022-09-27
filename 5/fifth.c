@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
             fi = fopen(argv[2], "r");
             if (fi == NULL)
             {
-                printf("Such file doesn't exsists!\n");
+                printf("Such file doesn't exists!\n");
                 return 1;
             }
 
@@ -114,7 +114,8 @@ int main(int argc, char *argv[])
                     cur_len *= 2;
                     files[file_it] = realloc(files[file_it], sizeof(char *) * cur_len);
                 }
-                sscanf(&c, "%c", &files[file_it][it++]);
+                *(*(files + file_it) + it++) = c;
+                // sscanf(&c, "%c", &files[file_it][it++]);
             }
             else
             {

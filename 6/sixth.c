@@ -53,9 +53,14 @@ int main(int argc, char *argv[])
             {
                 num_len *= 2;
                 num = realloc(num, num_len);
+                if (num == NULL)
+                {
+                    printf("Not enough memory!\n");
+                    return 1;
+                }
             }
-
-            sscanf(&c, "%c", &num[it++]);
+            *(num + it++) = c;
+            // sscanf(&c, "%c", &num[it++]);
         }
         else if (it != 0)
         {
