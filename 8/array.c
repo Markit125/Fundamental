@@ -4,22 +4,24 @@
 
 #define INT_MAX 2147483647
 
-int odd_indexes(int arr[], int *new_arr[], int *size)
+int odd_indexes(int arr[], int new_arr[], int *size)
 {
     int new_size = 0;
     
     int i;
     for (i = 0; i < *size; i += 2)
     {
-        *(new_arr + i / 2) = &arr[i];
+        *(new_arr + i / 2) = arr[i];
         ++new_size;
     }
-    new_arr = realloc(new_arr, sizeof(int) * new_size);
+
+    *size = new_size;
+    new_arr = realloc(new_arr, sizeof(int) * *size);
 
     return 0;
 }
 
-int even_nums(int arr[], int *new_arr[], int *size)
+int even_nums(int arr[], int new_arr[], int *size)
 {
     int new_size = 0;
     int i;
@@ -29,12 +31,12 @@ int even_nums(int arr[], int *new_arr[], int *size)
         {
             continue;
         }
-        *new_arr[i] = arr[i];
+        new_arr[new_size] = arr[i];
         ++new_size;
     }
 
     *size = new_size;
-    new_arr = realloc(new_arr, *size);
+    new_arr = realloc(new_arr, sizeof(int) * *size);
 
     return 0;
 }
@@ -56,10 +58,13 @@ int furthest(int arr[], int *ans, int index, int size)
         }
     }
     *ans = (max - arr[index]) > (min - arr[index]) ? max : min;
+
+    return 0;
 }
 
 int sum_before_index(int arr[], int *ans, int index)
 {
+    *ans = 0;
     int i;
     for (i = 0; i < index; ++i)
     {

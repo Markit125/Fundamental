@@ -128,8 +128,6 @@ int main(int argc, char *argv[])
         c = fgetc(file);
     }
     free(num);
-
-    printf("Read\n");
     
 
     int success = 0;
@@ -138,65 +136,64 @@ int main(int argc, char *argv[])
     {
         int *new_arr = malloc(sizeof(int) * size);
 
-        if (*flag == 'a' ? odd_indexes(arr, &new_arr, &size) == 0
-                         : even_nums(arr, &new_arr, &size) == 0)
+        if (*flag == 'a' ? odd_indexes(arr, new_arr, &size) == 0
+                         : even_nums(arr, new_arr, &size) == 0)
         {
             success = 1;
         }
 
-        // int i;
-        // for (i = 0; i < size; ++i)
-        // {
-        //     printf("%d ", new_arr[i]);
-        // }
+        int i;
+        for (i = 0; i < size; ++i)
+        {
+            printf("%d ", new_arr[i]);
+        }
     }
     
-    // else if (*flag == 'c' || *flag == 'd' || *flag == 'e')
-    // {
-    //     int answer;
-    //     if (size < index)
-    //     {
-    //         printf("Index must be lower than array size\n");
-    //     }
+    else if (*flag == 'c' || *flag == 'd' || *flag == 'e')
+    {
+        int answer = 0;
+        if (size < index + 1)
+        {
+            printf("Index must be lower than array size\n");
+        }
 
-    //     switch (*flag) {
-    //         case 'c':
-    //             if (furthest(arr, &answer, index, size))
-    //             {
-    //                 success = 1;
-    //             }
-    //             break;
+        switch (*flag) {
+            case 'c':
+                if (furthest(arr, &answer, index, size) == 0)
+                {
+                    success = 1;
+                }
+                break;
 
-    //         case 'd':
-    //             if (sum_before_index(arr, &answer, index) == 0)
-    //             {
-    //                 success = 1;
-    //             }
-    //             break;
+            case 'd':
+                if (sum_before_index(arr, &answer, index) == 0)
+                {
+                    success = 1;
+                }
+                break;
 
-    //         case 'e':
-    //             if (sum_lower_than_index(arr, &answer, index, size) == 0)
-    //             {
-    //                 success = 1;
-    //             }
-    //             break;
-    //     }
-    //     printf("%d\n", answer);
-    // }
-    // else
-    // {
-    //     printf("There is not such flag!\n");
-    //     return 1;
-    // }
+            case 'e':
+                if (sum_lower_than_index(arr, &answer, index, size) == 0)
+                {
+                    success = 1;
+                }
+                break;
+        }
+        printf("%d\n", answer);
+    }
+    else
+    {
+        printf("There is not such flag!\n");
+        return 1;
+    }
 
-    // if (!success)
-    // {
-    //     printf("Error\n");
-    //     return -1;
-    // }
+    if (!success)
+    {
+        printf("Error\n");
+        return -1;
+    }
 
     printf("\n");
-    printf("Success\n");
 
     return 0;
 }
