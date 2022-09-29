@@ -10,7 +10,7 @@
 
 int get_rand_int(int max_abs_value)
 {
-    return rand() % max_abs_value * (rand() % 2 ? 1 : -1);
+    return random() % max_abs_value * (random() % 2 ? 1 : -1);
 }
 
 int swap(int arr[], int arr_size, int max_index, int min_index)
@@ -72,7 +72,6 @@ int main(int argc, char *argv[])
     }
     
     int arr[arr_size];
-    srand(time(NULL));
 
 
     int max = -INT_MAX;
