@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
     
     else if (*flag == 's')
     {
-        char *spelled_number = malloc(sizeof(char) * 15);
+        char *spelled_number = (char *) malloc(sizeof(char) * 15);
         if (spell(number, spelled_number) == 0)
         {
             printf("%s", spelled_number);
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
         int i;
         for (i = 0; i < 10; ++i)
         {
-            arr[i] = malloc(sizeof(int) * 10);
+            arr[i] = (int *) malloc(sizeof(int) * 10);
         }
 
         if (extents(number, arr) == 0)

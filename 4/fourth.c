@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     char c, _c;
     
     int number_column = -1;
-    char **columns = (char **) malloc(sizeof(char) * 3);
+    char **columns = (char **) malloc(sizeof(char *) * 3);
 
     int it = 0;
     int cur_len = START_LEN;

@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     char c, _c = ' ';
     c = fgetc(file);
 
-    char *num = malloc(sizeof(char) * NUM_LEN);
+    char *num = (char *) malloc(sizeof(char) * NUM_LEN);
     int it = 0;
     int num_len = NUM_LEN;
 

@@ -2,6 +2,7 @@
 
 #define INT_MAX 2147483647
 
+
 int odd_indexes(int arr[], int new_arr[], int *size)
 {
     int new_size = 0;

@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 
 
         char _c = ' ';
-        files[file_it] = (char *) malloc(sizeof(char *) * FILENAME_LEN);
+        files[file_it] = (char *) malloc(sizeof(char) * FILENAME_LEN);
         
         files[file_it][FILENAME_LEN - 1] = '\0';
         int cur_len = FILENAME_LEN;
@@ -149,7 +149,7 @@ int main(int argc, char *argv[])
                     return 1;
                 }
 
-                files[file_it] = (char *) malloc(sizeof(char *) * FILENAME_LEN);
+                files[file_it] = (char *) malloc(sizeof(char) * FILENAME_LEN);
             }
 
             _c = c;

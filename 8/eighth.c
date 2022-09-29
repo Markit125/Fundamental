@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 
     if (*flag == 'a' || *flag == 'b')
     {
-        int *new_arr = malloc(sizeof(int) * size);
+        int *new_arr = (int *) malloc(sizeof(int) * size);
 
         if (*flag == 'a' ? odd_indexes(arr, new_arr, &size) == 0
                          : even_nums(arr, new_arr, &size) == 0)
