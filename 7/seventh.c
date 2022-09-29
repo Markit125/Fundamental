@@ -71,8 +71,8 @@ int main(int argc, char *argv[])
         return 1;
     }
     
+    srandom(time(NULL));
     int arr[arr_size];
-
 
     int max = -INT_MAX;
     int min = INT_MAX;
