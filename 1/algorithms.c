@@ -21,9 +21,9 @@ int multiply_less_hundred(int number, int *arr)
 {
     int exist = 0;
     int i, count = 0;
-    for (i = 1; i < 101; ++i)
+    for (i = number; i < 101; i += number)
     {
-        if (i % number == 0)
+        if (i < 101)
         {
             arr[count++] = i;
             exist = 1;
@@ -41,6 +41,11 @@ int multiply_less_hundred(int number, int *arr)
 
 int is_prime(int number, int *prime)
 {
+    if (number == 2)
+    {
+        *prime = 1;
+        return 0;
+    }
     for (int i = 2; i < sqrt(number) + 1; ++i)
     {
         if (number % i == 0)
