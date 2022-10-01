@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "numbers.c"
+#include "arguments.c"
 
 #define START_LEN 5
 
@@ -11,12 +12,6 @@
 int is_space(char c)
 {
     return c == '\n' || c == ' ' || c == '\t';
-}
-
-int is_number_integer(char const* arg)
-{
-    int n;
-    return (sscanf(arg, "%d", &n) == 1);
 }
 
 
@@ -32,7 +27,7 @@ int main(int argc, char *argv[])
     printf("Enter number system:\n");
     scanf("%s", input);
 
-    if (!is_number_integer(input))
+    if (!is_integer(input))
     {
         printf("You must enter integer number grater than one!\n");
         return 1;
@@ -59,7 +54,7 @@ int main(int argc, char *argv[])
     int wrong_base = 0;
 
     printf("Enter numbers:\n");
-    while (strcmp(num, "STOP") != 0)
+    while (!are_strings_equal(num, "STOP"))
     {
         c = getchar();
         c = toupper(c);
@@ -89,7 +84,7 @@ int main(int argc, char *argv[])
         {
             *(num + it) = '\0';
 
-            if (wrong_base && strcmp(num, "STOP") != 0)
+            if (wrong_base && !are_strings_equal(num, "STOP"))
             {
                 printf("This number doesn't belong to the base! %s\n", num);
                 return 1;

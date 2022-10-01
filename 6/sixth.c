@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
                 }
             }
             *(num + it++) = c;
-            // sscanf(&c, "%c", &num[it++]);
         }
         else if (it != 0)
         {

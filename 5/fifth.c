@@ -14,6 +14,23 @@ enum input
     arg
 };
 
+int are_strings_equal(char *s0, char *s1)
+{
+    char *ptr0 = s0;
+    char *ptr1 = s1;
+
+    while (*ptr0 || *ptr1)
+    {
+        if (*ptr0 != *ptr1)
+        {
+            return 0;
+        }
+        ++ptr0;
+        ++ptr1;
+    }
+
+    return 1;
+}
 
 int is_space(char c)
 {
@@ -49,15 +66,15 @@ int main(int argc, char *argv[])
 
     enum input in;
 
-    if (strcmp(flag, "fi") == 0)
+    if (are_strings_equal(flag, "fi"))
     {
         in = file;
     }
-    else if (strcmp(flag, "cin") == 0)
+    else if (are_strings_equal(flag, "cin"))
     {
         in = cin;
     }
-    else if (strcmp(flag, "arg") == 0) {
+    else if (are_strings_equal(flag, "arg")) {
         in = arg;
     }
     else
@@ -120,7 +137,6 @@ int main(int argc, char *argv[])
                     files[file_it] = realloc(files[file_it], sizeof(char *) * cur_len);
                 }
                 *(*(files + file_it) + it++) = c;
-                // sscanf(&c, "%c", &files[file_it][it++]);
             }
             else
             {
@@ -199,7 +215,7 @@ int main(int argc, char *argv[])
     FILE *out = fopen("out.txt", "w+");
     char c;
 
-    if (strcmp(files[file_it - 1], "") == 0)
+    if (are_strings_equal(files[file_it - 1], ""))
     {
         --file_it;
     }

@@ -1,19 +1,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "solve.c"
-
-
-int is_number(char const* arg)
-{
-    float n;
-    return (sscanf(arg, "%f", &n) == 1);
-}
-
-int is_flag(char const* arg)
-{
-    return arg[0] == '-' || arg[0] == '/';
-}
+#include "arguments.c"
 
 
 int main(int argc, char *argv[])
@@ -97,8 +87,8 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        int a = atoi(argv[2]);
-        int b = atoi(argv[3]);
+        int a = arg_to_int(argv[2]);
+        int b = arg_to_int(argv[3]);
 
         if (a == 0 || b == 0)
         {

@@ -1,6 +1,7 @@
-#include "array.c"
 #include <stdio.h>
 
+#include "arguments.c"
+#include "array.c"
 
 #define START_LEN 8
 #define ABS 1000
@@ -11,22 +12,6 @@ int is_space(char c)
     return c == '\n' || c == ' ' || c == '\t' || c == EOF;
 }
 
-int is_flag(char const* arg)
-{
-    return arg[0] == '-' || arg[0] == '/';
-}
-
-int is_number(char const* arg)
-{
-    float n;
-    return (sscanf(arg, "%f", &n) == 1);
-}
-
-int is_number_integer(char const* arg)
-{
-    int n;
-    return (sscanf(arg, "%d", &n) == 1);
-}
 
 int main(int argc, char *argv[])
 {
@@ -65,7 +50,7 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        if (!is_number_integer(argv[3]))
+        if (!is_integer(argv[3]))
         {
             printf("Index must be number!\n");
             return 1;   
@@ -110,10 +95,10 @@ int main(int argc, char *argv[])
                 }
             }
             *(num + it++) = c;
-            // sscanf(&c, "%c", &num[it++]);
         }
         else if (it != 0)
         {
+            *(num + it) = '\0';
             if (!is_number(num))
             {
                 printf("%s is not a number!\n", num);
@@ -178,7 +163,7 @@ int main(int argc, char *argv[])
                 }
                 break;
         }
-        printf("%d\n", answer);
+        printf("%d", answer);
     }
     else
     {

@@ -31,15 +31,22 @@ int swap(int arr[], int arr_size, int max_index, int min_index)
     return 0;
 }
 
-int is_number_integer(char const* arg)
+int is_integer(char const* arg)
 {
-    int i;
-    for (i = 0; i < strlen(arg); ++i)
+    char *ptr = arg;
+    
+    if (*arg == '-')
     {
-        if (!('0' - 1 < arg[i] && arg[i] < '9' + 1))
+        ++ptr;
+    }
+
+    while (*ptr)
+    {
+        if ('0' > *ptr || *ptr > '9')
         {
             return 0;
         }
+        ++ptr;
     }
     return 1;
 }
@@ -58,7 +65,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     
-    if (!is_number_integer(argv[1]))
+    if (!is_integer(argv[1]))
     {
         printf("Number must be integer number!\n");
         return 1;

@@ -58,8 +58,6 @@ char *from_decimal(int number, char *answer, int base, int size)
         rem = number % base;
         *(it--) = rem > 9 ? rem + 'A' - 10 : rem + '0';
         number /= base;
-
-        // printf("%s\n", answer);
     }
 
     if (negative)

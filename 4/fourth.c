@@ -88,7 +88,6 @@ int main(int argc, char *argv[])
             }
 
             *(*(columns + number_column )+ it++) = c;
-            // sscanf(&c, "%c", &columns[number_column][it++]);
         }
         else
         {

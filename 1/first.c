@@ -3,31 +3,7 @@
 #include <string.h>
 
 #include "algorithms.c"
-
-
-int is_number(char const* arg)
-{
-    int n;
-    return (sscanf(arg, "%d", &n) == 1);
-}
-
-int is_integer(char const* arg)
-{
-    int i;
-    for (i = 0; i < strlen(arg); ++i)
-    {
-        if (!is_number(&arg[i]))
-        {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-int is_flag(char const* arg)
-{
-    return arg[0] == '-' || arg[0] == '/';
-}
+#include "arguments.c"
 
 
 int main(int argc, char *argv[])
@@ -56,7 +32,7 @@ int main(int argc, char *argv[])
             printf("Number must be integer!\n");
             return 1;
         }
-        number = atoi(argv[1]);
+        number = arg_to_int(argv[1]);
     }
     
     else if (is_flag(argv[1]))
@@ -97,12 +73,12 @@ int main(int argc, char *argv[])
     {
         if (is_number(argv[2]))
         {
-            if (!is_integer(argv[1]))
+            if (!is_integer(argv[2]))
             {
                 printf("Number must be integer!\n");
                 return 1;
             }
-            number = atoi(argv[2]);
+            number = arg_to_int(argv[2]);
         }
         
         else
@@ -157,16 +133,17 @@ int main(int argc, char *argv[])
 
     else if (*flag == 'e')
     {
+        printf("%d\n", number);
         if (number > 10)
         {
             printf("Number must be less or equal to 10 for this flag!\n");
             return 1;
         }
-        int **arr = malloc(sizeof(int *) * number);
+        int **arr = malloc(sizeof(int *) * 10);
         int i;
         for (i = 0; i < 10; ++i)
         {
-            arr[i] = (int *) malloc(sizeof(int) * 10);
+            arr[i] = (int *) malloc(sizeof(int) * number);
         }
 
         if (extents(number, arr) == 0)
@@ -179,10 +156,13 @@ int main(int argc, char *argv[])
                     printf("%d ", arr[i][j]);
                 } printf("\n");
             }
+
             for (i = 0; i < 10; ++i)
             {
                 free(arr[i]);
             }
+            free(arr);
+            success = 1;
         }
         else
         {
@@ -190,7 +170,7 @@ int main(int argc, char *argv[])
             {
                 free(arr[i]);
             }
-            success = 0;
+            free(arr);
         }
     }
 

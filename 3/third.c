@@ -1,26 +1,9 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "file_work.c"
-
-
-int is_number(char const* arg)
-{
-    int n;
-    return (sscanf(arg, "%d", &n) == 1);
-}
-
-int is_flag_correct(char const* arg)
-{
-    if (arg[0] == '-' || arg[0] == '/')
-    {
-        if (strlen(arg) == 2 || (strlen(arg) == 3 && arg[1] == 'n'))
-        {
-            return 1;
-        }
-    }
-    return 0;
-}
+#include "arguments.c"
 
 
 int main(int argc, char *argv[])
@@ -52,6 +35,7 @@ int main(int argc, char *argv[])
             printf("Wrong number of arguments!\n");
             return 1;
         }
+        
         flag = argv[1][2];
         output_file_name = argv[3];
     }
@@ -65,15 +49,35 @@ int main(int argc, char *argv[])
         }
 
         flag = argv[1][1];
-        output_file_name = (char*) malloc(sizeof(char) * (4 + strlen(argv[2]) + 1));
+        output_file_name = (char *) malloc(sizeof(char) * (4 + strlen(argv[2]) + 1));
+        
+        char *out = "out_";
+        int i = 0;
+        while (*out)
+        {
+            *(output_file_name + i) = *out;
+            ++out;
+            ++i;
+        }
 
-        sscanf("out_", "%s", output_file_name);
-        sscanf(argv[2], "%s", output_file_name + 4);
+        out = argv[2];
+        while (*out)
+        {
+            *(output_file_name + i) = *out;
+            ++out;
+            ++i;
+        }
     }
+
+    
 
     FILE *in_file = fopen(argv[2], "r");
     FILE *out_file = fopen(output_file_name, "w");
-    free(output_file_name);
+
+    if (argc == 3)
+    {
+        free(output_file_name);
+    }
 
     if (in_file == NULL)
     {
