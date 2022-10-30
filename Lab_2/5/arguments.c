@@ -94,7 +94,8 @@ int get_rand_int(int a, int b)
     return random() % (b - a + 1) + a;
 }
 
-int swap_elements(int a[], int indx_0, int indx_1)
+// swap elements by adress! Redo!
+int swap_elements(int *a, int indx_0, int indx_1)
 {
     int buffer = a[indx_0];
     a[indx_0] = a[indx_1];
