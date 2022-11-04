@@ -118,7 +118,7 @@ int main()
         printf("Too many numbers!\n");
         return 1;
     }
-    else if (err == -1)
+    if (err == -1)
     {
         printf("Memory error!\n");
         return 1;
