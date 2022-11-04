@@ -17,9 +17,9 @@ typedef struct message
 
 
 
-int write_mes(message m)
+int write_mes(message *m)
 {
-    printf("%d | %s | %d\n", m.id, m.text, m.len);
+    printf("%d | %s | %d\n", (*m).id, (*m).text, (*m).len);
 
     return 0;
 }
@@ -67,12 +67,15 @@ int write_to_file(message msg, FILE *f)
 }
 
 
-int read_notes(int *count, message *msgs, FILE *f)
+int read_notes(int *count, message **msgs, FILE *f)
 {
     if (*count == 0)
     {
         ++(*count);
     }
+    
+    *msgs = malloc(sizeof(message));
+
 
     int err, n, it = 0, counter = 0, len = IN_LEN;
     char *in = malloc(sizeof(char) * len);
@@ -90,7 +93,7 @@ int read_notes(int *count, message *msgs, FILE *f)
 
                 err = !is_integer(in, &n, 1);
 
-                printf("in: %s\n", in);
+                // printf("in: %s\n", in);
 
                 if (err)
                 {
@@ -98,14 +101,14 @@ int read_notes(int *count, message *msgs, FILE *f)
                     return 1;
                 }
 
-                (msgs + counter)->id = n;
+                (*(msgs + counter))->id = n;
                 ++commas;
             }
             else if (commas == 1)
             {
                 err = check_message(in);
 
-                printf("in: %s\n", in);
+                // printf("in: %s\n", in);
 
                 if (err)
                 {
@@ -113,9 +116,9 @@ int read_notes(int *count, message *msgs, FILE *f)
                     return 1;
                 }
 
-                (msgs + counter)->text = malloc(sizeof(char) * it);
-                strcpy((msgs + counter)->text, in);
-                // (msgs + counter)->text = in;
+                (*(msgs + counter))->text = malloc(sizeof(char) * it);
+                strcpy((*(msgs + counter))->text, in);
+
                 ++commas;
             }
             it = 0;
@@ -127,7 +130,7 @@ int read_notes(int *count, message *msgs, FILE *f)
 
             err = !is_integer(in, &n, 0);
 
-            printf("in: %s\n", in);
+            // printf("in: %s\n", in);
 
             if (err)
             {
@@ -136,23 +139,24 @@ int read_notes(int *count, message *msgs, FILE *f)
             }
 
 
-            (msgs + counter)->len = n;
+            (*(msgs + counter))->len = n;
 
+            write_mes(*(msgs + counter));
             ++counter;
             if (counter >= *count)
             {
                 *count *= 2;
-                message *ptr = realloc(msgs, sizeof(message) * *count);
+                message **ptr = realloc(msgs, sizeof(message *) * *count);
                 if (ptr == NULL)
                 {
-                    free(msgs);
+                    free(in);
                     return 2;
                 }
 
                 msgs = ptr;
             }
+            *(msgs + counter) = malloc(sizeof(message));
 
-            write_mes(*(msgs + counter - 1));
 
             commas = 0;
         }
@@ -180,7 +184,7 @@ int read_notes(int *count, message *msgs, FILE *f)
     {
         *count = counter + 1;
 
-        message *ptr = realloc(msgs, sizeof(message) * *count);
+        message **ptr = realloc(msgs, sizeof(message *) * *count);
         if (ptr == NULL)
         {
             return 2;
@@ -189,19 +193,39 @@ int read_notes(int *count, message *msgs, FILE *f)
         msgs = ptr;
     }
 
+    for (int i = 0; i < *count; ++i)
+    {
+        printf("%p\n", *(i + msgs));
+    }
+
+    printf("read_notes done\n");
+
     return 0;
 }
 
 
-int write_notes(message *msgs, int count)
+int write_notes(message **msgs, int count)
 {
-    printf("Notes (%d)\n", count);
+    printf("\nNotes (%d)\n", count);
     int i;
     for (i = 0; i < count; ++i)
     {
-        printf("ID: %d\nMessage:\n%s\nLength of message: %d\n",
-                    (msgs + i)->id, (msgs + i)->text, (msgs + i)->len);
+        printf("ID: %d\nMessage:\n%s\nLength of message: %d\n\n",
+                    (*(msgs + i))->id, (*(msgs + i))->text, (*(msgs + i))->len);
     }
+
+    return 0;
+}
+
+
+int free_messages(message **msgs, int count)
+{
+    int i;
+    for (i = 0; i < count; ++i)
+    {
+        free(*(msgs + i));
+    }
+    free(msgs);
 
     return 0;
 }
