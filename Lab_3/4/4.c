@@ -3,7 +3,7 @@
 #include <string.h>
 #include "file_funcs.c"
 
-#define START_COUNT_NOTES 5
+#define START_COUNT_NOTES 2
 #define START_LEN 20
 #define NAME_LEN 10
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
             }
             else if (err == 2)
             {
-                printf("The message cannot contain any separators!\nTry again:\n");
+                printf("The message cannot contain any separators and commas!\nTry again:\n");
             }
             else
             {
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
         int err = check_message(argv[2]);
         if (err == 1)
         {
-            printf("Message cannot contain any separators!\n");
+            printf("Message cannot contain any separators and commas!\n");
 
             fclose(f);
 
@@ -120,6 +120,8 @@ int main(int argc, char *argv[])
         // message *messages = (message *) malloc(sizeof(message) * count_notes);
         message **messages = (message **) malloc(sizeof(message *) * count_notes);
 
+        message ***p = &messages;
+
         if (messages == NULL)
         {
             printf("Memory cannot be allocated!\n");
@@ -130,7 +132,9 @@ int main(int argc, char *argv[])
             return 2;
         }
 
-        err = read_notes(&count_notes, messages, f);
+        printf("count %d\n", count_notes);
+        err = read_notes(&count_notes, p, f);
+        printf("count %d\n", count_notes);
         // write_notes(messages, count_notes - 1);
 
         if (err == 1)

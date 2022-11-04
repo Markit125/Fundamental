@@ -67,15 +67,16 @@ int write_to_file(message msg, FILE *f)
 }
 
 
-int read_notes(int *count, message **msgs, FILE *f)
+int read_notes(int *count, message ***msgs, FILE *f)
 {
     if (*count == 0)
     {
         ++(*count);
     }
     
-    *msgs = malloc(sizeof(message));
-
+    *(*msgs + 0) = malloc(sizeof(message));
+    
+    // ========================================================
 
     int err, n, it = 0, counter = 0, len = IN_LEN;
     char *in = malloc(sizeof(char) * len);
@@ -101,7 +102,7 @@ int read_notes(int *count, message **msgs, FILE *f)
                     return 1;
                 }
 
-                (*(msgs + counter))->id = n;
+                (*(*msgs + counter))->id = n;
                 ++commas;
             }
             else if (commas == 1)
@@ -116,8 +117,8 @@ int read_notes(int *count, message **msgs, FILE *f)
                     return 1;
                 }
 
-                (*(msgs + counter))->text = malloc(sizeof(char) * it);
-                strcpy((*(msgs + counter))->text, in);
+                (*(*msgs + counter))->text = malloc(sizeof(char) * it);
+                strcpy((*(*msgs + counter))->text, in);
 
                 ++commas;
             }
@@ -139,24 +140,26 @@ int read_notes(int *count, message **msgs, FILE *f)
             }
 
 
-            (*(msgs + counter))->len = n;
+            (*(*msgs + counter))->len = n;
 
-            write_mes(*(msgs + counter));
+            // write_mes(**(msgs + counter));
+
             ++counter;
             if (counter >= *count)
             {
                 *count *= 2;
-                message **ptr = realloc(msgs, sizeof(message *) * *count);
+                message **ptr = realloc(*msgs, sizeof(message *) * *count);
                 if (ptr == NULL)
                 {
                     free(in);
                     return 2;
                 }
 
-                msgs = ptr;
+                *msgs = ptr;
             }
-            *(msgs + counter) = malloc(sizeof(message));
-
+            
+            *(*msgs + counter) = malloc(sizeof(message));
+            // ========================================================
 
             commas = 0;
         }
@@ -180,23 +183,20 @@ int read_notes(int *count, message **msgs, FILE *f)
     }
     free(in);
 
+    
     if (counter + 1 < *count)
     {
         *count = counter + 1;
 
-        message **ptr = realloc(msgs, sizeof(message *) * *count);
+        message **ptr = realloc(*msgs, sizeof(message *) * *count);
         if (ptr == NULL)
         {
             return 2;
         }
 
-        msgs = ptr;
+        *msgs = ptr;
     }
 
-    for (int i = 0; i < *count; ++i)
-    {
-        printf("%p\n", *(i + msgs));
-    }
 
     printf("read_notes done\n");
 

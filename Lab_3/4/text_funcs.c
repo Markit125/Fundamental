@@ -40,7 +40,7 @@ int read_message(char *text, int len)
             text = ptr;
         }
 
-        if (is_space(c))
+        if (is_space(c) || is_comma(c))
         {
             error = 2;
         }
@@ -64,7 +64,7 @@ int check_message(char *msg)
 
     while (*ptr)
     {
-        if (is_space(*(ptr++)))
+        if (is_space(*(ptr++)) || is_comma(*(ptr++)))
         {
             return 1;
         }
