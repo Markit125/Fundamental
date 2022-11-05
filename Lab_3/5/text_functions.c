@@ -82,3 +82,45 @@ int is_right_string(char *str, int flag)
 
     return 1;
 }
+
+
+int get_input(char *num, int *cur_len)
+{
+    char c = getchar();
+    int it = 0;
+    while (!is_space(c) && !is_newline(c) || it == 0)
+    {
+    // printf("There is not enough memory!\n");
+        if (it == *cur_len)
+        {
+            *cur_len *= 2;
+            char *ptr = realloc(num, *cur_len);
+            if (ptr == NULL)
+            {
+                return 1;
+            }
+
+            num = ptr;
+        }
+
+        *(num + it++) = c;
+        c = getchar();
+    }
+    *(num + it) = '\0';
+
+    return 0;
+}
+
+
+int validate(char *str_num, int *n, int from, int to)
+{
+    if (is_integer_range(str_num, n, from, to))
+    {
+        if (n > 0)
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
