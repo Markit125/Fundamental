@@ -117,7 +117,6 @@ int main(int argc, char *argv[])
 
 
         int count_notes = START_COUNT_NOTES;
-        // message *messages = (message *) malloc(sizeof(message) * count_notes);
         message **messages = (message **) malloc(sizeof(message *) * count_notes);
 
         message ***p = &messages;
@@ -132,10 +131,7 @@ int main(int argc, char *argv[])
             return 2;
         }
 
-        printf("count %d\n", count_notes);
         err = read_notes(&count_notes, p, f);
-        printf("count %d\n", count_notes);
-        // write_notes(messages, count_notes - 1);
 
         if (err == 1)
         {
@@ -153,8 +149,6 @@ int main(int argc, char *argv[])
             return 3;
         }
 
-        // printf("count %d\n", count_notes);
-        // printf("text %s\n", (*(messages + count_notes - 2))->text);
 
         *(messages + count_notes - 1) = malloc(sizeof(message));
         if (count_notes > 0)
@@ -174,8 +168,8 @@ int main(int argc, char *argv[])
 
         fclose(f);        
         free_messages(messages, count_notes);
+        free(p);
     }
-
 
     return 0;
 }

@@ -69,10 +69,10 @@ int write_to_file(message msg, FILE *f)
 
 int read_notes(int *count, message ***msgs, FILE *f)
 {
-    if (*count == 0)
-    {
-        ++(*count);
-    }
+    // if (*count == 0)
+    // {
+    //     ++(*count);
+    // }
     
     *(*msgs + 0) = malloc(sizeof(message));
     
@@ -186,19 +186,15 @@ int read_notes(int *count, message ***msgs, FILE *f)
     
     if (counter + 1 < *count)
     {
-        *count = counter + 1;
-
-        message **ptr = realloc(*msgs, sizeof(message *) * *count);
+        message **ptr = realloc(*msgs, sizeof(message *) * (counter + 1));
         if (ptr == NULL)
         {
             return 2;
         }
 
+        *count = counter + 1;
         *msgs = ptr;
     }
-
-
-    printf("read_notes done\n");
 
     return 0;
 }
@@ -223,6 +219,7 @@ int free_messages(message **msgs, int count)
     int i;
     for (i = 0; i < count; ++i)
     {
+        free((*(*msgs + i)).text);
         free(*(msgs + i));
     }
     free(msgs);
