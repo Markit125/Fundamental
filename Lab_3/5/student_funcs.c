@@ -228,4 +228,117 @@ int student_out(Student *st)
         average += *((*st).grades + i);
     }
     printf("%lf\n=====\n", average / 5);
+
+    return 0;
+}
+
+
+int student_to_file(Student *s, FILE *f)
+{
+    fprintf(f, "======\n");
+    fprintf(f, "ID: %d\nName: %s\nLast name: %s\nCourse: %d\nGroup: %s\nGrades: ",
+            (*s).id, (*s).name, (*s).last_name, (*s).course, (*s).group);
+
+    int i;
+    for (i = 0; i < 5; ++i)
+    {
+        fprintf(f, "%d ", *((*s).grades + i));
+    }
+    fprintf(f, "\n======\n");
+
+    return 0;
+}
+
+
+double get_average(Student *stud)
+{
+    int average = 0, i;
+    for (i = 0; i < 5; ++i)
+    {
+        average += *((*stud).grades + i);
+    }
+
+    return (double) average / 5;
+}
+
+
+int trace(Student *studs, int count, char* name)
+{
+    double *all_averages = (double *) malloc(sizeof(double) * count);
+    if (NULL == all_averages)
+    {
+        return 1;
+    }
+    double *course_averages = (double *) malloc(sizeof(double) * 4);
+    if (NULL == course_averages)
+    {
+        return 1;
+    }
+    int *course_counts = (int *) malloc(sizeof(int) * 4);
+    if (NULL == course_counts)
+    {
+        return 1;
+    }
+
+    int i, j;
+    for (i = 0; i < count; ++i)
+    {
+        *(course_averages + (*(studs + i)).course - 1) = 0;
+        *(course_counts + (*(studs + i)).course - 1) = 0;
+    }
+
+    for (i = 0; i < count; ++i)
+    {
+        *(all_averages + i) = get_average(studs + i);
+        *(course_averages + (*(studs + i)).course - 1) += *(all_averages + i);
+        ++(*(course_counts + (*(studs + i)).course - 1));
+    }
+
+    char *filename = (char *) malloc(sizeof(char) * (strlen(name) + 3));
+    if (NULL == filename)
+    {
+        return 1;
+    }
+
+
+    for (i = 0; i < 4; ++i)
+    {
+        if (*(course_counts + i) != 0)
+        {
+            *(course_averages + i) /= *(course_counts + i);
+        }
+    }
+
+    for (i = 0; i < 4; ++i)
+    {
+        printf("%f\n", *(course_averages + i));
+    }
+
+
+    for (j = 1; j <= 4; ++j)
+    {
+        sprintf(filename, "%s_%d", name, j);
+        *(filename + strlen(name) + 2) = '\0';
+        
+        FILE *f = fopen(filename, "w");
+        if (NULL == f)
+        {
+            return 2;
+        }
+
+        for (i = 0; i < count; ++i)
+        {
+            if (j == (*(studs + i)).course && (*(course_averages + j - 1) < *(all_averages + i)))
+            {
+                student_to_file(studs + i, f);
+            }
+        }
+
+        fclose(f);
+    }
+
+    free(course_averages);
+    free(course_counts);
+
+    return 0;
 }

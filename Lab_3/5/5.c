@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
         return 2;
     }
 
+
     int count_notes = START_COUNT, line_corrupt = 0;
 
     Student *studs = (Student *) malloc(sizeof(Student) * count_notes);
@@ -71,7 +72,11 @@ int main(int argc, char *argv[])
         return 5;
     }
 
-
+    err = trace(studs, count_notes, argv[1]);
+    if (err)
+    {
+        return 1;
+    }
 
     int count_new = 0;
     Student *new_collection = (Student *) malloc(sizeof(Student) * count_notes);
