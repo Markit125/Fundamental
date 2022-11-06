@@ -18,6 +18,86 @@ typedef struct Student
 } Student;
 
 
+typedef struct Node
+{
+    Student *student;
+    struct Node *next;
+} Node;
+
+
+typedef struct Student_list
+{
+    int length;
+    Node *first;
+} Student_list;
+
+
+int student_copy(Student *from, Student *to);
+
+
+int insert_student(Student_list *sl, Student *student_new)
+{
+    Node *stud = sl->first;
+    if (NULL == stud)
+    {
+        sl->first = (Node *) malloc(sizeof(Node));
+        if (NULL == sl->first)
+        {
+            return 1;
+        }
+
+        sl->first->student = (Student *) malloc(sizeof(Student));
+        if (NULL == sl->first->student)
+        {
+            return 1;
+        }
+        
+        student_copy(student_new, sl->first->student);
+        
+        sl->first->next = NULL;
+        ++(sl->length);
+        
+        return 0;
+    }
+
+    while (stud->next != NULL)
+    {
+        stud = stud->next;
+    }
+
+    stud->next = (Node *) malloc(sizeof(Node));
+    if (NULL == stud->next)
+    {
+        return 1;
+    }
+    
+    stud->next->student = (Student *) malloc(sizeof(Student));
+    student_copy(student_new, stud->next->student);
+    stud->next->next = NULL;
+    ++(sl->length);
+
+    return 0;
+}
+
+
+int free_student(Student *stud);
+
+
+int clear_list(Student_list *sl)
+{
+    Node *stud = (*sl).first, *prev;
+    while (stud != NULL)
+    {
+        free_student(stud->student);
+        prev = stud;
+        stud = stud->next;
+        free(prev);
+    }
+
+    return 0;
+}
+
+
 int set_id(char *in, Student *student)
 {
     int id;
@@ -117,15 +197,69 @@ int print_student(Student *s)
 }
 
 
+
+
+int student_copy(Student *from, Student *to)
+{
+    (*to).id = (*from).id;
+    (*to).name = (char *) malloc(sizeof(char) * strlen((*from).name));
+    if (NULL == (*to).name)
+    {
+        return 1;
+    }
+    strcpy((*to).name, (*from).name);
+
+    (*to).last_name = (char *) malloc(sizeof(char) * strlen((*from).last_name));
+    if (NULL == (*to).last_name)
+    {
+        return 1;
+    }
+    strcpy((*to).last_name, (*from).last_name);
+
+    (*to).course = (*from).course;
+    (*to).group = (char *) malloc(sizeof(char) * strlen((*from).group));
+    if (NULL == (*to).group)
+    {
+        return 1;
+    }
+    strcpy((*to).group, (*from).group);
+
+    (*to).grades = (short *) malloc(sizeof(char) * 5);
+    if (NULL == (*to).group)
+    {
+        return 1;
+    }
+
+    int i;
+    for (i = 0; i < 5; ++i)
+    {
+        *((*to).grades + i) = *((*from).grades + i);
+    }
+
+    return 0;
+}
+
+
+int free_student(Student *stud)
+{
+    free(stud->grades);
+    free(stud->name);
+    free(stud->last_name);
+    free(stud->group);
+
+    return 0;
+}
+
+
 int free_students(Student *studs, int count)
 {
     int i;
     for (i = 0; i < count; ++i)
     {
-        free((studs + i)->grades);
-        free((studs + i)->name);
-        free((studs + i)->last_name);
-        free((studs + i)->group);
+        free_student(studs + i);
+        free_student(studs + i);
+        free_student(studs + i);
+        free_student(studs + i);
     }
     free(studs);
 

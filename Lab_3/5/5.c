@@ -251,13 +251,33 @@ int main(int argc, char *argv[])
         student_out(studs + i);
     }
 
-
-    // for (i = 0; i < count_new; ++i)
-    // {
-    //     print_student(new_collection + i);
-    // }
-
     
+    Student_list *student_lists = by_course(studs, count_notes);
+
+    Node *st;
+
+    for (i = 0; i < 4; ++i)
+    {
+        st = (student_lists + i)->first;
+        while (st != NULL)
+        {
+            print_student(st->student);
+            st = st->next;
+        }
+    }
+    
+
+    for (i = 0; i < 4; ++i)
+    {
+        clear_list(student_lists + i);
+    }
+    free(student_lists);
+
+
+    for (i = 0; i < count_new; ++i)
+    {
+        print_student(new_collection + i);
+    }
 
     free_students(studs, count_notes);
     free_students(new_collection, count_new);

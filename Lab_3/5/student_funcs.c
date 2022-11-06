@@ -1,6 +1,7 @@
-#include "student.c"
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "student.c"
 
 #define START_LEN 15
 
@@ -9,6 +10,10 @@ int read_file(FILE *f, Student *studs, int *count_notes, int *line_corrupt)
 {
     int err = 0, n, commas = 0, counter = 0, it = 0, len = START_LEN;
     char *in = (char *) malloc(sizeof(char) * len);
+    if (NULL == in)
+    {
+        return 1;
+    }
     char c;
 
 
@@ -116,47 +121,6 @@ int read_file(FILE *f, Student *studs, int *count_notes, int *line_corrupt)
 }
 
 
-int student_copy(Student *from, Student *to)
-{
-    (*to).id = (*from).id;
-    (*to).name = (char *) malloc(sizeof(char) * strlen((*from).name));
-    if (NULL == (*to).name)
-    {
-        return 1;
-    }
-    strcpy((*to).name, (*from).name);
-
-    (*to).last_name = (char *) malloc(sizeof(char) * strlen((*from).last_name));
-    if (NULL == (*to).last_name)
-    {
-        return 1;
-    }
-    strcpy((*to).last_name, (*from).last_name);
-
-    (*to).course = (*from).course;
-    (*to).group = (char *) malloc(sizeof(char) * strlen((*from).group));
-    if (NULL == (*to).group)
-    {
-        return 1;
-    }
-    strcpy((*to).group, (*from).group);
-
-    (*to).grades = (short *) malloc(sizeof(char) * 5);
-    if (NULL == (*to).group)
-    {
-        return 1;
-    }
-
-    int i;
-    for (i = 0; i < 5; ++i)
-    {
-        *((*to).grades + i) = *((*from).grades + i);
-    }
-
-    return 0;
-}
-
-
 int find_students(Student *studs, Student *found, int by, int count_notes, int *count, char *num)
 {
     char *str = (char *) malloc(sizeof(char) * START_LEN);
@@ -193,7 +157,6 @@ int find_students(Student *studs, Student *found, int by, int count_notes, int *
 
         if (!not_copy)
         {
-            printf("Copied\n");
             err = student_copy(studs + i, found + *count);
             if (err == 1)
             {
@@ -341,4 +304,25 @@ int trace(Student *studs, int count, char* name)
     free(course_counts);
 
     return 0;
+}
+
+
+Student_list *by_course(Student *studs, int count)
+{
+    Student_list *list_of_students = (Student_list *) malloc(sizeof(Student_list) * 4);
+    
+    int i;
+    for (i = 0; i < 4; ++i)
+    {
+        (*(list_of_students + i)).length = 0;
+        (*(list_of_students + i)).first = NULL;
+    }
+
+
+    for (i = 0; i < count; ++i)
+    {
+        insert_student(list_of_students + (*(studs + i)).course - 1, studs + i);
+    }
+
+    return list_of_students;
 }
