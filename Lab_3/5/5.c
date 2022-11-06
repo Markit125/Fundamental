@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "student_funcs.c"
 
 #define START_COUNT 3
@@ -36,7 +37,10 @@ int main(int argc, char *argv[])
         return 4;
     }
 
-    int err = read_file(f, studs, &count_notes, &line_corrupt);
+
+    int err = read_file(f, &studs, &count_notes, &line_corrupt);
+    fclose(f);
+    printf("count %d\n", count_notes);
     if (err == 1)
     {
         printf("There is not enough memory!\n");
@@ -70,6 +74,11 @@ int main(int argc, char *argv[])
         }
         printf(" at the line %d\n", line_corrupt);
         return 5;
+    }
+
+    for (int i = 0; i < count_notes; ++i)
+    {
+        print_student(studs + i);
     }
 
     err = trace(studs, count_notes, argv[1]);
@@ -259,6 +268,7 @@ int main(int argc, char *argv[])
     for (i = 0; i < 4; ++i)
     {
         st = (student_lists + i)->first;
+        printf("\nCourse %d:\n\n", i + 1);
         while (st != NULL)
         {
             print_student(st->student);

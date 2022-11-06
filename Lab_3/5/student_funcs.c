@@ -6,7 +6,7 @@
 #define START_LEN 15
 
 
-int read_file(FILE *f, Student *studs, int *count_notes, int *line_corrupt)
+int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
 {
     int err = 0, n, commas = 0, counter = 0, it = 0, len = START_LEN;
     char *in = (char *) malloc(sizeof(char) * len);
@@ -47,22 +47,22 @@ int read_file(FILE *f, Student *studs, int *count_notes, int *line_corrupt)
                 switch (commas)
                 {
                     case 0:
-                        err = set_id(in, studs + counter) == 0 ? 0 : 4;
+                        err = set_id(in, *studs + counter) == 0 ? 0 : 4;
                         break;
                     case 1:
-                        err = set_name(in, studs + counter) == 0 ? 0 : 5;
+                        err = set_name(in, *studs + counter) == 0 ? 0 : 5;
                         break;
                     case 2:
-                        err = set_last_name(in, studs + counter) == 0 ? 0 : 5;
+                        err = set_last_name(in, *studs + counter) == 0 ? 0 : 5;
                         break;
                     case 3:
-                        err = set_course(in, studs + counter) == 0 ? 0 : 7;
+                        err = set_course(in, *studs + counter) == 0 ? 0 : 7;
                         break;
                     case 4:
-                        err = set_group(in, studs + counter) == 0 ? 0 : 8;
+                        err = set_group(in, *studs + counter) == 0 ? 0 : 8;
                         break;
                     default:
-                        err = set_grade(in, studs + counter, commas - 5) == 0 ? 0 : 9;
+                        err = set_grade(in, *studs + counter, commas - 5) == 0 ? 0 : 9;
                         break;
                 }
 
@@ -77,44 +77,46 @@ int read_file(FILE *f, Student *studs, int *count_notes, int *line_corrupt)
             }
             else
             {
-                err = set_grade(in, studs + counter, commas - 5);
+                err = set_grade(in, *studs + counter, commas - 5);
                 if (err || commas < 9)
                 {
                     free(in);
                     *line_corrupt = counter + 1;
                     return 9;
                 }
+                
+                ++counter;
 
                 if (*count_notes == counter)
                 {
-                    *count_notes *= 2;
-                    Student *ptr = realloc(studs, sizeof(Student) * *count_notes);
+                    Student *ptr = realloc(*studs, sizeof(Student) * (*count_notes * 2));
                     if (NULL == ptr)
                     {
                         free(in);
                         return 1;
                     }
 
-                    studs = ptr;
+                    *count_notes *= 2;
+                    *studs = ptr;
                 }
 
-                ++counter;
                 commas = 0;
             }
         }
     }
     free(in);
 
+
     if (counter < *count_notes)
     {
-        Student *ptr = realloc(studs, sizeof(Student) * counter);
+        Student *ptr = realloc(*studs, sizeof(Student) * counter);
         if (NULL == ptr)
         {
             return 1;
         }
 
         *count_notes = counter;
-        studs = ptr;
+        *studs = ptr;
     }
 
     return 0;
@@ -136,8 +138,6 @@ int find_students(Student *studs, Student *found, int by, int count_notes, int *
         {
             case 1:
                 sprintf(str, "%d", (studs + i)->id);
-                printf("-%s- -%s-\n", num, str);
-                // printf("+%d+\n", strcmp(str, num));
                 not_copy = strcmp(str, num);
                 break;
             case 2:
@@ -246,9 +246,11 @@ int trace(Student *studs, int count, char* name)
     int i, j;
     for (i = 0; i < count; ++i)
     {
+        printf("%d\n", i);
         *(course_averages + (*(studs + i)).course - 1) = 0;
         *(course_counts + (*(studs + i)).course - 1) = 0;
     }
+    
 
     for (i = 0; i < count; ++i)
     {
