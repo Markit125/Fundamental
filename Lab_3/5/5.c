@@ -179,6 +179,12 @@ int main(int argc, char *argv[])
                 {
                    printf("There is not enough memory!\n");
                     free(num);
+                    break;
+                }
+
+                err = validate(num, &action, 1, 4);
+                if (err)
+                {
                     printf("Try again\n");
                     --attempts;
                     continue;
@@ -238,6 +244,8 @@ int main(int argc, char *argv[])
     }
     free(num);
 
+
+    printf("Students and their average grades:\n");
     for (i = 0; i < count_notes; ++i)
     {
         student_out(studs + i);
