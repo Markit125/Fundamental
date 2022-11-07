@@ -101,24 +101,7 @@ int is_date(char *str, int *day, int *month, int *year)
     *(day_str + 2) = '\0';
     *(month_str + 2) = '\0';
     *(year_str + 4) = '\0';
-    // char *day_str = (char *) malloc(sizeof(char) * 2);
-    // if (NULL == day_str)
-    // {
-    //     return 0;
-    // }
-    // char *month_str = (char *) malloc(sizeof(char) * 2);
-    // if (NULL == month_str)
-    // {
-    //     free(day_str);
-    //     return 0;
-    // }
-    // char *year_str = (char *) malloc(sizeof(char) * 4);
-    // if (NULL == year_str)
-    // {
-    //     free(day_str);
-    //     free(month_str);
-    //     return 0;
-    // }
+
 
     strncpy(day_str, str, 2);
     strncpy(month_str, str + 3, 2);
@@ -126,16 +109,10 @@ int is_date(char *str, int *day, int *month, int *year)
 
     if (!is_integer_range(month_str, month, 1, 12))
     {
-        // free(day_str);
-        // free(month_str);
-        // free(year_str);
         return 0;
     }
     if (!is_integer_range(year_str, year, 2000, 2022))
     {
-        // free(day_str);
-        // free(month_str);
-        // free(year_str);
         return 0;
     }
 
@@ -144,16 +121,8 @@ int is_date(char *str, int *day, int *month, int *year)
 
     if (!is_integer_range(day_str, day, 1, *(count_days + *month - 1)))
     {
-        // free(day_str);
-        // free(month_str);
-        // free(year_str);
         return 0;
     }
-
-
-    // free(day_str);
-    // free(month_str);
-    // free(year_str);
 
     return 1;
 }
