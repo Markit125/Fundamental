@@ -130,9 +130,6 @@ int read_notes(int *count, message ***msgs, FILE *f)
             it = 0;
 
             err = !is_integer(in, &n, 0);
-
-            // printf("in: %s\n", in);
-
             if (err)
             {
                 free(in);
@@ -142,7 +139,6 @@ int read_notes(int *count, message ***msgs, FILE *f)
 
             (*(*msgs + counter))->len = n;
 
-            // write_mes(**(msgs + counter));
 
             ++counter;
             if (counter >= *count)
