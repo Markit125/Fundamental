@@ -33,6 +33,7 @@ typedef struct Student_list
 
 
 int student_copy(Student *from, Student *to);
+int free_student(Student *stud);
 
 
 int insert_student(Student_list *sl, Student *student_new)
@@ -52,7 +53,11 @@ int insert_student(Student_list *sl, Student *student_new)
             return 1;
         }
         
-        student_copy(student_new, sl->first->student);
+        if (student_copy(student_new, sl->first->student) != 0)
+        {
+            free_student(sl->first->student);
+            return 2;
+        }
         
         sl->first->next = NULL;
         ++(sl->length);
@@ -72,7 +77,12 @@ int insert_student(Student_list *sl, Student *student_new)
     }
     
     stud->next->student = (Student *) malloc(sizeof(Student));
-    student_copy(student_new, stud->next->student);
+
+    if (student_copy(student_new, stud->next->student) != 0)
+    {
+        free_student(sl->first->student);
+        return 2;
+    }
     stud->next->next = NULL;
     ++(sl->length);
 
@@ -80,7 +90,6 @@ int insert_student(Student_list *sl, Student *student_new)
 }
 
 
-int free_student(Student *stud);
 
 
 int clear_list(Student_list *sl)
@@ -115,6 +124,11 @@ int set_name(char *in, Student *student)
     if (is_right_string(in, 1) && strlen(in) > 0)
     {
         student->name = (char *) malloc(sizeof(char) * strlen(in));
+        if (NULL == student->name)
+        {
+            return 1;
+        }
+
         strcpy(student->name, in);
         return 0;
     }
@@ -127,6 +141,11 @@ int set_last_name(char *in, Student *student)
     if (is_right_string(in, 1) && strlen(in) > 0)
     {
         student->last_name = (char *) malloc(sizeof(char) * strlen(in));
+        if (NULL == student->last_name)
+        {
+            return 1;
+        }
+
         strcpy(student->last_name, in);
         return 0;
     }
@@ -140,6 +159,7 @@ int set_course(char *in, Student *student)
     if (is_integer_range(in, &course, 1, 4))
     {
         student->course = (short) course;
+
         return 0;
     }
     return 1;
@@ -151,6 +171,11 @@ int set_group(char *in, Student *student)
     if (is_right_string(in, 0) && strlen(in) > 0)
     {
         student->group = (char *) malloc(sizeof(char) * strlen(in));
+        if (NULL == student->group)
+        {
+            return 1;
+        }
+
         strcpy(student->group, in);
         return 0;
     }
@@ -171,6 +196,10 @@ int set_grade(char *in, Student *student, int position)
         if (NULL == student->grades)
         {
             student->grades = (short *) malloc(sizeof(short) * 5);
+            if (NULL == student->grades)
+            {
+                return 1;
+            }
         }
 
         *(student->grades + position) = (short) grade;

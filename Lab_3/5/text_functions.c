@@ -90,7 +90,6 @@ int get_input(char *num, int *cur_len)
     int it = 0;
     while (!is_space(c) && !is_newline(c) || it == 0)
     {
-    // printf("There is not enough memory!\n");
         if (it == *cur_len)
         {
             *cur_len *= 2;

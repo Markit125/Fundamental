@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
 
     int err = read_file(f, &studs, &count_notes, &line_corrupt);
     fclose(f);
-    printf("count %d\n", count_notes);
     if (err == 1)
     {
         printf("There is not enough memory!\n");
@@ -76,10 +75,6 @@ int main(int argc, char *argv[])
         return 5;
     }
 
-    for (int i = 0; i < count_notes; ++i)
-    {
-        print_student(studs + i);
-    }
 
     err = trace(studs, count_notes, argv[1]);
     if (err)

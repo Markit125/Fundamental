@@ -235,18 +235,20 @@ int trace(Student *studs, int count, char* name)
     double *course_averages = (double *) malloc(sizeof(double) * 4);
     if (NULL == course_averages)
     {
+        free(all_averages);
         return 1;
     }
     int *course_counts = (int *) malloc(sizeof(int) * 4);
     if (NULL == course_counts)
     {
+        free(all_averages);
+        free(course_averages);
         return 1;
     }
 
     int i, j;
     for (i = 0; i < count; ++i)
     {
-        printf("%d\n", i);
         *(course_averages + (*(studs + i)).course - 1) = 0;
         *(course_counts + (*(studs + i)).course - 1) = 0;
     }
@@ -262,6 +264,9 @@ int trace(Student *studs, int count, char* name)
     char *filename = (char *) malloc(sizeof(char) * (strlen(name) + 3));
     if (NULL == filename)
     {
+        free(all_averages);
+        free(course_averages);
+        free(course_counts);
         return 1;
     }
 
@@ -274,11 +279,6 @@ int trace(Student *studs, int count, char* name)
         }
     }
 
-    for (i = 0; i < 4; ++i)
-    {
-        printf("%f\n", *(course_averages + i));
-    }
-
 
     for (j = 1; j <= 4; ++j)
     {
@@ -288,6 +288,9 @@ int trace(Student *studs, int count, char* name)
         FILE *f = fopen(filename, "w");
         if (NULL == f)
         {
+            free(all_averages);
+            free(course_averages);
+            free(course_counts);
             return 2;
         }
 
@@ -319,7 +322,6 @@ Student_list *by_course(Student *studs, int count)
         (*(list_of_students + i)).length = 0;
         (*(list_of_students + i)).first = NULL;
     }
-
 
     for (i = 0; i < count; ++i)
     {
