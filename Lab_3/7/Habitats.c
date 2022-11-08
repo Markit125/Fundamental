@@ -9,8 +9,8 @@
 
 enum gender
 {
-    m,
-    w,
+    m = 0,
+    w = 1,
 };
 
 typedef struct Habitat
@@ -152,10 +152,10 @@ int print_habitat(Habitat *hab, int num)
     {
         printf("=====\n");
     }
-    printf("Last name: %s\nName: %s\nMiddle name: %s\nBirth date: %s\nGender: %u\nIncome: %.3lf\n",
+    printf("Last name: %s\nName: %s\nMiddle name: %s\nBirth date: %s\nGender: %c\nIncome: %.3lf\n",
             (*hab).last_name, (*hab).name, (*hab).middle_name,
             (*hab).birth_date,
-            (*hab).gender, (*hab).income);
+            (*hab).gender ? 'w' : 'm', (*hab).income);
     printf("=====\n");
 
     return 0;
@@ -164,10 +164,10 @@ int print_habitat(Habitat *hab, int num)
 
 int file_print_habitat(FILE *f, Habitat *hab)
 {
-    fprintf(f, "%s %s %s %s %u %.3lf\n",
+    fprintf(f, "%s %s %s %s %c %.3lf\n",
             (*hab).last_name, (*hab).name, (*hab).middle_name,
             (*hab).birth_date,
-            (*hab).gender, (*hab).income);
+            (*hab).gender ? 'w' : 'm', (*hab).income);
 
     return 0;
 }

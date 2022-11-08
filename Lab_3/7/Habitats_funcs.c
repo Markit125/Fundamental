@@ -1,6 +1,9 @@
 #include "list.c"
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#define eps 0.000001
 
 
 int read_file(FILE *f, List *list, int *line_corrupt, int *len)
@@ -147,7 +150,7 @@ int write_to_file(FILE *f, List *list)
 }
 
 
-int find_habs(List *list, int by, List *found, int len)
+int find_habs(List *list, int by, List *found, int len, char *str)
 {
     if (NULL == list)
     {
@@ -164,11 +167,47 @@ int find_habs(List *list, int by, List *found, int len)
         return 3;
     }
 
+    int not_copy = 1, err = 0, gender;
+    char c;
+    double income;
+
     Node *node = list->first;
 
     while (node != NULL)
     {
-        
+        not_copy = 1;
+        switch(by)
+        {
+            case 1:
+                not_copy = strcmp(node->habitat->last_name, str);
+                break;
+            case 2:
+                not_copy = strcmp(node->habitat->name, str);
+                break;
+            case 3:
+                not_copy = strcmp(node->habitat->middle_name, str);
+                break;
+            case 4:
+                not_copy = strcmp(node->habitat->birth_date, str);
+                break;
+            case 5:
+                gender = node->habitat->gender;
+                c = gender ? 'w' : 'm';
+
+                not_copy = strcmp(&c, str);
+                break;
+            case 6:
+                is_double(str, &income, 0);
+                not_copy = fabs(node->habitat->income - income) < eps ? 0 : 1;
+                break;
+        }
+
+        if (!not_copy)
+        {
+            add(found, node->habitat);
+        }
+
+        node = node->next;
     }
 
     return 0;

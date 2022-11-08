@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     if (err == 1)
     {
         printf("There is not enough memory!\n");
-        clear_list(list);
+        clear_list(list, 1);
         return 1;
     }
 
@@ -69,15 +69,15 @@ int main(int argc, char *argv[])
                 printf("Something...");
         }
         printf(" at the line %d\n", line_corrupt);
-        clear_list(list);
+        clear_list(list, 1);
         return 5;
     }
 
-    print_list(list);
+    print_list(list, 0);
 
     char *out = "new.txt";
 
-    FILE *f_out = fopen(out, "r+");
+    FILE *f_out = fopen(out, "w");
     if (NULL == f_out)
     {
         printf("Cannot create new file!\n");
@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
     }
 
     err = write_to_file(f_out, list);
+    fclose(f_out);
     if (err == 1)
     {
         printf("New file does not exists!\n");
@@ -97,12 +98,11 @@ int main(int argc, char *argv[])
     }
 
 
-    int by;
     int cur_len = START_LEN, action, attempts = 3, i;
     List *found;
 
-    char *num = (char *) malloc(sizeof(char) * cur_len);
-    if (NULL == num)
+    char *input = (char *) malloc(sizeof(char) * cur_len);
+    if (NULL == input)
     {
         printf("There is not enough memory!\n");
         return 11;
@@ -112,16 +112,16 @@ int main(int argc, char *argv[])
     {
         printf("To find enter 1\nTo edit enter 2\nTo go through enter 3:\n");
 
-        err = get_input(num, &cur_len);
+        err = get_input(input, &cur_len);
         if (err == 1)
         {
             printf("There is not enough memory!\n");
-            free(num);
+            free(input);
             return 1;
         }
         
 
-        err = validate(num, &action, 1, 3);
+        err = validate(input, &action, 1, 3);
         if (err)
         {
             printf("Try again\n");
@@ -133,14 +133,14 @@ int main(int argc, char *argv[])
             attempts = 3;
             while (attempts)
             {
-                printf("Find by\n1 - last name\n2 - name\n3 - middle name\n4 - birth date\n5 - gender\n6 - income");
-                err = get_input(num, &cur_len);
+                printf("Find by\n1 - last name\n2 - name\n3 - middle name\n4 - birth date\n5 - gender\n6 - income\n");
+                err = get_input(input, &cur_len);
                 if (err == 1)
                 {
                     break;
                 }
 
-                err = validate(num, &action, 1, 6);
+                err = validate(input, &action, 1, 6);
                 if (err)
                 {
                     printf("Try again\n");
@@ -149,7 +149,7 @@ int main(int argc, char *argv[])
                 }
 
                 printf("Enter the value:\n");
-                err = get_input(num, &cur_len);
+                err = get_input(input, &cur_len);
                 if (err == 1)
                 {
                     break;
@@ -161,14 +161,16 @@ int main(int argc, char *argv[])
                     return 11;
                 }
 
-                err = find_habs(list, by, found, len);
+                err = find_habs(list, action, found, len, input);
+
+                print_list(found, 1);
 
                 break;
             }
             if (err == 1)
             {
                 printf("There is not enough memory!\n");
-                free(num);
+                free(input);
                 return 1;
             }
         }
@@ -179,15 +181,15 @@ int main(int argc, char *argv[])
             while (attempts)
             {
                 printf("Choose edit option:\n1 - add\n2 - delete\n");
-                err = get_input(num, &cur_len);
+                err = get_input(input, &cur_len);
                 if (err == 1)
                 {
-                   printf("There is not enough memory!\n");
-                    free(num);
+                    printf("There is not enough memory!\n");
+                    free(input);
                     break;
                 }
 
-                err = validate(num, &action, 1, 2);
+                err = validate(input, &action, 1, 2);
                 if (err)
                 {
                     printf("Try again\n");
@@ -197,12 +199,12 @@ int main(int argc, char *argv[])
 
                 if (action == 1)
                 {
-                    add_habitat(list);
+                    // add_habitat(list);
                 }
                 else
                 {
                     print_list(list, 1);
-                    remove_habitat(list);
+                    // remove_habitat(list);
                 }
                 
                 break;
@@ -213,13 +215,14 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    free(num);
+    free(input);
 
     
+    // print_list(list, 0);
 
 
-
-    clear_list(list);
+    clear_list(found, 0);
+    clear_list(list, 1);
 
     return 0;
 }

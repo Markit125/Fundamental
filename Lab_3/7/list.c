@@ -37,6 +37,7 @@ int add(List *list, Habitat *hab)
 
         list->first = node;
         node->habitat = hab;
+        node->next = NULL;
 
         return 0;
     }
@@ -72,12 +73,13 @@ int add(List *list, Habitat *hab)
 
     prev->next = new_node;
     new_node->next = node;
-
+    
+    
     return 0;
 }
 
 
-int clear_list(List *list)
+int clear_list(List *list, int free_hab)
 {
     if (list == NULL)
     {
@@ -91,7 +93,10 @@ int clear_list(List *list)
     Node *node = list->first, *prev;
     while (node != NULL)
     {
-        free_habitat(node->habitat);
+        if (free_hab)
+        {
+            free_habitat(node->habitat);
+        }
         prev = node;
         node = node->next;
         free(prev);
@@ -106,11 +111,12 @@ int clear_list(List *list)
 int print_list(List *list, int enumerate)
 {
     Node *node = list->first;
-    int i = 0;
+    int i = 1;
     while (node != NULL)
     {
         print_habitat(node->habitat, enumerate ? i : 0);
         node = node->next;
+        ++i;
     }
 
     return 0;
