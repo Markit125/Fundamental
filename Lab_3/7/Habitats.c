@@ -18,7 +18,7 @@ typedef struct Habitat
     char *last_name;
     char *name;
     char *middle_name;
-    int birth_date[3];
+    char *birth_date;
     enum gender gender;
     double income;
 } Habitat;
@@ -29,6 +29,7 @@ int free_habitat(Habitat *hab)
     free(hab->last_name);
     free(hab->name);
     free(hab->middle_name);
+    free(hab->birth_date);
 
     return 0;
 }
@@ -93,9 +94,12 @@ int set_birth_date(Habitat *hab, char *in)
     int day, month, year;
     if (is_date(in, &day, &month, &year))
     {
-        *hab->birth_date = day;
-        *(hab->birth_date + 1) = month;
-        *(hab->birth_date + 2) = year;
+        hab->birth_date = (char *) malloc(sizeof(char) * strlen(in));
+        if (NULL == hab->birth_date)
+        {
+            return 1;
+        }
+        strcpy(hab->birth_date, in);
 
         return 0;
     }
@@ -139,12 +143,18 @@ int set_income(Habitat *hab, char *in)
 }
 
 
-int print_habitat(Habitat *hab)
+int print_habitat(Habitat *hab, int num)
 {
-    printf("=====\n");
-    printf("Last name: %s\nName: %s\nMiddle name: %s\nBirth date: %d.%d.%d\nGender: %u\nIncome: %.3lf\n",
+    if (num) {
+        printf("=== %d ===\n", num);
+    }
+    else
+    {
+        printf("=====\n");
+    }
+    printf("Last name: %s\nName: %s\nMiddle name: %s\nBirth date: %s\nGender: %u\nIncome: %.3lf\n",
             (*hab).last_name, (*hab).name, (*hab).middle_name,
-            *(*hab).birth_date, *((*hab).birth_date + 1), *((*hab).birth_date + 2),
+            (*hab).birth_date,
             (*hab).gender, (*hab).income);
     printf("=====\n");
 
@@ -152,30 +162,46 @@ int print_habitat(Habitat *hab)
 }
 
 
-int is_younger(Habitat *h1, Habitat *h2)
+int file_print_habitat(FILE *f, Habitat *hab)
 {
-    if (*(h1->birth_date + 2) > *(h2->birth_date + 2))
-    {
-        return 1;
-    }
-    else if (*(h1->birth_date + 2) < *(h2->birth_date + 2))
-    {
-        return 0;
-    }
-
-    if (*(h1->birth_date + 1) > *(h2->birth_date + 1))
-    {
-        return 1;
-    }
-    else if (*(h1->birth_date + 1) < *(h2->birth_date + 1))
-    {
-        return 0;
-    }
-
-    if (*(h1->birth_date) > *(h2->birth_date))
-    {
-        return 1;
-    }
+    fprintf(f, "%s %s %s %s %u %.3lf\n",
+            (*hab).last_name, (*hab).name, (*hab).middle_name,
+            (*hab).birth_date,
+            (*hab).gender, (*hab).income);
 
     return 0;
+}
+
+
+int is_younger(Habitat *h1, Habitat *h2)
+{
+    int day_1, day_2, month_1, month_2, year_1, year_2;
+    if (is_date(h1->birth_date, &day_1, &month_1, &year_1) && is_date(h2->birth_date, &day_2, &month_2, &year_2))
+    {
+        if (year_1 > year_2)
+        {
+            return 1;
+        }
+        else if (year_1 < year_2)
+        {
+            return 0;
+        }
+
+        if (month_1 > month_2)
+        {
+            return 1;
+        }
+        else if (month_1 < month_2)
+        {
+            return 0;
+        }
+
+        if (day_1 > day_2)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
+    return -1;
 }

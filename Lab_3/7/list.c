@@ -103,12 +103,13 @@ int clear_list(List *list)
 }
 
 
-int print_list(List *list)
+int print_list(List *list, int enumerate)
 {
     Node *node = list->first;
+    int i = 0;
     while (node != NULL)
     {
-        print_habitat(node->habitat);
+        print_habitat(node->habitat, enumerate ? i : 0);
         node = node->next;
     }
 

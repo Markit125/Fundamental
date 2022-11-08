@@ -3,10 +3,19 @@
 #include <stdlib.h>
 
 
-int read_file(FILE *f, List *list, int *line_corrupt)
+int read_file(FILE *f, List *list, int *line_corrupt, int *len)
 {
-    int err = 0, n, position = 0, counter = 0, it = 0, len = START_LEN;
-    char *in = (char *) malloc(sizeof(char) * len);
+    if (f == NULL)
+    {
+        return 3;
+    }
+    if (list == NULL)
+    {
+        return 9;
+    }
+
+    int err = 0, n, position = 0, counter = 0, it = 0;
+    char *in = (char *) malloc(sizeof(char) * *len);
     if (NULL == in)
     {
         return 1;
@@ -24,13 +33,14 @@ int read_file(FILE *f, List *list, int *line_corrupt)
     {
         if (!is_space(c) && !is_newline(c))
         {
-            if (it == len)
+            if (it == *len)
             {
-                len *= 2;
-                char *ptr = realloc(in, sizeof(char) * len);
+                *len *= 2;
+                char *ptr = realloc(in, sizeof(char) * *len);
                 if (ptr == NULL)
                 {
                     free(in);
+                    free(hab);
                     return 1;
                 }
 
@@ -70,6 +80,7 @@ int read_file(FILE *f, List *list, int *line_corrupt)
                 if (err)
                 {
                     free(in);
+                    free(hab);
                     *line_corrupt = counter + 1;
                     return err;
                 }
@@ -82,6 +93,7 @@ int read_file(FILE *f, List *list, int *line_corrupt)
                 if (err)
                 {
                     free(in);
+                    free(hab);
                     *line_corrupt = counter + 1;
                     return err;
                 }
@@ -103,6 +115,61 @@ int read_file(FILE *f, List *list, int *line_corrupt)
     }
     free(hab);
     free(in);
+
+    return 0;
+}
+
+
+int write_to_file(FILE *f, List *list)
+{
+    if (f == NULL)
+    {
+        return 1;
+    }
+    if (list == NULL)
+    {
+        return 2;
+    }
+
+    fseek(f, 0, SEEK_END);
+    Node *node = list->first;
+
+    while (node != NULL)
+    {
+        if (node->habitat != NULL)
+        {
+            file_print_habitat(f, node->habitat);
+        }
+        node = node->next;
+    }
+
+    return 0;
+}
+
+
+int find_habs(List *list, int by, List *found, int len)
+{
+    if (NULL == list)
+    {
+        return 1;
+    }
+    if (NULL == found)
+    {
+        return 2;
+    }
+
+    char *in = (char *) malloc(sizeof(char) * len);
+    if (NULL == in)
+    {
+        return 3;
+    }
+
+    Node *node = list->first;
+
+    while (node != NULL)
+    {
+        
+    }
 
     return 0;
 }
