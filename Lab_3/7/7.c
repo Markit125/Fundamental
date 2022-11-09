@@ -1,7 +1,10 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "Habitats_funcs.c"
+
+#define INF 2147483647
 
 
 int main(int argc, char *argv[])
@@ -74,28 +77,6 @@ int main(int argc, char *argv[])
     }
 
     print_list(list, 0);
-
-    char *out = "new.txt";
-
-    FILE *f_out = fopen(out, "w");
-    if (NULL == f_out)
-    {
-        printf("Cannot create new file!\n");
-        return 7;
-    }
-
-    err = write_to_file(f_out, list);
-    fclose(f_out);
-    if (err == 1)
-    {
-        printf("New file does not exists!\n");
-        return 3;
-    }
-    else if (err == 2)
-    {
-        printf("List does not exists!\n");
-        return 10;
-    }
 
 
     int cur_len = START_LEN, action, attempts = 3, i;
@@ -184,8 +165,6 @@ int main(int argc, char *argv[])
                 err = get_input(input, &cur_len);
                 if (err == 1)
                 {
-                    printf("There is not enough memory!\n");
-                    free(input);
                     break;
                 }
 
@@ -199,15 +178,66 @@ int main(int argc, char *argv[])
 
                 if (action == 1)
                 {
-                    // add_habitat(list);
+                    err = add_habitat(list);
+                    if (err)
+                    {
+                        printf("Wrong ");
+                        switch(err)
+                        {
+                            case 4:
+                                printf("Last name\n");
+                                break;
+                            case 5:
+                                printf("Name\n");
+                                break;
+                            case 6:
+                                printf("Middle name\n");
+                                break;
+                            case 7:
+                                printf("Birth date\n");
+                                break;
+                            case 8:
+                                printf("Gender\n");
+                                break;
+                            case 9:
+                                printf("Income\n");
+                                break;
+                            default:
+                                printf("Something...\n");
+                        }
+                    }
                 }
                 else
                 {
                     print_list(list, 1);
-                    // remove_habitat(list);
+                    err = get_input(input, &cur_len);
+                    if (err == 1)
+                    {
+                        break;
+                    }
+
+                    err = validate(input, &action, 1, INF);
+                    if (err)
+                    {
+                        printf("Wrong number, try again!\n");
+                        --attempts;
+                        continue;
+                    }
+
+                    err = remove_habitat(list, action);
+                    if (err)
+                    {
+                        printf("There is not such habitat!\n");
+                    }
                 }
                 
                 break;
+            }
+            if (err == 1)
+            {
+                printf("There is not enough memory!\n");
+                free(input);
+                return 1;
             }
         }
         else
@@ -217,8 +247,32 @@ int main(int argc, char *argv[])
     }
     free(input);
 
-    
-    // print_list(list, 0);
+
+
+    char *out = "new.txt";
+
+    FILE *f_out = fopen(out, "w");
+    if (NULL == f_out)
+    {
+        printf("Cannot create new file!\n");
+        return 7;
+    }
+
+    err = write_to_file(f_out, list);
+    fclose(f_out);
+    if (err == 1)
+    {
+        printf("New file does not exists!\n");
+        return 3;
+    }
+    else if (err == 2)
+    {
+        printf("List does not exists!\n");
+        return 10;
+    }
+
+
+    print_list(list, 0);
 
 
     clear_list(found, 0);

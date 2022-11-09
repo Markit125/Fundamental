@@ -143,10 +143,10 @@ int set_income(Habitat *hab, char *in)
 }
 
 
-int print_habitat(Habitat *hab, int num)
+int print_habitat(Habitat *hab, int numerate)
 {
-    if (num) {
-        printf("=== %d ===\n", num);
+    if (numerate) {
+        printf("=== %d ===\n", numerate);
     }
     else
     {
