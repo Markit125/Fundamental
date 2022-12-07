@@ -120,3 +120,41 @@ int Permitted(char c)
             c == '/' || c == '*' || c == '%' || c == '^' ||
             c == '+' || c == '-';
 }
+
+
+int IsNumSymbol(char c)
+{
+    return '0' <= c && c <= '9' || c == '.';
+}
+
+
+int StrCopy(char *dest, char *str, int startIt, int it)
+{
+    dest = (char *) malloc(sizeof(char) * (it - startIt + 1));
+    if (NULL == dest)
+    {
+        return 1;
+    }
+
+    int i = startIt;
+    int j = 0;
+    while (*(str + i) != '\0')
+    {
+        *(dest + j++) = *(str + i++);
+    }
+
+    *(dest + j) = '\0';
+
+    if (i != it)
+    {
+        char *ptr = realloc(dest, sizeof(char) * (j + 1));
+        if (NULL == ptr)
+        {
+            return 1;
+        }
+
+        dest = ptr;
+    }
+    
+    return 0;
+}

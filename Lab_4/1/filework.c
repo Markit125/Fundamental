@@ -1,4 +1,3 @@
-#include "arguments.c"
 #include "process.c"
 #define START_LEN 10
 
@@ -33,7 +32,7 @@ int ReadFiles(int argc, const char *argv)
         {
             if (!IsSpace(c))
             {
-                if (it == len - 1)
+                if (it == len - 2)
                 {
                     char *ptr = (char *) malloc(sizeof(char) * (len * 2));
                     if (ptr == NULL)
@@ -61,6 +60,8 @@ int ReadFiles(int argc, const char *argv)
             }
             else if (c == '\n')
             {
+                *(sym + it++) = '#';
+                *(sym + it) = '\0';
                 if (fout == NULL)
                 {
                     fout = fopen("out.txt", "w");

@@ -67,6 +67,8 @@ int Pop(Stack *st, char *data)
 {
     Node *node = st->first;
     st->first = node->next;
+
+    if (strlen())
     data = (char *) malloc(sizeof(node->data));
     if (data == NULL)
     {
@@ -76,6 +78,21 @@ int Pop(Stack *st, char *data)
     strcpy(data, node->data);
     free(node->data);
     free(node);
+
+    return 0;
+}
+
+
+int Top(Stack *st, char *data)
+{
+    Node *node = st->first;
+    data = (char *) malloc(sizeof(node->data));
+    if (data == NULL)
+    {
+        return 1;
+    }
+
+    strcpy(data, node->data);
 
     return 0;
 }
