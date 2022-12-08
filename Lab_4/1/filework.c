@@ -1,19 +1,22 @@
 #include "process.c"
-#define START_LEN 10
+#include <stdio.h>
 
 
-int ReadFiles(int argc, const char *argv)
+int ReadFiles(int argc, const char **argv)
 {
-    if (argc == 0) {
+    if (argc == 1) {
         return 1;
     }
 
-    for (int i = 0; i < argc; ++i)
+
+    for (int i = 1; i < argc; ++i)
     {
-        FILE *f = fopen(argv + i, "r");
+        FILE *f = fopen(*(argv + i), "r");
+        printf("%s \n", *(argv + i));
         if (NULL == f) {
             return 2;
         }
+
 
         FILE *fout;
 
@@ -28,21 +31,23 @@ int ReadFiles(int argc, const char *argv)
         }
 
 
+
         while (c != EOF)
         {
             if (!IsSpace(c))
             {
                 if (it == len - 2)
                 {
-                    char *ptr = (char *) malloc(sizeof(char) * (len * 2));
+                    char *ptr = (char *) realloc(sym, sizeof(char) * (len * 2));
                     if (ptr == NULL)
                     {
                         return 3;
                     }
+                    len *= 2;
 
                     sym = ptr;
                 }
-
+                
                 if (!Permitted(c))
                 {
                     if (fout == NULL)
@@ -54,6 +59,7 @@ int ReadFiles(int argc, const char *argv)
                         }
                     }
                     WriteError(fout, it, sym);
+
                 }
 
                 *(sym + it++) = c;                    
@@ -73,12 +79,11 @@ int ReadFiles(int argc, const char *argv)
 
                 int err = Process(f, fout, sym);
             }
+            c = getc(f);
 
         }
 
-
-        
-        
-
     }
+
+    return 0;
 }

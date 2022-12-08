@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define LEN 10
 
@@ -116,7 +117,7 @@ int GetInput(char *num, int *cur_len)
 
 int Permitted(char c)
 {
-    return '0' <= c && c <= '9' || c == '(' || c == ')' ||
+    return  '0' <= c && c <= '9' || c == '(' || c == ')' ||
             c == '/' || c == '*' || c == '%' || c == '^' ||
             c == '+' || c == '-';
 }
@@ -128,33 +129,44 @@ int IsNumSymbol(char c)
 }
 
 
-int StrCopy(char *dest, char *str, int startIt, int it)
+int StrCopy(char **dest, char *str, int startIt, int it, int *len)
 {
-    dest = (char *) malloc(sizeof(char) * (it - startIt + 1));
-    if (NULL == dest)
+    if (NULL == *dest)
     {
         return 1;
     }
 
-    int i = startIt;
-    int j = 0;
-    while (*(str + i) != '\0')
+    if (*len < strlen(str))
     {
-        *(dest + j++) = *(str + i++);
-    }
-
-    *(dest + j) = '\0';
-
-    if (i != it)
-    {
-        char *ptr = realloc(dest, sizeof(char) * (j + 1));
+        char *ptr = (char *) realloc(*dest, sizeof(char) * (*len * 2));
         if (NULL == ptr)
         {
             return 1;
         }
+        *len *= 2;
 
-        dest = ptr;
+        *dest = ptr;
     }
+
+    int i = startIt;
+    int j = 0;
+    while (*(str + i) != '\0' && i < it)
+    {
+        *(*dest + j++) = *(str + i++);
+    }
+
+    *(*dest + j - 1) = '\0';
+
+    // if (i != it)
+    // {
+    //     char *ptr = realloc(*dest, sizeof(char) * (j + 1));
+    //     if (NULL == ptr)
+    //     {
+    //         return 1;
+    //     }
+
+    //     *dest = ptr;
+    // }
     
     return 0;
 }

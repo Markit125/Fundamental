@@ -1,6 +1,8 @@
+#include <stdlib.h>
 #include "arguments.c"
 #include "station.c"
-#include <stdlib.h>
+
+#define START_LEN 10
 
 
 int WriteError(FILE *fout, int it, char *sym);
@@ -31,9 +33,12 @@ int Process(FILE *f, FILE *fout, char *sym)
     int prevNumber = 0;
     int it = 0, startIt = 0;
     int act = -1;
-    char *num;
+    int len = START_LEN;
+    char *num = (char *) malloc(sizeof(char) * START_LEN);
     char c = *sym;
     char *top;
+
+    printf("BEGIN %s\n", sym);
     while (c != '\0')
     {
         if (IsNumSymbol(c))
@@ -48,7 +53,7 @@ int Process(FILE *f, FILE *fout, char *sym)
 
         if (prevNumber == 1 && !number)
         {
-            err = StrCopy(num, sym, startIt, it);
+            err = StrCopy(&num, sym, startIt, it, &len);
             if (err)
             {
                 free(num);
@@ -57,7 +62,8 @@ int Process(FILE *f, FILE *fout, char *sym)
                 ClearStack(stackS);
                 return 3;
             }
-
+            
+            printf("%s -> stackNum\n", num);
             Push(stackNum, num);
         }
 
@@ -66,7 +72,7 @@ int Process(FILE *f, FILE *fout, char *sym)
         {
             // push to stack
 
-            err = Top(stackS, top);
+            err = Top(stackS, &top);
             if (err)
             {
                 WriteError(fout, it, sym);
@@ -77,8 +83,8 @@ int Process(FILE *f, FILE *fout, char *sym)
                 return 4;
             }
 
-            act = Action(*top, c);
 
+            act = Action(*top, c);
             if (act == 5)
             {
                 WriteError(fout, it, sym);
@@ -92,16 +98,22 @@ int Process(FILE *f, FILE *fout, char *sym)
             {
                 --it;
             }
+            else if (act == 4)
+            {
+                break;
+            }
 
             err = ChangeStacks(stackNum, stackS, act, c);
-
 
             startIt = it + (act == 2);
         }
 
         prevNumber = number;
-        ++it;
+        c = *(sym + it++);
     }
+
+    PrintStack(stackNum);
+    // PrintStack(stackS);
 
     WriteStart(sym);
     err = WriteReversePolish(stackNum);
@@ -110,8 +122,9 @@ int Process(FILE *f, FILE *fout, char *sym)
         return 3;
     }
 
-    WriteAnswer(stackNum);
+    // WriteAnswer(stackNum);
 
+    free(sym);
     free(num);
     free(top);
     ClearStack(stackNum);
@@ -126,7 +139,11 @@ int WriteStart(char *sym)
     char *ptr = sym;
     while (*ptr)
     {
-        printf("%c", *ptr);
+        if (*ptr != '#')
+        {
+            printf("%c", *ptr);
+        }
+        ++ptr;
     }
     printf("\n");
 
@@ -144,9 +161,18 @@ int WriteReversePolish(Stack *stackNum)
     char *data;
     while (!IsEmpty(stackNum))
     {
-        Pop(stackNum, data);
+        Pop(stackNum, &data);
         Push(stackTemp, data);
     }
+
+    while (!IsEmpty(stackTemp))
+    {
+        Pop(stackTemp, &data);
+        printf("%s ", data);
+    }
+    printf("\n");
+
+    return 0;
 
 }
 

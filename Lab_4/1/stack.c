@@ -23,11 +23,25 @@ int IsEmpty(Stack *st)
 }
 
 
+int PrintStack(Stack *st)
+{
+    Node *node = st->first;
+    while (node)
+    {
+        printf("node: %s\n", node->data);
+        node = node->next;
+    }
+
+    return 0;
+}
+
+
 int ClearStack(Stack *st)
 {
     Node *node = st->first, *prev;
     while (node)
     {
+        // printf("node %s\n", node->data);
         prev = node;
         node = node->next;
         free(prev->data);
@@ -44,13 +58,14 @@ int Push(Stack *st, char *s)
 {
     Node *node = st->first;
     Node *newNode = (Node *) malloc(sizeof(Node));
-    if (newNode == NULL) {
+    if (newNode == NULL)
+    {
         return 1;
     }
 
     newNode->next = node;
     st->first = newNode;
-    
+
     newNode->data = (char *) malloc(sizeof(char) * strlen(s));
     if (newNode == NULL)
     {
@@ -58,24 +73,35 @@ int Push(Stack *st, char *s)
     }
 
     strcpy(newNode->data, s);
+    // *(newNode->data + strlen(s) - 1) = '\0';
 
     return 0;
 }
 
 
-int Pop(Stack *st, char *data)
+int Pop(Stack *st, char **data)
 {
+
+    if (IsEmpty(st))
+    {
+        return 2;
+    }
+
     Node *node = st->first;
     st->first = node->next;
 
-    if (strlen())
-    data = (char *) malloc(sizeof(node->data));
-    if (data == NULL)
+    if (strlen(*data) > 0)
+    {
+        free(*data);
+    }
+
+    *data = (char *) malloc(sizeof(node->data));
+    if (*data == NULL)
     {
         return 1;
     }
 
-    strcpy(data, node->data);
+    strcpy(*data, node->data);
     free(node->data);
     free(node);
 
@@ -83,16 +109,16 @@ int Pop(Stack *st, char *data)
 }
 
 
-int Top(Stack *st, char *data)
+int Top(Stack *st, char **data)
 {
     Node *node = st->first;
-    data = (char *) malloc(sizeof(node->data));
-    if (data == NULL)
+    *data = (char *) malloc(sizeof(node->data));
+    if (*data == NULL)
     {
         return 1;
     }
 
-    strcpy(data, node->data);
+    strcpy(*data, node->data);
 
     return 0;
 }

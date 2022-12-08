@@ -1,4 +1,6 @@
 #include "stack.c"
+#include <stdio.h>
+#include <stdlib.h>
 
 int Action(char inStack, char c)
 {
@@ -7,6 +9,10 @@ int Action(char inStack, char c)
         if (c == ')')
         {
             return 5;
+        }
+        else if (c == '#')
+        {
+            return 4;
         }
 
         return 1;
@@ -63,23 +69,37 @@ int ChangeStacks(Stack *stackNum, Stack *stackS, int act, char c)
     switch (act)
     {
         case 1:
-            err = Push(stackS, &c);
+            carriage = (char *) malloc(sizeof(char) * 2);
+            if (NULL == carriage)
+            {
+                return 1;
+            }
+
+            *carriage = c;
+            *(carriage + 1) = '\0';
+            err = Push(stackS, carriage);
+            printf("%s -> stackS\n", carriage);
             break;
         case 2:
-            err = Pop(stackS, carriage);
+            err = Pop(stackS, &carriage);
             if (err)
             {
                 return err;
             }
 
             err = Push(stackNum, carriage);
+
+            printf("stackS -> %s -> stackS\n", carriage);
+
+            free(carriage);
             break;
         case 3:
-            err = Pop(stackS, carriage);
+            err = Pop(stackS, &carriage);
+            free(carriage);
             break;
     }
 
-    free(carriage);
+    
     return err;
 
 }
