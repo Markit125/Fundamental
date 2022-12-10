@@ -21,5 +21,9 @@ int main()
     sum = sum_of_nums(ans, len, 36, 3, "AA", "Z", "12");
     printf("%s\n\n", sum);
 
+    printf("GIANT + GIGANT 33th\n");
+    sum = sum_of_nums(ans, len, 33, 2, "GIANT", "GIGANT");
+    printf("%s\n\n", sum);
+
     return 0;
 }

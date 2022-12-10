@@ -65,10 +65,6 @@ int Process(FILE *fout, char *sym)
                 return 3;
             }
             
-            // printf("%s -> stackNum\n", num);
-            
-            // PrintStack(stackNum);
-            printf("ssssssssss %p\n", stackNum->first);
 
             Push(stackNum, num);
             printf("  Num\n");
@@ -84,8 +80,6 @@ int Process(FILE *fout, char *sym)
         {
             // push to stack
 
-            printf("OK\n");
-            // printf("\n%s ===\n\n\n", stackS->first->data);
             err = Top(stackS, &top);
             if (err)
             {
@@ -94,11 +88,13 @@ int Process(FILE *fout, char *sym)
                 free(top);
                 FreeStack(stackNum);
                 FreeStack(stackS);
-                return 4;
+                return 3;
             }
+            printf("Top done!\n");
 
             // printf("%s %c before action\n", top, c);
             act = Action(*top, c);
+            
             // printf("%d - action\n", act);
             if (act == 5)
             {
@@ -132,7 +128,7 @@ int Process(FILE *fout, char *sym)
         prevNumber = number;
         c = *(sym + it++);
 
-        printf("%c end\n", c);
+        // printf("%c end\n", c);
     }
 
     PrintStack(stackNum);
@@ -152,7 +148,7 @@ int Process(FILE *fout, char *sym)
     free(top);
     FreeStack(stackNum);
     FreeStack(stackS);
-    printf("%p ============\n", stackNum);
+    // printf("%p ============\n", stackNum);
 
     return 0;
 }

@@ -123,15 +123,18 @@ int Pop(Stack *st, char **data)
 
 int Top(Stack *st, char **data)
 {
-    printf("OK top");
-    Node *node = st->first;
-    *data = (char *) malloc(sizeof(node->data));
+    if (IsEmpty(st))
+    {
+        return 2;
+    }
+
+    *data = (char *) malloc(sizeof(st->first->data));
     if (*data == NULL)
     {
         return 1;
     }
 
-    strcpy(*data, node->data);
-
+    strcpy(*data, st->first->data);
+    
     return 0;
 }

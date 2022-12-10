@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 
 #define VIEW_SEEK 5
@@ -19,9 +20,9 @@ int str_len(char *s)
 }
 
 
-int get_table(char *str, int tab[], int size)
+int get_table(char *str, int **tab, int size)
 {
-    tab[0] = 0;
+    **tab = 0;
 
     if (size < 2)
     {
@@ -33,23 +34,22 @@ int get_table(char *str, int tab[], int size)
     int i = 1;
     while (i < size)
     {
-        if (str[i] != str[index])
+        if (*(str + i) != *(str + index))
         {
             if (index != 0)
             {
-                index = tab[tab[index]];
+                index = *(*tab + *(*tab + index));
             }
             else
             {
                 ++i;
             }
-            
             continue;
         }
 
-        if (str[i] == str[index])
+        if (*(str + i) == *(str + index))
         {
-            tab[i] = index + 1;
+            *(*tab + i) = index + 1;
             ++index;
             ++i;
             continue;
@@ -60,35 +60,37 @@ int get_table(char *str, int tab[], int size)
 }
 
 
-int kmp(int tab[], char *str, FILE *f, int size)
+int kmp(int *tab, char *str, FILE *f, int size)
 {
-    int index = 0;
-
+    int i = 0;
+    int j = 0;
     char c = fgetc(f);
-    int it = 0;
-
-
     while (c != EOF)
     {
-        if (c == str[it])
+        if (*(str + j) == c)
         {
-            ++it;
-        }
-        else if (it != 0)
-        {
-            it = tab[it - 1];
-            continue;
-        }
-        ++index;
-
-        if (it == size - 1)
-        {
-            return index - it;
+            i++;
+            j++;
+            c = fgetc(f);
         }
 
-        c = fgetc(f);
+        if (j == size)
+        {
+            return i - size;
+        }
+        else if (*(str + j) != c)
+        {
+            if (j == 0)
+            {
+                i++;
+                c = fgetc(f);
+            }
+            else
+            {
+                j = *(tab + j - 1);
+            }
+        }
     }
-
 
     return -1;
 }
@@ -100,21 +102,28 @@ int find_substring(char *sub, int count, ...)
     va_start(ap, count);
 
     int size = str_len(sub);
-    int tab[size];
-    get_table(sub, tab, size);
+    int *tab = (int *) malloc(sizeof(int) * size);
+    
+    get_table(sub, &tab, size);
 
     int i;
     for (i = 0; i < count; ++i)
     {
         FILE *f = fopen(va_arg(ap, char *), "r");
-
         if (f == NULL)
         {
             printf("There is not such file!\n");
+            free(tab);
             return 1;
         }
 
         int index = kmp(tab, sub, f, size);
+        if (index == -1)
+        {
+            printf("No matches\n");
+            continue;
+        }
+        
         int seek = (index - VIEW_SEEK > 0) ? (index - VIEW_SEEK) : 0;
         fseek(f, seek, SEEK_SET);
 
@@ -153,9 +162,10 @@ int find_substring(char *sub, int count, ...)
 
         for (j = 0; j < size; ++j)
         {
-            printf("%c", sub[j]);
+            printf("%c", *(sub + j));
         } printf("\n\n");
     }
+    free(tab);
 
     return 0;
 }
@@ -163,7 +173,7 @@ int find_substring(char *sub, int count, ...)
 
 int main()
 {
-    char *substing = "ababaaba";
+    char *substing = "ba";
 
     find_substring(substing, 3, "test.txt", "test2.txt", "test3.txt");
 }

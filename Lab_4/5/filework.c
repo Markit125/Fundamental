@@ -22,6 +22,8 @@ int ReadFiles(int argc, const char **argv)
 
         char c = getc(f);
 
+        char prevC;
+
         int it = 0;
         int len = START_LEN;
         char *sym = (char *) malloc(sizeof(char) * len);
@@ -66,6 +68,11 @@ int ReadFiles(int argc, const char **argv)
             }
             else if (c == '\n' || c == EOF)
             {
+                if (c == EOF && prevC == '\n')
+                {
+                    break;
+                }
+                
                 *(sym + it++) = '#';
                 *(sym + it) = '\0';
                 it = 0;
@@ -90,8 +97,9 @@ int ReadFiles(int argc, const char **argv)
                     break;
                 }
             }
-            c = getc(f);
 
+            prevC = c;
+            c = getc(f);
         }
 
     }

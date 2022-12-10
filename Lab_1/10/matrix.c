@@ -15,6 +15,11 @@ int read_number(double ***m, int i, int j)
 {
     char c = 0;
     char *num = (char *) malloc(sizeof(char) * 15);
+    if (NULL == num)
+    {
+        return 2;
+    }
+
     int it = 0;
     while (is_space(c))
     {
@@ -42,23 +47,37 @@ int read_number(double ***m, int i, int j)
 int matrix_genf(double ***matrix, int rows, int columns)
 {
     *matrix = (double **) malloc(sizeof(double *) * (rows + 1));
+    if (NULL == *matrix)
+    {
+        return 2;
+    }
 
     (*matrix)[0] = (double *) malloc(sizeof(int) * 2);
+    if (NULL == (*matrix)[0])
+    {
+        return 2;
+    }
     (*matrix)[0][0] = rows;
     (*matrix)[0][1] = columns;
 
-
+    printf("Enter values:\n");
+    int err;
     int i;
-    for (i = 1; i < rows + 1; ++i)
+    for (i = 1; i <= rows; ++i)
     {
         (*matrix)[i] = (double *) malloc(sizeof(double) * columns);
+        if (NULL == (*matrix)[i])
+        {
+            return 2;
+        }
 
         int j;
         for (j = 0; j < columns; ++j)
         {
-            if (read_number(matrix, i, j) != 0)
+            err = read_number(matrix, i, j);
+            if (err != 0)
             {
-                return 6;
+                return err;
             }
             // scanf("%lf", &(*matrix)[i][j]);
         }
@@ -82,22 +101,34 @@ int matrix_gen(double ***matrix, int rows, int columns)
     }
 
     *matrix = (double **) malloc(sizeof(double *) * (rows + 1));
+    if (NULL == *matrix)
+    {
+        return 2;
+    }
 
     (*matrix)[0] = (double *) malloc(sizeof(int) * 2);
+    if (NULL == (*matrix)[0])
+    {
+        return 2;
+    }
+
     (*matrix)[0][0] = rows;
     (*matrix)[0][1] = columns;
 
 
     int i;
-    for (i = 1; i < rows + 1; ++i)
+    for (i = 1; i <= rows; ++i)
     {
         (*matrix)[i] = (double *) malloc(sizeof(double) * columns);
+        if (NULL == (*matrix)[i])
+        {
+            return 2;
+        }
 
         int j;
         for (j = 0; j < columns; ++j)
         {
             (*matrix)[i][j] = get_rand_int(ABS);
-            // (*matrix)[i][j] = (i - 1) * columns + j;
         }
     }
 
@@ -111,7 +142,7 @@ int matrix_print(double **matrix)
     int columns = matrix[0][1];
 
     int i;
-    for (i = 1; i < rows + 1; ++i)
+    for (i = 1; i <= rows; ++i)
     {
         int j;
         for (j = 0; j < columns; ++j)
@@ -131,7 +162,7 @@ int matrix_delete(double ***matrix)
     int columns = (*matrix)[0][1];
 
     int i;
-    for (i = 0; i < rows + 1; ++i)
+    for (i = 0; i <= rows; ++i)
     {
         free((*matrix)[i]);
     }
@@ -144,8 +175,6 @@ int matrix_delete(double ***matrix)
 
 int matrix_multiply(double ***m1, double ***m2, double ***m3)
 {
-    // printf("cdcd");
-    // printf("%f\n", (*m2)[0][0]);
     if ((*m1)[0][1] != (*m2)[0][0])
     {
         return 1;
@@ -157,17 +186,30 @@ int matrix_multiply(double ***m1, double ***m2, double ***m3)
     int factors = (*m2)[0][0];
 
     *m3 = (double **) malloc(sizeof(double *) * (rows + 1));
+    if (NULL == *m3)
+    {
+        return 2;
+    }
     
     (*m3)[0] = (double *) malloc(sizeof(int) * 2);
+    if (NULL == *m3)
+    {
+        return 2;
+    }
+
     (*m3)[0][0] = rows;
     (*m3)[0][1] = columns;
 
 
     int a = 0;
     int y;
-    for (y = 1; y < rows + 1; ++y)
+    for (y = 1; y <= rows; ++y)
     {
         (*m3)[y] = (double *) malloc(sizeof(double) * columns);
+        if (NULL == (*m3)[y])
+        {
+            return 2;
+        }
         int x;
             a = 0;
         for (x = 0; x < columns; ++x)
@@ -195,14 +237,26 @@ int determinant(double ***matrix, double *det)
     }
 
     double **triangle = (double **) malloc(sizeof(double *) * (rows + 1));
+    if (NULL == triangle)
+    {
+        return 2;
+    }
     triangle[0] = (double *) malloc(sizeof(int) * 2);
+    if (NULL == triangle[0])
+    {
+        return 2;
+    }
     triangle[0][0] = rows;
     triangle[0][1] = columns;
     
     int i;
-    for (i = 1; i < rows + 1; ++i)
+    for (i = 1; i <= rows; ++i)
     {
         triangle[i] = (double *) malloc(sizeof(double) * columns);
+        if (NULL == triangle[i])
+        {
+            return 2;
+        }
         int j;
         for (j = 0; j < columns; ++j)
         {
@@ -214,7 +268,7 @@ int determinant(double ***matrix, double *det)
     if (triangle[1][0] == 0 && rows > 1)
     {
         int i;
-        for (i = 2; i < rows + 1; ++i)
+        for (i = 2; i <= rows; ++i)
         {
             if (triangle[i][0] != 0)
             {
@@ -227,7 +281,7 @@ int determinant(double ***matrix, double *det)
         }
     }
 
-    for (i = 2; i < rows + 1; ++i)
+    for (i = 2; i <= rows; ++i)
     {
         int j;
         for (j = 0; j < i - 1; ++j)
@@ -241,7 +295,7 @@ int determinant(double ***matrix, double *det)
         }
     }
 
-    for (i = 1; i < rows + 1; ++i)
+    for (i = 1; i <= rows; ++i)
     {
         *det *= triangle[i][i - 1];
     }
@@ -258,6 +312,11 @@ int read_size(int *rows, int *columns)
     *rows = -1;
     *columns = -1;
     char *number = (char *) malloc(sizeof(char) * 10);
+    if (NULL == number)
+    {
+        return 4;
+    }
+
     char c = ' ';
     int it = 0;
     int count = 0;

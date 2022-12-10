@@ -30,27 +30,45 @@ int main(int argc, char *argv[])
     int len_a = get_rand_positive_int(10);
     int len_b = get_rand_positive_int(10);
 
-    // scanf("%d %d", &len_a, &len_b);
+    scanf("%d %d", &len_a, &len_b);
 
     int *a = (int *) malloc(sizeof(int) * len_a);
+    if (a == NULL)
+    {
+        printf("Cant");
+        return 2;
+    }
     int *b = (int *) malloc(sizeof(int) * len_b);
+    if (b == NULL)
+    {
+        printf("Cant");
+        free(a);
+        return 3;
+    }
     int *c = (int *) malloc(sizeof(int) * len_a);
+    if (c == NULL)
+    {
+        free(a);
+        free(b);
+        printf("Cant");
+        return 4;
+    }
 
     int i;
     for (i = 0; i < len_a; ++i)
     {
-        *(a + i) = get_rand_int(MAX_ABS);
-        printf("%d ", *(a + i));
+        // *(a + i) = get_rand_int(MAX_ABS);
+        // printf("%d ", *(a + i));
 
-        // scanf("%d", (a + i));
+        scanf("%d", (a + i));
     } printf("\n");
 
     for (i = 0; i < len_b; ++i)
     {
-        *(b + i) = get_rand_int(MAX_ABS);
-        printf("%d ", *(b + i));
+        // *(b + i) = get_rand_int(MAX_ABS);
+        // printf("%d ", *(b + i));
 
-        // scanf("%d", (b + i));
+        scanf("%d", (b + i));
     } printf("\n");
 
 
