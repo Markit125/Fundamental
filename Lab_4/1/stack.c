@@ -28,15 +28,33 @@ int PrintStack(Stack *st)
     Node *node = st->first;
     while (node)
     {
-        printf("node: %s\n", node->data);
+        printf("\t| %s |\n", node->data);
         node = node->next;
     }
+
 
     return 0;
 }
 
 
 int ClearStack(Stack *st)
+{
+    Node *node = st->first, *prev;
+    while (node)
+    {
+        // printf("node %s\n", node->data);
+        prev = node;
+        node = node->next;
+        free(prev->data);
+        free(prev);
+    }
+    st->first = NULL;
+
+    return 0;
+}
+
+
+int FreeStack(Stack *st)
 {
     Node *node = st->first, *prev;
     while (node)
@@ -73,7 +91,6 @@ int Push(Stack *st, char *s)
     }
 
     strcpy(newNode->data, s);
-    // *(newNode->data + strlen(s) - 1) = '\0';
 
     return 0;
 }
@@ -89,11 +106,6 @@ int Pop(Stack *st, char **data)
 
     Node *node = st->first;
     st->first = node->next;
-
-    if (strlen(*data) > 0)
-    {
-        free(*data);
-    }
 
     *data = (char *) malloc(sizeof(node->data));
     if (*data == NULL)
@@ -111,6 +123,7 @@ int Pop(Stack *st, char **data)
 
 int Top(Stack *st, char **data)
 {
+    printf("OK top");
     Node *node = st->first;
     *data = (char *) malloc(sizeof(node->data));
     if (*data == NULL)

@@ -58,6 +58,11 @@ int Action(char inStack, char c)
         return 1;
     }
 
+    if (inStack == '^')
+    {
+        return 2;
+    }
+
     return 5;
 }
 
@@ -86,6 +91,7 @@ int ChangeStacks(Stack *stackNum, Stack *stackS, int act, char c)
             {
                 return err;
             }
+
 
             err = Push(stackNum, carriage);
 

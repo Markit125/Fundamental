@@ -32,7 +32,7 @@ int ReadFiles(int argc, const char **argv)
 
 
 
-        while (c != EOF)
+        while (1)
         {
             if (!IsSpace(c))
             {
@@ -64,10 +64,11 @@ int ReadFiles(int argc, const char **argv)
 
                 *(sym + it++) = c;                    
             }
-            else if (c == '\n')
+            else if (c == '\n' || c == EOF)
             {
                 *(sym + it++) = '#';
                 *(sym + it) = '\0';
+                it = 0;
                 if (fout == NULL)
                 {
                     fout = fopen("out.txt", "w");
@@ -77,7 +78,17 @@ int ReadFiles(int argc, const char **argv)
                     }
                 }
 
-                int err = Process(f, fout, sym);
+                int err = Process(fout, sym);
+                if (err && err != 4)
+                {
+                    free(sym);
+                    return err;
+                }
+
+                if (c == EOF)
+                {
+                    break;
+                }
             }
             c = getc(f);
 
