@@ -215,7 +215,7 @@ int free_messages(message **msgs, int count)
     int i;
     for (i = 0; i < count; ++i)
     {
-        free((*(*msgs + i)).text);
+        free((*(msgs + i))->text);
         free(*(msgs + i));
     }
     free(msgs);

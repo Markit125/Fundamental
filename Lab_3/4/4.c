@@ -119,7 +119,6 @@ int main(int argc, char *argv[])
         int count_notes = START_COUNT_NOTES;
         message **messages = (message **) malloc(sizeof(message *) * count_notes);
 
-        message ***p = &messages;
 
         if (messages == NULL)
         {
@@ -131,7 +130,7 @@ int main(int argc, char *argv[])
             return 2;
         }
 
-        err = read_notes(&count_notes, p, f);
+        err = read_notes(&count_notes, &messages, f);
 
         if (err == 1)
         {
@@ -159,16 +158,27 @@ int main(int argc, char *argv[])
         {
             (*(messages + count_notes - 1))->id = 1;
         }
-        (*(messages + count_notes - 1))->text = argv[2];
+
+        (*(messages + count_notes - 1))->text = (char *) malloc(sizeof(char) * strlen(argv[2]));
+        if (NULL == (*(messages + count_notes - 1))->text)
+        {
+            printf("Memory cannot be allocated!\n");
+
+            fclose(f);
+            free_messages(messages, count_notes);
+
+            return 2;
+        }
+
+        strcpy((*(messages + count_notes - 1))->text, argv[2]);
         (*(messages + count_notes - 1))->len = strlen(argv[2]);
 
         write_to_file(**(messages + count_notes - 1), f);
         write_notes(messages, count_notes);
 
-
-        fclose(f);        
         free_messages(messages, count_notes);
-        free(p);
+        fclose(f);        
+
     }
 
     return 0;
