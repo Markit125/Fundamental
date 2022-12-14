@@ -286,9 +286,6 @@ int free_students(Student *studs, int count)
     for (i = 0; i < count; ++i)
     {
         free_student(studs + i);
-        free_student(studs + i);
-        free_student(studs + i);
-        free_student(studs + i);
     }
     free(studs);
 

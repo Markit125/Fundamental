@@ -142,6 +142,7 @@ int main(int argc, char *argv[])
 
                 if (count_new != 0)
                 {
+                    printf("ddcdcdc\n");
                     free_students(new_collection, count_new);
                     new_collection = (Student *) malloc(sizeof(Student) * count_notes);
                     if (NULL == new_collection)
