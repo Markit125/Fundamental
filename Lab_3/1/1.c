@@ -73,8 +73,6 @@ int to_two_based(int n, int r, char **new_num)
         *(*new_num + pos) = '-';
     }
 
-    // printf("%s\n", new_num);
-
     return 0;
 }
 
