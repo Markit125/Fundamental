@@ -67,13 +67,12 @@ int add(List *list, Habitat *hab)
     {
         new_node->next = node;
         list->first = new_node;
-
+        
         return 0;
     }
 
     prev->next = new_node;
     new_node->next = node;
-    
     
     return 0;
 }

@@ -141,10 +141,23 @@ int main(int argc, char *argv[])
                 {
                     return 11;
                 }
+                found->first = NULL;
 
                 err = find_habs(list, action, found, len, input);
-
-                print_list(found, 1);
+                switch (err)
+                {
+                    case 1:
+                        printf("List does not exists!\n");
+                        return 5;
+                    case 2:
+                        printf("List of found does not exists!\n");
+                        return 6;
+                    case 3:
+                        err = 1;
+                        break;
+                    default:
+                        print_list(found, 1);
+                }
 
                 break;
             }
