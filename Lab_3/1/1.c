@@ -17,7 +17,7 @@ int get_len(int n)
 }
 
 
-int to_two_based(int n, int r, char *new_num)
+int to_two_based(int n, int r, char **new_num)
 {
     if (r < 1 || 5 < r)
     {
@@ -34,14 +34,11 @@ int to_two_based(int n, int r, char *new_num)
     int count_bits = get_len(n);
     int len = (count_bits / r) + ((count_bits % r) != 0) + negative;
 
-    char *ptr = (char *) realloc(new_num, sizeof(char) * len);
-
-    if (ptr == NULL)
+    *new_num = (char *) malloc(sizeof(char) * len);
+    if (new_num == NULL)
     {
-        return 2;
+        return 1;
     }
-
-    new_num = ptr;
 
 
     int i;
@@ -69,12 +66,14 @@ int to_two_based(int n, int r, char *new_num)
 
         buf_num = buf_num >> (bit - r);
 
-        *(new_num + pos--) = buf_num > 9 ? 'A' + buf_num - 10 : '0' + buf_num;
+        *(*new_num + pos--) = buf_num > 9 ? 'A' + buf_num - 10 : '0' + buf_num;
     }
 
     if (negative) {
-        *(new_num + pos) = '-';
+        *(*new_num + pos) = '-';
     }
+
+    // printf("%s\n", new_num);
 
     return 0;
 }
@@ -82,23 +81,26 @@ int to_two_based(int n, int r, char *new_num)
 
 int main()
 {
-    char *new_number = malloc(1);
+    char *new_number;
 
     int n = 32;
     int r = 5;
 
     scanf("%d%d", &n, &r);
 
-    int err = to_two_based(n, r, new_number);
-
+    int err = to_two_based(n, r, &new_number);
 
     if (err == 1)
     {
         printf("r must be between 1 and 5 inclusively!\n");
+        free(new_number);
+        return 2;
     }
     else if (err == 2)
     {
         printf("There is no enough memory!\n");
+        free(new_number);
+        return 3;
     }
     else
     {
