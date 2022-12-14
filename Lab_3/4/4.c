@@ -45,12 +45,22 @@ int main(int argc, char *argv[])
             }
             else if (err == 2)
             {
-                printf("The message cannot contain any separators and commas!\nTry again:\n");
+                printf("The message cannot contain any separators and commas!\n");
+                if (attempts > 0)
+                {
+                    printf("Try again:\n");
+                }
             }
             else
             {
                 break;
             }
+        }
+
+        if (attempts == -1)
+        {
+            printf("Too many attempts!\n");
+            return 4;
         }
 
 
