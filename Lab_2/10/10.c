@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #define DEFAULT_COUNT_REMAINDERS 10
-#define FIND_TILL 20
+#define FIND_TILL 10
 
 
 int is_endless(double n, int base)
@@ -14,8 +14,7 @@ int is_endless(double n, int base)
     }
 
     int rems_count = DEFAULT_COUNT_REMAINDERS;
-    double *rems = (double *) malloc(sizeof(double) * rems_count);
-    
+    double *rems = (double *) malloc(sizeof(double) * rems_count);  
     if (rems == NULL)
     {
         return -1;
@@ -69,7 +68,7 @@ int is_endless(double n, int base)
 }
 
 
-int check_endless(double a[], int base, int count, ...)
+int check_endless(double *a, int base, int count, ...)
 {
     if (count > 10)
     {
@@ -82,11 +81,12 @@ int check_endless(double a[], int base, int count, ...)
     int i;
     double *ptr = a;
     double num;
+    int endless;
 
     for (i = 0; i < count; ++i)
     {
         num = va_arg(ap, double);
-        int endless = is_endless(num, base);
+        endless = is_endless(num, base);
         
         if (!endless)
         {
@@ -111,7 +111,9 @@ int main()
     double arr[11];
     arr[10] = -1;
 
-    int err = check_endless(arr, 8, 3, (double) 0.74, (double) 0.5, (double) 0.5625);
+    int base = 2;
+
+    int err = check_endless(arr, base, 4, (double) 0.3, (double) 0.74, (double) 0.5, (double) 0.5625);
 
     if (err == 1)
     {
@@ -125,7 +127,7 @@ int main()
     }
 
     int i = 0;
-    printf("These decimal numbers aren't endless in binary system:\n");
+    printf("These decimal numbers aren't endless in %d-based system:\n", base);
 
     while (arr[i] != -1)
     {
