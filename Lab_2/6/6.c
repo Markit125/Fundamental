@@ -97,7 +97,7 @@ int kmp(int *tab, char *str, FILE *f, int size)
 }
 
 
-int find_substring(int ***results, char *sub, int count, ...)
+int find_substring(int **results, char *sub, int count, ...)
 {
     va_list ap;
     va_start(ap, count);
@@ -111,18 +111,17 @@ int find_substring(int ***results, char *sub, int count, ...)
     
     get_table(sub, &tab, size);
 
+    int index;
     int i;
     for (i = 0; i < count; ++i)
     {
-        *(*results + i) = (int *) malloc(sizeof(int) * COUNT);
         FILE *f = fopen(va_arg(ap, char *), "r");
         if (f == NULL)
         {
             free(tab);
-            return 1;
+            return 2;
         }
 
-        int index;
         if (strcmp(sub, "") == 0)
         {
             index = 0;    
@@ -131,7 +130,7 @@ int find_substring(int ***results, char *sub, int count, ...)
         {
             index = kmp(tab, sub, f, size);
         }
-        *(*(*results + i) + 1) = index;
+        *(*results + i) = index;
 
         if (index == -1)
         {
@@ -146,58 +145,75 @@ int find_substring(int ***results, char *sub, int count, ...)
 }
 
 
-int print_out(int ***results, char *sub, int count, ...)
+int print_out(int **results, char *sub, int count, ...)
 {
     va_list ap;
     va_start(ap, count);
-    FILE *f = fopen(va_arg(ap, char *), "r");
-    if (f == NULL)
-    {
-        printf("There is not such file!\n");
-        return 1;
-    }
 
     int size = strlen(sub);
-    int seek = (index - VIEW_SEEK > 0) ? (index - VIEW_SEEK) : 0;
-    fseek(f, seek, SEEK_SET);
+    int index;
+    int seek;
 
-
-
-
-    if (seek > 0)
+    char c;
+    int i, j;
+    for (i = 0; i < count; ++i)
     {
-        printf("...");
-    }
-    int j = 0;
-    char c = fgetc(f);
-    while (c != EOF && j < index + size + VIEW_SEEK)
-    {
-        printf("%c", c);
+        FILE *f = fopen(va_arg(ap, char *), "r");
+        if (f == NULL)
+        {
+            return 1;
+        }
+        index = *(*results + i);
+
+        printf("File %d: ", i);
+        if (index == -1)
+        {
+            printf("No matches\n");
+            continue;
+        }
+        else
+        {
+            printf("Match found\n");
+        }
+
+        seek = (index - VIEW_SEEK > 0) ? (index - VIEW_SEEK) : 0;
+        fseek(f, seek, SEEK_SET);
+
+        if (seek > 0)
+        {
+            printf("...");
+        }
+        j = 0;
         c = fgetc(f);
-        ++j;
-    }
+        while (c != EOF && j < index + size + VIEW_SEEK)
+        {
+            printf("%c", c);
+            c = fgetc(f);
+            ++j;
+        }
 
-    if (c != EOF)
-    {
-        printf("...");
-    }
-    
-    printf("\n");
-    
-    if (seek > 0)
-    {
-        printf("   ");
-    }
+        if (c != EOF)
+        {
+            printf("...");
+        }
+        
+        printf("\n");
+        
+        if (seek > 0)
+        {
+            printf("   ");
+        }
 
-    for (j = 0; j < index - seek; ++j)
-    {
-        printf(" ");
-    }
+        for (j = 0; j < index - seek; ++j)
+        {
+            printf(" ");
+        }
 
-    for (j = 0; j < size; ++j)
-    {
-        printf("%c", *(sub + j));
-    } printf("\n\n");
+        for (j = 0; j < size; ++j)
+        {
+            printf("%c", *(sub + j));
+        } printf("\n\n");
+    }
 }
 
 
@@ -205,18 +221,21 @@ int main()
 {
     int count = 3;
 
-    int **results = (int **) malloc(sizeof(int *) * count);
+    int *results = (int *) malloc(sizeof(int) * count);
     if (NULL == results)
     {
         return 1;
     }
 
-    char *substring = "ca";
+    char *substring = "b a";
 
     find_substring(&results, substring, count, "test.txt", "test2.txt", "test3.txt");
 
-    print_out(&results, count, "test.txt", "test2.txt", "test3.txt");
+    if (print_out(&results, substring, count, "test.txt", "test2.txt", "test3.txt") == 1)
+    {
+        printf("There is not such file!\n");
+        return 2;
+    }
 
-    
-
+    free(results);
 }
