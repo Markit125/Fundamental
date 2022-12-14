@@ -214,6 +214,8 @@ int print_out(int **results, char *sub, int count, ...)
             printf("%c", *(sub + j));
         } printf("\n\n");
     }
+
+    return 0;
 }
 
 
