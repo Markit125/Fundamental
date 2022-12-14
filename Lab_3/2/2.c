@@ -4,25 +4,10 @@
 
 #define START_COUNT_LEN 10
 
-// int get_len(int n)
-// {
-//     int bit = 1;
-//     int len = 0;
-//     while (bit < 32)
-//     {
-//         if ((1 << bit++) & n)
-//         {
-//             len = bit;
-//         }
-//     }
-//     return len;
-// }
-
 
 unsigned int IntToInt(unsigned int k) {
     return (k == 0 || k == 1 ? k : ((k % 2) + 10 * IntToInt(k / 2)));
 }
-
 
 
 int main()
@@ -31,9 +16,12 @@ int main()
 
     int count = 0;
     int cur_len = LEN;
+    int err;
+    int count_nums;
+    int i;
+    int *numbers;
 
     char *num = (char *) malloc(sizeof(char) * cur_len);
-    
     if (num == NULL)
     {
         return 1;
@@ -43,7 +31,7 @@ int main()
 
     while (count < 2)
     {
-        int err = get_input(num, &cur_len);
+        err = get_input(num, &cur_len);
         if (err == 1)
         {
             printf("There is not enough memory!\n");
@@ -52,7 +40,7 @@ int main()
 
         if (count == 0)
         {
-            int err = validate(num, &k);
+            err = validate(num, &k);
 
             if (err == 0)
             {
@@ -66,15 +54,11 @@ int main()
         }
         else
         {
-            int err = validate(num, &l);
+            err = validate(num, &l);
 
             if (err == 0 && l <= k)
             {
                 ++count;
-            }
-            else
-            {
-                printf("Wrong positive integer, l should be less or equal to k, try again!\n");
             }
         }
     }
@@ -82,7 +66,7 @@ int main()
     printf("Enter the number of function:\n");
     while (1)
     {
-        int err = get_input(num, &cur_len);
+        err = get_input(num, &cur_len);
         if (err == 0)
         {
             if (*num == '1' || *num == '2')
@@ -102,18 +86,15 @@ int main()
 
     cur_len = (count == 1) ? count_l_ones(k, l) : count_one_row(k, l);
     
-    // printf("len: %d\n", cur_len);
-
-
-    int *numbers = (int *) malloc(sizeof(int) * cur_len);
-
+    numbers = (int *) malloc(sizeof(int) * cur_len);
     if (numbers == NULL) 
     {
         printf("There is not enough memory!\n");
         return 1;
     }
 
-    int count_nums = 0;
+    count_nums = 0;
+    printf("There are %d such numbers:\n", cur_len);
 
     if (count == 1)
     {
@@ -121,14 +102,13 @@ int main()
     }
     else
     {
+        printf("%d %d input\n", k, l);
         l_ones_in_a_row(k, l, numbers, &count_nums, &cur_len);
     }
 
-
-    int i;
+    
     for (i = 0; i < count_nums; ++i)
     {
-        // printf("%d ", *(numbers + i));
         printf("%d\n", IntToInt(*(numbers + i)));
     } printf("\n");
 
