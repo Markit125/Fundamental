@@ -56,20 +56,20 @@ int main()
 
     if (range[0] > range[1])
     {
-        range[0] += range[1];
-        range[1] = range[0] - range[1];
-        range[0] -= range[1];
+        int buf = *(range + 1);
+        *(range + 1) = *range;
+        *range = buf;
     }
 
     int i;
     for (i = 0; i < 10; ++i)
     {
-        a[i] = get_rand_int(range[0], range[1]);
+        *(a + i) = get_rand_int(range[0], range[1]);
     }
 
     for (i = 0; i < 10; ++i)
     {
-        printf("%d ", a[i]);
+        printf("%d ", *(a + i));
     }
     printf("\n");
 
@@ -88,7 +88,7 @@ int main()
         swap_max_min(a);
         for (i = 0; i < 10; ++i)
         {
-            printf("%d ", a[i]);
+            printf("%d ", *(a + i));
         }
     }
     else
@@ -97,7 +97,7 @@ int main()
         int set_len = make_set(a, set);
         for (i = 0; i < set_len; ++i)
         {
-            printf("%d ", set[i]);
+            printf("%d ", *(set + i));
         }
     }
 

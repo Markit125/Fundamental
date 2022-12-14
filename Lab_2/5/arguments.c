@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 #define MAXINT 2147483647
@@ -94,12 +95,12 @@ int get_rand_int(int a, int b)
     return random() % (b - a + 1) + a;
 }
 
-// swap elements by adress! Redo!
-int swap_elements(int *a, int indx_0, int indx_1)
+int swap_elements(int *item_0, int *item_1)
 {
-    int buffer = a[indx_0];
-    a[indx_0] = a[indx_1];
-    a[indx_1] = buffer;
+    printf("%p %p\n", item_0, item_1);
+    int buffer = *item_0;
+    *item_0 = *item_1;
+    *item_1 = buffer;
 
     return 0;
 }
@@ -126,12 +127,12 @@ int swap_max_min(int a[])
         }
     }
 
-    swap_elements(a, i_min, i_max);
+    swap_elements(a + i_min, a + i_max);
 
     return 0;
 }
 
-int make_set(int a[], int set[])
+int make_set(int *a, int *set)
 {
     int length = 0;
     int i, j, item;
