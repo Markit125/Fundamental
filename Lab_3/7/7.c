@@ -34,10 +34,12 @@ int main(int argc, char *argv[])
     {
         return 11;
     }
+    list->first = NULL;
 
     int err, line_corrupt = -1, len = START_LEN;
     err = read_file(f, list, &line_corrupt, &len);
     fclose(f);
+
     if (err == 1)
     {
         printf("There is not enough memory!\n");
@@ -72,11 +74,19 @@ int main(int argc, char *argv[])
                 printf("Something...");
         }
         printf(" at the line %d\n", line_corrupt);
+
         clear_list(list, 1);
         return 5;
     }
 
-    print_list(list, 0);
+    if (!is_empty(list))
+    {
+        print_list(list, 0);
+    }
+    else
+    {
+        printf("There are no habitats!\n");
+    }
 
 
     int cur_len = START_LEN, action, attempts = 3, i;
@@ -111,6 +121,11 @@ int main(int argc, char *argv[])
         else if (action == 1)
         {
             // find
+            if (is_empty(list))
+            {
+                printf("\nThere are not habitats!\n\n");
+                continue;
+            }
             attempts = 3;
             while (attempts)
             {
@@ -156,7 +171,14 @@ int main(int argc, char *argv[])
                         err = 1;
                         break;
                     default:
-                        print_list(found, 1);
+                        if (is_empty(found))
+                        {
+                            printf("\nThere are not such habitats!\n\n");
+                        }
+                        else
+                        {
+                            print_list(found, 1);
+                        }
                 }
 
                 break;
@@ -219,10 +241,20 @@ int main(int argc, char *argv[])
                                 printf("Something...\n");
                         }
                     }
+                    // print_list(list, 1);
                 }
                 else
                 {
+                    if (is_empty(list))
+                    {
+                        printf("List is empty!\n");
+                        continue;
+                    }
+
+
                     print_list(list, 1);
+                    printf("Enter the number of habitat to delete:\n");
+
                     err = get_input(input, &cur_len);
                     if (err == 1)
                     {
@@ -241,6 +273,7 @@ int main(int argc, char *argv[])
                     if (err)
                     {
                         printf("There is not such habitat!\n");
+                        err = 0;
                     }
                 }
                 
@@ -288,8 +321,8 @@ int main(int argc, char *argv[])
     print_list(list, 0);
 
 
-    clear_list(found, 0);
-    clear_list(list, 1);
+    // clear_list(found, 0);
+    // clear_list(list, 1);
 
     return 0;
 }

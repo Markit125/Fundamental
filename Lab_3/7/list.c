@@ -87,6 +87,7 @@ int clear_list(List *list, int free_hab)
     if (list->first == NULL)
     {
         free(list);
+        return 2;
     }
 
     Node *node = list->first, *prev;
@@ -250,7 +251,7 @@ int add_habitat(List *list)
                         printf("birth date:\n");
                         break;
                     case 4:
-                        printf("gender:\n");
+                        printf("gender (m/w):\n");
                         break;
                     case 5:
                         printf("income:\n");

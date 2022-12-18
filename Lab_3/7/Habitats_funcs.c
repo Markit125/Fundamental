@@ -69,7 +69,7 @@ int read_file(FILE *f, List *list, int *line_corrupt, int *len)
                         err = set_name(hab, in) == 0 ? 0 : 5;
                         break;
                     case 2:
-                        err = set_middle_name(hab, in) == 0 ? 0 : 5;
+                        err = set_middle_name(hab, in) == 0 ? 0 : 6;
                         break;
                     case 3:
                         err = set_birth_date(hab, in) == 0 ? 0 : 7;
@@ -103,7 +103,7 @@ int read_file(FILE *f, List *list, int *line_corrupt, int *len)
 
                 ++counter;
                 position = 0;
-
+                
                 add(list, hab);
 
 
@@ -118,6 +118,12 @@ int read_file(FILE *f, List *list, int *line_corrupt, int *len)
     }
     free(hab);
     free(in);
+
+    if (position)
+    {
+        *line_corrupt = counter + 1;
+        return position + 4;
+    }
 
     return 0;
 }
