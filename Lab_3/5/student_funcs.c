@@ -106,8 +106,12 @@ int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
     }
     free(in);
 
-
-    if (counter < *count_notes)
+    if (counter == 0)
+    {
+        *count_notes = 0;
+        free(*studs);
+    }
+    else if (counter < *count_notes)
     {
         Student *ptr = realloc(*studs, sizeof(Student) * counter);
         if (NULL == ptr)

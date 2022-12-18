@@ -32,6 +32,12 @@ typedef struct Student_list
 } Student_list;
 
 
+int is_empty(Student_list *studs)
+{
+    return studs->first == NULL;
+}
+
+
 int student_copy(Student *from, Student *to);
 int free_student(Student *stud);
 

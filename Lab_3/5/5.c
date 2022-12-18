@@ -72,7 +72,14 @@ int main(int argc, char *argv[])
                 printf("Something...");
         }
         printf(" at the line %d\n", line_corrupt);
+        free(studs);
         return 5;
+    }
+
+    if (count_notes == 0)
+    {
+        printf("File is empty!\n");
+        return 10;
     }
 
 
@@ -89,6 +96,8 @@ int main(int argc, char *argv[])
         printf("There is not enough memory!\n");
         return 1;
     }
+
+
 
     int cur_len = START_COUNT, action, attempts = 3, i;
     char *num = (char *) malloc(sizeof(char) * cur_len);
@@ -109,8 +118,14 @@ int main(int argc, char *argv[])
         err = validate(num, &action, 1, 3);
         if (err)
         {
-            printf("Try again\n");
             --attempts;
+
+            if (attempts == 0)
+            {
+                printf("Too many attempts!\n");
+                return 10;
+            }
+            printf("Try again\n");
         }
         else if (action == 1)
         {
@@ -128,8 +143,13 @@ int main(int argc, char *argv[])
                 err = validate(num, &action, 1, 5);
                 if (err)
                 {
-                    printf("Try again\n");
                     --attempts;
+                    if (attempts == 0)
+                    {
+                        printf("Too many attempts!\n");
+                        return 10;
+                    }
+                    printf("Try again\n");
                     continue;
                 }
 
@@ -142,7 +162,6 @@ int main(int argc, char *argv[])
 
                 if (count_new != 0)
                 {
-                    printf("ddcdcdc\n");
                     free_students(new_collection, count_new);
                     new_collection = (Student *) malloc(sizeof(Student) * count_notes);
                     if (NULL == new_collection)
@@ -171,6 +190,7 @@ int main(int argc, char *argv[])
                 free(num);
                 return 1;
             }
+            
         }
         else if (action == 2)
         {
@@ -190,8 +210,13 @@ int main(int argc, char *argv[])
                 err = validate(num, &action, 1, 4);
                 if (err)
                 {
-                    printf("Try again\n");
                     --attempts;
+                    if (attempts == 0)
+                    {
+                        printf("Too many attempts!\n");
+                        return 10;
+                    }
+                    printf("Try again\n");
                     continue;
                 }
 
@@ -248,6 +273,12 @@ int main(int argc, char *argv[])
         }
     }
     free(num);
+
+    if (attempts == 0)
+    {
+        printf("Too many attempts!\n");
+        return 10;
+    }
 
 
     printf("Students and their average grades:\n");
