@@ -82,6 +82,8 @@ int main(int argc, char *argv[])
         return 10;
     }
 
+    printf("%s\n", studs->name);
+
 
     err = trace(studs, count_notes, argv[1]);
     if (err)

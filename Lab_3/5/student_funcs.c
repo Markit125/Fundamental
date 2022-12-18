@@ -15,10 +15,16 @@ int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
         return 1;
     }
     char c;
+    char c_prev = ' ';
 
-
-    while ((c = fgetc(f)) != EOF)
+    c = fgetc(f);
+    while (c_prev != EOF)
     {
+        if (c == EOF && c_prev != '\n')
+        {
+            c = '\n';
+        }
+        
         if (!is_comma(c) && !is_newline(c))
         {
             if (it == len)
@@ -53,7 +59,7 @@ int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
                         err = set_name(in, *studs + counter) == 0 ? 0 : 5;
                         break;
                     case 2:
-                        err = set_last_name(in, *studs + counter) == 0 ? 0 : 5;
+                        err = set_last_name(in, *studs + counter) == 0 ? 0 : 6;
                         break;
                     case 3:
                         err = set_course(in, *studs + counter) == 0 ? 0 : 7;
@@ -102,6 +108,12 @@ int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
 
                 commas = 0;
             }
+        }
+
+        c_prev = c;
+        if (c != EOF)
+        {
+            c = fgetc(f);
         }
     }
     free(in);
@@ -202,8 +214,12 @@ int student_out(Student *st)
 
 int student_to_file(Student *s, FILE *f)
 {
+    printf("======\n");
     fprintf(f, "======\n");
     fprintf(f, "ID: %d\nName: %s\nLast name: %s\nCourse: %d\nGroup: %s\nGrades: ",
+            (*s).id, (*s).name, (*s).last_name, (*s).course, (*s).group);
+
+    printf("ID: %d\nName: %s\nLast name: %s\nCourse: %d\nGroup: %s\nGrades: ",
             (*s).id, (*s).name, (*s).last_name, (*s).course, (*s).group);
 
     int i;
@@ -300,6 +316,7 @@ int trace(Student *studs, int count, char* name)
 
         for (i = 0; i < count; ++i)
         {
+    printf("jsidngbuhgi");
             if (j == (*(studs + i)).course && (*(course_averages + j - 1) < *(all_averages + i)))
             {
                 student_to_file(studs + i, f);
