@@ -67,72 +67,97 @@ int write_to_file(message msg, FILE *f)
 }
 
 
-int read_notes(int *count, message ***msgs, FILE *f)
+int read_notes(int *count, message ***msgs, FILE *f, unsigned int *corrupt_line)
 {
-    // if (*count == 0)
-    // {
-    //     ++(*count);
-    // }
     
-    *(*msgs + 0) = malloc(sizeof(message));
+    **msgs = (message *) malloc(sizeof(message));
+    if (**msgs == NULL)
+    {
+        return 3;
+    }
     
     // ========================================================
 
     int err, n, it = 0, counter = 0, len = IN_LEN;
-    char *in = malloc(sizeof(char) * len);
-
-    int commas = 0;
-    char c;
-    while ((c = fgetc(f)) != EOF)
+    char *in = (char *) malloc(sizeof(char) * len);
+    if (in == NULL)
     {
+        return 4;
+    }
+
+    int count_lines = 0;
+    int commas = 0;
+    char c, c_prev = ' ';
+    c = fgetc(f);
+    if (c == EOF)
+    {
+        *count = 1;
+        return 0;
+    }
+
+    while (c_prev != EOF)
+    {
+        // printf("c = %c\n", c);
+        if (c == EOF && c_prev != '\n')
+        {
+            c = '\n';
+            fputc('\n', f);
+        }
+
         if (is_comma(c))
         {
             *(in + it) = '\0';
 
             if (commas == 0)
             {
-
                 err = !is_integer(in, &n, 1);
 
-                // printf("in: %s\n", in);
 
                 if (err)
                 {
                     free(in);
+                    *corrupt_line = count_lines + 1;
                     return 1;
                 }
 
                 (*(*msgs + counter))->id = n;
-                ++commas;
             }
             else if (commas == 1)
             {
                 err = check_message(in);
 
-                // printf("in: %s\n", in);
-
                 if (err)
                 {
                     free(in);
+                    *corrupt_line = count_lines;
                     return 1;
                 }
 
-                (*(*msgs + counter))->text = malloc(sizeof(char) * it);
+                (*(*msgs + counter))->text = (char *) malloc(sizeof(char) * it);
+                if (NULL == (*(*msgs + counter))->text)
+                {
+                    return 6;
+                }
                 strcpy((*(*msgs + counter))->text, in);
 
-                ++commas;
             }
+            
+            ++commas;
             it = 0;
         }
-        else if (is_newline(c))
+        else if (is_newline(c))// && it != 0)
         {
+            ++count_lines;
+
             *(in + it) = '\0';
             it = 0;
 
             err = !is_integer(in, &n, 0);
-            if (err)
+
+            if (err || commas != 2)
             {
                 free(in);
+                *corrupt_line = count_lines;
                 return 1;
             }
 
@@ -154,7 +179,11 @@ int read_notes(int *count, message ***msgs, FILE *f)
                 *msgs = ptr;
             }
             
-            *(*msgs + counter) = malloc(sizeof(message));
+            *(*msgs + counter) = (message *) malloc(sizeof(message));
+            if (*(*msgs + counter) == NULL)
+            {
+                return 5;
+            }
             // ========================================================
 
             commas = 0;
@@ -175,6 +204,12 @@ int read_notes(int *count, message ***msgs, FILE *f)
             }
 
             *(in + it++) = c;
+        }
+
+        c_prev = c;
+        if (c != EOF)
+        {
+            c = fgetc(f);
         }
     }
     free(in);
@@ -198,7 +233,7 @@ int read_notes(int *count, message ***msgs, FILE *f)
 
 int write_notes(message **msgs, int count)
 {
-    printf("\nNotes (%d)\n", count);
+    printf("\nNotes (%d):\n\n", count);
     int i;
     for (i = 0; i < count; ++i)
     {
