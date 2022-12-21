@@ -1,21 +1,13 @@
 #include <stdarg.h>
-int str_len(char *str)
-{
-    int len = 0;
-    char *ptr = str;
-    while (*(ptr++))
-    {
-        ++len;
-    }
-
-    return len;
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 int sum_of_two(char *sum, char *num, int base)
 {
-    int len_n = str_len(num);
-    char *ptr = sum + str_len(sum) - 1;
+    int len_n = strlen(num);
+    char *ptr = sum + strlen(sum) - 1;
     char *ptr_n = num + len_n - 1;
 
     int a, b, rem = 0, sm = 0, memory = 0;
@@ -43,21 +35,42 @@ int sum_of_two(char *sum, char *num, int base)
 }
 
 
-char *sum_of_nums(char *answer, int length, int base, int count, ...)
+char *sum_of_nums(char *answer, int base, int count, ...)
 {
-    char *ptr = answer + length - 1;
-    *(ptr--) = '\0';
+
+    va_list apa;
+    va_start(apa, count);
+    char *num = va_arg(apa, char *);
+
+    int len = strlen(num);
+    int mx = len;
     int i;
-    for (i = 0; i < length; ++i)
+    for (i = 0; i < count - 1; ++i)
     {
-        *(ptr--) = '0';
+        len = strlen(va_arg(apa, char *));
+        if (mx < len)
+        {
+            mx = len;
+        }
     }
-    ptr = answer + length - 1;
+    len = mx + 2;
+
+    answer = (char *) malloc(sizeof(char) * (len + 1));
+    if (NULL == answer)
+    {
+        return NULL;
+    }
+
+    for (i = 0; i < len; ++i)
+    {
+        *(answer + i) = '0';
+    }
+    *(answer + len) = '\0';
+
 
     va_list ap;
     va_start(ap, count);
 
-    char *num;
     for (i = 0; i < count; ++i)
     {
         num = va_arg(ap, char *);
@@ -65,10 +78,12 @@ char *sum_of_nums(char *answer, int length, int base, int count, ...)
     }
     va_end(ap);
 
-    ptr = answer;
-    while (*ptr == '0')
+    char *ptr = answer;
+    i = 0;
+    while (*ptr == '0' && i < len - 1)
     {
         ++ptr;
+        ++i;
     }
 
     return ptr;

@@ -6,24 +6,33 @@
 
 int main()
 {
-    int len = 32;
-    char *ans = (char*) malloc(sizeof(char) * len);
+    char *ans;
+    char *sum;
     
-    printf("11 + 11 binary\n");
-    char *sum = sum_of_nums(ans, len, 2, 2, "11", "11");
-    printf("%s\n\n", sum);
+    // sum = sum_of_nums(ans, 2, 3, "0", "0", "0");
 
-    printf("25 + 99 + 1000 decimal\n");
-    sum = sum_of_nums(ans, len, 10, 3, "25", "99", "1000");
-    printf("%s\n\n", sum);
+    // sum = sum_of_nums(ans, 2, 2, "0000000000000000000000000000000001001", "00000000000000000000");
 
-    printf("AA + Z + 12 36th\n");
-    sum = sum_of_nums(ans, len, 36, 3, "AA", "Z", "12");
-    printf("%s\n\n", sum);
+    // sum = sum_of_nums(ans, 16, 3, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", "2", "0");
 
-    printf("GIANT + GIGANT 33th\n");
-    sum = sum_of_nums(ans, len, 33, 2, "GIANT", "GIGANT");
-    printf("%s\n\n", sum);
+
+    // printf("AA + Z + 12 36th\n");
+    // sum = sum_of_nums(ans, 36, 3, "AA", "Z", "12");
+
+
+    // printf("GIANT + GIGANT 33th\n");
+    // sum = sum_of_nums(ans, 33, 2, "GIANT", "GIGANT");
+    
+
+
+    if (NULL == sum)
+    {
+        printf("Cannot allocate memory!\n");
+        return 1;
+    }
+    printf("%s\n", sum);
+
+    free(ans);
 
     return 0;
 }
