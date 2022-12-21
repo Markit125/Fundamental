@@ -49,13 +49,13 @@ int matrix_genf(double ***matrix, int rows, int columns)
     *matrix = (double **) malloc(sizeof(double *) * (rows + 1));
     if (NULL == *matrix)
     {
-        return 2;
+        return 4;
     }
 
     (*matrix)[0] = (double *) malloc(sizeof(int) * 2);
     if (NULL == (*matrix)[0])
     {
-        return 2;
+        return 4;
     }
     (*matrix)[0][0] = rows;
     (*matrix)[0][1] = columns;
@@ -68,7 +68,7 @@ int matrix_genf(double ***matrix, int rows, int columns)
         (*matrix)[i] = (double *) malloc(sizeof(double) * columns);
         if (NULL == (*matrix)[i])
         {
-            return 2;
+            return 4;
         }
 
         int j;
@@ -300,6 +300,8 @@ int determinant(double ***matrix, double *det)
         *det *= triangle[i][i - 1];
     }
 
+
+    printf("Triangle form:\n");
     matrix_print(triangle);
     matrix_delete(&triangle);
 
@@ -358,7 +360,6 @@ int read_size(int *rows, int *columns)
 
 int enter_matrix(double ***m)
 {
-    printf("Enter count of rows and coloumns:\n");
     int rows = 0;
     int columns = 0;
 
@@ -372,7 +373,7 @@ int enter_matrix(double ***m)
 
     if (err != 0)
     {
-        return err;
+        return err + 10;
     }
 
     return 0;
