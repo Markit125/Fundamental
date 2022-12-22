@@ -97,7 +97,7 @@ int get_rand_int(int a, int b)
 
 int swap_elements(int *item_0, int *item_1)
 {
-    printf("%p %p\n", item_0, item_1);
+    // printf("%p %p\n", item_0, item_1);
     int buffer = *item_0;
     *item_0 = *item_1;
     *item_1 = buffer;

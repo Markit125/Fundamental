@@ -108,12 +108,12 @@ int check_endless(double *a, int base, int count, ...)
 
 int main()
 {
-    double arr[11];
-    arr[10] = -1;
+    double arr[FIND_TILL + 1];
+    arr[FIND_TILL] = -1;
 
     int base = 2;
 
-    int err = check_endless(arr, base, 4, (double) 0.3, (double) 0.74, (double) 0.5, (double) 0.5625);
+    int err = check_endless(arr, base, 2, (double) 0.25, (double) 0.75); //, (double) 0.5, (double) 0.5625);
 
     if (err == 1)
     {

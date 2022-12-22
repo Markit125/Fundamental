@@ -124,7 +124,7 @@ int find_substring(int **results, char *sub, int count, ...)
 
         if (strcmp(sub, "") == 0)
         {
-            index = 0;    
+            index = 0;
         }
         else
         {
@@ -240,4 +240,6 @@ int main()
     }
 
     free(results);
+
+    return 0;
 }
