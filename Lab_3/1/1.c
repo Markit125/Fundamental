@@ -1,20 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
-int get_len(int n)
-{
-    int bit = 1;
-    int len = 0;
-    while (bit < 32)
-    {
-        if ((1 << bit++) & n)
-        {
-            len = bit;
-        }
-    }
-    return len;
-}
+#include <string.h>
+#include "arguments.c"
 
 
 int to_two_based(int n, int r, char **new_num)
@@ -22,6 +9,17 @@ int to_two_based(int n, int r, char **new_num)
     if (r < 1 || 5 < r)
     {
         return 1;
+    }
+
+    if (n == 0)
+    {
+        *new_num = (char *) malloc(sizeof(char) * 2);
+        if (new_num == NULL)
+        {
+            return 1;
+        }
+        strcpy(*new_num, "0\0");
+        return 0;
     }
 
     int negative = 0;
@@ -73,6 +71,8 @@ int to_two_based(int n, int r, char **new_num)
         *(*new_num + pos) = '-';
     }
 
+    *(*new_num + len) = '\0';
+
     return 0;
 }
 
@@ -83,10 +83,50 @@ int main()
 
     int n = 32;
     int r = 5;
+    int err;
 
-    scanf("%d%d", &n, &r);
+    printf("Enter a number:\n");
 
-    int err = to_two_based(n, r, &new_number);
+    err = get_int(&n);
+    if (err)
+    {
+        switch (err)
+        {
+            case 1:
+                printf("Cannot allocate memory 1!\n");
+                return 1;
+            case 2:
+                printf("Cannot allocate memory 1!\n");
+                break;
+            case -1:
+                printf("Invalid number!\n");
+                break;
+        }
+        return err;
+    }
+
+    printf("Enter a 2^r base:\n");
+    err = get_int(&r);
+    if (err)
+    {
+        switch (err)
+        {
+            case 1:
+                printf("Cannot allocate memory 1!\n");
+                return 1;
+            case 2:
+                printf("Cannot allocate memory 1!\n");
+                break;
+            case -1:
+                printf("Invalid number!\n");
+                break;
+        }
+        return err;
+    }
+
+    printf("%d 2^%d\n", n, r);
+
+    err = to_two_based(n, r, &new_number);
 
     if (err == 1)
     {
@@ -100,10 +140,8 @@ int main()
         free(new_number);
         return 3;
     }
-    else
-    {
-        printf("%s\n", new_number);
-    }
+
+    printf("%s\n", new_number);
 
     free(new_number);
 
