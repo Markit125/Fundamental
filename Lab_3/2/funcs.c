@@ -19,13 +19,14 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
 
     if (it == -1)
     {
-        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_l_ones(k + 1, l));
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_l_ones(k, l));
         if (*nums == NULL) 
         {
             return 1;
         }
+
+        number |= (1 << (k - 1));
         it = 0;
-        number |= (1 << k);
     }
 
 
@@ -36,7 +37,7 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
         return 0;
     }
 
-    if (k - pos < l - one_count)
+    if (k - 1 - pos < l - one_count)
     {
         return 0;
     }
@@ -52,78 +53,62 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
 int count_one_row(int k, int l);
 
 
-int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int row, int pos)
+int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int row, int pos, int rest)
 {
     static unsigned int it = -1;
 
     if (it == -1)
     {
-        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_one_row(k + 1, l));
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_one_row(k, l));
         if (*nums == NULL) 
         {
             return 1;
         }
+
+        number |= (1 << k);
+        --number;
+        row = 1;
+        pos = k - 2;
         it = 0;
     }
 
-    if (row == l)
+    // printf("%d\t rest: %d\trow: %d\tpos: %d\n", int_to_int(number), rest, row, pos);
+    // for (int i = 0; i < k - pos - 1; ++i)
+    // {
+    //     printf(" ");
+    // }
+    // printf("^\n");
+
+    if (pos < 0)
     {
-        *(*nums + it++) = number;
-        
+        if (rest || l == row)
+        {
+            *(*nums + it++) = number;
+            // printf("======================\n");
+        }
+
         return 0;
     }
-    // if (k - l < row)
-    // {
-    //     return 0;
-    // }
 
-
-    l_ones_in_row(k, l, nums, number | (1 << pos), row + 1, pos + 1);
-    l_ones_in_row(k, l, nums, number, 0, pos + 1);
     
+
+
+    if (rest || l == row)
+    {
+        // printf("%d\t%d\t%d\n", int_to_int(number), rest, row);
+
+        l_ones_in_row(k, l, nums, number & ~(1 << pos), 0, pos - 1, 1);
+
+        l_ones_in_row(k, l, nums, number, row + 1, pos - 1, rest);
+    }
+    else
+    {
+        l_ones_in_row(k, l, nums, number & ~(1 << pos), 0, pos - 1, rest);
+        
+        l_ones_in_row(k, l, nums, number, row + 1, pos - 1, rest);
+    }    
 
     return 0;
-}
-
-
-void l_ones_in_a_row(int k, int l, unsigned int *nums, int *count, int *cur_len)
-{
-    int i, n, x;
-    int count_ones = 0;
-    int in_a_row = 0;
-    
-    for (i = (1 << (k - 1)); i < (1 << k); ++i)
-    {
-        n = i;
-        count_ones = 0;
-        in_a_row = 0;
-
-        for (; n; n >>= 1)
-        {
-            x = n & 1;
-            count_ones += x;
-
-            if (x)
-            {
-                ++in_a_row;
-            }
-            else
-            {
-                if (in_a_row == l)
-                {
-                    *(nums + *count) = i;
-                    ++(*count);
-                    break;
-                }
-                in_a_row = 0;
-            }
-        }
-        if (in_a_row == l && !n)
-        {
-            *(nums + *count) = i;
-            ++(*count);
-        }
-    }
 }
 
 

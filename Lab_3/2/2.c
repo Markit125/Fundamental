@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 #define START_COUNT_LEN 10
+#define STR_LEN 35
 
 static int int_compare(const void *p1, const void *p2)
 {
@@ -70,7 +71,7 @@ int main()
         }
     }
 
-    printf("Enter the number of function:\n");
+    printf("Enter the number of function (1/2):\n");
     while (1)
     {
         err = get_input(num, &cur_len);
@@ -91,12 +92,15 @@ int main()
     }
     free(num);
 
+
+
+
+
     cur_len = (count == 1) ? count_l_ones(k, l) : count_one_row(k, l);
-    
 
     if (count == 1)
     {
-        err = l_ones(k - 1, l, &numbers, 0, 1, 0);
+        err = l_ones(k, l, &numbers, 0, 1, 0);
         if (err)
         {
             printf("Cannot allocate memory!\n");
@@ -105,7 +109,7 @@ int main()
     }
     else
     {
-        err = l_ones_in_row(k, l, &numbers, 0, 0, 0);
+        err = l_ones_in_row(k, l, &numbers, 0, 1, 0, 0);
         if (err)
         {
             printf("Cannot allocate memory!\n");
@@ -116,15 +120,12 @@ int main()
 
     qsort(numbers, cur_len, sizeof(unsigned int), int_compare);
 
-
-    printf("There are %d such numbers:\n", cur_len);    
+    printf("There are %d such numbers:\n", cur_len);  
     for (i = 0; i < cur_len; ++i)
     {
-        printf("%d\t=\t", int_to_int(*(numbers + i)));
         printf("%d\n", *(numbers + i));
     } printf("\n");
-
-
+    
 
     free(numbers);
 
