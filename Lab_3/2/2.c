@@ -21,7 +21,6 @@ int main()
     int count = 0;
     int cur_len = LEN;
     int err;
-    int count_nums;
     int i;
     unsigned int *numbers;
 
@@ -94,15 +93,6 @@ int main()
 
     cur_len = (count == 1) ? count_l_ones(k, l) : count_one_row(k, l);
     
-    numbers = (unsigned int *) malloc(sizeof(unsigned int) * cur_len);
-    if (numbers == NULL) 
-    {
-        printf("There is not enough memory!\n");
-        return 1;
-    }
-
-    count_nums = 0;
-    printf("There are %d such numbers:\n", cur_len);
 
     if (count == 1)
     {
@@ -112,21 +102,20 @@ int main()
             printf("Cannot allocate memory!\n");
             return 2;
         }
-        count_nums = cur_len;
     }
     else
     {
-        l_ones_in_a_row(k, l, numbers, &count_nums, &cur_len);
+        // l_ones_in_a_row(k, l, numbers, &cur_len);
     }
 
 
     qsort(numbers, cur_len, sizeof(unsigned int), int_compare);
 
 
-    
-    for (i = 0; i < count_nums; ++i)
+    printf("There are %d such numbers:\n", cur_len);    
+    for (i = 0; i < cur_len; ++i)
     {
-        // printf("%d\n", int_to_int(*(numbers + i)));
+        printf("%d\t=\t", int_to_int(*(numbers + i)));
         printf("%d\n", *(numbers + i));
     } printf("\n");
 

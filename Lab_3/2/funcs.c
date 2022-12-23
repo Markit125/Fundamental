@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define INT_MAX 2147483647
 
 
@@ -10,6 +11,7 @@ unsigned int int_to_int(unsigned int k) {
 
 int count_l_ones(int k, int l);
 
+
 //                                                 default 0         default 1   default 1
 int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count, int pos)
 {
@@ -17,15 +19,15 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
 
     if (it == -1)
     {
-        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_l_ones(k, l));
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_l_ones(k + 1, l));
         if (*nums == NULL) 
         {
             return 1;
         }
-        ++it;
+        it = 0;
     }
+        number |= (1 << k);
 
-    number |= (1 << k);
 
     if (l == one_count)
     {
@@ -52,9 +54,44 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
 }
 
 
-void l_ones_in_row(int k, int l, unsigned int *nums, int *count, int *cur_len)
-{
+int count_one_row(int k, int l);
 
+
+int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int row, int pos)
+{
+    static unsigned int it = -1;
+
+    if (it == -1)
+    {
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_one_row(k, l));
+        if (*nums == NULL) 
+        {
+            return 1;
+        }
+        ++it;
+    }
+
+    if (row == l)
+    {
+        *(*nums + it++) = number;
+        
+        return 0;
+    }
+
+
+
+    if (l_ones_in_row(k, l, nums, number | (1 << pos), row + 1, pos + 1))
+    {
+        return 1;
+    }
+    if (l_ones_in_row(k, l, nums, number, 0, pos + 1))
+    {
+        return 1;
+    }
+
+
+
+    return 0;
 }
 
 
