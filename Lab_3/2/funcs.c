@@ -25,8 +25,8 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
             return 1;
         }
         it = 0;
-    }
         number |= (1 << k);
+    }
 
 
     if (l == one_count)
@@ -41,14 +41,9 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
         return 0;
     }
 
-    if (l_ones(k, l, nums, number, one_count, pos + 1))
-    {
-        return 1;
-    }
-    if (l_ones(k, l, nums, number | (1 << pos), one_count + 1, pos + 1))
-    {
-        return 1;
-    }
+    l_ones(k, l, nums, number, one_count, pos + 1);
+    l_ones(k, l, nums, number | (1 << pos), one_count + 1, pos + 1);
+    
 
     return 0;
 }
@@ -63,12 +58,12 @@ int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int ro
 
     if (it == -1)
     {
-        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_one_row(k, l));
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_one_row(k + 1, l));
         if (*nums == NULL) 
         {
             return 1;
         }
-        ++it;
+        it = 0;
     }
 
     if (row == l)
@@ -77,19 +72,15 @@ int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int ro
         
         return 0;
     }
+    // if (k - l < row)
+    // {
+    //     return 0;
+    // }
 
 
-
-    if (l_ones_in_row(k, l, nums, number | (1 << pos), row + 1, pos + 1))
-    {
-        return 1;
-    }
-    if (l_ones_in_row(k, l, nums, number, 0, pos + 1))
-    {
-        return 1;
-    }
-
-
+    l_ones_in_row(k, l, nums, number | (1 << pos), row + 1, pos + 1);
+    l_ones_in_row(k, l, nums, number, 0, pos + 1);
+    
 
     return 0;
 }

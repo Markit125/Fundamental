@@ -105,7 +105,12 @@ int main()
     }
     else
     {
-        // l_ones_in_a_row(k, l, numbers, &cur_len);
+        err = l_ones_in_row(k, l, &numbers, 0, 0, 0);
+        if (err)
+        {
+            printf("Cannot allocate memory!\n");
+            return 2;
+        }
     }
 
 
