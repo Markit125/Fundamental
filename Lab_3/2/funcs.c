@@ -1,29 +1,40 @@
 #include <stdio.h>
 #define INT_MAX 2147483647
 
-void l_ones(int k, int l, int *nums, int *count, int *cur_len)
-{
-    int i, n;
-    int count_ones = 0;
-    for (i = (1 << (k - 1)); i < (1 << k); ++i)
-    {
-        n = i;
-        count_ones = 0;
-        for (; n; n >>= 1)
-        {
-            count_ones += n & 1;
-        }
 
-        if (count_ones == l)
-        {
-            *(nums + *count) = i;
-            ++(*count);
-        }
-    }
+unsigned int int_to_int(unsigned int k) {
+    return (k == 0 || k == 1 ? k : ((k % 2) + 10 * int_to_int(k / 2)));
 }
 
 
-void l_ones_in_a_row(int k, int l, int *nums, int *count, int *cur_len)
+//                                                 default 0         default 1   default 1
+void l_ones(int k, int l, unsigned int *nums, unsigned int number, int one_count, int pos)
+{
+    static unsigned int it = 0;
+
+    number |= (1 << k);
+
+    if (l == one_count)
+    {
+        *(nums + it++) = number;
+        
+        return;
+    }
+
+    if (k - pos < l - one_count)
+    {
+        return;
+    }
+
+    l_ones(k, l, nums, number, one_count, pos + 1);
+    l_ones(k, l, nums, number | (1 << pos), one_count + 1, pos + 1);
+
+}
+
+
+
+
+void l_ones_in_a_row(int k, int l, unsigned int *nums, int *count, int *cur_len)
 {
     int i, n, x;
     int count_ones = 0;
