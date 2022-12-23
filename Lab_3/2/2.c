@@ -106,12 +106,16 @@ int main()
 
     if (count == 1)
     {
-        err = l_ones(k - 1, l, numbers, 0, 1, 0);
+        err = l_ones(k - 1, l, &numbers, 0, 1, 0);
+        if (err)
+        {
+            printf("Cannot allocate memory!\n");
+            return 2;
+        }
         count_nums = cur_len;
     }
     else
     {
-        printf("%d %d input\n", k, l);
         l_ones_in_a_row(k, l, numbers, &count_nums, &cur_len);
     }
 

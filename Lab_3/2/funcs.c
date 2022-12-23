@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define INT_MAX 2147483647
 
 
@@ -7,31 +8,54 @@ unsigned int int_to_int(unsigned int k) {
 }
 
 
+int count_l_ones(int k, int l);
+
 //                                                 default 0         default 1   default 1
-void l_ones(int k, int l, unsigned int *nums, unsigned int number, int one_count, int pos)
+int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count, int pos)
 {
-    static unsigned int it = 0;
+    static unsigned int it = -1;
+
+    if (it == -1)
+    {
+        *nums = (unsigned int *) malloc(sizeof(unsigned int) * count_l_ones(k, l));
+        if (*nums == NULL) 
+        {
+            return 1;
+        }
+        ++it;
+    }
 
     number |= (1 << k);
 
     if (l == one_count)
     {
-        *(nums + it++) = number;
+        *(*nums + it++) = number;
         
-        return;
+        return 0;
     }
 
     if (k - pos < l - one_count)
     {
-        return;
+        return 0;
     }
 
-    l_ones(k, l, nums, number, one_count, pos + 1);
-    l_ones(k, l, nums, number | (1 << pos), one_count + 1, pos + 1);
+    if (l_ones(k, l, nums, number, one_count, pos + 1))
+    {
+        return 1;
+    }
+    if (l_ones(k, l, nums, number | (1 << pos), one_count + 1, pos + 1))
+    {
+        return 1;
+    }
 
+    return 0;
 }
 
 
+void l_ones_in_row(int k, int l, unsigned int *nums, int *count, int *cur_len)
+{
+
+}
 
 
 void l_ones_in_a_row(int k, int l, unsigned int *nums, int *count, int *cur_len)
