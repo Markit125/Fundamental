@@ -5,7 +5,7 @@
 #define LEN 10
 
 
-int IsNumber(char *arg)
+int is_number(char *arg)
 {
     char *ptr = arg;
     int dot = 0;
@@ -37,7 +37,7 @@ int IsNumber(char *arg)
 }
 
 
-int IsInteger(char *arg, int *num)
+int is_integer(char *arg, int *num)
 {
     char *ptr = arg;
 
@@ -68,9 +68,9 @@ int IsInteger(char *arg, int *num)
 }
 
 
-int Validate(char *str_num, int *n)
+int validate(char *str_num, int *n)
 {
-    if (IsInteger(str_num, n))
+    if (is_integer(str_num, n))
     {
         if (n > 0)
         {
@@ -82,17 +82,17 @@ int Validate(char *str_num, int *n)
 }
 
 
-int IsSpace(char c)
+int is_space(char c)
 {
     return c == '\n' || c == ' ' || c == '\t' || c == EOF;
 }
 
 
-int GetInput(char *num, int *cur_len)
+int get_input(char *num, int *cur_len)
 {
     char c = getchar();
     int it = 0;
-    while (!IsSpace(c) || it == 0)
+    while (!is_space(c) || it == 0)
     {
         if (it == *cur_len)
         {
@@ -115,7 +115,7 @@ int GetInput(char *num, int *cur_len)
 }
 
 
-int Permitted(char c)
+int permitted(char c)
 {
     return  '0' <= c && c <= '9' || c == '(' || c == ')' ||
             c == '/' || c == '*' || c == '%' || c == '^' ||
@@ -123,13 +123,13 @@ int Permitted(char c)
 }
 
 
-int IsNumSymbol(char c)
+int is_num_symbol(char c)
 {
     return '0' <= c && c <= '9' || c == '.';
 }
 
 
-int StrCopy(char **dest, char *str, int startIt, int it, int *len)
+int str_copy(char **dest, char *str, int startIt, int it, int *len)
 {
     if (NULL == *dest)
     {

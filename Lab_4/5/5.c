@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    int err = ReadFiles(argc, argv);
+    int err = read_files(argc, argv);
     if (err) {
         switch (err) {
             case 1:

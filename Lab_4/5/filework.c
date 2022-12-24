@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-int ReadFiles(int argc, const char **argv)
+int read_files(int argc, char **argv)
 {
     if (argc == 1) {
         return 1;
@@ -36,7 +36,7 @@ int ReadFiles(int argc, const char **argv)
 
         while (1)
         {
-            if (!IsSpace(c))
+            if (!is_space(c))
             {
                 if (it == len - 2)
                 {
@@ -50,7 +50,7 @@ int ReadFiles(int argc, const char **argv)
                     sym = ptr;
                 }
                 
-                if (!Permitted(c))
+                if (!permitted(c))
                 {
                     if (fout == NULL)
                     {
@@ -60,7 +60,7 @@ int ReadFiles(int argc, const char **argv)
                             return 3;
                         }
                     }
-                    WriteError(fout, it, sym);
+                    write_error(fout, it, sym);
 
                 }
 
@@ -85,7 +85,7 @@ int ReadFiles(int argc, const char **argv)
                     }
                 }
 
-                int err = Process(fout, sym);
+                int err = process(fout, sym);
                 if (err && err != 4)
                 {
                     free(sym);

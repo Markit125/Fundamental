@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int Action(char inStack, char c)
+int action(char inStack, char c)
 {
     if (inStack == '#')
     {
@@ -67,7 +67,7 @@ int Action(char inStack, char c)
 }
 
 
-int ChangeStacks(Stack *stackNum, Stack *stackS, int act, char c)
+int change_stacks(Stack *stackNum, Stack *stackS, int act, char c)
 {
     int err = 0;
     char *carriage;
@@ -82,25 +82,25 @@ int ChangeStacks(Stack *stackNum, Stack *stackS, int act, char c)
 
             *carriage = c;
             *(carriage + 1) = '\0';
-            err = Push(stackS, carriage);
+            err = push(stackS, carriage);
             printf("%s -> stackS\n", carriage);
             break;
         case 2:
-            err = Pop(stackS, &carriage);
+            err = pop(stackS, &carriage);
             if (err)
             {
                 return err;
             }
 
 
-            err = Push(stackNum, carriage);
+            err = push(stackNum, carriage);
 
             printf("stackS -> %s -> stackS\n", carriage);
 
             free(carriage);
             break;
         case 3:
-            err = Pop(stackS, &carriage);
+            err = pop(stackS, &carriage);
             free(carriage);
             break;
     }

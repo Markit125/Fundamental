@@ -17,13 +17,13 @@ typedef struct Stack
 } Stack;
 
 
-int IsEmpty(Stack *st)
+int is_empty(Stack *st)
 {
     return st->first == NULL;
 }
 
 
-int PrintStack(Stack *st)
+int print_stack(Stack *st)
 {
     Node *node = st->first;
     while (node)
@@ -37,7 +37,7 @@ int PrintStack(Stack *st)
 }
 
 
-int ClearStack(Stack *st)
+int clear_stack(Stack *st)
 {
     Node *node = st->first, *prev;
     while (node)
@@ -54,7 +54,7 @@ int ClearStack(Stack *st)
 }
 
 
-int FreeStack(Stack *st)
+int free_stack(Stack *st)
 {
     Node *node = st->first, *prev;
     while (node)
@@ -72,7 +72,7 @@ int FreeStack(Stack *st)
 }
 
 
-int Push(Stack *st, char *s)
+int push(Stack *st, char *s)
 {
     Node *node = st->first;
     Node *newNode = (Node *) malloc(sizeof(Node));
@@ -96,10 +96,10 @@ int Push(Stack *st, char *s)
 }
 
 
-int Pop(Stack *st, char **data)
+int pop(Stack *st, char **data)
 {
 
-    if (IsEmpty(st))
+    if (is_empty(st))
     {
         return 2;
     }
@@ -121,9 +121,9 @@ int Pop(Stack *st, char **data)
 }
 
 
-int Top(Stack *st, char **data)
+int get_top(Stack *st, char **data)
 {
-    if (IsEmpty(st))
+    if (is_empty(st))
     {
         return 2;
     }
