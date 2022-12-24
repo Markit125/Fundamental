@@ -53,6 +53,7 @@ int l_ones(int k, int l, unsigned int **nums, unsigned int number, int one_count
 int count_one_row(int k, int l);
 
 
+
 int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int row, int pos, int rest)
 {
     static unsigned int it = -1;
@@ -106,7 +107,7 @@ int l_ones_in_row(int k, int l, unsigned int **nums, unsigned int number, int ro
         l_ones_in_row(k, l, nums, number & ~(1 << pos), 0, pos - 1, rest);
         
         l_ones_in_row(k, l, nums, number, row + 1, pos - 1, rest);
-    }    
+    }
 
     return 0;
 }

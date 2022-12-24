@@ -124,7 +124,7 @@ int main()
         return err;
     }
 
-    printf("%d 2^%d\n", n, r);
+    // printf("%d 2^%d\n", n, r);
 
     err = to_two_based(n, r, &new_number);
 

@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     List *list = (List *) malloc(sizeof(List));
     if (NULL == list)
     {
+        fclose(f);
         return 11;
     }
     list->first = NULL;

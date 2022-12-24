@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     if (NULL == f)
     {
         printf("Such file does not exists!\n");
+        free_students(studs, count_notes);
         return 4;
     }
 

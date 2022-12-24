@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
         printf("Incorrect number of rows or columns!\n");
         matrix_delete(&matrix_0);
         matrix_delete(&matrix_1);
-        matrix_delete(&matrix_mp);
+        // matrix_delete(&matrix_mp);
         return 3;
     }
 

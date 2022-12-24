@@ -18,6 +18,7 @@ int read_file(FILE *f, Student **studs, int *count_notes, int *line_corrupt)
     char c_prev = ' ';
 
     c = fgetc(f);
+
     while (c_prev != EOF)
     {
         if (c == EOF && c_prev != '\n')
@@ -316,7 +317,6 @@ int trace(Student *studs, int count, char* name)
 
         for (i = 0; i < count; ++i)
         {
-    printf("jsidngbuhgi");
             if (j == (*(studs + i)).course && (*(course_averages + j - 1) < *(all_averages + i)))
             {
                 student_to_file(studs + i, f);
@@ -336,6 +336,10 @@ int trace(Student *studs, int count, char* name)
 Student_list *by_course(Student *studs, int count)
 {
     Student_list *list_of_students = (Student_list *) malloc(sizeof(Student_list) * 4);
+    if (NULL == list_of_students)
+    {
+        return NULL;
+    }
     
     int i;
     for (i = 0; i < 4; ++i)
