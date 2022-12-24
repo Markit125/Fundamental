@@ -18,7 +18,7 @@ int to_two_based(int n, int r, char **new_num)
         {
             return 1;
         }
-        strcpy(*new_num, "0\0");
+        strcpy(*new_num, "0");
         return 0;
     }
 
@@ -123,8 +123,6 @@ int main()
         }
         return err;
     }
-
-    // printf("%d 2^%d\n", n, r);
 
     err = to_two_based(n, r, &new_number);
 
