@@ -5,16 +5,6 @@
 #define START_COUNT_LEN 10
 #define STR_LEN 35
 
-static int int_compare(const void *p1, const void *p2)
-{
-    unsigned int int_a = *((unsigned int *) p1);
-    unsigned int int_b = *((unsigned int *) p2);
-
-    if (int_a == int_b) return 0;
-    else if (int_a < int_b) return -1;
-    else return 1;
-}
-
 
 int main()
 {
@@ -93,38 +83,35 @@ int main()
     free(num);
 
 
-
-
-
     cur_len = (count == 1) ? count_l_ones(k, l) : count_one_row(k, l);
 
     if (count == 1)
     {
-        err = l_ones(k, l, &numbers, 0, 1, 0);
-        if (err)
-        {
-            printf("Cannot allocate memory!\n");
-            return 2;
-        }
+        err = l_ones(k, l, &numbers);
     }
     else
     {
-        err = l_ones_in_row(k, l, &numbers, 0, 1, 0, 0);
-        if (err)
-        {
-            printf("Cannot allocate memory!\n");
-            return 2;
-        }
+        cur_len = 0;
+        err = l_ones_row(k, l, &numbers, &cur_len);
     }
 
+    if (err == 1)
+    {
+        printf("Cannot allocate memory!\n");
+        return 2;
+    }
+    else if (err == 2)
+    {
+        printf("Cannot reallocate memory!\n");
+        return 3;
+    }
 
-    qsort(numbers, cur_len, sizeof(unsigned int), int_compare);
-
-    printf("There are %d such numbers:\n", cur_len);  
+    printf("There are %d such numbers:\n", cur_len);
     for (i = 0; i < cur_len; ++i)
     {
+        printf("%d\n", int_to_int(*(numbers + i)));
         printf("%d\n", *(numbers + i));
-    } printf("\n");
+    }
     
 
     free(numbers);
