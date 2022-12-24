@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "arguments.c"
 #include "station.c"
@@ -37,12 +38,25 @@ int process(FILE *fout, char *sym)
     int act = -1;
     int len = START_LEN;
     char *num = (char *) malloc(sizeof(char) * START_LEN);
-    char c = *sym;
+    if (NULL == num)
+    {
+        return 3;
+    }
+
+    char c = ' ', c_prev = ' ', before_ext = ' ';
     char *top;
 
     printf("BEGIN %s\n", sym);
     while (c != '\0')
     {
+        c_prev = c;
+        c = *(sym + it++);
+        if (c == '^')
+        {
+            before_ext = c_prev;
+        }
+
+        printf("\n%c on input\n\n", c);
         if (is_num_symbol(c))
         {
             number = 1;
@@ -67,7 +81,7 @@ int process(FILE *fout, char *sym)
             
 
             push(stackNum, num);
-            printf("  Num\n");
+            printf("\n\nAfter pushing:\n  Num\n");
             print_stack(stackNum);
             printf("  S\n");
             print_stack(stackS);
@@ -79,6 +93,7 @@ int process(FILE *fout, char *sym)
         if (!number)
         {
             // push to stack
+            
 
             err = get_top(stackS, &top);
             if (err)
@@ -95,7 +110,7 @@ int process(FILE *fout, char *sym)
             // printf("%s %c before action\n", top, c);
             act = action(*top, c);
             
-            // printf("%d - action\n", act);
+            printf("%d - action\n", act);
             if (act == 5)
             {
                 write_error(fout, it, sym);
@@ -105,19 +120,41 @@ int process(FILE *fout, char *sym)
                 free_stack(stackS);
                 return 4;
             }
-            else if (act == 2)
+            else if (act == 2 || act == 6)
             {
                 --it;
             }
             else if (act == 4)
             {
+                print_stack(stackNum);
                 break;
             }
 
-            // printf("%d, %c giggi\n", act, c);
-            err = change_stacks(stackNum, stackS, act, c); // here
+            err = change_stacks(stackNum, stackS, act, c, before_ext); // here
+            if (err == 1)
+            {
+                printf("Cannot allocate memory!\n");
+                write_error(fout, it, sym);
+                free(num);
+                free(top);
+                free_stack(stackNum);
+                free_stack(stackS);
+
+                return 5;
+            }
+            else if (err == 2)
+            {
+                printf("Stack empty error\n");
+                write_error(fout, it, sym);
+                free(num);
+                free(top);
+                free_stack(stackNum);
+                free_stack(stackS);
+
+                return 6;
+            }
             
-            printf("  Num\n");
+            printf("\n\nAfter changing:\n  Num\n");
             print_stack(stackNum);
             printf("  S\n");
             print_stack(stackS);
@@ -126,11 +163,12 @@ int process(FILE *fout, char *sym)
         }
 
         prevNumber = number;
-        c = *(sym + it++);
+        
 
-        // printf("%c end\n", c);
+        printf("%c end\n", c);
     }
 
+    printf("\n\nFinal stack:\n");
     print_stack(stackNum);
     print_stack(stackS);
 

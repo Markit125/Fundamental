@@ -60,17 +60,17 @@ int action(char inStack, char c)
 
     if (inStack == '^')
     {
-        return 2;
+        return 6;
     }
 
     return 5;
 }
 
 
-int change_stacks(Stack *stackNum, Stack *stackS, int act, char c)
+int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 {
     int err = 0;
-    char *carriage;
+    char *carriage, *carriage_e;
     switch (act)
     {
         case 1:
@@ -85,6 +85,51 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c)
             err = push(stackS, carriage);
             printf("%s -> stackS\n", carriage);
             break;
+        case 6:
+            printf("\n\n\nCLASH %c\n\n", c_prev);
+            if (c_prev != ')')
+            {
+                err = pop(stackNum, &carriage);
+                if (err)
+                {
+                    return err;
+                }
+                
+                err = pop(stackNum, &carriage_e);
+                if (err)
+                {
+                    return err;
+                }
+
+                err = push(stackNum, carriage);
+                if (err)
+                {
+                    return err;
+                }
+
+
+                err = pop(stackS, &carriage);
+                if (err)
+                {
+                    return err;
+                }
+
+                printf("\n\n%s - carrrrrr\n\n\n", carriage);
+
+                err = push(stackNum, carriage);
+                if (err)
+                {
+                    return err;
+                }
+
+                err = push(stackNum, carriage_e);
+                if (err)
+                {
+                    return err;
+                }
+        
+                break;
+            }
         case 2:
             err = pop(stackS, &carriage);
             if (err)
