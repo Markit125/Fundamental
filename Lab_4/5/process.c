@@ -36,6 +36,7 @@ int process(FILE *fout, char *sym)
     int prevNumber = 0;
     int it = 0, startIt = 0;
     int act = -1;
+    int brace = 0;
     int len = START_LEN;
     char *num = (char *) malloc(sizeof(char) * START_LEN);
     if (NULL == num)
@@ -54,6 +55,25 @@ int process(FILE *fout, char *sym)
         if (c == '^')
         {
             before_ext = c_prev;
+        }
+        else if (c == '(')
+        {
+            if (is_num_symbol(c_prev))
+            {
+                printf("\nWrong expression!\n");
+                return 7;
+            }
+            ++brace;
+        }
+        else if (c == ')')
+        {
+            if (!is_num_symbol(c_prev))
+            --brace;
+        }
+        if (brace < 0)
+        {
+            printf("\nWrong expression!\n");
+            return 8;
         }
 
         printf("\n%c on input\n\n", c);
@@ -93,7 +113,6 @@ int process(FILE *fout, char *sym)
         if (!number)
         {
             // push to stack
-            
 
             err = get_top(stackS, &top);
             if (err)
@@ -118,9 +137,10 @@ int process(FILE *fout, char *sym)
                 free(top);
                 free_stack(stackNum);
                 free_stack(stackS);
+                printf("\nWrong expression!\n");
                 return 4;
             }
-            else if (act == 2 || act == 6)
+            else if (act == 2 || act == 6 || act == 7)
             {
                 --it;
             }
