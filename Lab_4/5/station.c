@@ -89,7 +89,7 @@ int action(char in_stack, char c)
 }
 
 
-int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
+int change_stacks(Stack *stack_num, Stack *stack_s, int act, char c, char c_prev)
 {
     int err = 0;
     char *carriage, *carriage_e, *carriage_last;
@@ -104,22 +104,22 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
             *carriage = c;
             *(carriage + 1) = '\0';
-            err = push(stackS, carriage);
+            err = push(stack_s, carriage);
             printf("%s -> stackS\n", carriage);
             break;
 
         case 6:
             printf("\n\n\nPrevious %c\n\n", c_prev);
-            if (!is_empty(stackNum))
+            if (!is_empty(stack_num))
             {
-                err = get_top(stackNum, &carriage_last);
+                err = get_top(stack_num, &carriage_last);
             }
             if (!('0' <= *carriage_last && *carriage_last <= '9'))
             {
 
                 if (c_prev != ')')
                 {
-                    err = pop(stackNum, &carriage);
+                    err = pop(stack_num, &carriage);
                     if (err)
                     {
                         return err;
@@ -129,7 +129,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
 
                     
-                    err = pop(stackNum, &carriage_e);
+                    err = pop(stack_num, &carriage_e);
                     if (err)
                     {
                         return err;
@@ -139,14 +139,14 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
                     printf("%s %s carrrrrrs\n", carriage, carriage_e);
 
-                    if (!is_empty(stackNum))
+                    if (!is_empty(stack_num))
                     {
-                        err = get_top(stackNum, &carriage_last);
+                        err = get_top(stack_num, &carriage_last);
                     }
 
-                    if (!is_empty(stackNum))
+                    if (!is_empty(stack_num))
                     {
-                        err = push(stackNum, carriage);
+                        err = push(stack_num, carriage);
                         if (err)
                         {
                             return err;
@@ -154,7 +154,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
                         
                         printf("memory_1 -> %s -> stackNum\n\n", carriage);
 
-                        err = pop(stackS, &carriage);
+                        err = pop(stack_s, &carriage);
                         if (err)
                         {
                             return err;
@@ -162,7 +162,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
                         printf("stackS -> %s -> memory_1\n\n", carriage);
 
-                        err = push(stackNum, carriage);
+                        err = push(stack_num, carriage);
                         if (err)
                         {
                             return err;
@@ -170,7 +170,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
                         printf("memory_1 -> %s -> stackNum\n\n", carriage);
 
-                        err = push(stackNum, carriage_e);
+                        err = push(stack_num, carriage_e);
                         if (err)
                         {
                             return err;
@@ -182,13 +182,13 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
                     }
                     else
                     {
-                        err = push(stackNum, carriage_e);
+                        err = push(stack_num, carriage_e);
                         if (err)
                         {
                             return err;
                         }
                         printf("memory_2 -> %s -> stackNum\n\n", carriage);
-                        err = push(stackNum, carriage);
+                        err = push(stack_num, carriage);
                         if (err)
                         {
                             return err;
@@ -200,13 +200,13 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
 
 
         case 2:
-            err = pop(stackS, &carriage);
+            err = pop(stack_s, &carriage);
             if (err)
             {
                 return err;
             }
 
-            err = push(stackNum, carriage);
+            err = push(stack_num, carriage);
 
             printf("stackS -> %s -> stackNum\n", carriage);
 
@@ -214,27 +214,27 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
             break;
 
         case 3:
-            err = pop(stackS, &carriage);
+            err = pop(stack_s, &carriage);
             if (err)
             {
                 return err;
             }
 
-            if (!is_empty(stackS))
+            if (!is_empty(stack_s))
             {
-                err = get_top(stackS, &carriage);
+                err = get_top(stack_s, &carriage);
                 if (err)
                 {
                     return err;
                 }
                 if (*carriage == '^')
                 {
-                    err = pop(stackS, &carriage);
+                    err = pop(stack_s, &carriage);
                     if (err)
                     {
                         return err;
                     }
-                    err = push(stackNum, carriage);
+                    err = push(stack_num, carriage);
                     if (err)
                     {
                         return err;
@@ -248,7 +248,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
         case 7:
             while (*carriage != '#')
             {
-                err = pop(stackS, &carriage);
+                err = pop(stack_s, &carriage);
                 if (err)
                 {
                     return err;
@@ -258,7 +258,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
                 {
                     if (*carriage == '#')
                     {
-                        err = push(stackS, carriage);
+                        err = push(stack_s, carriage);
                         if (err)
                         {
                             return err;
@@ -266,7 +266,7 @@ int change_stacks(Stack *stackNum, Stack *stackS, int act, char c, char c_prev)
                     }
                     continue;
                 }
-                err = push(stackNum, carriage);
+                err = push(stack_num, carriage);
                 if (err)
                 {
                     return err;

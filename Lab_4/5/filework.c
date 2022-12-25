@@ -22,9 +22,10 @@ int read_files(int argc, char **argv)
 
         char c = getc(f);
 
-        char prevC;
+        char prev_c;
 
         int it = 0;
+        int expression_number = 0;
         int len = START_LEN;
         char *sym = (char *) malloc(sizeof(char) * len);
         if (sym == NULL)
@@ -60,15 +61,13 @@ int read_files(int argc, char **argv)
                             return 3;
                         }
                     }
-                    write_error(fout, it, sym);
-
                 }
 
                 *(sym + it++) = c;                    
             }
             else if (c == '\n' || c == EOF)
             {
-                if (c == EOF && prevC == '\n')
+                if (c == EOF && prev_c == '\n')
                 {
                     break;
                 }
@@ -85,7 +84,7 @@ int read_files(int argc, char **argv)
                     }
                 }
 
-                int err = process(fout, sym);
+                int err = process(fout, sym, expression_number++);
                 if (err && err != 4)
                 {
                     free(sym);
@@ -98,7 +97,7 @@ int read_files(int argc, char **argv)
                 }
             }
 
-            prevC = c;
+            prev_c = c;
             c = getc(f);
         }
 

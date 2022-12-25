@@ -75,22 +75,22 @@ int free_stack(Stack *st)
 int push(Stack *st, char *s)
 {
     Node *node = st->first;
-    Node *newNode = (Node *) malloc(sizeof(Node));
-    if (newNode == NULL)
+    Node *new_node = (Node *) malloc(sizeof(Node));
+    if (new_node == NULL)
     {
         return 1;
     }
 
-    newNode->next = node;
-    st->first = newNode;
+    new_node->next = node;
+    st->first = new_node;
 
-    newNode->data = (char *) malloc(sizeof(char) * strlen(s));
-    if (newNode == NULL)
+    new_node->data = (char *) malloc(sizeof(char) * strlen(s));
+    if (new_node == NULL)
     {
         return 1;
     }
 
-    strcpy(newNode->data, s);
+    strcpy(new_node->data, s);
 
     return 0;
 }

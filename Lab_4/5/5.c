@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
                 printf("There are not arguments!\n");
                 break;
             case 2:
-                printf("There is not such file!\n");
+                printf("There is no such file!\n");
                 break;
             case 3:
                 printf("Cannot allocate memory!\n");
