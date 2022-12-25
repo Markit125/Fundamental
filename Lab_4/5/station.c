@@ -137,8 +137,6 @@ int change_stacks(Stack *stack_num, Stack *stack_s, int act, char c, char c_prev
 
                     printf("stackNum -> %s -> memory_2\n\n", carriage);
 
-                    printf("%s %s carrrrrrs\n", carriage, carriage_e);
-
                     if (!is_empty(stack_num))
                     {
                         err = get_top(stack_num, &carriage_last);

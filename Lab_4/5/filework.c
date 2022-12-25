@@ -8,6 +8,11 @@ int read_files(int argc, char **argv)
         return 1;
     }
 
+    if (argc > 2)
+    {
+        return 4;
+    }
+
 
     for (int i = 1; i < argc; ++i)
     {
@@ -24,7 +29,7 @@ int read_files(int argc, char **argv)
 
         char prev_c;
 
-        int it = 0;
+        int it = 0, err_it = -1;
         int expression_number = 0;
         int len = START_LEN;
         char *sym = (char *) malloc(sizeof(char) * len);
@@ -51,7 +56,16 @@ int read_files(int argc, char **argv)
                     sym = ptr;
                 }
                 
-                if (!permitted(c))
+                *(sym + it++) = c;
+
+                if (!permitted(c) && err_it == -1)
+                {
+                    err_it = it;
+                }
+            }
+            else if (c == '\n' || c == EOF)
+            {
+                if (err_it != -1)
                 {
                     if (fout == NULL)
                     {
@@ -61,12 +75,10 @@ int read_files(int argc, char **argv)
                             return 3;
                         }
                     }
+                    write_error(fout, err_it, sym, expression_number, mis_unknown);
+                    return 5;
                 }
 
-                *(sym + it++) = c;                    
-            }
-            else if (c == '\n' || c == EOF)
-            {
                 if (c == EOF && prev_c == '\n')
                 {
                     break;

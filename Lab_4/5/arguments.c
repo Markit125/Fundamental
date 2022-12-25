@@ -156,17 +156,12 @@ int str_copy(char **dest, char *str, int startIt, int it, int *len)
     }
 
     *(*dest + j - 1) = '\0';
-
-    // if (i != it)
-    // {
-    //     char *ptr = realloc(*dest, sizeof(char) * (j + 1));
-    //     if (NULL == ptr)
-    //     {
-    //         return 1;
-    //     }
-
-    //     *dest = ptr;
-    // }
     
     return 0;
+}
+
+
+int is_sign(char c)
+{
+    return c == '*' || c == '/' || c == '-' || c == '+' || c == '^';
 }

@@ -10,7 +10,8 @@ enum mistakes
     mis_braces = 1,
     mis_sign = 2,
     mis_number = 3,
-    mis_file,
+    mis_file = 4,
+    mis_unknown = 5,
 };
 
 
@@ -22,27 +23,27 @@ int write_answer(Stack *stackNum);
 
 int process(FILE *fout, char *sym, int expression_number)
 {
-    Stack *stackNum = (Stack *) malloc(sizeof(Stack));
-    if (stackNum == NULL)
+    Stack *stack_num = (Stack *) malloc(sizeof(Stack));
+    if (stack_num == NULL)
     {
         return 3;
     }
-    stackNum->first = NULL;
+    stack_num->first = NULL;
 
-    Stack *stackS = (Stack *) malloc(sizeof(Stack));
-    if (stackS == NULL)
+    Stack *stack_s = (Stack *) malloc(sizeof(Stack));
+    if (stack_s == NULL)
     {
         return 3;
     }
-    stackS->first = NULL;
-    push(stackS, "#");
+    stack_s->first = NULL;
+    push(stack_s, "#");
 
 
 
     int err;
     int number = 0;
-    int prevNumber = 0;
-    int it = 0, startIt = 0, prev_it = -1;
+    int prev_number = 0;
+    int it = 0, start_it = 0, prev_it = -1;
     int act = -1;
     int brace = 0;
     int len = START_LEN;
@@ -64,31 +65,39 @@ int process(FILE *fout, char *sym, int expression_number)
         {
             before_ext = c_prev;
         }
-        else if (c == '(' && prev_it != it)
+        if (it != prev_it)
         {
-            if (is_num_symbol(c_prev))
+            if (c == '(' && prev_it != it)
             {
-                printf("\nWrong expression! 1\n");
-                write_error(fout, it, sym, expression_number, mis_braces);
-                return 7;
+                if (is_num_symbol(c_prev) && c_prev != '(')
+                {
+                    write_error(fout, it, sym, expression_number, mis_braces);
+                    return 5;
+                }
+                ++brace;
             }
-            ++brace;
-        }
-        else if (c == ')' && prev_it != it)
-        {
-            if (!is_num_symbol(c_prev))
+            else if (c == ')' && prev_it != it)
             {
-                printf("\nWrong expression! 1\n");
+                if (!is_num_symbol(c_prev) && c_prev != ')')
+                {
+                    write_error(fout, it, sym, expression_number, mis_sign);
+                    return 5;
+                }
+                --brace;
+            }
+
+            
+            if (is_sign(c) && is_sign(c_prev))
+            {
                 write_error(fout, it, sym, expression_number, mis_sign);
-                return 7;
+                return 5;
             }
-            --brace;
-        }
-        if (brace < 0)
-        {
-            printf("\nWrong expression! 2\n");
-            write_error(fout, it, sym, expression_number, mis_braces);
-            return 8;
+
+            if (brace < 0)
+            {
+                write_error(fout, it, sym, expression_number, mis_braces);
+                return 5;
+            }
         }
         prev_it = it;
 
@@ -103,26 +112,24 @@ int process(FILE *fout, char *sym, int expression_number)
         }
 
 
-        if (prevNumber == 1 && !number)
+        if (prev_number == 1 && !number)
         {
-            err = str_copy(&num, sym, startIt, it, &len);
+            err = str_copy(&num, sym, start_it, it, &len);
             if (err)
             {
                 free(num);
                 free(top);
-                free_stack(stackNum);
-                free_stack(stackS);
-                return 3;
+                free_stack(stack_num);
+                free_stack(stack_s);
+                return 6;
             }
             
 
-            push(stackNum, num);
+            push(stack_num, num);
             printf("\n\nAfter pushing:\n  Num\n");
-            print_stack(stackNum);
+            print_stack(stack_num);
             printf("  S\n");
-            print_stack(stackS);
-            printf("OK\n");
-
+            print_stack(stack_s);
         }
 
 
@@ -130,31 +137,29 @@ int process(FILE *fout, char *sym, int expression_number)
         {
             // push to stack
 
-            err = get_top(stackS, &top);
+            err = get_top(stack_s, &top);
             if (err)
             {
                 write_error(fout, it, sym, expression_number, mis_braces);
                 free(num);
                 free(top);
-                free_stack(stackNum);
-                free_stack(stackS);
-                return 3;
+                free_stack(stack_num);
+                free_stack(stack_s);
+                return 5;
             }
-            printf("Top done!\n");
 
-            // printf("%s %c before action\n", top, c);
             act = action(*top, c);
             
-            printf("%d - action\n", act);
+            printf("\n\n========= %d - action\n\n", act);
             if (act == 5)
             {
                 write_error(fout, it, sym, expression_number, mis_braces);
                 free(num);
                 free(top);
-                free_stack(stackNum);
-                free_stack(stackS);
-                printf("\nWrong expression! 3\n");
-                return 4;
+                free_stack(stack_num);
+                free_stack(stack_s);
+
+                return 5;
             }
             else if (act == 2 || act == 6 || act == 7)
             {
@@ -162,53 +167,51 @@ int process(FILE *fout, char *sym, int expression_number)
             }
             else if (act == 4)
             {
-                print_stack(stackNum);
+                print_stack(stack_num);
                 break;
             }
 
-            err = change_stacks(stackNum, stackS, act, c, before_ext); // here
+            err = change_stacks(stack_num, stack_s, act, c, before_ext); // here
             if (err == 1)
             {
-                printf("Cannot allocate memory!\n");
                 write_error(fout, it, sym, expression_number, mis_file);
                 free(num);
                 free(top);
-                free_stack(stackNum);
-                free_stack(stackS);
+                free_stack(stack_num);
+                free_stack(stack_s);
 
-                return 5;
+                return 3;
             }
             else if (err == 2)
             {
-                printf("Stack empty error\n");
                 write_error(fout, it, sym, expression_number, mis_braces);
                 free(num);
                 free(top);
-                free_stack(stackNum);
-                free_stack(stackS);
+                free_stack(stack_num);
+                free_stack(stack_s);
 
-                return 6;
+                return 5;
             }
             
             printf("\n\nAfter changing:\n  Num\n");
-            print_stack(stackNum);
+            print_stack(stack_num);
             printf("  S\n");
-            print_stack(stackS);
+            print_stack(stack_s);
 
-            startIt = it + (act == 2);
+            start_it = it + (act == 2);
         }
 
-        prevNumber = number;
+        prev_number = number;
         
         printf("%c end\n", c);
     }
 
     printf("\n\nFinal stack:\n");
-    print_stack(stackNum);
-    print_stack(stackS);
+    print_stack(stack_num);
+    print_stack(stack_s);
 
     write_start(sym);
-    err = write_reverse_polish(stackNum);
+    err = write_reverse_polish(stack_num);
     if (err)
     {
         return 3;
@@ -217,8 +220,8 @@ int process(FILE *fout, char *sym, int expression_number)
     free(sym);
     free(num);
     free(top);
-    free_stack(stackNum);
-    free_stack(stackS);
+    free_stack(stack_num);
+    free_stack(stack_s);
 
     return 0;
 }
@@ -305,7 +308,7 @@ int write_error(FILE *fout, int it, char *sym, int number, int err_type)
     }
 
 
-    while (*ptr != '#')
+    while (*ptr != '#' && *ptr != '\0')
     {
         fputc(*ptr++, fout);
     }
@@ -327,6 +330,9 @@ int write_error(FILE *fout, int it, char *sym, int number, int err_type)
             break;
         case mis_sign:
             fprintf(fout, "Wrong sign sequence\n");
+            break;
+        case mis_unknown:
+            fprintf(fout, "Unknown symbol\n");
             break;
     }
     
