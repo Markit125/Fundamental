@@ -26,12 +26,18 @@ int is_empty(Stack *st)
 int print_stack(Stack *st)
 {
     Node *node = st->first;
+    if (!node)
+    {
+        printf("\t[Stack is empty]\n");
+        return 0;
+    }
+
     while (node)
     {
         printf("\t| %s |\n", node->data);
+        printf("node: %p\n", node->next);
         node = node->next;
     }
-
 
     return 0;
 }
@@ -96,7 +102,6 @@ int push(Stack *st, char *s)
 
 int pop(Stack *st, char **data)
 {
-
     if (is_empty(st))
     {
         return 2;

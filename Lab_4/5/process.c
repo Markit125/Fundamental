@@ -13,13 +13,14 @@ enum mistakes
     mis_number = 3,
     mis_file = 4,
     mis_unknown = 5,
+    mis_zero = 6,
 };
 
 
 int write_error(FILE *fout, int it, char *sym, int number, int err_type);
 int write_start(char *sym);
 int write_reverse_polish(Stack *stackNum);
-int write_answer(Stack *stack_num);
+int write_answer(Stack *stack_num, FILE *fout, char *sym, int e_number);
 int get_answer(Stack *stackNum, float *result);
 
 
@@ -202,7 +203,7 @@ int process(FILE *fout, char *sym, int expression_number)
         return 3;
     }
 
-    err = write_answer(stack_num);
+    err = write_answer(stack_num, fout, sym, expression_number);
     if (err)
     {
         return err;
@@ -234,38 +235,41 @@ int write_start(char *sym)
     return 0;
 }
 
-int write_reverse_polish(Stack *stackNum)
+int write_reverse_polish(Stack *stack_num)
 {
-    Stack *stackTemp = (Stack *) malloc(sizeof(Stack));
-    if (stackTemp == NULL)
+    Stack *stack_temp = (Stack *) malloc(sizeof(Stack));
+    if (stack_temp == NULL)
     {
         return 1;
     }
+    stack_temp->first = NULL;
     
     int err;
     char *data;
-    while (!is_empty(stackNum))
+    while (!is_empty(stack_num))
     {
-        err = pop(stackNum, &data);
+        err = pop(stack_num, &data);
         if (err)
         {
             return err;
         }
-        err = push(stackTemp, data);
+        err = push(stack_temp, data);
         if (err)
         {
             return err;
         }
     }
 
-    while (!is_empty(stackTemp))
+
+    while (!is_empty(stack_temp))
     {
-        err = pop(stackTemp, &data);
+        err = pop(stack_temp, &data);
         if (err)
         {
             return err;
         }
-        err = push(stackNum, data);
+
+        err = push(stack_num, data);
         if (err)
         {
             return err;
@@ -274,7 +278,7 @@ int write_reverse_polish(Stack *stackNum)
     }
     printf("\n");
 
-    free(stackTemp);
+    free_stack(stack_temp);
 
     return 0;
 
@@ -312,7 +316,7 @@ int calculate(float a, float b, char c, float *res)
 }
 
 
-int write_answer(Stack *stack_num)
+int write_answer(Stack *stack_num, FILE *fout, char *sym, int e_number)
 {
     int err;
     float ans;
@@ -328,15 +332,35 @@ int write_answer(Stack *stack_num)
                 err = 6;
                 break;
             case 3:
-                err = 7;
+                write_error(fout, -1, sym, e_number, mis_number);
+                err = -1;
                 break;
             case 4:
                 err = 8;
                 break;
+            case 11:
+                write_error(fout, -1, sym, e_number, mis_zero);
+                err = -1;
+                break;
+            case 12:
+                write_error(fout, -1, sym, e_number, mis_sign);
+                err = -1;
+                break;
         }
-        return err;
+        if (err != 0 && err != -1)
+        {
+            return err;
+        }
     }
-    printf("Answer: %f\n", ans);
+
+    if (err != -1)
+    {
+        printf("Answer: %f\n", ans);
+    }
+    else
+    {
+        printf("Cannot calculate\n");
+    }
 
     return 0;
 }
@@ -434,11 +458,14 @@ int write_error(FILE *fout, int it, char *sym, int number, int err_type)
     }
     fputc('\n', fout);
 
-    for (i = 0; i < it - 1; ++i)
+    if (it != -1)
     {
-        fputc(' ', fout);
+        for (i = 0; i < it - 1; ++i)
+        {
+            fputc(' ', fout);
+        }
+        fprintf(fout, "^\n");
     }
-    fprintf(fout, "^\n");
 
     switch (err_type)
     {

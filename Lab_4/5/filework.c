@@ -82,6 +82,7 @@ int read_files(int argc, char **argv)
                 *(sym + it++) = '#';
                 *(sym + it) = '\0';
                 it = 0;
+                err_it = -1;
                 if (fout == NULL)
                 {
                     fout = fopen("out.txt", "w");
