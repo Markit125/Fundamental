@@ -113,6 +113,7 @@ int read_files(int argc, char **argv)
             c = getc(f);
         }
 
+        free(sym);
     }
 
     return 0;

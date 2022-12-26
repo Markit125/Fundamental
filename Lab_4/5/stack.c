@@ -42,7 +42,6 @@ int clear_stack(Stack *st)
     Node *node = st->first, *prev;
     while (node)
     {
-        // printf("node %s\n", node->data);
         prev = node;
         node = node->next;
         free(prev->data);
@@ -59,7 +58,6 @@ int free_stack(Stack *st)
     Node *node = st->first, *prev;
     while (node)
     {
-        // printf("node %s\n", node->data);
         prev = node;
         node = node->next;
         free(prev->data);

@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "arguments.c"
@@ -18,7 +19,8 @@ enum mistakes
 int write_error(FILE *fout, int it, char *sym, int number, int err_type);
 int write_start(char *sym);
 int write_reverse_polish(Stack *stackNum);
-int write_answer(Stack *stackNum);
+int write_answer(Stack *stack_num);
+int get_answer(Stack *stackNum, float *result);
 
 
 int process(FILE *fout, char *sym, int expression_number)
@@ -206,9 +208,12 @@ int process(FILE *fout, char *sym, int expression_number)
         printf("%c end\n", c);
     }
 
-    printf("\n\nFinal stack:\n");
-    print_stack(stack_num);
+    printf("\nFinal stack S\n");
     print_stack(stack_s);
+
+    printf("\n\nFinal stack num:\n");
+    print_stack(stack_num);
+    
 
     write_start(sym);
     err = write_reverse_polish(stack_num);
@@ -217,7 +222,13 @@ int process(FILE *fout, char *sym, int expression_number)
         return 3;
     }
 
-    free(sym);
+    err = write_answer(stack_num);
+    if (err)
+    {
+        return err;
+    }
+
+
     free(num);
     free(top);
     free_stack(stack_num);
@@ -251,26 +262,159 @@ int write_reverse_polish(Stack *stackNum)
         return 1;
     }
     
+    int err;
     char *data;
     while (!is_empty(stackNum))
     {
-        pop(stackNum, &data);
-        push(stackTemp, data);
+        err = pop(stackNum, &data);
+        if (err)
+        {
+            return err;
+        }
+        err = push(stackTemp, data);
+        if (err)
+        {
+            return err;
+        }
     }
 
     while (!is_empty(stackTemp))
     {
-        pop(stackTemp, &data);
+        err = pop(stackTemp, &data);
+        if (err)
+        {
+            return err;
+        }
+        err = push(stackNum, data);
+        if (err)
+        {
+            return err;
+        }
         printf("%s ", data);
     }
     printf("\n");
+
+    free(stackTemp);
 
     return 0;
 
 }
 
 
-int write_answer(Stack *stackNum);
+int calculate(float a, float b, char c, float *res)
+{
+    switch (c)
+    {
+        case '*':
+            *res = a * b;
+            break;
+        case '/':
+            if (b == 0)
+            {
+                return 1;
+            }
+            *res = a / b;
+            break;
+        case '+':
+            *res = a + b;
+            break;
+        case '-':
+            *res = a - b;
+            break;
+        case '^':
+            *res = pow(a, b);
+            break;
+        default:
+            return 2;
+    }
+
+    return 0;
+}
+
+
+int write_answer(Stack *stack_num)
+{
+    int err;
+    float ans;
+    err = get_answer(stack_num, &ans);
+    if (err)
+    {
+        switch (err)   
+        {
+            case 1:
+                err = 3;
+                break;
+            case 2:
+                err = 6;
+                break;
+            case 3:
+                err = 7;
+                break;
+            case 4:
+                err = 8;
+                break;
+        }
+        return err;
+    }
+    printf("Answer: %f\n", ans);
+
+    return 0;
+}
+
+
+int get_answer(Stack *stack_num, float *result)
+{
+    if (is_empty(stack_num))
+    {
+        return 4;
+    }
+
+    char *c, *arg_0, *arg_1;
+    float res_0, res_1;
+    int err;
+    err = pop(stack_num, &c);
+    if (err)
+    {
+        return err;
+    }
+
+    if (is_sign(*c))
+    {
+        
+        err = get_answer(stack_num, &res_1);
+        if (err)
+        {
+            return err;
+        }
+
+        // printf("got %f\n", res_1);
+
+        err = get_answer(stack_num, &res_0);
+        if (err)
+        {
+            return err;
+        }
+
+        // printf("got %f\n", res_0);
+
+        err = calculate(res_0, res_1, *c, result);
+        if (err)
+        {
+            return err + 10;
+        }
+        
+    }
+    else
+    {
+        if (!is_number(c))
+        {
+            return 3;
+        }
+        *result = atof(c);
+    }
+
+    return 0;
+}
 
 
 int write_error(FILE *fout, int it, char *sym, int number, int err_type)
