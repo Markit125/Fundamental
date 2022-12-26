@@ -17,18 +17,13 @@ int read_files(int argc, char **argv)
     for (int i = 1; i < argc; ++i)
     {
         FILE *f = fopen(*(argv + i), "r");
-        printf("%s \n", *(argv + i));
         if (NULL == f) {
             return 2;
         }
 
-
         FILE *fout;
-
         char c = getc(f);
-
         char prev_c;
-
         int it = 0, err_it = -1;
         int expression_number = 0;
         int len = START_LEN;
