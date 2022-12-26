@@ -58,7 +58,6 @@ int process(FILE *fout, char *sym, int expression_number)
     char c = ' ', c_prev = ' ', before_ext = ' ';
     char *top;
 
-    printf("BEGIN %s\n", sym);
     while (c != '\0')
     {
         c_prev = c;
@@ -103,7 +102,6 @@ int process(FILE *fout, char *sym, int expression_number)
         }
         prev_it = it;
 
-        printf("\n%c on input\n\n", c);
         if (is_num_symbol(c))
         {
             number = 1;
@@ -126,12 +124,11 @@ int process(FILE *fout, char *sym, int expression_number)
                 return 6;
             }
             
-
-            push(stack_num, num);
-            printf("\n\nAfter pushing:\n  Num\n");
-            print_stack(stack_num);
-            printf("  S\n");
-            print_stack(stack_s);
+            err = push(stack_num, num);
+            if (err)
+            {
+                return err;
+            }
         }
 
 
@@ -151,8 +148,6 @@ int process(FILE *fout, char *sym, int expression_number)
             }
 
             act = action(*top, c);
-            
-            printf("\n\n========= %d - action\n\n", act);
             if (act == 5)
             {
                 write_error(fout, it, sym, expression_number, mis_braces);
@@ -169,11 +164,10 @@ int process(FILE *fout, char *sym, int expression_number)
             }
             else if (act == 4)
             {
-                print_stack(stack_num);
                 break;
             }
 
-            err = change_stacks(stack_num, stack_s, act, c, before_ext); // here
+            err = change_stacks(stack_num, stack_s, act, c, before_ext);
             if (err == 1)
             {
                 write_error(fout, it, sym, expression_number, mis_file);
@@ -194,26 +188,12 @@ int process(FILE *fout, char *sym, int expression_number)
 
                 return 5;
             }
-            
-            printf("\n\nAfter changing:\n  Num\n");
-            print_stack(stack_num);
-            printf("  S\n");
-            print_stack(stack_s);
 
             start_it = it + (act == 2);
         }
 
         prev_number = number;
-        
-        printf("%c end\n", c);
     }
-
-    printf("\nFinal stack S\n");
-    print_stack(stack_s);
-
-    printf("\n\nFinal stack num:\n");
-    print_stack(stack_num);
-    
 
     write_start(sym);
     err = write_reverse_polish(stack_num);
@@ -387,15 +367,11 @@ int get_answer(Stack *stack_num, float *result)
             return err;
         }
 
-        // printf("got %f\n", res_1);
-
         err = get_answer(stack_num, &res_0);
         if (err)
         {
             return err;
         }
-
-        // printf("got %f\n", res_0);
 
         err = calculate(res_0, res_1, *c, result);
         if (err)
