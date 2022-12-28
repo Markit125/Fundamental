@@ -89,7 +89,7 @@ int process(FILE *fout, char *sym, int expression_number)
             }
 
             
-            if (is_sign(c) && is_sign(c_prev))
+            if (is_sign_char(c) && is_sign_char(c_prev))
             {
                 write_error(fout, it, sym, expression_number, mis_sign);
                 return 5;
@@ -101,9 +101,10 @@ int process(FILE *fout, char *sym, int expression_number)
                 return 5;
             }
         }
+        
         prev_it = it;
 
-        if (is_num_symbol(c))
+        if (is_num_symbol(c) || (c_prev == '(' && c == '-'))
         {
             number = 1;
         }
@@ -122,6 +123,7 @@ int process(FILE *fout, char *sym, int expression_number)
                 free(top);
                 free_stack(stack_num);
                 free_stack(stack_s);
+
                 return 6;
             }
             
@@ -145,6 +147,7 @@ int process(FILE *fout, char *sym, int expression_number)
                 free(top);
                 free_stack(stack_num);
                 free_stack(stack_s);
+
                 return 5;
             }
 
@@ -355,11 +358,11 @@ int write_answer(Stack *stack_num, FILE *fout, char *sym, int e_number)
 
     if (err != -1)
     {
-        printf("Answer: %f\n", ans);
+        printf("Answer: %f\n\n", ans);
     }
     else
     {
-        printf("Cannot calculate\n");
+        printf("Cannot calculate\n\n");
     }
 
     return 0;
@@ -382,7 +385,7 @@ int get_answer(Stack *stack_num, float *result)
         return err;
     }
 
-    if (is_sign(*c))
+    if (is_sign(c))
     {
         
         err = get_answer(stack_num, &res_1);
@@ -406,10 +409,11 @@ int get_answer(Stack *stack_num, float *result)
     }
     else
     {
-        if (!is_number(c))
-        {
-            return 3;
-        }
+        // if (!is_number(c))
+        // {
+        //     printf("%s is not a number\n", c);
+        //     return 3;
+        // }
         *result = atof(c);
     }
 
@@ -480,6 +484,9 @@ int write_error(FILE *fout, int it, char *sym, int number, int err_type)
             break;
         case mis_unknown:
             fprintf(fout, "Unknown symbol\n");
+            break;
+        case mis_zero:
+            fprintf(fout, "Dividing by zero!\n");
             break;
     }
     

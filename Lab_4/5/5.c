@@ -19,23 +19,11 @@ int main(int argc, char *argv[])
             case 4:
                 printf("Too many arguments!\n");
                 break;
-            case 5:
-                printf("Wrong expression!\n");
-                break;
             case 6:
                 printf("Wrong expression while calculating!\n");
                 break;
-            case 7:
-                printf("Wrong number\n");
-                break;
             case 8:
                 printf("Stack was lost\n");
-                break;
-            case 11:
-                printf("Division by zero!\n");
-                break;
-            case 12:
-                printf("Wrong sign!\n");
                 break;
             default:
                 printf("Unclown error!\n");

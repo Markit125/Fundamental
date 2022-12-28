@@ -35,7 +35,7 @@ int print_stack(Stack *st)
     while (node)
     {
         printf("\t| %s |\n", node->data);
-        printf("node: %p\n", node->next);
+        printf("node->next: %p\n", node->next);
         node = node->next;
     }
 

@@ -161,7 +161,13 @@ int str_copy(char **dest, char *str, int startIt, int it, int *len)
 }
 
 
-int is_sign(char c)
+int is_sign(char *c)
+{
+    return !strcmp(c, "*") || !strcmp(c, "+") || !strcmp(c, "/") || !strcmp(c, "-") || !strcmp(c, "^");
+}
+
+
+int is_sign_char(char c)
 {
     return c == '*' || c == '/' || c == '-' || c == '+' || c == '^';
 }

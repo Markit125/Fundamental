@@ -1,2 +1,3 @@
 Wrong expression 1:
-5-2+(9-0/0)
+5-2+(9-1/0)
+Dividing by zero!
