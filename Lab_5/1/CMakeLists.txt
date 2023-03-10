@@ -11,4 +11,6 @@ add_executable(
         logger/prototypes/logger_builder.cpp
         time/my_time.cpp
         time/my_time.h
+        logger/configure/configure_file.h
+        logger/configure/configure_file.cpp
 )

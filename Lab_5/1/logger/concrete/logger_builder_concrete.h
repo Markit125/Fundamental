@@ -4,6 +4,7 @@
 #include <map>
 #include "../prototypes/logger_builder.h"
 
+
 class logger_builder_concrete final : public logger_builder
 {
 

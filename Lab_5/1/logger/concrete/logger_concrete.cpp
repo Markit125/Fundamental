@@ -1,8 +1,10 @@
-#include "logger_concrete.h"
-#include "../../time/my_time.h"
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <algorithm>
 
+#include "logger_concrete.h"
+#include "../../time/my_time.h"
 
 
 std::map<std::string, std::pair<std::ofstream *, size_t>> logger_concrete::_streams =
@@ -95,11 +97,11 @@ logger const *logger_concrete::log(
         
         if (logger_stream.second.first == nullptr)
         {
-            std::cout << "[" << get_time() << "]" << get_severity(logger_stream.second.second) << " " << to_log << std::endl;
+            std::cout << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
         }
         else
         {
-            (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(logger_stream.second.second) << " " << to_log << std::endl;
+            (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
         }
     }
 
