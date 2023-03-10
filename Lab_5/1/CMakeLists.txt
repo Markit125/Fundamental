@@ -1,0 +1,14 @@
+add_executable(
+    lab5-1
+        main.cpp
+        logger/concrete/logger_builder_concrete.h
+        logger/concrete/logger_builder_concrete.cpp
+        logger/concrete/logger_concrete.h
+        logger/concrete/logger_concrete.cpp
+        logger/prototypes/logger.h
+        logger/prototypes/logger.cpp
+        logger/prototypes/logger_builder.h
+        logger/prototypes/logger_builder.cpp
+        time/my_time.cpp
+        time/my_time.h
+)
