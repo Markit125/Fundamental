@@ -2,7 +2,6 @@
 #define SANDBOX_CPP_LOGGER_CONCRETE_H
 
 #include "../prototypes/logger.h"
-// #include "../configure/configurator.h"
 #include "logger_builder_concrete.h"
 #include <map>
 
@@ -21,7 +20,7 @@ private:
 
     static std::map<std::string, std::pair<std::ofstream *, size_t> > _streams;
 
-public:
+private:
 
     logger_concrete(std::map<std::string, logger::severity> const &);
 
