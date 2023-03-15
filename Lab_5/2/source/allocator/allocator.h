@@ -19,15 +19,17 @@ public:
     ~allocator();
 
 
-    void *allocate(size_t targer_size) const override;
+    void *allocate(size_t const) const override;
 
-    void deallocate(void * const target_to_dealloc) const override;
+    void deallocate(void * const) const override;
 
-    size_t get_size(void * const object) const override;
+    size_t get_size(void * const) const override;
 
 private:
 
     logger *_logger_allocator;
+
+    std::string get_bytes(void * const) const;
 
 
 };

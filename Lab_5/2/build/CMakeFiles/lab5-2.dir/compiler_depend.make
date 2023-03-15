@@ -1386,7 +1386,9 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_builder_concrete.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger_builder.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.h
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.h \
+  /usr/include/c++/12/sstream \
+  /usr/include/c++/12/bits/sstream.tcc
 
 CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/main.cpp.o: /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/main.cpp \
   /usr/include/stdc-predef.h \
@@ -1613,6 +1615,8 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
 
 
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/main.cpp:
+
+/usr/include/c++/12/sstream:
 
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/memory/memory.h:
 
@@ -1905,6 +1909,8 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
 /usr/include/c++/12/x86_64-redhat-linux/bits/ctype_inline.h:
 
 /usr/include/c++/12/bits/stl_pair.h:
+
+/usr/include/c++/12/bits/sstream.tcc:
 
 /usr/include/c++/12/cstdlib:
 

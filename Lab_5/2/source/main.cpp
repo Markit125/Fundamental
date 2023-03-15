@@ -12,7 +12,7 @@ int main() {
 
     std::cout << alloc->get_size(constants) << '\n';
 
-    *constants = 3.14159;
+    *(constants + 0) = 3.14159;
     *(constants + 1) = 2.71828;
 
     std::cout << *constants << '\n' << *(constants + 1) << std::endl;
