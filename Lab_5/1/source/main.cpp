@@ -17,7 +17,7 @@ int main() {
         ->construct();
 
 
-    logger *logger_from_configuration_file = conf->configure_from_file("conf.txt");
+    logger *logger_from_configuration_file = conf->configure_from_file("../test_files/conf.txt");
     if (logger_from_configuration_file == nullptr) {
         std::cout << "File corrupted!\n";
         constructed_logger->log("Configuration file is corrupted!", logger::severity::critical);

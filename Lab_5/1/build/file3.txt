@@ -1,3 +1,3 @@
-[03/13/23 15:20:37][INFO] kek lol 123
-[03/13/23 15:20:37][ERROR] 123 kek lol
-[03/13/23 15:20:37][CRITICAL] You are Giant
+[03/15/23 19:31:01][INFO] kek lol 123
+[03/15/23 19:31:01][ERROR] 123 kek lol
+[03/15/23 19:31:01][CRITICAL] You are Giant
