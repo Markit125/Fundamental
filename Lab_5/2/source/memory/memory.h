@@ -22,6 +22,8 @@ public:
 
     virtual void deallocate(void * const target_to_dealloc) const = 0;
 
+    virtual size_t get_size(void * const object) const = 0;
+
 };
 
 #endif

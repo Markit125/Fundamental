@@ -23,8 +23,8 @@ public:
 
     void deallocate(void * const target_to_dealloc) const override;
 
-    size_t get_size(void * const object) const;
-    
+    size_t get_size(void * const object) const override;
+
 private:
 
     logger *_logger_allocator;

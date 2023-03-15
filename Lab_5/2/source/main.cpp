@@ -6,7 +6,7 @@
 
 int main() {
 
-    allocator *alloc = new allocator();
+    memory *alloc = new allocator();
 
     double *constants = static_cast<double *>(alloc->allocate(sizeof(double) * 2));
 
