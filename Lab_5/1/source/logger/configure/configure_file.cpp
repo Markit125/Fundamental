@@ -8,42 +8,28 @@
 
 
 
-logger::severity configurator::str_to_severity(std::string const str)
-{
-    if (str == "trace")
-    {
+logger::severity configurator::str_to_severity(std::string const str) {
+    if (str == "trace") {
         return logger::severity::trace;
-    }
-    else if (str == "debug")
-    {
+    } else if (str == "debug") {
         return logger::severity::debug;
-    }
-    else if (str == "info")
-    {
+    } else if (str == "info") {
         return logger::severity::information;
-    }
-    else if (str == "warning")
-    {
+    } else if (str == "warning") {
         return logger::severity::warning;
-    }
-    else if (str == "error")
-    {
+    } else if (str == "error") {
         return logger::severity::error;
-    }
-    else
-    {
+    } else {
         return logger::severity::critical;
     }
 }
 
 
-logger *configurator::configure_from_file(std::string const filename)
-{
+logger *configurator::configure_from_file(std::string const filename) {
     std::map<std::string, logger::severity> construction_info;
 
     std::ifstream file(filename, std::ios::in);
-    if (!file.is_open())
-    {
+    if (!file.is_open()) {
         return nullptr;
     }
 
@@ -59,17 +45,23 @@ logger *configurator::configure_from_file(std::string const filename)
     std::string stream;
     std::string severity;
 
-    while (file >> stream && file >> severity)
-    {
-        if (std::find(begin(severities), end(severities), severity) != end(severities))
-        {
+    while (file >> stream && file >> severity) {
+        if (std::find(begin(severities), end(severities), severity) != end(severities)) {
             construction_info[stream] = str_to_severity(severity);
-        }
-        else
-        {
+        } else {
             return nullptr;
         }
     }
 
     return new logger_concrete(construction_info);    
+}
+
+
+configurator::configurator() {
+
+}
+
+
+configurator::~configurator() {
+    
 }

@@ -5,14 +5,17 @@
 #include "../prototypes/logger_builder.h"
 
 
-class logger_builder_concrete final : public logger_builder
-{
+class logger_builder_concrete final : public logger_builder {
 
 private:
 
     std::map<std::string, logger::severity> _construction_info;
 
 public:
+
+    logger_builder_concrete();
+
+    ~logger_builder_concrete();
 
     logger_builder *add_stream(std::string const &, logger::severity) override;
 

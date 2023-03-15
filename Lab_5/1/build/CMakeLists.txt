@@ -3,15 +3,12 @@ cmake_minimum_required(VERSION 3.20)
 project(Fundamental C CXX)
 
 if (MSVC)
-    add_compile_options(/W4 /WX)
+add_compile_options(/W4 /WX)
 else()
-    add_compile_options(-Wall -Wextra -pedantic -Werror)
+add_compile_options(-Wall -Wextra -pedantic -Werror)
 endif()
 
-include(FindThreads)
-
 set(CMAKE_CXX_STANDARD 17)
-
 
 add_executable(
     lab5-1

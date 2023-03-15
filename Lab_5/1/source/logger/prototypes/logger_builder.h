@@ -4,8 +4,8 @@
 #include <iostream>
 #include "logger.h"
 
-class logger_builder
-{
+
+class logger_builder {
 
 public:
 
@@ -14,6 +14,8 @@ public:
     virtual logger *construct() const = 0;
 
 public:
+
+    logger_builder();
 
     virtual ~logger_builder();
 

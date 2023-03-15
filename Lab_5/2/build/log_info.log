@@ -1,0 +1,5 @@
+[03/15/23 19:23:22][INFO] Logger is built
+[03/15/23 19:23:22][INFO] Allocator is instantiated
+[03/15/23 19:23:22][INFO] Allocated 16 bytes of memory
+[03/15/23 19:23:22][INFO] Deallocated 16 bytes of memory
+[03/15/23 19:23:22][INFO] Allocator is destroyed

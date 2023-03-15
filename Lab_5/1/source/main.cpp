@@ -1,8 +1,7 @@
 #include "logger/configure/configure_file.h"
 
 
-int main()
-{
+int main() {
     logger_builder* builder = new logger_builder_concrete();
     configurator* conf = new configurator();
 
@@ -19,8 +18,7 @@ int main()
 
 
     logger *logger_from_configuration_file = conf->configure_from_file("conf.txt");
-    if (logger_from_configuration_file == nullptr)
-    {
+    if (logger_from_configuration_file == nullptr) {
         std::cout << "File corrupted!\n";
         constructed_logger->log("Configuration file is corrupted!", logger::severity::critical);
         delete constructed_logger_2;

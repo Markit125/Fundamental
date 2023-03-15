@@ -3,8 +3,7 @@
 #include <ostream>
 #define DATE_LEN 19
 
-std::string get_time()
-{
+std::string get_time() {
     time_t rawtime;
     time(&rawtime);
 

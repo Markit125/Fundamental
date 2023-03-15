@@ -11,25 +11,20 @@ std::map<std::string, std::pair<std::ofstream *, size_t>> logger_concrete::_stre
     std::map<std::string, std::pair<std::ofstream *, size_t>>();
 
 logger_concrete::logger_concrete(
-    std::map<std::string, logger::severity> const & targets)
-{
-    for (auto & target : targets)
-    {
+    std::map<std::string, logger::severity> const & targets) {
+    for (auto & target : targets) {
         auto global_stream = _streams.find(target.first);
         std::ofstream *stream = nullptr;
 
-        if (global_stream == _streams.end())
-        {
-            if (target.first != "console")
-            {
+        if (global_stream == _streams.end()) {
+            if (target.first != "console") {
                 stream = new std::ofstream;
                 stream->open(target.first);
             }
 
             _streams.insert(std::make_pair(target.first, std::make_pair(stream, 1)));
         }
-        else
-        {
+        else {
             stream = global_stream->second.first;
             global_stream->second.second++;
         }
@@ -38,21 +33,16 @@ logger_concrete::logger_concrete(
     }
 }
 
-logger_concrete::~logger_concrete()
-{
-    for (auto & logger_stream : _logger_streams)
-    {
+logger_concrete::~logger_concrete() {
+    for (auto & logger_stream : _logger_streams) {
         auto global_stream = _streams.find(logger_stream.first);
         
-        if (global_stream == _streams.end())
-        {
+        if (global_stream == _streams.end()) {
             continue;
         }
 
-        if (--(global_stream->second.second) == 0)
-        {
-            if (global_stream->second.first != nullptr)
-            {
+        if (--(global_stream->second.second) == 0) {
+            if (global_stream->second.first != nullptr) {
                 global_stream->second.first->flush();
                 global_stream->second.first->close();
                 delete global_stream->second.first;
@@ -63,10 +53,8 @@ logger_concrete::~logger_concrete()
     }
 }
 
-std::string get_severity(logger::severity severity)
-{
-    switch (severity)
-    {
+std::string get_severity(logger::severity severity) {
+    switch (severity) {
         case logger::severity::trace:
             return "[TRACE]";
         case logger::severity::debug:
@@ -86,21 +74,16 @@ std::string get_severity(logger::severity severity)
 
 logger const *logger_concrete::log(
     const std::string &to_log,
-    logger::severity severity) const
-{
-    for (auto & logger_stream : _logger_streams)
-    {
-        if (logger_stream.second.second > severity)
-        {
+    logger::severity severity) const {
+    for (auto & logger_stream : _logger_streams) {
+        if (logger_stream.second.second > severity) {
             continue;
         }
         
-        if (logger_stream.second.first == nullptr)
-        {
+        if (logger_stream.second.first == nullptr) {
             std::cout << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
         }
-        else
-        {
+        else {
             (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
         }
     }

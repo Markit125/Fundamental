@@ -6,8 +6,7 @@
 #include <map>
 
 
-class logger_concrete final : public logger
-{
+class logger_concrete final : public logger {
 
     friend class logger_builder_concrete;
     friend class configurator;
@@ -28,7 +27,7 @@ public:
 
     logger_concrete(logger_concrete const &) = delete;
 
-    logger_concrete &operator=(logger_concrete const &) = delete;
+    // logger_concrete &operator=(logger_concrete const &) = delete;
 
     ~logger_concrete();
 

@@ -4,10 +4,13 @@
 #include "../concrete/logger_concrete.h"
 
 
-class configurator
-{
+class configurator {
 
 public:
+
+    configurator();
+
+    ~configurator();
 
     logger *configure_from_file(std::string const);
 

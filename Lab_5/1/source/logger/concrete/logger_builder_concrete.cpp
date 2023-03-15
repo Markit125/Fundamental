@@ -4,14 +4,23 @@
 
 logger_builder *logger_builder_concrete::add_stream(
     std::string const &path,
-    logger::severity severity)
-{
+    logger::severity severity) {
     _construction_info[path] = severity;
 
     return this;
 }
 
-logger *logger_builder_concrete::construct() const
-{
+
+logger *logger_builder_concrete::construct() const {
     return new logger_concrete(_construction_info);
+}
+
+
+logger_builder_concrete::logger_builder_concrete() {
+
+}
+
+
+logger_builder_concrete::~logger_builder_concrete() {
+
 }
