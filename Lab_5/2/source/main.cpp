@@ -6,9 +6,9 @@
 
 int main() {
 
-    memory *alloc = new allocator();
+    memory *alloc = ::new allocator();
 
-    double *constants = static_cast<double *>(alloc->allocate(sizeof(double) * 2));
+    double *constants = reinterpret_cast<double *>(alloc->allocate(sizeof(double) * 2));
 
     std::cout << alloc->get_size(constants) << '\n';
 

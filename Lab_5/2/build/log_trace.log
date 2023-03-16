@@ -1,5 +1,5 @@
-[03/15/23 20:49:48][INFO] Logger is built
-[03/15/23 20:49:48][INFO] Allocator is instantiated
-[03/15/23 20:49:48][INFO] Allocated 16 bytes of memory at 0x1a5b1a0
-[03/15/23 20:49:48][INFO] Deallocated 16 bytes of memory from 0x1a5b1a0 that contained bytes: 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 
-[03/15/23 20:49:48][INFO] Allocator is destroyed
+[03/16/23 16:08:16][INFO] Logger is built
+[03/16/23 16:08:16][INFO] Allocator is instantiated
+[03/16/23 16:08:16][INFO] Allocated 16 bytes of memory at 0x10021a0
+[03/16/23 16:08:16][INFO] Deallocated 16 bytes of memory from 0x10021a0 that contained bytes: [ 110 134 27 240 249 33 9 64 144 247 170 149 9 191 5 64  ]
+[03/16/23 16:08:16][INFO] Allocator is destroyed

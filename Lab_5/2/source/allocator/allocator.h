@@ -31,7 +31,6 @@ private:
 
     std::string get_bytes(void * const) const;
 
-
 };
 
 
