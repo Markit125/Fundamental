@@ -11,6 +11,8 @@ public:
 
     virtual logger_builder *add_stream(std::string const &, logger::severity) = 0;
 
+    virtual logger *construct_configuration(std::string const &) = 0;
+
     virtual logger *construct() const = 0;
 
 public:

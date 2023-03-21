@@ -130,6 +130,7 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/allocator.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../memory/memory.h \
  /usr/include/c++/12/cstddef \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../memory/../../../1/source/logger/prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/logger_concrete.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/../prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/logger_builder_concrete.h \

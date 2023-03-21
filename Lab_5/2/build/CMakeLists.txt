@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Fundamental C CXX)
+project(Lab-5-2 C CXX)
 
 if (MSVC)
 add_compile_options(/W4 /WX)
@@ -17,7 +17,7 @@ add_executable(
         ../source/allocator/allocator.cpp
         ../source/memory/memory.h
         ../source/memory/memory.cpp
-        ../../1/
+        # ../../1/
         ../../1/source/logger/concrete/logger_builder_concrete.h
         ../../1/source/logger/concrete/logger_builder_concrete.cpp
         ../../1/source/logger/concrete/logger_concrete.h

@@ -18,7 +18,6 @@ public:
 
     ~allocator();
 
-
     void *allocate(size_t const) const override;
 
     void deallocate(void * const) const override;
@@ -27,7 +26,7 @@ public:
 
 private:
 
-    logger *_logger_allocator;
+    void *allocated_memory;
 
     std::string get_bytes(void * const) const;
 

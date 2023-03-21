@@ -3,7 +3,6 @@
 
 int main() {
     logger_builder* builder = new logger_builder_concrete();
-    configurator* conf = new configurator();
 
     logger *constructed_logger = builder
         ->add_stream("file1.txt", logger::severity::critical)
@@ -17,7 +16,7 @@ int main() {
         ->construct();
 
 
-    logger *logger_from_configuration_file = conf->configure_from_file("../test_files/conf.txt");
+    logger *logger_from_configuration_file = builder->construct_configuration("../test_files/conf.json");
     if (logger_from_configuration_file == nullptr) {
         std::cout << "File corrupted!\n";
         constructed_logger->log("Configuration file is corrupted!", logger::severity::critical);

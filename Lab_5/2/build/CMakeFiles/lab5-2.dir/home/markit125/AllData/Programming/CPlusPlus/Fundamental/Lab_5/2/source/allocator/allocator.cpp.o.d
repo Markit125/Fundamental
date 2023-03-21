@@ -14,8 +14,7 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
  /usr/include/c++/12/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/12/pstl/pstl_config.h \
  /usr/lib/gcc/x86_64-redhat-linux/12/include/stddef.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/logger_concrete.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/../prototypes/logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../memory/../../../1/source/logger/prototypes/logger.h \
  /usr/include/c++/12/iostream /usr/include/c++/12/ostream \
  /usr/include/c++/12/ios /usr/include/c++/12/iosfwd \
  /usr/include/c++/12/bits/stringfwd.h \
@@ -133,6 +132,8 @@ CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/logger_concrete.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/../prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/2/source/allocator/../../../1/source/logger/concrete/logger_builder_concrete.h \
  /usr/include/c++/12/map /usr/include/c++/12/bits/stl_tree.h \
  /usr/include/c++/12/ext/aligned_buffer.h \

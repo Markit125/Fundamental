@@ -2,12 +2,19 @@
 #define MEMORY_H
 
 #include <cstddef>
-
+#include "../../../1/source/logger/prototypes/logger.h"
 
 
 class memory {
 
 public:
+
+    enum fit_type {
+        first,
+        best,
+        worst
+    };
+
 
     memory();
 
@@ -22,7 +29,11 @@ public:
 
     virtual void deallocate(void * const) const = 0;
 
-    virtual size_t get_size(void * const) const = 0;
+    virtual size_t get_size(void * const) const;
+
+protected:
+
+    logger *_logger_allocator;
 
 };
 

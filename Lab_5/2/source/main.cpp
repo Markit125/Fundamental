@@ -1,12 +1,13 @@
 #include <iostream>
 #include <string>
+
 #include "allocator/allocator.h"
 #include "memory/memory.h"
 
 
 int main() {
 
-    memory *alloc = ::new allocator();
+    allocator *alloc = new allocator();
 
     double *constants = reinterpret_cast<double *>(alloc->allocate(sizeof(double) * 2));
 

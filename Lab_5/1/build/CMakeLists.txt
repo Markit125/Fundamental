@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Fundamental C CXX)
+project(Lab-5-1 C CXX)
 
 if (MSVC)
 add_compile_options(/W4 /WX)
@@ -17,6 +17,7 @@ add_executable(
         ../source/logger/concrete/logger_builder_concrete.cpp
         ../source/logger/concrete/logger_concrete.h
         ../source/logger/concrete/logger_concrete.cpp
+        ../source/logger/concrete/json.hpp
         ../source/logger/prototypes/logger.h
         ../source/logger/prototypes/logger.cpp
         ../source/logger/prototypes/logger_builder.h

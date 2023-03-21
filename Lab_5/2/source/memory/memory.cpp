@@ -19,3 +19,8 @@ memory::memory() {
 memory::~memory() {
 
 }
+
+
+size_t memory::get_size(void * const) const {
+    return 0;
+}
