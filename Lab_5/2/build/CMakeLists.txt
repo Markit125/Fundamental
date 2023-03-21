@@ -17,17 +17,15 @@ add_executable(
         ../source/allocator/allocator.cpp
         ../source/memory/memory.h
         ../source/memory/memory.cpp
-        # ../../1/
         ../../1/source/logger/concrete/logger_builder_concrete.h
         ../../1/source/logger/concrete/logger_builder_concrete.cpp
         ../../1/source/logger/concrete/logger_concrete.h
         ../../1/source/logger/concrete/logger_concrete.cpp
+        ../../1/source/logger/concrete/json.hpp
         ../../1/source/logger/prototypes/logger.h
         ../../1/source/logger/prototypes/logger.cpp
         ../../1/source/logger/prototypes/logger_builder.h
         ../../1/source/logger/prototypes/logger_builder.cpp
         ../../1/source/time/my_time.cpp
         ../../1/source/time/my_time.h
-        ../../1/source/logger/configure/configure_file.h
-        ../../1/source/logger/configure/configure_file.cpp
 )

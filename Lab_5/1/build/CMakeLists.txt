@@ -24,6 +24,4 @@ add_executable(
         ../source/logger/prototypes/logger_builder.cpp
         ../source/time/my_time.cpp
         ../source/time/my_time.h
-        ../source/logger/configure/configure_file.h
-        ../source/logger/configure/configure_file.cpp
 )
