@@ -16,7 +16,7 @@ public:
 
     memory_with_list();
 
-    memory_with_list(size_t, memory *, logger *, fit_type);
+    memory_with_list(size_t, memory_with_list *, logger *, fit_type);
 
     ~memory_with_list();
 
@@ -24,7 +24,7 @@ public:
 
     void *allocate(size_t, logger *, memory *, fit_type);
 
-    void *allocate_fit(size_t,  fit_type) override;
+    void *allocate_fit(size_t,  fit_type);
 
     void deallocate(void * const) const override;
 
@@ -38,17 +38,19 @@ public:
 
     void *memory_with_list_allocate(size_t, fit_type);
 
-    void **find_first_fit(void *, size_t size);
+    void **find_first_fit(size_t size);
 
-    void **find_best_fit(void *, size_t size);
+    void **find_best_fit(size_t size);
 
-    void **find_worst_fit(void *, size_t size);
+    void **find_worst_fit(size_t size);
 
     void *_next_block;
 
-    void **get_pointer_next(void * const);
+    void **get_pointer_next(void * const) const;
     
-    size_t get_size_service_block() const;
+    size_t get_size_service_block_allocator() const;
+
+    size_t get_size_service_block_block() const;
 
     void insert_allocator_to_pointer_list(void **);
 
@@ -56,7 +58,13 @@ public:
 
 private:
 
-    void set_size_allocator(void *, size_t);
+    void set_pointer_to_next_block(void *, void **);
+
+    void **get_pointer_to_end_allocator();
+
+    size_t get_space_beetween(void **, void **) const;
+
+    void set_size_block(void *, size_t);
 
     void *_allocated_memory;
 
