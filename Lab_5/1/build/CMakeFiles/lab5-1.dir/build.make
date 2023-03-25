@@ -153,20 +153,6 @@ CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/L
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp -o CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp.s
 
-CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o: CMakeFiles/lab5-1.dir/flags.make
-CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o: /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp
-CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o: CMakeFiles/lab5-1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o -MF CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o.d -o CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o -c /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp
-
-CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp > CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i
-
-CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp -o CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s
-
 # Object files for target lab5-1
 lab5__1_OBJECTS = \
 "CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/main.cpp.o" \
@@ -174,8 +160,7 @@ lab5__1_OBJECTS = \
 "CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.cpp.o" \
 "CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.cpp.o" \
 "CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger_builder.cpp.o" \
-"CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp.o" \
-"CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o"
+"CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp.o"
 
 # External object files for target lab5-1
 lab5__1_EXTERNAL_OBJECTS =
@@ -186,10 +171,9 @@ lab5-1: CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Funda
 lab5-1: CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.cpp.o
 lab5-1: CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger_builder.cpp.o
 lab5-1: CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/time/my_time.cpp.o
-lab5-1: CMakeFiles/lab5-1.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o
 lab5-1: CMakeFiles/lab5-1.dir/build.make
 lab5-1: CMakeFiles/lab5-1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable lab5-1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable lab5-1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab5-1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
