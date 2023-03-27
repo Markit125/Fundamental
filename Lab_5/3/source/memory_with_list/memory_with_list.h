@@ -28,9 +28,7 @@ public:
 
     void deallocate(void * const) const override;
 
-    size_t get_size(void * const) const override;
-
-    size_t get_size_block(const void * const) const;
+    size_t get_size_block(const void * const) const override;
 
     void *get_memory_pointer();
 
@@ -44,9 +42,9 @@ public:
 
     void *find_worst_fit(size_t size);
 
-    void **get_pointer_next(void * const) const;
+    void **get_pointer_next(const void * const) const;
 
-    void **get_pointer_previous(void * const) const;
+    void **get_pointer_previous(const void * const) const;
     
     size_t get_size_service_block_allocator() const;
 
@@ -61,6 +59,8 @@ public:
     std::string print_allocator(const memory_with_list * const) const;
 
 private:
+
+    void *trusted_memory_to_block() const;
 
     void set_pointer_to_next_block(void *, void *) const;
 

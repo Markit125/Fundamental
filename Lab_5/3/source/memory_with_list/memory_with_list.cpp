@@ -15,47 +15,55 @@ std::string cast_to_str(const T& object) {
 
 
 void memory_with_list::deallocate(void * const target_to_dealloc) const {
-
+    
     size_t size = get_size_block(target_to_dealloc);
-    void **ptr_next = get_pointer_next(target_to_dealloc);
-    void **ptr_prev = get_pointer_previous(target_to_dealloc);
-
-    _logger->log("Prev " + cast_to_str(*ptr_prev), logger::severity::trace);
-    _logger->log("Next " + cast_to_str(*ptr_next), logger::severity::trace);
-
-    _logger->log("Outer next " + cast_to_str(get_pointer_next(_trusted_memory)), logger::severity::trace);
-    _logger->log("Outer end  " + cast_to_str(get_pointer_to_end_pointer_allocator()), logger::severity::trace);
-
-    set_pointer_to_next_block(*ptr_prev, *ptr_next);
-
-    _logger->log("Prev " + cast_to_str(*ptr_prev), logger::severity::trace);
-    _logger->log("Next " + cast_to_str(*ptr_next), logger::severity::trace);
-
-    _logger->log("Outer next " + cast_to_str(get_pointer_next(_trusted_memory)), logger::severity::trace);
-    _logger->log("Outer end  " + cast_to_str(get_pointer_to_end_pointer_allocator()), logger::severity::trace);
-
     unsigned char *ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
+
+    if (target_to_dealloc == trusted_memory_to_block()) {
+
+        for (size_t i = 0; i < size; ++i) {
+            *(ptr++) = 0;
+        }
+
+        return;
+    }
+
+    void *next = *get_pointer_next(target_to_dealloc);
+    void *prev = *get_pointer_previous(target_to_dealloc);
+
+    _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
+    _logger->log("Next " + cast_to_str(next), logger::severity::trace);
+
+    _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
+    _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
+
+    prev = *get_pointer_previous(target_to_dealloc);
+    *(reinterpret_cast<void **>(prev) - 1) = next;
+
+    _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
+    _logger->log("Next " + cast_to_str(next), logger::severity::trace);
+
+    _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
+    _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
+
     for (size_t i = 0; i < size; ++i) {
         *(ptr++) = 0;
     }
 
-}   
+}
 
 
 memory_with_list::~memory_with_list() {
 
-    deallocate(reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 2));
+    deallocate(trusted_memory_to_block());
+
+    _logger->log("Deallocaded memory of allocator: " + print_allocator(this), logger::severity::information);
 
     _logger->log("Allocator is destroyed", logger::severity::information);
     // delete _logger;
 
     ::operator delete(_trusted_memory);
 
-}
-
-
-size_t memory_with_list::get_size(void * const object) const {
-    return *(reinterpret_cast<size_t *>(object) - 1);
 }
 
 
@@ -216,7 +224,7 @@ void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit
 
 
 void memory_with_list::insert_block_to_pointer_list(void *block) const {
-    void *ptr_current = reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 3);
+    void *ptr_current = trusted_memory_to_block();
     void *previous = ptr_current;
 
     // _logger->log("cur " + cast_to_str(ptr_current) + " prev " + cast_to_str(previous) + " block " + cast_to_str(block),
@@ -246,7 +254,7 @@ void memory_with_list::insert_block_to_pointer_list(void *block) const {
 
 
 void memory_with_list::set_pointer_to_next_block(void *block, void *pointer) const {
-    *(reinterpret_cast<void **>(reinterpret_cast<size_t *>(block) - 1)) = pointer;
+    *(reinterpret_cast<void **>(block) - 1) = pointer;
 }
 
 
@@ -361,8 +369,6 @@ size_t memory_with_list::get_space_beetween(void *ptr_current, void *ptr_next) c
 }
 
 
-
-
 size_t memory_with_list::get_size_block(const void * const block) const {
     return *(reinterpret_cast<size_t *>(const_cast<void *>(block)) - 2);
 }
@@ -373,13 +379,13 @@ void memory_with_list::set_size_block(void *block, size_t size) const {
 }
 
 
-void **memory_with_list::get_pointer_next(void * const block) const {
-    return reinterpret_cast<void **>(block) - 1;
+void **memory_with_list::get_pointer_next(const void * const block) const {
+    return reinterpret_cast<void **>(const_cast<void *>(block)) - 1;
 }
 
-void **memory_with_list::get_pointer_previous(void * const block) const {
-    void *current = _trusted_memory; // reinterpret_cast<void *>(reinterpret_cast<void **>(_allocated_memory) - 1);
-    void **previous;
+void **memory_with_list::get_pointer_previous(const void * const block) const {
+    void *current = trusted_memory_to_block();
+    void **previous = &current;
 
     while (current < block) {
         previous = &current;
@@ -422,4 +428,9 @@ std::string memory_with_list::print_allocator(const memory_with_list * const all
     ss << "]";
 
     return ss.str();
+}
+
+
+void *memory_with_list::trusted_memory_to_block() const {
+    return reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 3);
 }

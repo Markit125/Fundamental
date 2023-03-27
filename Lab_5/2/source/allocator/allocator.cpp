@@ -72,15 +72,15 @@ allocator::~allocator() {
 }
 
 
-size_t allocator::get_size(void * const object) const {
+size_t allocator::get_size_block(const void * const object) const {
     
-    return *(reinterpret_cast<size_t *>(object) - 1);
+    return *(reinterpret_cast<size_t *>(const_cast<void *>(object)) - 1);
 }
 
 
 std::string allocator::get_bytes(void * const memory) const {
     
-    size_t size = allocator::get_size(memory);
+    size_t size = allocator::get_size_block(memory);
     unsigned char *ptr = reinterpret_cast<unsigned char *>(memory);
     std::stringstream ss;
     while (size-- > 0) {

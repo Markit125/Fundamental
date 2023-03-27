@@ -64,5 +64,5 @@ int main() {
     // allocator->deallocate(inherit_allocator);
 
     // delete inherit_allocator;
-    // delete allocator;
+    delete allocator;
 }
