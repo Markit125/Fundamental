@@ -16,12 +16,14 @@ std::string cast_to_str(const T& object) {
 
 void memory_with_list::deallocate(void * const target_to_dealloc) const {
     
+    logger *_logger = get_logger();
+
     size_t size = get_size_block(target_to_dealloc);
     unsigned char *ptr;
 
     if (target_to_dealloc == trusted_memory_to_block()) {
 
-        ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<void **>(target_to_dealloc) - 3);
+        ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<void **>(target_to_dealloc) - 4);
         for (size_t i = 0; i < size; ++i) {
             *(ptr++) = 0;
         }
@@ -32,28 +34,28 @@ void memory_with_list::deallocate(void * const target_to_dealloc) const {
     void *next = *get_pointer_next(target_to_dealloc);
     void *prev = get_pointer_previous(target_to_dealloc);
 
-    _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
-    _logger->log("Next " + cast_to_str(next), logger::severity::trace);
+    if (nullptr != _logger) {
+        _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
+        _logger->log("Next " + cast_to_str(next), logger::severity::trace);
 
-    _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
-    _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
-
+        _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
+        _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
+    }
 
     *(reinterpret_cast<void **>(prev) - 1) = next;
 
-    _logger->log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ", logger::severity::trace);
     // prev = *get_pointer_previous(target_to_dealloc);
     // next = *get_pointer_next(prev);
 
     
+    if (nullptr != _logger) {
+        _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
+        _logger->log("Curr " + cast_to_str(target_to_dealloc), logger::severity::trace);
+        _logger->log("Next " + cast_to_str(next), logger::severity::trace);
 
-    _logger->log("Prev " + cast_to_str(prev), logger::severity::trace);
-    _logger->log("Curr " + cast_to_str(target_to_dealloc), logger::severity::trace);
-    _logger->log("Next " + cast_to_str(next), logger::severity::trace);
-
-    _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
-    _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
-
+        _logger->log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logger::severity::trace);
+        _logger->log("Outer end  " + cast_to_str(*get_pointer_to_end_pointer_allocator()), logger::severity::trace);
+    }
 
     ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
     for (size_t i = 0; i < size; ++i) {
@@ -63,14 +65,19 @@ void memory_with_list::deallocate(void * const target_to_dealloc) const {
 }
 
 
+logger *memory_with_list::get_logger() const {
+    return *reinterpret_cast<logger **>(_trusted_memory);
+}
+
+
 memory_with_list::~memory_with_list() {
 
-    // logger *log = get_logger();
+    logger *_logger = get_logger();
 
-    // if (log) {
-    //     _logger->log("Allocator is destroyed", logger::severity::information);
-    //     delete log;
-    // }
+    if (_logger) {
+        _logger->log("Allocator is destroyed", logger::severity::information);
+        // delete log;
+    }
 
     if (is_outer_allocator) {
         ::operator delete(_trusted_memory);
@@ -103,7 +110,11 @@ void *memory_with_list::get_memory_pointer() {
 
 void *memory_with_list::allocate(size_t const targer_size) const {
 
-    _logger->log("New memory allocating............................................", logger::severity::trace);
+    logger *_logger = get_logger();
+
+    if (nullptr != _logger) {
+        _logger->log("New memory allocating............................................", logger::severity::trace);
+    }
 
     void *new_memory = allocate_fit(targer_size + get_size_service_block_block(), _fit);
 
@@ -113,17 +124,19 @@ void *memory_with_list::allocate(size_t const targer_size) const {
         return nullptr;
     }
 
-    _logger->log("Allocated block " + std::to_string(targer_size) + " bytes of memory at "
-            + cast_to_str(new_memory), logger::severity::information);
 
-    _logger->log("new_memory " + print_memory(new_memory), logger::severity::trace);
-    _logger->log("_allocated_memory " + print_allocator(this), logger::severity::trace);
+    if (nullptr != _logger) {
+        _logger->log("Allocated block " + std::to_string(targer_size) + " bytes of memory at "
+                + cast_to_str(new_memory), logger::severity::information);
 
-    _logger->log("ALLOCATOR " + cast_to_str(_trusted_memory), logger::severity::trace);
-    _logger->log("Starts at     " + cast_to_str(_trusted_memory), logger::severity::trace);
-    _logger->log("New memory at " + cast_to_str(new_memory), logger::severity::trace);
-    _logger->log("Ends at       " + cast_to_str(*(get_pointer_to_end_pointer_allocator())), logger::severity::trace);
+        _logger->log("new_memory " + print_memory(new_memory), logger::severity::trace);
+        _logger->log("_allocated_memory " + print_allocator(this), logger::severity::trace);
 
+        _logger->log("ALLOCATOR " + cast_to_str(_trusted_memory), logger::severity::trace);
+        _logger->log("Starts at     " + cast_to_str(_trusted_memory), logger::severity::trace);
+        _logger->log("New memory at " + cast_to_str(new_memory), logger::severity::trace);
+        _logger->log("Ends at       " + cast_to_str(*(get_pointer_to_end_pointer_allocator())), logger::severity::trace);
+    }
 
     return new_memory;
 }
@@ -133,27 +146,35 @@ void *memory_with_list::allocate(size_t const targer_size) const {
 memory_with_list::memory_with_list(
         size_t size, memory_with_list *outer_allocator, logger *memory_logger,
         memory_with_list::fit_type fit = memory_with_list::fit_type::first
-    ) : _logger { memory_logger }, _fit { fit } {
-
-
-    _logger->log("New allocator allocating.........................................", logger::severity::trace);
+    ) : _fit { fit } {
+    
 
     _trusted_memory = outer_allocator == nullptr ?
         ::operator new(size + get_size_service_block_allocator()) :
         outer_allocator->allocate_fit(size + get_size_service_block_allocator() + get_size_service_block_block(), fit);
 
+
+    logger *_logger = nullptr;
+    if (outer_allocator) {
+        _logger = get_logger();
+    }
+
+
     if (_trusted_memory == nullptr) {
-        
-        _logger->log("Cannot allocate " + cast_to_str(size) + " bytes of memory", logger::severity::error);
+
+        if (_logger != nullptr) {
+            _logger->log("Cannot allocate " + cast_to_str(size) + " bytes of memory", logger::severity::error);
+        }    
 
         throw std::runtime_error("There is not enough space for allocator!");
         return;
     }
 
 
-    _logger->log("New allocator _allocated_memory " + cast_to_str(reinterpret_cast<size_t *>(_trusted_memory) + 2), logger::severity::trace);
+    logger **logger_ptr = reinterpret_cast<logger **>(_trusted_memory);
+    *logger_ptr = memory_logger;
 
-    if (outer_allocator) {
+    if (outer_allocator && _logger != nullptr) {
 
         _logger->log("Memory of new Allocator", logger::severity::trace);
         _logger->log("Start at " + cast_to_str(outer_allocator->_trusted_memory), logger::severity::trace);
@@ -161,35 +182,41 @@ memory_with_list::memory_with_list(
         _logger->log("  End at " + cast_to_str(*(outer_allocator->get_pointer_to_end_pointer_allocator())), logger::severity::trace);
     }
 
-    _logger->log("Allocated allocator with " + cast_to_str(size) + " bytes of memory at " + cast_to_str(_trusted_memory),
-                logger::severity::information);
+
+    if (nullptr != _logger) {
+        _logger->log("Allocated allocator with " + cast_to_str(size) + " bytes of memory at " + cast_to_str(_trusted_memory),
+                    logger::severity::information);
+    }
 
 
     void **end_ptr = get_pointer_to_end_pointer_allocator();
     *end_ptr = reinterpret_cast<void *>(reinterpret_cast<unsigned char *>(_trusted_memory) + size + get_size_service_block_allocator());
 
-    size_t *pointer_size = reinterpret_cast<size_t *>(_trusted_memory) + 1;
+    size_t *pointer_size = reinterpret_cast<size_t *>(_trusted_memory) + 2;
     *pointer_size = size;
 
-    void **first_block = reinterpret_cast<void **>(_trusted_memory) + 2;
+    void **first_block = reinterpret_cast<void **>(_trusted_memory) + 3;
     *first_block = *end_ptr;
+
 
     if (outer_allocator == nullptr) {
 
         is_outer_allocator = true;
 
-        unsigned char *ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(_trusted_memory) + 3);
+        unsigned char *ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(_trusted_memory) + 4);
         for (size_t i = 0; i < size; ++i) {
             *(ptr++) = 0;
         }
         
     }
 
+    if (nullptr != _logger) {
 
-    _logger->log("New allocator _allocated_memory " + print_allocator(this), logger::severity::trace);
+        _logger->log("New allocator _allocated_memory " + print_allocator(this), logger::severity::trace);
 
-    if (outer_allocator) {
-        _logger->log("_allocated_memory " + print_allocator(outer_allocator), logger::severity::trace);
+        if (outer_allocator) {
+            _logger->log("_allocated_memory " + print_allocator(outer_allocator), logger::severity::trace);
+        }
     }
 
 }
@@ -197,11 +224,15 @@ memory_with_list::memory_with_list(
 
 void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit = memory_with_list::fit_type::first) const {
 
+    logger *_logger = get_logger();    
+
     void *fit_memory_block = nullptr;
     
-
-    _logger->log("Start finding memory block for allocator with size " + cast_to_str(size) + " bytes",
-                logger::severity::information);
+    if (nullptr != _logger) {
+        _logger->log("Start finding memory block for allocator with size " + cast_to_str(size) + " bytes",
+                    logger::severity::information);
+    }
+    
 
     if (fit == memory_with_list::fit_type::first) {
         fit_memory_block = memory_with_list::find_first_fit(size);
@@ -212,12 +243,14 @@ void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit
     }
 
 
-    _logger->log("(allocate_fit) block at " + cast_to_str(fit_memory_block), logger::severity::trace);
-
     if (fit_memory_block == nullptr) {
-        _logger->log("There is no memory for allocator with size " + cast_to_str(size), logger::severity::error);
+
+        if (nullptr != _logger) {
+            _logger->log("There is no memory for allocator with size " + cast_to_str(size), logger::severity::error);
+        }
+
         return nullptr;
-    } else {
+    } else if (nullptr != _logger) {
         _logger->log(cast_to_str(size) + " bytes of memory is allocated", logger::severity::trace);
     }
 
@@ -276,7 +309,7 @@ void memory_with_list::set_pointer_to_next_block(void *block, void *pointer) con
 
 
 void **memory_with_list::get_pointer_to_end_pointer_allocator() const {
-    return reinterpret_cast<void **>(_trusted_memory);
+    return reinterpret_cast<void **>(_trusted_memory) + 1;
 }
 
 // Allocator
@@ -288,28 +321,33 @@ void **memory_with_list::get_pointer_to_end_pointer_allocator() const {
 void *memory_with_list::find_first_fit(size_t size) const {
     //                          size of block plus service block
 
+    logger *_logger = get_logger();
+
     void **ptr_next = get_pointer_next(trusted_memory_to_block());
 
-    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 3);
+    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 4);
     void **ptr_current = &current_memory;
     
     void *end = *get_pointer_to_end_pointer_allocator();
     void **fit = nullptr;
     size_t free_space;
 
+    if (nullptr != _logger) {
+        _logger->log("Start jumping between memory blocks", logger::severity::trace);
 
-    _logger->log("Start jumping between memory blocks", logger::severity::trace);
-
-    _logger->log(">>>>>>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
+        _logger->log(">>>>>>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
         _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
         _logger->log("prt_end: " + cast_to_str(end), logger::severity::trace);
+    }
     
     if (*ptr_next == end) {
 
         free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
-        _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(end) +
-                     " is " + cast_to_str(free_space), logger::severity::trace);
+        if (nullptr != _logger) {
+            _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(end) +
+                        " is " + cast_to_str(free_space), logger::severity::trace);
+        }
 
         if (free_space >= size) {
             current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 2);
@@ -324,10 +362,12 @@ void *memory_with_list::find_first_fit(size_t size) const {
 
             
             free_space = get_space_beetween(*ptr_current, *ptr_next);
-        
-            _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
-                        " is " + cast_to_str(free_space),
-                        logger::severity::trace);
+
+            if (nullptr != _logger) {
+                _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+                            " is " + cast_to_str(free_space),
+                            logger::severity::trace);
+            }
 
 
             if (free_space >= size) {
@@ -346,9 +386,11 @@ void *memory_with_list::find_first_fit(size_t size) const {
 
             // _logger->log("----->>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
 
-            _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
-            _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            _logger->log("prt_end: " + cast_to_str(end), logger::severity::trace);
+            if (nullptr != _logger) {
+                _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
+                _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
+                _logger->log("prt_end: " + cast_to_str(end), logger::severity::trace);
+            }
         }
     }
 
@@ -356,17 +398,20 @@ void *memory_with_list::find_first_fit(size_t size) const {
 
     if (*ptr_current == end) {
         
-        _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
-                    logger::severity::error);
+        if (nullptr != _logger) {
+            _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
+                        logger::severity::error);
+        }
         return nullptr;
 
-    } else {
+    } else if (nullptr != _logger) {
         _logger->log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logger::severity::information);
     }
 
-    _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
-
-    _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    if (nullptr != _logger) {
+        _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
+        _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    }
 
     return *fit;
 }
@@ -374,31 +419,33 @@ void *memory_with_list::find_first_fit(size_t size) const {
 
 void *memory_with_list::find_best_fit(size_t size) const {
     //                          size of block plus service block
-    void **ptr_next = reinterpret_cast<void **>(_trusted_memory) + 2;
 
-    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 3);
+    logger *_logger = get_logger();
+
+    void **ptr_next = get_pointer_next(trusted_memory_to_block());
+
+    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 4);
     void **ptr_current = &current_memory;
     
     void **fit = nullptr;
     size_t free_space;
 
-
-    _logger->log("Start jumping between memory blocks", logger::severity::trace);
-
+    if (nullptr != _logger) {
+        _logger->log("Start jumping between memory blocks", logger::severity::trace);
+    }
 
     void **ptr_end = get_pointer_to_end_pointer_allocator();
 
 
-
-    _logger->log(">>>>>>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-        _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
     
     if (*ptr_next == *ptr_end) {
 
         free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
-        _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
-                     " is " + cast_to_str(free_space), logger::severity::trace);
+        if (nullptr != _logger) {
+            _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
+                        " is " + cast_to_str(free_space), logger::severity::trace);
+        }
 
         if (free_space >= size) {
             current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 2);
@@ -414,10 +461,12 @@ void *memory_with_list::find_best_fit(size_t size) const {
         while (*ptr_current < *ptr_end) {
             
             free_space = get_space_beetween(*ptr_current, *ptr_next);
-        
-            _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
-                        " is " + cast_to_str(free_space),
-                        logger::severity::trace);
+
+            if (nullptr != _logger) {
+                _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+                            " is " + cast_to_str(free_space),
+                            logger::severity::trace);
+            }
 
 
             if (free_space >= size) {
@@ -431,17 +480,13 @@ void *memory_with_list::find_best_fit(size_t size) const {
 
             }
 
-            // _logger->log("----->>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            // _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
-
             ptr_current = get_pointer_next(*ptr_current);
             ptr_next = get_pointer_next(*ptr_current);
 
-            // _logger->log("----->>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            // _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
-
-            _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
+            if (nullptr != _logger) {
+                _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
+                _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
+            }
         }
     }
 
@@ -449,17 +494,21 @@ void *memory_with_list::find_best_fit(size_t size) const {
 
     if (*ptr_current == *ptr_end) {
         
-        _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
-                    logger::severity::error);
+        if (nullptr != _logger) {
+            _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
+                        logger::severity::error);
+        }
+
         return nullptr;
 
-    } else {
+    } else if (nullptr != _logger) {
         _logger->log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logger::severity::information);
     }
 
-    _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
-
-    _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    if (nullptr != _logger) {
+        _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
+        _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    }
 
     return *fit;
 }
@@ -467,31 +516,32 @@ void *memory_with_list::find_best_fit(size_t size) const {
 
 void *memory_with_list::find_worst_fit(size_t size) const {
     //                          size of block plus service block
-    void **ptr_next = reinterpret_cast<void **>(_trusted_memory) + 2;
 
-    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 3);
+    logger *_logger = get_logger();
+
+    void **ptr_next = get_pointer_next(trusted_memory_to_block());
+
+    void *current_memory = reinterpret_cast<void *>(reinterpret_cast<void **>(_trusted_memory) + 4);
     void **ptr_current = &current_memory;
     
     void **fit = nullptr;
     size_t free_space;
 
-
-    _logger->log("Start jumping between memory blocks", logger::severity::trace);
-
+    if (nullptr != _logger) {
+        _logger->log("Start jumping between memory blocks", logger::severity::trace);
+    }
 
     void **ptr_end = get_pointer_to_end_pointer_allocator();
 
-
-
-    _logger->log(">>>>>>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-        _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
     
     if (*ptr_next == *ptr_end) {
 
         free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
-        _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
-                     " is " + cast_to_str(free_space), logger::severity::trace);
+        if (nullptr != _logger) {
+            _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
+                        " is " + cast_to_str(free_space), logger::severity::trace);
+        }
 
         if (free_space >= size) {
             current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 2);
@@ -507,11 +557,12 @@ void *memory_with_list::find_worst_fit(size_t size) const {
         while (*ptr_current < *ptr_end) {
             
             free_space = get_space_beetween(*ptr_current, *ptr_next);
-        
-            _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
-                        " is " + cast_to_str(free_space),
-                        logger::severity::trace);
 
+            if (nullptr != _logger) {
+                _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+                            " is " + cast_to_str(free_space),
+                            logger::severity::trace);
+            }
 
             if (free_space >= size) {
 
@@ -524,34 +575,35 @@ void *memory_with_list::find_worst_fit(size_t size) const {
 
             }
 
-            // _logger->log("----->>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            // _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
-
             ptr_current = get_pointer_next(*ptr_current);
             ptr_next = get_pointer_next(*ptr_current);
 
-            // _logger->log("----->>>ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            // _logger->log("prt_next: " + cast_to_str(*ptr_next), logger::severity::trace);
-
-            _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
-            _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
+            if (nullptr != _logger) {
+                _logger->log("ptr_current: " + cast_to_str(*ptr_current), logger::severity::trace);
+                _logger->log("prt_end: " + cast_to_str(*ptr_end), logger::severity::trace);
+            }
         }
     }
 
 
     if (*ptr_current == *ptr_end) {
         
-        _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
-                    logger::severity::error);
+        if (nullptr != _logger) {
+            _logger->log("Cannot find memory block with " + cast_to_str(size) + " bytes of memory (first fit)",
+                        logger::severity::error);
+        }
+
         return nullptr;
 
-    } else {
+    } else if (nullptr != _logger) {
         _logger->log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logger::severity::information);
     }
 
-    _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
 
-    _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    if (nullptr != _logger) {
+        _logger->log("_allocated_memory " + cast_to_str(_trusted_memory), logger::severity::trace);
+        _logger->log("block fit " + cast_to_str(*fit), logger::severity::trace);
+    }
 
     return *fit;
 }
@@ -600,7 +652,7 @@ void *memory_with_list::get_pointer_previous(const void * const block) const {
 
 
 size_t memory_with_list::get_size_service_block_allocator() const {
-    return sizeof(size_t) + sizeof(void *) + sizeof(void *);
+    return sizeof(size_t) + sizeof(void *) + sizeof(void *) + sizeof(logger **);
 }
 
 
@@ -640,7 +692,7 @@ std::string memory_with_list::print_allocator_data(const memory_with_list * cons
     ss << "[ ";
 
 
-    unsigned char *ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<void **>(allocator->_trusted_memory) + 3);
+    unsigned char *ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<void **>(allocator->_trusted_memory) + 4);
     void **ptr_end = allocator->get_pointer_to_end_pointer_allocator();
 
     while (ptr < *ptr_end) {
@@ -654,5 +706,5 @@ std::string memory_with_list::print_allocator_data(const memory_with_list * cons
 
 
 void *memory_with_list::trusted_memory_to_block() const {
-    return reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 3);
+    return reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 4);
 }

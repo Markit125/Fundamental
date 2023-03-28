@@ -52,7 +52,7 @@ public:
 
     void insert_block_to_pointer_list(void *) const;
 
-    logger *get_logger();
+    logger *get_logger() const;
 
 
     std::string print_memory(const void * const) const;
@@ -74,8 +74,6 @@ private:
     void set_size_block(void *, size_t) const;
 
     void *_trusted_memory;
-
-    logger *_logger;
 
     fit_type _fit;
 
