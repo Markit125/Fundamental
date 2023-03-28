@@ -29,11 +29,13 @@ public:
 
     virtual void deallocate(void * const) const = 0;
 
-    virtual size_t get_size_block(const void * const) const;
+    // virtual size_t get_size_block(const void * const) const;
 
 protected:
 
     logger *_logger_allocator;
+
+    void *_trusted_memory;
 
 };
 

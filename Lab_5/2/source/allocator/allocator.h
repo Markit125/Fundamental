@@ -22,7 +22,7 @@ public:
 
     void deallocate(void * const) const override;
 
-    size_t get_size_block(const void * const) const override;
+    size_t get_size_block(const void * const) const;
 
 private:
 

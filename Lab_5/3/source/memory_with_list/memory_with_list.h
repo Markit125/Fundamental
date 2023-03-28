@@ -16,7 +16,7 @@ public:
 
     memory_with_list();
 
-    memory_with_list(size_t, memory_with_list *, logger *, fit_type);
+    memory_with_list(size_t, memory *, logger *, fit_type);
 
     ~memory_with_list();
 
@@ -28,7 +28,7 @@ public:
 
     void deallocate(void * const) const override;
 
-    size_t get_size_block(const void * const) const override;
+    size_t get_size_block(const void * const) const;
 
     void *get_memory_pointer();
 
@@ -57,11 +57,13 @@ public:
 
     std::string print_memory(const void * const) const;
 
-    std::string print_allocator(const memory_with_list * const) const;
+    std::string print_allocator(const memory * const) const;
 
-    std::string print_allocator_data(const memory_with_list * const) const;
+    std::string print_allocator_data(const memory * const) const;
 
 private:
+
+    void clear_logger() const;
 
     void *trusted_memory_to_block() const;
 

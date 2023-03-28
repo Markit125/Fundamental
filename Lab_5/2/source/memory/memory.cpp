@@ -19,8 +19,3 @@ memory::memory() {
 memory::~memory() {
 
 }
-
-
-size_t memory::get_size_block(const void * const) const {
-    return 0;
-}
