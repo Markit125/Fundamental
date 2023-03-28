@@ -1,3 +1,0 @@
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/build/CMakeFiles/lab5-3.dir
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/build/CMakeFiles/edit_cache.dir
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/build/CMakeFiles/rebuild_cache.dir

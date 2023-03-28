@@ -151,7 +151,7 @@ memory_with_list::memory_with_list(
 
     _trusted_memory = outer_allocator == nullptr ?
         ::operator new(size + get_size_service_block_allocator()) :
-        outer_allocator->allocate_fit(size + get_size_service_block_allocator() + get_size_service_block_block(), fit);
+        outer_allocator->allocate(size + get_size_service_block_allocator());
 
 
     logger *_logger = nullptr;
@@ -224,7 +224,7 @@ memory_with_list::memory_with_list(
 
 void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit = memory_with_list::fit_type::first) const {
 
-    logger *_logger = get_logger();    
+    logger *_logger = get_logger();
 
     void *fit_memory_block = nullptr;
     
