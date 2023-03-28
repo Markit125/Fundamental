@@ -38,13 +38,13 @@ public:
 
     void *find_first_fit(size_t size) const;
 
-    void *find_best_fit(size_t size);
+    void *find_best_fit(size_t size) const;
 
-    void *find_worst_fit(size_t size);
+    void *find_worst_fit(size_t size) const;
 
     void **get_pointer_next(const void * const) const;
 
-    void **get_pointer_previous(const void * const) const;
+    void *get_pointer_previous(const void * const) const;
     
     size_t get_size_service_block_allocator() const;
 
@@ -52,11 +52,14 @@ public:
 
     void insert_block_to_pointer_list(void *) const;
 
+    logger *get_logger();
 
 
     std::string print_memory(const void * const) const;
 
     std::string print_allocator(const memory_with_list * const) const;
+
+    std::string print_allocator_data(const memory_with_list * const) const;
 
 private:
 
@@ -75,6 +78,8 @@ private:
     logger *_logger;
 
     fit_type _fit;
+
+    bool is_outer_allocator {};
 
     std::string get_bytes(const void * const) const;
 
