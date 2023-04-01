@@ -177,30 +177,6 @@ home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/c
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5-2.dir/build.make CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.cpp.s
 .PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.cpp.s
 
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.o: home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.o
-
-# target to build an object file
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5-2.dir/build.make CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o
-
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.i: home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.i
-
-# target to preprocess a source file
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5-2.dir/build.make CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.i
-
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.s: home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.s
-
-# target to generate assembly for a file
-home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5-2.dir/build.make CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s
-.PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.s
-
 home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.o: home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.cpp.o
 .PHONY : home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.o
 
@@ -360,9 +336,6 @@ help:
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.o"
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.i"
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.s"
-	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.o"
-	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.i"
-	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.s"
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.o"
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.i"
 	@echo "... home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.s"

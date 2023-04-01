@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+namespace logging {
+
 class logger {
 
 public:
@@ -25,5 +27,7 @@ public:
     virtual logger const *log(const std::string &, severity) const = 0;
 
 };
+
+}
 
 #endif //SANDBOX_CPP_LOGGER_H

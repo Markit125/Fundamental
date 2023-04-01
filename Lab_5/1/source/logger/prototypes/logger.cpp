@@ -1,5 +1,5 @@
 #include "logger.h"
 
-logger::~logger() {
+logging::logger::~logger() {
 
 }

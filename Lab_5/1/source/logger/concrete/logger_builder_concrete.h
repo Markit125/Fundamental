@@ -7,13 +7,13 @@
 #include <fstream>
 
 
-class logger_builder_concrete final : public logger_builder {
+class logger_builder_concrete final : public logging::logger_builder {
 
 private:
 
-    std::map<std::string, logger::severity> _construction_info;
+    std::map<std::string, logging::logger::severity> _construction_info;
 
-    logger::severity str_to_severity(std::string const);
+    logging::logger::severity str_to_severity(std::string const);
 
 public:
 
@@ -21,11 +21,11 @@ public:
 
     ~logger_builder_concrete();
 
-    logger_builder *add_stream(std::string const &, logger::severity) override;
+    logger_builder *add_stream(std::string const &, logging::logger::severity) override;
 
-    logger *construct_configuration(std::string const &) override;
+    logging::logger *construct_configuration(std::string const &) override;
 
-    logger *construct() const override;
+    logging::logger *construct() const override;
 
 };
 

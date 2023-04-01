@@ -3,6 +3,7 @@
 
 #include "../concrete/logger_concrete.h"
 
+namespace logging {
 
 class configurator {
 
@@ -20,5 +21,6 @@ private:
 
 };
 
+}
 
 #endif

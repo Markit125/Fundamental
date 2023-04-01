@@ -1,21 +1,21 @@
 #include "memory.h"
 
 
-void *memory::operator+=(size_t const &size) {
+void *allocating::memory::operator+=(size_t const &size) {
     return allocate(size);
 }
 
 
-void memory::operator-=(void *memory_object) {
+void allocating::memory::operator-=(void *memory_object) {
     deallocate(memory_object);
 }
 
 
-memory::memory() {
+allocating::memory::memory() {
     
 }
 
 
-memory::~memory() {
+allocating::memory::~memory() {
 
 }

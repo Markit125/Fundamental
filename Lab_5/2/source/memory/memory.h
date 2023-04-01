@@ -5,6 +5,8 @@
 #include "../../../1/source/logger/prototypes/logger.h"
 
 
+namespace allocating {
+
 class memory {
 
 public:
@@ -33,10 +35,12 @@ public:
 
 protected:
 
-    logger *_logger_allocator;
+    logging::logger *_logger_allocator;
 
     void *_trusted_memory;
 
 };
+
+}
 
 #endif

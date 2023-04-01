@@ -9,14 +9,16 @@
 #include <cstddef>
 
 
+namespace allocating {
 
-class memory_with_list final : public memory {
+
+class memory_with_list final : public allocating::memory {
 
 public:
 
     memory_with_list();
 
-    memory_with_list(size_t, memory *, logger *, fit_type);
+    memory_with_list(size_t, memory *, logging::logger *, fit_type);
 
     ~memory_with_list() override;
 
@@ -46,7 +48,7 @@ public:
 
     void insert_block_to_pointer_list(void *) const;
 
-    logger *get_logger() const;
+    logging::logger *get_logger() const;
 
     static std::string print_memory(const void *);
 
@@ -78,5 +80,6 @@ private:
 
 };
 
+}
 
 #endif

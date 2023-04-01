@@ -4,6 +4,7 @@
 #include <iostream>
 #include "logger.h"
 
+namespace logging {
 
 class logger_builder {
 
@@ -22,5 +23,7 @@ public:
     virtual ~logger_builder();
 
 };
+
+}
 
 #endif //SANDBOX_CPP_LOGGER_BUILDER_H

@@ -6,7 +6,10 @@
 #include <map>
 
 
-class logger_concrete final : public logger {
+namespace logging {
+
+
+class logger_concrete final : public logging::logger {
 
     friend class logger_builder_concrete;
     friend class configurator;
@@ -19,7 +22,7 @@ private:
 
     static std::map<std::string, std::pair<std::ofstream *, size_t> > _streams;
 
-private:
+public:
 
     logger_concrete(std::map<std::string, logger::severity> const &);
 
@@ -36,5 +39,7 @@ public:
     logger const *log(const std::string &, severity) const override;
 
 };
+
+}
 
 #endif //SANDBOX_CPP_LOGGER_CONCRETE_H

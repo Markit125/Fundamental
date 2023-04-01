@@ -3,20 +3,20 @@
 #include <fstream>
 
 
-logger_builder *logger_builder_concrete::add_stream(
+logging::logger_builder *logger_builder_concrete::add_stream(
     std::string const &path,
-    logger::severity severity) {
+    logging::logger::severity severity) {
     _construction_info[path] = severity;
 
     return this;
 }
 
 
-logger *logger_builder_concrete::construct() const {
-    return new logger_concrete(_construction_info);
+logging::logger *logger_builder_concrete::construct() const {
+    return new logging::logger_concrete(_construction_info);
 }
 
-logger *logger_builder_concrete::construct_configuration(const std::string & filename) {
+logging::logger *logger_builder_concrete::construct_configuration(const std::string & filename) {
 
     std::ifstream conf_file(filename);
     std::stringstream buf;
@@ -44,18 +44,18 @@ logger_builder_concrete::~logger_builder_concrete() {
 }
 
 
-logger::severity logger_builder_concrete::str_to_severity(std::string const str) {
+logging::logger::severity logger_builder_concrete::str_to_severity(std::string const str) {
     if (str == "trace") {
-        return logger::severity::trace;
+        return logging::logger::severity::trace;
     } else if (str == "debug") {
-        return logger::severity::debug;
+        return logging::logger::severity::debug;
     } else if (str == "info") {
-        return logger::severity::information;
+        return logging::logger::severity::information;
     } else if (str == "warning") {
-        return logger::severity::warning;
+        return logging::logger::severity::warning;
     } else if (str == "error") {
-        return logger::severity::error;
+        return logging::logger::severity::error;
     } else {
-        return logger::severity::critical;
+        return logging::logger::severity::critical;
     }
 }

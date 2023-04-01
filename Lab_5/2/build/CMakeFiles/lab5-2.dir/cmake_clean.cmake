@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_builder_concrete.cpp.o.d"
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.cpp.o"
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/concrete/logger_concrete.cpp.o.d"
-  "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o"
-  "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/configure/configure_file.cpp.o.d"
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.cpp.o"
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger.cpp.o.d"
   "CMakeFiles/lab5-2.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Lab_5/1/source/logger/prototypes/logger_builder.cpp.o"

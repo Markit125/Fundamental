@@ -8,7 +8,7 @@
 #include "../../../1/source/logger/prototypes/logger.h"
 #include <cstddef>
 
-
+namespace allocating {
 
 class allocator : public memory {
 
@@ -32,5 +32,6 @@ private:
 
 };
 
+}
 
 #endif

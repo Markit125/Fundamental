@@ -7,11 +7,11 @@
 #include "../../time/my_time.h"
 
 
-std::map<std::string, std::pair<std::ofstream *, size_t>> logger_concrete::_streams =
+std::map<std::string, std::pair<std::ofstream *, size_t>> logging::logger_concrete::_streams =
     std::map<std::string, std::pair<std::ofstream *, size_t>>();
 
-logger_concrete::logger_concrete(
-    std::map<std::string, logger::severity> const & targets) {
+logging::logger_concrete::logger_concrete(
+    std::map<std::string, logging::logger::severity> const & targets) {
     for (auto & target : targets) {
         auto global_stream = _streams.find(target.first);
         std::ofstream *stream = nullptr;
@@ -33,7 +33,7 @@ logger_concrete::logger_concrete(
     }
 }
 
-logger_concrete::~logger_concrete() {
+logging::logger_concrete::~logger_concrete() {
     for (auto & logger_stream : _logger_streams) {
         auto global_stream = _streams.find(logger_stream.first);
         
@@ -53,28 +53,28 @@ logger_concrete::~logger_concrete() {
     }
 }
 
-std::string get_severity(logger::severity severity) {
+std::string get_severity(logging::logger::severity severity) {
     switch (severity) {
-        case logger::severity::trace:
+        case logging::logger::severity::trace:
             return "[TRACE]";
-        case logger::severity::debug:
+        case logging::logger::severity::debug:
             return "[DEBUG]";
-        case logger::severity::information:
+        case logging::logger::severity::information:
             return "[INFO]";
-        case logger::severity::warning:
+        case logging::logger::severity::warning:
             return "[WARNING]";
-        case logger::severity::error:
+        case logging::logger::severity::error:
             return "[ERROR]";
-        case logger::severity::critical:
+        case logging::logger::severity::critical:
             return "[CRITICAL]";
         default:
             return "[UNDEFINED]";
     }
 }
 
-logger const *logger_concrete::log(
+logging::logger const *logging::logger_concrete::log(
     const std::string &to_log,
-    logger::severity severity) const {
+    logging::logger::severity severity) const {
     for (auto & logger_stream : _logger_streams) {
         if (logger_stream.second.second > severity) {
             continue;

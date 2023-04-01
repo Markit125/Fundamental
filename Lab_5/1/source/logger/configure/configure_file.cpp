@@ -8,25 +8,25 @@
 
 
 
-logger::severity configurator::str_to_severity(std::string const str) {
+logging::logger::severity logging::configurator::str_to_severity(std::string const str) {
     if (str == "trace") {
-        return logger::severity::trace;
+        return logging::logger::severity::trace;
     } else if (str == "debug") {
-        return logger::severity::debug;
+        return logging::logger::severity::debug;
     } else if (str == "info") {
-        return logger::severity::information;
+        return logging::logger::severity::information;
     } else if (str == "warning") {
-        return logger::severity::warning;
+        return logging::logger::severity::warning;
     } else if (str == "error") {
-        return logger::severity::error;
+        return logging::logger::severity::error;
     } else {
-        return logger::severity::critical;
+        return logging::logger::severity::critical;
     }
 }
 
 
-logger *configurator::configure_from_file(std::string const filename) {
-    std::map<std::string, logger::severity> construction_info;
+logging::logger *logging::configurator::configure_from_file(std::string const filename) {
+    std::map<std::string, logging::logger::severity> construction_info;
 
     std::ifstream file(filename, std::ios::in);
     if (!file.is_open()) {
@@ -57,11 +57,11 @@ logger *configurator::configure_from_file(std::string const filename) {
 }
 
 
-configurator::configurator() {
+logging::configurator::configurator() {
 
 }
 
 
-configurator::~configurator() {
+logging::configurator::~configurator() {
     
 }
