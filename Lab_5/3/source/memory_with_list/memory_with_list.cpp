@@ -1,6 +1,4 @@
 #include "memory_with_list.h"
-#include "logger.h"
-#include <cstddef>
 #include <stdexcept>
 #include <string>
 #include <sstream>
@@ -89,7 +87,7 @@ memory_with_list::~memory_with_list() {
 }
 
 
-std::string memory_with_list::get_bytes(const void * const memory) const {
+std::string memory_with_list::get_bytes(const void * const memory) {
     
     size_t size = get_size_block(memory) + get_size_service_block_block();
     unsigned char *ptr = reinterpret_cast<unsigned char *>(const_cast<void *>(memory)) - 2;
@@ -108,7 +106,7 @@ void *memory_with_list::get_memory_pointer() {
 }
 
 
-void *memory_with_list::allocate(size_t const targer_size) const {
+void *memory_with_list::allocate(const size_t target_size) const {
 
     logger *_logger = get_logger();
 
@@ -116,18 +114,17 @@ void *memory_with_list::allocate(size_t const targer_size) const {
         _logger->log("New memory allocating............................................", logger::severity::trace);
     }
 
-    void *new_memory = allocate_fit(targer_size + get_size_service_block_block(), _fit);
+    void *new_memory = allocate_fit(target_size + get_size_service_block_block(), _fit);
 
     if (new_memory == nullptr) {
 
         throw std::runtime_error("There is not enough space for memory allocation!");
-        return nullptr;
     }
 
 
     if (nullptr != _logger) {
-        _logger->log("Allocated block " + std::to_string(targer_size) + " bytes of memory at "
-                + cast_to_str(new_memory), logger::severity::information);
+        _logger->log("Allocated block " + std::to_string(target_size) + " bytes of memory at "
+                     + cast_to_str(new_memory), logger::severity::information);
 
         _logger->log("new_memory " + print_memory(new_memory), logger::severity::trace);
         _logger->log("_allocated_memory " + print_allocator(this), logger::severity::trace);
@@ -167,7 +164,6 @@ memory_with_list::memory_with_list(
         }    
 
         throw std::runtime_error("There is not enough space for allocator!");
-        return;
     }
 
 
@@ -211,12 +207,7 @@ memory_with_list::memory_with_list(
     }
 
     if (nullptr != _logger) {
-
         _logger->log("New allocator _allocated_memory " + print_allocator(this), logger::severity::trace);
-
-        if (outer_allocator) {
-            // _logger->log("_allocated_memory " + print_allocator(outer_allocator), logger::severity::trace);
-        }
     }
 
 }
@@ -226,7 +217,7 @@ void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit
 
     logger *_logger = get_logger();
 
-    void *fit_memory_block = nullptr;
+    void *fit_memory_block;
     
     if (nullptr != _logger) {
         _logger->log("Start finding memory block for allocator with size " + cast_to_str(size) + " bytes",
@@ -236,7 +227,7 @@ void *memory_with_list::allocate_fit(size_t size, memory_with_list::fit_type fit
 
     if (fit == memory_with_list::fit_type::first) {
         fit_memory_block = memory_with_list::find_first_fit(size);
-    } else if (memory_with_list::fit_type::best) {
+    } else if (fit == memory_with_list::fit_type::best) {
         fit_memory_block = memory_with_list::find_best_fit(size);
     } else {
         fit_memory_block = memory_with_list::find_worst_fit(size);
@@ -303,7 +294,7 @@ void memory_with_list::insert_block_to_pointer_list(void *block) const {
 }
 
 
-void memory_with_list::set_pointer_to_next_block(void *block, void *pointer) const {
+void memory_with_list::set_pointer_to_next_block(void *block, void *pointer) {
     *(reinterpret_cast<void **>(block) - 1) = pointer;
 }
 
@@ -342,7 +333,7 @@ void *memory_with_list::find_first_fit(size_t size) const {
     
     if (*ptr_next == end) {
 
-        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
         if (nullptr != _logger) {
             _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(end) +
@@ -361,7 +352,7 @@ void *memory_with_list::find_first_fit(size_t size) const {
         while (*ptr_current < end) {
 
             
-            free_space = get_space_beetween(*ptr_current, *ptr_next);
+            free_space = get_space_between(*ptr_current, *ptr_next);
 
             if (nullptr != _logger) {
                 _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
@@ -442,7 +433,7 @@ void *memory_with_list::find_best_fit(size_t size) const {
     
     if (*ptr_next == *ptr_end) {
 
-        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
         if (nullptr != _logger) {
             _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
@@ -462,7 +453,7 @@ void *memory_with_list::find_best_fit(size_t size) const {
 
         while (*ptr_current < *ptr_end) {
             
-            free_space = get_space_beetween(*ptr_current, *ptr_next);
+            free_space = get_space_between(*ptr_current, *ptr_next);
 
             if (nullptr != _logger) {
                 _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
@@ -539,7 +530,7 @@ void *memory_with_list::find_worst_fit(size_t size) const {
     
     if (*ptr_next == *ptr_end) {
 
-        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
         if (nullptr != _logger) {
             _logger->log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_end) +
@@ -559,7 +550,7 @@ void *memory_with_list::find_worst_fit(size_t size) const {
 
         while (*ptr_current < *ptr_end) {
             
-            free_space = get_space_beetween(*ptr_current, *ptr_next);
+            free_space = get_space_between(*ptr_current, *ptr_next);
 
             if (nullptr != _logger) {
                 _logger->log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
@@ -614,7 +605,7 @@ void *memory_with_list::find_worst_fit(size_t size) const {
 
 
 
-size_t memory_with_list::get_space_beetween(void *ptr_current, void *ptr_next) const {
+size_t memory_with_list::get_space_between(void *ptr_current, void *ptr_next) {
 
     unsigned char *ptr_1_casted = reinterpret_cast<unsigned char *>(ptr_current);
     unsigned char *ptr_2_casted = reinterpret_cast<unsigned char *>(ptr_next);
@@ -627,17 +618,17 @@ size_t memory_with_list::get_space_beetween(void *ptr_current, void *ptr_next) c
 }
 
 
-size_t memory_with_list::get_size_block(const void * const block) const {
+size_t memory_with_list::get_size_block(const void * const block) {
     return *(reinterpret_cast<size_t *>(const_cast<void *>(block)) - 2);
 }
 
 
-void memory_with_list::set_size_block(void *block, size_t size) const {
+void memory_with_list::set_size_block(void *block, size_t size) {
     *(reinterpret_cast<size_t *>(block) - 2) = size;
 }
 
 
-void **memory_with_list::get_pointer_next(const void * const block) const {
+void **memory_with_list::get_pointer_next(const void * const block) {
     return reinterpret_cast<void **>(const_cast<void *>(block)) - 1;
 }
 
@@ -655,17 +646,17 @@ void *memory_with_list::get_pointer_previous(const void * const block) const {
 }
 
 
-size_t memory_with_list::get_size_service_block_allocator() const {
+size_t memory_with_list::get_size_service_block_allocator() {
     return sizeof(size_t) + sizeof(void *) + sizeof(void *) + sizeof(logger **);
 }
 
 
-size_t memory_with_list::get_size_service_block_block() const {
+size_t memory_with_list::get_size_service_block_block() {
     return sizeof(size_t) + sizeof(void **);
 }
 
 
-std::string memory_with_list::print_memory(const void *block) const {
+std::string memory_with_list::print_memory(const void *block) {
     std::string s;
     s = "[ " + get_bytes(block) + "]";
     
@@ -673,7 +664,7 @@ std::string memory_with_list::print_memory(const void *block) const {
 }
 
 
-std::string memory_with_list::print_allocator(const memory * const allocator) const {
+std::string memory_with_list::print_allocator(const memory * const allocator) {
     memory_with_list *allocator_memory = reinterpret_cast<memory_with_list *>(const_cast<memory *>(allocator));
     std::stringstream ss;
     ss << "[ ";
@@ -692,7 +683,7 @@ std::string memory_with_list::print_allocator(const memory * const allocator) co
 }
 
 
-std::string memory_with_list::print_allocator_data(const memory * const allocator) const {
+std::string memory_with_list::print_allocator_data(const memory * const allocator) {
     memory_with_list *allocator_memory = reinterpret_cast<memory_with_list *>(const_cast<memory *>(allocator));
     std::stringstream ss;
     ss << "[ ";
@@ -714,3 +705,6 @@ std::string memory_with_list::print_allocator_data(const memory * const allocato
 void *memory_with_list::trusted_memory_to_block() const {
     return reinterpret_cast<void *>(reinterpret_cast<size_t *>(_trusted_memory) + 4);
 }
+
+
+memory_with_list::memory_with_list() = default;

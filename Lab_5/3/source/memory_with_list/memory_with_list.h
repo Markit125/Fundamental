@@ -18,48 +18,41 @@ public:
 
     memory_with_list(size_t, memory *, logger *, fit_type);
 
-    ~memory_with_list();
+    ~memory_with_list() override;
 
-    void *allocate(size_t const) const override;
-
-    void *allocate(size_t, logger *, memory *, fit_type);
+    void *allocate(size_t) const override;
 
     void *allocate_fit(size_t,  fit_type) const;
 
-    void deallocate(void * const) const override;
+    void deallocate(void *) const override;
 
-    size_t get_size_block(const void * const) const;
+    static size_t get_size_block(const void *);
 
     void *get_memory_pointer();
 
-    void *allocate(memory *, size_t, fit_type);
+    void *find_first_fit(size_t) const;
 
-    void *memory_with_list_allocate(size_t, fit_type);
+    void *find_best_fit(size_t) const;
 
-    void *find_first_fit(size_t size) const;
+    void *find_worst_fit(size_t) const;
 
-    void *find_best_fit(size_t size) const;
+    static void **get_pointer_next(const void *);
 
-    void *find_worst_fit(size_t size) const;
-
-    void **get_pointer_next(const void * const) const;
-
-    void *get_pointer_previous(const void * const) const;
+    void *get_pointer_previous(const void *) const;
     
-    size_t get_size_service_block_allocator() const;
+    static size_t get_size_service_block_allocator();
 
-    size_t get_size_service_block_block() const;
+    static size_t get_size_service_block_block();
 
     void insert_block_to_pointer_list(void *) const;
 
     logger *get_logger() const;
 
+    static std::string print_memory(const void *);
 
-    std::string print_memory(const void * const) const;
+    static std::string print_allocator(const memory *);
 
-    std::string print_allocator(const memory * const) const;
-
-    std::string print_allocator_data(const memory * const) const;
+    static std::string print_allocator_data(const memory *);
 
 private:
 
@@ -67,21 +60,21 @@ private:
 
     void *trusted_memory_to_block() const;
 
-    void set_pointer_to_next_block(void *, void *) const;
+    static void set_pointer_to_next_block(void *, void *);
 
     void **get_pointer_to_end_pointer_allocator() const;
 
-    size_t get_space_beetween(void *, void *) const;
+    static size_t get_space_between(void *, void *);
 
-    void set_size_block(void *, size_t) const;
+    static void set_size_block(void *, size_t);
 
-    void *_trusted_memory;
+    void *_trusted_memory{};
 
-    fit_type _fit;
+    fit_type _fit {};
 
     bool is_outer_allocator {};
 
-    std::string get_bytes(const void * const) const;
+    static std::string get_bytes(const void *);
 
 };
 
