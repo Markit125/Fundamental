@@ -11,8 +11,8 @@ namespace logging {
 
 class logger_concrete final : public logging::logger {
 
-    friend class logger_builder_concrete;
-    friend class configurator;
+    // friend class logger_builder_concrete;
+    // friend class configurator;
 
 private:
 

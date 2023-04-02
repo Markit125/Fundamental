@@ -7,11 +7,9 @@
 
 int main() {
 
-    allocating::allocator *alloc = new allocating::allocator();
+    allocating::memory *alloc = new allocating::allocator();
 
     double *constants = reinterpret_cast<double *>(alloc->allocate(sizeof(double) * 2));
-
-    std::cout << alloc->get_size_block(constants) << '\n';
 
     *(constants + 0) = 3.14159;
     *(constants + 1) = 2.71828;

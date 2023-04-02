@@ -29,7 +29,7 @@ public:
 
     virtual void *allocate(size_t) const = 0;
 
-    virtual void deallocate(void * const) const = 0;
+    virtual void deallocate(void *) const = 0;
 
     // virtual size_t get_size_block(const void * const) const;
 

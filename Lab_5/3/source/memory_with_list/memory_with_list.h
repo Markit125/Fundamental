@@ -64,7 +64,7 @@ private:
 
     static void set_pointer_to_next_block(void *, void *);
 
-    void **get_pointer_to_end_pointer_allocator() const;
+    void *get_end_allocator() const;
 
     static size_t get_space_between(void *, void *);
 
@@ -72,9 +72,12 @@ private:
 
     void *_trusted_memory{};
 
+
     fit_type _fit {};
 
-    bool is_outer_allocator {};
+    memory *get_outer_allocator() const;
+
+    void set_outer_allocator(memory *);
 
     static std::string get_bytes(const void *);
 
