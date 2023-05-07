@@ -9,7 +9,7 @@
 namespace allocating {
 
 
-class memory_with_list final : public allocating::memory, protected complete_logger {
+class memory_with_list final : public allocating::memory, protected logging::complete_logger {
 
 public:
 
