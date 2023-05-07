@@ -2,14 +2,14 @@
 #define MEMORY_WITH_LIST_H
 
 #include "memory.h"
-#include "logger_concrete.h"
+#include "../../../1/source/logger/complete/complete_logger.h"
 #include <cstddef>
 
 
 namespace allocating {
 
 
-class memory_with_list final : public allocating::memory {
+class memory_with_list final : public allocating::memory, protected complete_logger {
 
 public:
 
@@ -49,7 +49,7 @@ public:
 
     void insert_block_to_pointer_list(void *) const;
 
-    logging::logger *get_logger() const;
+    logging::logger *get_logger() const override;
 
     static std::string print_memory(const void *);
 
