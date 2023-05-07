@@ -49,36 +49,6 @@ int main() {
     std::cout << tree->get(6) << std::endl;
     std::cout << std::endl;
 
-    // delete tree;
-
-    // std::cout << "prefix:" << std::endl;
-
-    // auto it_end_pre = tree->end_prefix();
-    // for (auto it = tree.begin_prefix(); it != it_end_pre; ++it) {
-    //     std::cout << (*it).key << " ";
-    // }
-
-    // std::cout << std::endl;
-
-
-    // std::cout << "infix:" << std::endl;
-
-    // auto it_end_inf = tree.end_infix();
-    // for (auto it = tree.begin_infix(); it != it_end_inf; ++it) {
-    //     std::cout << (*it).key << " ";
-    // }
-
-    // std::cout << std::endl;
-
-
-    // std::cout << "postfix:" << std::endl;
-
-    // auto it_end_post = tree.end_postfix();
-    // for (auto it = tree.begin_postfix(); it != it_end_post; ++it) {
-    //     std::cout << (*it).key << " ";
-    // }
-
-    // std::cout << std::endl;
 
     tree->print_container();
     tree->remove(2);
@@ -95,11 +65,8 @@ int main() {
     tree->remove(1);
     tree->print_container();
 
-    // std::cout << tree->remove(1) << std::endl;
-    // std::cout << tree->remove(2) << std::endl;
-    // std::cout << tree->remove(4) << std::endl;
-    // std::cout << tree->remove(10) << std::endl;
-    // std::cout << tree->remove(6) << std::endl;
-    // std::cout << tree->remove(5) << std::endl;
 
+    delete tree;
+    delete allocator;
+    delete logger;
 }

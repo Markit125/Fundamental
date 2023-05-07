@@ -479,8 +479,11 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::prefix_iterator::prefix_iterato
     _begin = tree_root;
     _end = tree_root;
 
-    while (_end->right_subtree_address) {
-        _end = _end->right_subtree_address;
+
+    if (nullptr != _end) {
+        while (_end->right_subtree_address) {
+            _end = _end->right_subtree_address;
+        }
     }
 
     _current = nullptr == begin_or_end_node ? nullptr : _begin;
@@ -627,18 +630,22 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::infix_iterator(
 
     if (nullptr == begin_or_end_node) {
 
-        while (nullptr != _begin->left_subtree_address) {
-            _begin = _begin->left_subtree_address;
+        if (nullptr != _begin) {
+            while (nullptr != _begin->left_subtree_address) {
+                _begin = _begin->left_subtree_address;
+            }
         }
 
         _current = nullptr;
 
     } else {
         
-        while (nullptr != _begin->left_subtree_address) {
+        if (nullptr != _begin) {
+            while (nullptr != _begin->left_subtree_address) {
 
-            _way.push(_begin);
-            _begin = _begin->left_subtree_address;
+                _way.push(_begin);
+                _begin = _begin->left_subtree_address;
+            }
         }
 
         _current = _begin;
@@ -646,9 +653,12 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::infix_iterator(
     
     _end = tree_root;
 
-    while (nullptr != _end->right_subtree_address) {
-        _end = _end->right_subtree_address;
+    if (nullptr != _end) {
+        while (nullptr != _end->right_subtree_address) {
+            _end = _end->right_subtree_address;
+        }
     }
+
 }
 
 template<
@@ -681,6 +691,7 @@ template<
     typename tvalue,
     typename tkey_comparer>
 typename binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator &binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::operator++() {
+
     if (nullptr == _current || _current == _end) {
 
         _current = nullptr;
@@ -776,8 +787,10 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::postfix_iterator::postfix_itera
 
     if (nullptr == begin_or_end_node) {
 
-        while (nullptr != _begin->left_subtree_address) {
-            _begin = _begin->left_subtree_address;
+        if (nullptr != _begin) {
+            while (nullptr != _begin->left_subtree_address) {
+                _begin = _begin->left_subtree_address;
+            }
         }
 
         _current = nullptr;
