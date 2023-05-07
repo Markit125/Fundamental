@@ -18,9 +18,13 @@ public:
     };
 
 
-    memory();
+    memory() = default;
 
-    virtual ~memory();
+    virtual ~memory() = default;
+
+    memory(memory const&) = delete;
+
+    void operator=(memory const&) = delete;
 
     void *operator+=(size_t const &);
 
@@ -30,8 +34,6 @@ public:
     virtual void *allocate(size_t) const = 0;
 
     virtual void deallocate(void *) const = 0;
-
-    // virtual size_t get_size_block(const void * const) const;
 
 protected:
 

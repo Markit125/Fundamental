@@ -9,13 +9,3 @@ void *allocating::memory::operator+=(size_t const &size) {
 void allocating::memory::operator-=(void *memory_object) {
     deallocate(memory_object);
 }
-
-
-allocating::memory::memory() {
-    
-}
-
-
-allocating::memory::~memory() {
-
-}

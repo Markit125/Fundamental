@@ -3,9 +3,6 @@
 
 #include "memory.h"
 #include "logger_concrete.h"
-#include "logger_builder_concrete.h"
-#include "logger_builder.h"
-#include "logger.h"
 #include <cstddef>
 
 
@@ -16,7 +13,11 @@ class memory_with_list final : public allocating::memory {
 
 public:
 
-    memory_with_list();
+    memory_with_list(memory_with_list const&) = delete;
+
+    void operator=(memory_with_list const&) = delete;
+
+    memory_with_list() = default;
 
     memory_with_list(size_t, memory *, logging::logger *, fit_type);
 

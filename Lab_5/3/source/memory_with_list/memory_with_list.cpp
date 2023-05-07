@@ -284,7 +284,6 @@ void allocating::memory_with_list::insert_block_to_pointer_list(void *block) con
         _logger->log("cur " + cast_to_str(ptr_current) + " prev " + cast_to_str(previous) + " block " + cast_to_str(block),
                 logging::logger::severity::trace);
     }
-    _logger->log("HERE", logging::logger::severity::trace);
 
 
     // _logger->log("prev  " + cast_to_str(previous) + " next " + cast_to_str(*get_pointer_next(previous)), logging::logger::severity::trace);
@@ -722,6 +721,3 @@ allocating::memory *allocating::memory_with_list::get_outer_allocator() const {
 void allocating::memory_with_list::set_outer_allocator(memory *allocator) {
     *(reinterpret_cast<memory **>(_trusted_memory) + 1) = allocator;
 }
-
-
-allocating::memory_with_list::memory_with_list() = default;

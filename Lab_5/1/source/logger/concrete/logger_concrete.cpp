@@ -82,8 +82,7 @@ logging::logger const *logging::logger_concrete::log(
         
         if (logger_stream.second.first == nullptr) {
             std::cout << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
-        }
-        else {
+        } else {
             (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
         }
     }

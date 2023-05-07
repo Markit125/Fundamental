@@ -30,7 +30,7 @@ public:
 
     logger_concrete(logger_concrete const &) = delete;
 
-    // logger_concrete &operator=(logger_concrete const &) = delete;
+    logger_concrete &operator=(logger_concrete const &) = delete;
 
     ~logger_concrete();
 
