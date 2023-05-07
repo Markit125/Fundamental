@@ -3,6 +3,7 @@
 #include <string>
 
 #include "binary_search_tree.h"
+#include "logger_builder_concrete.h"
 
 
 class integer_comparator
@@ -25,13 +26,18 @@ int main() {
         ->add_stream("debug.log", logging::logger::severity::debug)
         ->construct();
 
+    // logger = nullptr;
+
     allocating::memory *allocator = new allocating::memory_with_list(2048, nullptr, logger, allocating::memory::fit_type::first);
 
-    binary_search_tree<int, std::string, integer_comparator> *tree = 
-        new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
     // associative_container<int, std::string> *tree =
     //         new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
+
+    // allocator = nullptr;
+
+    associative_container<int, std::string> *tree =
+            new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
 
     tree->insert(5, "five");
@@ -69,4 +75,5 @@ int main() {
     delete tree;
     delete allocator;
     delete logger;
+    delete builder;
 }
