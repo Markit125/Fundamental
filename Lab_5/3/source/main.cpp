@@ -106,7 +106,7 @@ void my_test() {
         ->add_stream("debug.log", logging::logger::severity::debug)
         ->construct();
     
-    constructed_logger = nullptr;
+    // constructed_logger = nullptr;
 
     allocating::memory *allocator = new allocating::memory_with_list(252, nullptr, constructed_logger, allocating::memory::fit_type::best);
     allocating::memory *inherit_allocator = new allocating::memory_with_list(100, allocator, constructed_logger, allocating::memory::fit_type::best);
