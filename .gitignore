@@ -1,6 +1,7 @@
 .vscode
 .idea
 */.*
+.cache
 */build/*
 Lab_5/1/build/*
 Lab_5/2/build/*
