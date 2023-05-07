@@ -3,6 +3,8 @@
 
 #include "logger.h"
 
+namespace logging {
+
 class complete_logger
 {
 
@@ -16,5 +18,6 @@ public:
 
 };
 
+}
 
 #endif
