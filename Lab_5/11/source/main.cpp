@@ -34,7 +34,7 @@ int main() {
     // associative_container<int, std::string> *tree =
     //         new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
-    // allocator = nullptr;
+    allocator = nullptr;
 
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
@@ -54,6 +54,8 @@ int main() {
     std::cout << tree->get(3) << std::endl;
     std::cout << tree->get(6) << std::endl;
     std::cout << std::endl;
+
+    // std::cout << tree->remove(6);
 
 
     tree->print_container();
