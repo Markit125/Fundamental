@@ -1046,7 +1046,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     path_to_subtree_root_exclusive.pop();
 
     
-    // after_insert_inner(key, std::move(value), next_node, path_to_subtree_root_exclusive);
+    after_insert_inner(key, std::move(value), next_node, path_to_subtree_root_exclusive);
 }
 
 template<
@@ -1137,7 +1137,7 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
 
     tvalue const &value = read_inner(key, next_node, path_to_subtree_root_exclusive);
 
-    // after_read_inner(key, next_node, path_to_subtree_root_exclusive);
+    after_read_inner(key, next_node, path_to_subtree_root_exclusive);
     
 
     return value;
@@ -1199,7 +1199,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
     binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&subtree_root_address,
     std::stack<binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **> &path_to_subtree_root_exclusive) {
 
-    // before_remove_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+    before_remove_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
 
     if (nullptr == subtree_root_address) {
@@ -1286,7 +1286,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
     
     path_to_subtree_root_exclusive.pop();
     
-    // after_remove_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+    after_remove_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
     return std::move(value_to_remove);
 }

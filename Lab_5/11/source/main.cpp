@@ -31,8 +31,6 @@ int main() {
 
     allocating::memory *allocator = new allocating::memory_with_list(2048, nullptr, logger, allocating::memory::fit_type::first);
 
-    // allocator = nullptr;
-
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
