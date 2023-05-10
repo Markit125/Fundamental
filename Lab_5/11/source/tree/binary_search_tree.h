@@ -1,14 +1,10 @@
 #ifndef SANDBOX_CPP_BINARY_SEARCH_TREE_H
 #define SANDBOX_CPP_BINARY_SEARCH_TREE_H
 
-#include "logger.h"
-#include "memory.h"
-#include <cstddef>
 #include <functional>
 #include <iostream>
 #include <stack>
 #include <sstream>
-#include <utility>
 
 #define UNUSED(expr) do { (void)(expr); } while (0)
 
