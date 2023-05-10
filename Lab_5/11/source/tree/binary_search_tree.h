@@ -1460,7 +1460,6 @@ template<
 tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::get(
     tkey const &key) {
 
-    
     safe_log("Start getting the node with key " + cast_to_str(key), logging::logger::severity::information);
     return _reading->read(key, _root);
 }

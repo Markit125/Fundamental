@@ -27,7 +27,6 @@ int main() {
         ->add_stream("debug.log", logging::logger::severity::debug)
         ->construct();
 
-    // logger = nullptr;
 
     allocating::memory *allocator = new allocating::memory_with_list(2048, nullptr, logger, allocating::memory::fit_type::first);
 
@@ -35,12 +34,12 @@ int main() {
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
 
-    tree->insert(5, "five");
-    tree->insert(2, "two");
-    tree->insert(1, "one");
-    tree->insert(4, "four");
-    tree->insert(3, "three");
-    tree->insert(6, "six");
+    // tree->insert(5, "five");
+    // tree->insert(2, "two");
+    // tree->insert(1, "one");
+    // tree->insert(4, "four");
+    // tree->insert(3, "three");
+    // tree->insert(6, "six");
 
     std::cout << "get:\n";
 
