@@ -923,11 +923,12 @@ template<
     typename tvalue,
     typename tkey_comparer>
 void binary_search_tree<tkey, tvalue, tkey_comparer>::left_rotation(tree_node *&subtree_root) const {
-    
-    tree_node *right_subtree_address = subtree_root->right_subtree_address;
-    subtree_root->right_subtree_address = right_subtree_address->left_subtree_address;
-    right_subtree_address->left_subtree_address = subtree_root;
-    subtree_root = right_subtree_address;
+
+    tree_node *node = subtree_root->right_subtree_address;
+    subtree_root->right_subtree_address = node->left_subtree_address;
+    node->left_subtree_address = subtree_root;
+    subtree_root = node;
+
 }
 
 template<
@@ -936,14 +937,11 @@ template<
     typename tkey_comparer>
 void binary_search_tree<tkey, tvalue, tkey_comparer>::right_rotation(tree_node *&subtree_root) const {
     
-    // UNUSED(subtree_root);
-    // tree_node *left = subtree_root->left_subtree_address;
+    tree_node *node = subtree_root->left_subtree_address;
+    subtree_root->left_subtree_address = node->right_subtree_address;
+    node->right_subtree_address = subtree_root;
+    subtree_root = node;
     
-
-    tree_node *left_subtree_adress = subtree_root->left_subtree_address;
-    subtree_root->left_subtree_address = left_subtree_adress->right_subtree_address;
-    left_subtree_adress->right_subtree_address = subtree_root;
-    subtree_root = left_subtree_adress;
 }
 
 // endregion rotation implementation
@@ -1241,6 +1239,11 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
             _tree->safe_deallocate(left_max);
 
 
+            // std::cout << "before left rotation\n";
+            // _tree->print_container();
+            // tree_node **node = &subtree_root_address;
+            // _tree->left_rotation(*node);
+
         } else if (nullptr != subtree_root_address->left_subtree_address) {
 
             tree_node *left_node = subtree_root_address->left_subtree_address;
@@ -1249,23 +1252,13 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
 
             subtree_root_address = left_node;
 
-            // std::cout << "============= rotation\n";
-
-            // _tree->right_rotation(*(&subtree_root_address));
-
-
         } else if (nullptr != subtree_root_address->right_subtree_address) {
 
 
             tree_node *right_node = subtree_root_address->right_subtree_address;
             _tree->safe_deallocate(subtree_root_address);
-
-
+    
             subtree_root_address = right_node;
-
-            // std::cout << "============= rotation\n";
-
-            // _tree->right_rotation(*(&subtree_root_address));
 
         } else {
             subtree_root_address->~tree_node();
