@@ -1,5 +1,9 @@
+#include <csetjmp>
+#include <cstddef>
+#include <cstdlib>
 #include <iostream>
 #include <ostream>
+#include <set>
 #include <string>
 
 #include "binary_search_tree.h"
@@ -28,11 +32,33 @@ int main() {
         ->construct();
 
 
-    allocating::memory *allocator = new allocating::memory_with_list(2048, nullptr, logger, allocating::memory::fit_type::first);
+    allocating::memory *allocator = new allocating::memory_with_list(204800, nullptr, logger, allocating::memory::fit_type::first);
 
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
+
+    std::set<int> s;
+
+    srand (time(NULL));
+
+    for (int i = 0; i < 10000; ++i) {
+
+        if (rand() & 1) {
+            int key = rand() % 20000;
+            tree->insert(key, "kjnf");
+            s.insert(key);
+        } else if (!s.empty()) {
+            size_t item = rand() % s.size();
+            auto it = s.begin();
+
+            for (size_t k = 0; k < item; ++k, ++it);
+
+            tree->remove(*it);
+            s.erase(*it);
+        }
+
+    }
 
     // tree->insert(5, "five");
     // tree->insert(2, "two");
@@ -41,37 +67,37 @@ int main() {
     // tree->insert(3, "three");
     // tree->insert(6, "six");
 
-    std::cout << "get:\n";
+    // std::cout << "get:\n";
 
-    std::cout << tree->get(5) << std::endl;
-    std::cout << tree->get(2) << std::endl;
-    std::cout << tree->get(1) << std::endl;
-    std::cout << tree->get(4) << std::endl;
-    std::cout << tree->get(3) << std::endl;
-    std::cout << tree->get(6) << std::endl;
-    std::cout << std::endl;
+    // std::cout << tree->get(5) << std::endl;
+    // std::cout << tree->get(2) << std::endl;
+    // std::cout << tree->get(1) << std::endl;
+    // std::cout << tree->get(4) << std::endl;
+    // std::cout << tree->get(3) << std::endl;
+    // std::cout << tree->get(6) << std::endl;
+    // std::cout << std::endl;
 
 
-    tree->print_container();
+    // tree->print_container();
 
-    tree->remove(6);
-    std::cout << "\nremoved " << 6;
-    tree->print_container();
+    // tree->remove(6);
+    // std::cout << "\nremoved " << 6;
+    // tree->print_container();
 
-    tree->remove(2);
-    std::cout << "\nremoved " << 2;
-    tree->print_container();
-    tree->remove(4);
-    std::cout << "\nremoved " << 4;
-    tree->print_container();
-    tree->remove(3);
-    std::cout << "\nremoved " << 3;
-    tree->print_container();
-    tree->remove(5);
-    std::cout << "\nremoved " << 5;
-    tree->print_container();
-    tree->remove(1);
-    std::cout << "\nremoved " << 1;
+    // tree->remove(2);
+    // std::cout << "\nremoved " << 2;
+    // tree->print_container();
+    // tree->remove(4);
+    // std::cout << "\nremoved " << 4;
+    // tree->print_container();
+    // tree->remove(3);
+    // std::cout << "\nremoved " << 3;
+    // tree->print_container();
+    // tree->remove(5);
+    // std::cout << "\nremoved " << 5;
+    // tree->print_container();
+    // tree->remove(1);
+    // std::cout << "\nremoved " << 1;
     tree->print_container();
 
     // for (int i = 0; i < 1000; ++i) {
@@ -85,3 +111,4 @@ int main() {
     delete logger;
     delete builder;
 }
+
