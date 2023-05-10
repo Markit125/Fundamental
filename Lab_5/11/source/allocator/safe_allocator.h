@@ -12,7 +12,7 @@ class safe_allocator
     
 public:
 
-    ~safe_allocator() = default;
+    virtual ~safe_allocator() = default;
 
     void *safe_allocate(size_t) const;
 

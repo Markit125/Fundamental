@@ -24,12 +24,6 @@ public:
         tkey const &key) = 0;
     
 
-    virtual void print_prefix() const = 0;
-
-    virtual void print_infix() const = 0;
-
-    virtual void print_postfix() const = 0;
-
     virtual void print_container() const = 0;
 
 };
