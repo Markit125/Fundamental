@@ -15,8 +15,8 @@ std::string cast_to_str(const T& object) {
 void allocating::memory_with_list::deallocate(void * const target_to_dealloc) const {
     
 
-    size_t size = get_size_block(target_to_dealloc);
-    unsigned char *ptr;
+    // size_t size = get_size_block(target_to_dealloc);
+    // unsigned char *ptr;
 
     if (target_to_dealloc == trusted_memory_to_block()) {
 
@@ -47,10 +47,10 @@ void allocating::memory_with_list::deallocate(void * const target_to_dealloc) co
     safe_log("Outer end  " + cast_to_str(get_end_allocator()), logging::logger::severity::trace);
     
 
-    ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
-    for (size_t i = 0; i < size; ++i) {
-        *(ptr++) = 0;
-    }
+    // ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
+    // for (size_t i = 0; i < size; ++i) {
+    //     *(ptr++) = 0;
+    // }
 
 }
 
