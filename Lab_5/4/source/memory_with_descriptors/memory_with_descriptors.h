@@ -73,7 +73,7 @@ private:
 
     // void **get_pointer_to_end_allocator() const;
 
-    static size_t get_space_between(void *, void *);
+    static size_t get_space_beetween(void *, void *);
 
     static void set_size_block(void *, size_t);
 

@@ -307,14 +307,14 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
     size_t free_space;
 
     
-    safe_log("Start jumping between memory blocks", logging::logger::severity::trace);
+    safe_log("Start jumping beetween memory blocks", logging::logger::severity::trace);
     
     if (*ptr_next == ptr_end) {
 
-        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
         
-        safe_log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
+        safe_log("First block! Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
                     " is " + cast_to_str(free_space), logging::logger::severity::trace);
 
         if (free_space >= size) {
@@ -333,10 +333,10 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
         while (*ptr_current < ptr_end) {
 
             
-            free_space = get_space_between(*ptr_current, *ptr_next);
+            free_space = get_space_beetween(*ptr_current, *ptr_next);
 
             
-            safe_log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+            safe_log("Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
                         " is " + cast_to_str(free_space),
                         logging::logger::severity::trace);
             safe_log("Size need " + cast_to_str(size), logging::logger::severity::trace);
@@ -398,16 +398,16 @@ void *allocating::memory_with_descriptors::find_best_fit(size_t size) const {
     size_t free_space;
 
     
-    safe_log("Start jumping between memory blocks", logging::logger::severity::trace);
+    safe_log("Start jumping beetween memory blocks", logging::logger::severity::trace);
    
     if (*ptr_next == ptr_end) {
 
-        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
-        safe_log("Space " + cast_to_str(get_space_between(*ptr_current, *ptr_next)), logging::logger::severity::trace);
+        safe_log("Space " + cast_to_str(get_space_beetween(*ptr_current, *ptr_next)), logging::logger::severity::trace);
         safe_log("Size " + cast_to_str(get_size_block(*ptr_current)), logging::logger::severity::trace);
         
-        safe_log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
+        safe_log("First block! Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
                     " is " + cast_to_str(free_space), logging::logger::severity::trace);
         
 
@@ -428,10 +428,10 @@ void *allocating::memory_with_descriptors::find_best_fit(size_t size) const {
 
         while (*ptr_current < ptr_end) {
             
-            free_space = get_space_between(*ptr_current, *ptr_next);
+            free_space = get_space_beetween(*ptr_current, *ptr_next);
 
             
-            safe_log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+            safe_log("Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
                         " is " + cast_to_str(free_space),
                         logging::logger::severity::trace);
             safe_log("Size need " + cast_to_str(size), logging::logger::severity::trace);
@@ -500,14 +500,14 @@ void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
     size_t free_space;
 
     
-    safe_log("Start jumping between memory blocks", logging::logger::severity::trace);
+    safe_log("Start jumping beetween memory blocks", logging::logger::severity::trace);
         
     if (*ptr_next == ptr_end) {
 
-        free_space = get_space_between(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
+        free_space = get_space_beetween(*ptr_current, *ptr_next) + get_size_block(*ptr_current);
 
         
-        safe_log("First block! Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
+        safe_log("First block! Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(ptr_end) +
                     " is " + cast_to_str(free_space), logging::logger::severity::trace);
         
 
@@ -528,10 +528,10 @@ void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
 
         while (*ptr_current < ptr_end) {
             
-            free_space = get_space_between(*ptr_current, *ptr_next);
+            free_space = get_space_beetween(*ptr_current, *ptr_next);
 
             
-            safe_log("Space for data between " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
+            safe_log("Space for data beetween " + cast_to_str(*ptr_current) + " and " + cast_to_str(*ptr_next) +
                         " is " + cast_to_str(free_space),
                         logging::logger::severity::trace);
             safe_log("Size need " + cast_to_str(size), logging::logger::severity::trace);
@@ -585,7 +585,7 @@ void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
 
 
 
-size_t allocating::memory_with_descriptors::get_space_between(void *ptr_current, void *ptr_next) {
+size_t allocating::memory_with_descriptors::get_space_beetween(void *ptr_current, void *ptr_next) {
 
     unsigned char *ptr_1_casted = reinterpret_cast<unsigned char *>(ptr_current);
     unsigned char *ptr_2_casted = reinterpret_cast<unsigned char *>(ptr_next);

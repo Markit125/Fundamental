@@ -25,15 +25,15 @@ void testing_allocator()
             ->construct();
 
     // memory *allocator1 = new global_heap_allocator(logger);
-    allocating::memory *allocator2 = new allocating::memory_with_descriptors(1000000, nullptr, logger, allocating::memory::fit_type::best);
+    allocating::memory *allocator2 = new allocating::memory_with_descriptors(1000000, nullptr, logger, allocating::memory::fit_type::first);
     // memory *allocator2 = new border_descriptors_allocator(1000000, allocating::memory::allocation_mode::first_match, logger, allocator1);
-    allocating::memory *allocator3 = new allocating::memory_with_descriptors(999900, allocator2, logger, allocating::memory::fit_type::best);
+    allocating::memory *allocator3 = new allocating::memory_with_descriptors(999900, allocator2, logger, allocating::memory::fit_type::first);
 
     std::vector<void*> allocated_blocks;
 
     srand((unsigned)time(nullptr));
 
-    for (size_t i = 0; i < 100; ++i)
+    for (size_t i = 0; i < 1000; ++i)
     {
         void * ptr;
 
@@ -99,9 +99,9 @@ void my_test();
 
 int main() {
 
-    my_test();
+    // my_test();
 
-//    testing_allocator();
+   testing_allocator();
 
 }
 
