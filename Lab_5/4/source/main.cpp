@@ -116,16 +116,14 @@ void my_test() {
         ->add_stream("debug.log", logging::logger::severity::debug)
         ->construct();
     
-    constructed_logger = nullptr;
+    // constructed_logger = nullptr;
 
-    allocating::memory *allocator = new allocating::memory_with_descriptors(2048, nullptr, constructed_logger, allocating::memory::fit_type::best);
-    allocating::memory *inherit_allocator = new allocating::memory_with_descriptors(1024, allocator, constructed_logger, allocating::memory::fit_type::best);
-
-
+    allocating::memory *allocator = new allocating::memory_with_descriptors(2048, nullptr, constructed_logger, allocating::memory::fit_type::worst);
+    allocating::memory *inherit_allocator = new allocating::memory_with_descriptors(1024, allocator, constructed_logger, allocating::memory::fit_type::worst);
+    
     size_t array_size = 10;
     int *array = reinterpret_cast<int *>(inherit_allocator->allocate(sizeof(int) * array_size));
     
-    // constructed_logger->safe_log("Array in inherited allocator ================================================================", logging::logger::severity::trace);
 
 
     for (size_t i = 0; i < array_size; ++i) {
@@ -141,23 +139,15 @@ void my_test() {
     *dd = 99999;
     std::cout << "Double: " << *dd << std::endl;
 
-    
-    allocator->deallocate(dd);
-
-    std::cout << "gantt\n\n";
-    // constructed_logger->log("HERE 0", logging::logger::severity::trace);
-    
+    allocator->deallocate(dd);    
 
     inherit_allocator->deallocate(array);
-// return;
-    std::cout << "gigigigi\n\n";
 
     // constructed_logger->log("HERE 1", logging::logger::severity::trace);
 
     array = reinterpret_cast<int *>(inherit_allocator->allocate(sizeof(int) * array_size));
     
     std::cout << "after array\n\n";
-    // constructed_logger->log("Array in inherited allocator ================================================================", logging::logger::severity::trace);
     
     for (size_t i = 1; i <= array_size; ++i) {
         array[i - 1] = i * i;
@@ -173,7 +163,6 @@ void my_test() {
 
     array = reinterpret_cast<int *>(inherit_allocator->allocate(sizeof(int) * array_size));
 
-    // constructed_logger->log("Array in inherited allocator ================================================================", logging::logger::severity::trace);
 
     for (size_t i = 1; i <= array_size; ++i) {
         array[i - 1] = i * (i + 1);
@@ -188,7 +177,6 @@ void my_test() {
 
     array = reinterpret_cast<int *>(inherit_allocator->allocate(sizeof(int) * array_size));
 
-    // constructed_logger->log("Array in inherited allocator ================================================================", logging::logger::severity::trace);
 
     for (size_t i = 1; i <= array_size; ++i) {
         array[i - 1] = i * (i + 1);

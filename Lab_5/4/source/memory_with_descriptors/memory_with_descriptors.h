@@ -39,9 +39,9 @@ public:
 
     void *find_worst_fit(size_t) const;
 
-    static void **get_pointer_next(const void *);
+    void **get_pointer_next(const void *) const;
 
-    void *get_pointer_previous(const void *) const;
+    void **get_pointer_previous(const void *) const;
     
     static size_t get_size_service_block_allocator();
 
@@ -63,9 +63,15 @@ private:
 
     void *trusted_memory_to_block() const;
 
-    static void set_pointer_to_next_block(void *, void *);
+    void **pointer_to_trusted_memory_to_block() const;
+
+    static void set_pointer_to_next_block(void *, void **);
+
+    static void set_pointer_to_previous_block(void *, void **);
 
     void *get_end_allocator() const;
+
+    // void **get_pointer_to_end_allocator() const;
 
     static size_t get_space_between(void *, void *);
 
