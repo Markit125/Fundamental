@@ -14,7 +14,7 @@ class allocator : public memory {
 
 public:
 
-    allocator();
+    allocator(logging::logger *logger = nullptr);
 
     ~allocator();
 

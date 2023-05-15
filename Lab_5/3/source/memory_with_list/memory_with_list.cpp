@@ -14,9 +14,8 @@ std::string cast_to_str(const T& object) {
 
 void allocating::memory_with_list::deallocate(void * const target_to_dealloc) const {
     
+    safe_log("Deallocating...................", logging::logger::severity::trace);
 
-    // size_t size = get_size_block(target_to_dealloc);
-    // unsigned char *ptr;
 
     if (target_to_dealloc == trusted_memory_to_block()) {
 
@@ -46,12 +45,15 @@ void allocating::memory_with_list::deallocate(void * const target_to_dealloc) co
     safe_log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logging::logger::severity::trace);
     safe_log("Outer end  " + cast_to_str(get_end_allocator()), logging::logger::severity::trace);
     
+    // size_t size = get_size_block(target_to_dealloc);
+    // unsigned char *ptr;
 
     // ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
     // for (size_t i = 0; i < size; ++i) {
     //     *(ptr++) = 0;
     // }
 
+    safe_log("Deallocation completed!", logging::logger::severity::trace);
 }
 
 
@@ -116,8 +118,8 @@ void *allocating::memory_with_list::allocate(const size_t target_size) const {
     safe_log("Allocated block " + std::to_string(target_size) + " bytes of memory at "
                     + cast_to_str(new_memory), logging::logger::severity::information);
 
-    safe_log("new_memory " + print_memory(new_memory), logging::logger::severity::trace);
-    safe_log("_allocated_memory " + print_allocator(this), logging::logger::severity::trace);
+    // safe_log("new_memory " + print_memory(new_memory), logging::logger::severity::trace);
+    // safe_log("_allocated_memory " + print_allocator(this), logging::logger::severity::trace);
 
     safe_log("ALLOCATOR " + cast_to_str(_trusted_memory), logging::logger::severity::trace);
     safe_log("Starts at     " + cast_to_str(_trusted_memory), logging::logger::severity::trace);
@@ -189,7 +191,7 @@ allocating::memory_with_list::memory_with_list(
     }
 
   
-    safe_log("New allocator _allocated_memory " + print_allocator(this), logging::logger::severity::trace);
+    // safe_log("New allocator _allocated_memory " + print_allocator(this), logging::logger::severity::trace);
 
 }
 

@@ -1,24 +1,13 @@
 #include "allocator.h"
+#include "logger.h"
 #include <cstddef>
 #include <string>
 #include <sstream>
 
 
-allocating::allocator::allocator() {
+allocating::allocator::allocator(logging::logger *logger) {
 
-    logging::logger_builder *builder = new logger_builder_concrete();
-
-    _logger_allocator = builder
-            ->add_stream("log_warning.log", logging::logger::severity::warning)
-            ->add_stream("log_trace.log", logging::logger::severity::trace)
-            ->add_stream("log_info.log", logging::logger::severity::information)
-            ->construct();
-
-    _logger_allocator
-            ->log("Logger is built", logging::logger::severity::information)
-            ->log("Allocator is instantiated", logging::logger::severity::information);
-
-    delete builder;
+    _logger_allocator = logger;
 }
 
 
@@ -68,7 +57,6 @@ allocating::allocator::~allocator() {
     _logger_allocator
             ->log("Allocator is destroyed", logging::logger::severity::information);
 
-    delete _logger_allocator;
 }
 
 
