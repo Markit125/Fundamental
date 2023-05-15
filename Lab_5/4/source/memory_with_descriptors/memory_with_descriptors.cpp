@@ -512,7 +512,7 @@ void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
         
 
         if (free_space >= size) {
-            current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 2);
+            current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 3);
             fit = &current_memory;
 
             *(reinterpret_cast<void **>(current_memory) - 1) = ptr_end;
