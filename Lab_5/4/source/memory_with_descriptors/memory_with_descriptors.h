@@ -1,5 +1,5 @@
-#ifndef MEMORY_WITH_DESCRIPTORS_H
-#define MEMORY_WITH_DESCRIPTORS_H
+#ifndef MEMORY_WITH_descriptors_H
+#define MEMORY_WITH_descriptors_H
 
 #include "memory.h"
 #include "../../../1/source/logger/complete/complete_logger.h"
@@ -13,9 +13,9 @@ class memory_with_descriptors final : public allocating::memory, protected loggi
 
 public:
 
-    memory_with_descriptors(memory_with_descriptors&) = delete;
+    memory_with_descriptors(memory_with_descriptors const&) = delete;
 
-    void operator=(memory_with_descriptors&) = delete;
+    void operator=(memory_with_descriptors const&) = delete;
 
     memory_with_descriptors() = default;
 
@@ -39,9 +39,9 @@ public:
 
     void *find_worst_fit(size_t) const;
 
-    void **get_pointer_next(const void *) const;
+    static void **get_pointer_next(const void *);
 
-    void **get_pointer_previous(const void *) const;
+    void *get_pointer_previous(const void *) const;
     
     static size_t get_size_service_block_allocator();
 
@@ -63,15 +63,9 @@ private:
 
     void *trusted_memory_to_block() const;
 
-    void **pointer_to_trusted_memory_to_block() const;
-
-    static void set_pointer_to_next_block(void *, void **);
-
-    static void set_pointer_to_previous_block(void *, void **);
+    static void set_pointer_to_next_block(void *, void *);
 
     void *get_end_allocator() const;
-
-    // void **get_pointer_to_end_allocator() const;
 
     static size_t get_space_beetween(void *, void *);
 
