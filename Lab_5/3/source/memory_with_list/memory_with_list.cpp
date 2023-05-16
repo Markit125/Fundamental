@@ -466,7 +466,7 @@ void *allocating::memory_with_list::find_best_fit(size_t size) const {
         return nullptr;
 
     } else {
-        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::information);
+        safe_log("Found best fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::information);
     }
 
     
