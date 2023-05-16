@@ -19,11 +19,8 @@ void allocating::memory_with_descriptors::deallocate(void * const target_to_deal
 
 
     if (target_to_dealloc == trusted_memory_to_block()) {
-        safe_log("Deallocating................... allocator", logging::logger::severity::trace);
         memory *outer_allocator = get_outer_allocator();
-        safe_log("Deallocating................... allocator 1", logging::logger::severity::trace);
         outer_allocator->deallocate(target_to_dealloc);
-        safe_log("Deallocating................... allocator 2", logging::logger::severity::trace);
 
         return;
     }
@@ -611,8 +608,6 @@ void *allocating::memory_with_descriptors::get_pointer_previous(const void * con
     while (current < block) {
         previous = current;
         current = *get_pointer_next(current);
-        safe_log(cast_to_str(previous) + " " + cast_to_str(current), logging::logger::severity::information);
-        safe_log("1=11==1=1=1=1=1=1=1==1=11=1==1=1=1=1=1=1==11==1=", logging::logger::severity::information);
     }
 
     return previous;

@@ -26,9 +26,9 @@ void testing_allocator()
             ->construct();
 
     // memory *allocator1 = new global_heap_allocator(logger);
-    allocating::memory *allocator2 = new allocating::memory_with_descriptors(1000000, nullptr, logger, allocating::memory::fit_type::worst);
+    allocating::memory *allocator2 = new allocating::memory_with_descriptors(1000000, nullptr, logger, allocating::memory::fit_type::best);
     // memory *allocator2 = new border_descriptors_allocator(1000000, allocating::memory::allocation_mode::first_match, logger, allocator1);
-    allocating::memory *allocator3 = new allocating::memory_with_descriptors(999900, allocator2, logger, allocating::memory::fit_type::worst);
+    allocating::memory *allocator3 = new allocating::memory_with_descriptors(999900, allocator2, logger, allocating::memory::fit_type::best);
 
     std::vector<void*> allocated_blocks;
 
