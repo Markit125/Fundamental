@@ -1218,7 +1218,6 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
 
             _tree->safe_deallocate(left_max);
 
-
             // std::cout << "before left rotation\n";
             // _tree->print_container();
             // tree_node **node = &subtree_root_address;
