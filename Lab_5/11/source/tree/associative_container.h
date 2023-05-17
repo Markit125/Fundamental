@@ -20,7 +20,7 @@ public:
     virtual tvalue const &get(
         tkey const &key) = 0;
 
-    virtual tvalue remove(
+    virtual tvalue&& remove(
         tkey const &key) = 0;
     
 

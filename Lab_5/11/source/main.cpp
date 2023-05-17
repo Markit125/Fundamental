@@ -4,6 +4,7 @@
 #include "binary_search_tree.h"
 #include "logger_builder_concrete.h"
 #include "memory_with_list.h"
+#include "memory_with_descriptors.h"
 
 
 class integer_comparator
@@ -27,7 +28,8 @@ int main() {
         ->construct();
 
 
-    allocating::memory *allocator = new allocating::memory_with_list(204800, nullptr, logger, allocating::memory::fit_type::first);
+    // allocating::memory *allocator = new allocating::memory_with_list(204800, nullptr, logger, allocating::memory::fit_type::first);
+    allocating::memory *allocator = new allocating::memory_with_descriptors(204800, nullptr, logger, allocating::memory::fit_type::first);
 
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
