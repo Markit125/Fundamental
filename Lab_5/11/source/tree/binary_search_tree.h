@@ -1262,6 +1262,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
     }
 
 
+    // works only this way:
     binary_search_tree::tree_node **next_node = &(comparation > 0 ? subtree_root_address->right_subtree_address : subtree_root_address->left_subtree_address);
     // binary_search_tree::tree_node *next_node = (comparation > 0 ? subtree_root_address->right_subtree_address : subtree_root_address->left_subtree_address);
 
