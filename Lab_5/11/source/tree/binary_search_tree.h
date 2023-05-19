@@ -1197,7 +1197,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
 
             while (left_max->right_subtree_address) {
                 // TODO
-                path_to_subtree_root_exclusive.push(&left_max);
+                // path_to_subtree_root_exclusive.push(&left_max);
 
                 left_max_parent = left_max;
                 left_max = left_max->right_subtree_address;
@@ -1224,6 +1224,9 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
             // _tree->left_rotation(*node);
 
         } else if (nullptr != subtree_root_address->left_subtree_address) {
+
+            // TODO
+            // Removing doesn't work below
 
             tree_node *left_node = subtree_root_address->left_subtree_address;
 
