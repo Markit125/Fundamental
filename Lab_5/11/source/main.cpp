@@ -31,6 +31,8 @@ int main() {
     // allocating::memory *allocator = new allocating::memory_with_list(204800, nullptr, logger, allocating::memory::fit_type::first);
     allocating::memory *allocator = new allocating::memory_with_descriptors(204800, nullptr, logger, allocating::memory::fit_type::first);
 
+    // allocator = nullptr;
+
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
@@ -57,11 +59,17 @@ int main() {
 
     // }
 
+    tree->print_container();
     tree->insert(5, "five");
+    tree->print_container();
     tree->insert(2, "two");
+    tree->print_container();
     tree->insert(1, "one");
+    tree->print_container();
     tree->insert(4, "four");
+    tree->print_container();
     tree->insert(3, "three");
+    tree->print_container();
     tree->insert(6, "six");
 
     std::cout << "get:\n";

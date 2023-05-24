@@ -1,7 +1,7 @@
 #ifndef MEMORY_WITH_LIST_H
 #define MEMORY_WITH_LIST_H
 
-#include "memory.h"
+#include "../../../2/source/memory/memory.h"
 #include "../../../1/source/logger/complete/complete_logger.h"
 #include <cstddef>
 

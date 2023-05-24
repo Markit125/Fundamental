@@ -1,7 +1,7 @@
 #ifndef COMPLETE_LOGGER
 #define COMPLETE_LOGGER
 
-#include "logger.h"
+#include "../prototypes/logger.h"
 
 namespace logging {
 

@@ -25,3 +25,12 @@ add_executable(
         ../source/time/my_time.cpp
         ../source/time/my_time.h
 )
+
+target_include_directories(
+    lab5-1
+    PRIVATE
+        ../source/logger/prototypes/
+        ../source/logger/concrete/
+        ../source/time/
+        ../source
+)

@@ -10,10 +10,10 @@
 #define UNUSED(expr) do { (void)(expr); } while (0)
 
 
-#include "memory_with_list.h"
+#include "../../../3/source/memory_with_list/memory_with_list.h"
 #include "associative_container.h"
-#include "complete_logger.h"
-#include "safe_allocator.h"
+#include "../../../1/source/logger/complete/complete_logger.h"
+#include "../../../11/source/allocator/safe_allocator.h"
 
 
 
@@ -193,7 +193,6 @@ protected:
 
         virtual void after_insert_inner(
             tkey const &key,
-            tvalue &&value,
             tree_node *&subtree_root_address,
             std::stack<binary_search_tree::tree_node **> &path_to_subtree_root_exclusive);
 
@@ -204,6 +203,8 @@ protected:
         logging::logger *get_logger() const override;
 
         allocating::memory *get_allocator() const override;
+
+    protected:
 
         virtual size_t get_size_node() const;
 
@@ -290,12 +291,12 @@ protected:
 
 protected:
 
-    tree_node *_root;
     insertion_template_method *_insertion;
     reading_template_method *_reading;
     removing_template_method *_removing;
     allocating::memory *_allocator;
     logging::logger *_logger;
+    tree_node *_root;
 
 protected:
 
@@ -304,7 +305,8 @@ protected:
         reading_template_method *reading,
         removing_template_method *removing,
         allocating::memory *allocator = nullptr,
-        logging::logger *logger = nullptr);
+        logging::logger *logger = nullptr, 
+        tree_node *root = nullptr);
 
 public:
 
@@ -372,7 +374,7 @@ public:
 
     void print_postfix() const;
 
-    void print_container() const override;
+    virtual void print_container() const override;
 
 };
 
@@ -951,7 +953,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     tvalue &&value,
     binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&tree_root_address) {
 
-        UNUSED(tree_root_address);
+    UNUSED(tree_root_address);
     std::stack<binary_search_tree::tree_node **> path_to_subtree_root_exclusive;
 
     return insert_inner(key, std::move(value), _tree->_root,
@@ -969,6 +971,8 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     std::stack<binary_search_tree::tree_node **> &path_to_subtree_root_exclusive) {
 
     tkey_comparer comparer;
+    _tree->safe_log("Insert inner", logging::logger::severity::trace);
+
 
     if (nullptr == subtree_root_address) {
         // creating new node here
@@ -1004,6 +1008,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
         return;
     }
 
+    _tree->safe_log("Not nullptr", logging::logger::severity::trace);
 
     _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::information);
 
@@ -1037,7 +1042,10 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     path_to_subtree_root_exclusive.pop();
 
     
-    after_insert_inner(key, std::move(value), next_node, path_to_subtree_root_exclusive);
+    // tree_node **nodenode = &next_node;
+    // after_insert_inner(key, *nodenode, path_to_subtree_root_exclusive);
+
+    after_insert_inner(key, next_node, path_to_subtree_root_exclusive);
 }
 
 
@@ -1047,14 +1055,13 @@ template<
     typename tkey_comparer>
 void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method::after_insert_inner(
     tkey const &key,
-    tvalue &&value,
     binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&subtree_root_address,
     std::stack<binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **> &path_to_subtree_root_exclusive) {
 
     UNUSED(key);
-    UNUSED(value);
     UNUSED(subtree_root_address);
     UNUSED(path_to_subtree_root_exclusive);
+    std::cout << "__________________ BINARY __________________\n";
 }
 
 template<
@@ -1308,12 +1315,14 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
     binary_search_tree::reading_template_method *reading,
     binary_search_tree::removing_template_method *removing,
     allocating::memory *allocator,
-    logging::logger *logger)
-    : _insertion(insertion(this)),
-      _reading(reading(this)),
-      _removing(removing(this)),
+    logging::logger *logger,
+    tree_node *root)
+    : _insertion(insertion),
+      _reading(reading),
+      _removing(removing),
       _allocator(allocator),
-      _logger(logger) {
+      _logger(logger),
+      _root(root) {
 
     safe_log("Tree is created", logging::logger::severity::information);
 }
@@ -1325,12 +1334,12 @@ template<
 binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
     allocating::memory *allocator,
     logging::logger *logger):
-    _root(nullptr),
     _insertion(new insertion_template_method(this)),
     _reading(new reading_template_method(this)),
     _removing(new removing_template_method(this)),
     _allocator(allocator),
-    _logger(logger) {
+    _logger(logger),
+    _root(nullptr) {
 
     safe_log("Tree is created", logging::logger::severity::information);
 }
