@@ -71,7 +71,7 @@ void allocating::memory_with_descriptors::clear_logger() const {
 allocating::memory_with_descriptors::~memory_with_descriptors() {
 
 
-    safe_log("Allocator is destroyed", logging::logger::severity::information);
+    safe_log("Allocator is destroyed", logging::logger::severity::debug);
     clear_logger();
 
     if (get_outer_allocator() == nullptr) {
@@ -118,7 +118,7 @@ void *allocating::memory_with_descriptors::allocate(const size_t target_size) co
 
     
     safe_log("Allocated block " + std::to_string(target_size) + " bytes of memory at "
-                    + cast_to_str(new_memory), logging::logger::severity::information);
+                    + cast_to_str(new_memory), logging::logger::severity::debug);
 
     // safe_log("new_memory " + print_memory(new_memory), logging::logger::severity::trace);
     // safe_log("_allocated_memory " + print_allocator(this), logging::logger::severity::trace);
@@ -159,7 +159,7 @@ allocating::memory_with_descriptors::memory_with_descriptors(
 
     
     safe_log("Allocated allocator with " + cast_to_str(size) + " bytes of memory at " + cast_to_str(_trusted_memory),
-                logging::logger::severity::information);
+                logging::logger::severity::debug);
 
 
     size_t *pointer_size = reinterpret_cast<size_t *>(_trusted_memory) + 2;
@@ -208,7 +208,7 @@ void *allocating::memory_with_descriptors::allocate_fit(size_t size, allocating:
     
     
     safe_log("Start finding memory block for allocator with size " + cast_to_str(size) + " bytes",
-                logging::logger::severity::information);
+                logging::logger::severity::debug);
 
 
     if (fit == allocating::memory_with_descriptors::fit_type::first) {
@@ -383,7 +383,7 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
         return nullptr;
 
     } else {
-        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::information);
+        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::debug);
     }
 
     
@@ -480,7 +480,7 @@ void *allocating::memory_with_descriptors::find_best_fit(size_t size) const {
         return nullptr;
 
     } else {
-        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::information);
+        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::debug);
     }
 
     
@@ -573,7 +573,7 @@ void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
         return nullptr;
 
     } else {
-        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::information);
+        safe_log("Found first fit block with size " + cast_to_str(size) + " at " + cast_to_str(*fit), logging::logger::severity::debug);
     }
 
 

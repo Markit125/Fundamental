@@ -40,9 +40,6 @@ add_executable(
 
         ../source/allocator/safe_allocator.h
         ../source/allocator/safe_allocator.cpp
-
-        # ../source/exception/not_implemented.h
-        # ../source/exception/not_implemented.cpp
         
         ../source/tree/binary_search_tree.h
         ../source/tree/binary_search_tree.cpp
