@@ -318,15 +318,6 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     _tree->safe_log("After inser inner", logging::logger::severity::trace);
     _tree->safe_log("___________________AVL___________________", logging::logger::severity::trace);
 
-// =================
-    typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **parent = nullptr;
-    if (!path_to_subtree_root_exclusive.empty())
-    {
-        parent = path_to_subtree_root_exclusive.top();
-        path_to_subtree_root_exclusive.pop();
-    }
-
-// =================
     
     _tree->fix_height(&subtree_root_address);
 
@@ -384,12 +375,6 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
         _tree->fix_height(&(subtree_root_address->right_subtree_address));
     }
 
-// ======================
-    if (parent != nullptr)
-    {
-        path_to_subtree_root_exclusive.push(parent);
-    }
-// ======================
 }
 
 template<
