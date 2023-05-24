@@ -245,7 +245,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::fix_height(
     size_t right;
 
     if (nullptr == *node) {
-        this->safe_log("nullllllllllllllllll fixheight", logging::logger::severity::information);
+        this->safe_log("nullptr in fix height", logging::logger::severity::information);
         left = right = 0;
     } else {
         left = get_height((*node)->left_subtree_address);
@@ -317,23 +317,22 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     UNUSED(key);
     UNUSED(path_to_subtree_root_exclusive);
 
-    _tree->safe_log("_____After insert inner_____", logging::logger::severity::trace);
-    _tree->safe_log("___________________AVL___________________", logging::logger::severity::trace);
+    _tree->safe_log("_____After insert inner_____", logging::logger::severity::information);
     
-    _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::trace);
+    _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::information);
     if (nullptr != subtree_root_address) {
-        _tree->safe_log("key: " + cast_to_str(subtree_root_address->key), logging::logger::severity::trace);
+        _tree->safe_log("key: " + cast_to_str(subtree_root_address->key), logging::logger::severity::information);
     }
 
 
     
     _tree->fix_height(&subtree_root_address);
 
-    _tree->safe_log("fix height has ended", logging::logger::severity::trace);
+    _tree->safe_log("fix height has ended", logging::logger::severity::information);
 
     int balance = _tree->balance_factor(subtree_root_address);
 
-    _tree->safe_log("balance factor has ended", logging::logger::severity::trace);
+    _tree->safe_log("balance factor has ended", logging::logger::severity::information);
 
     _tree->safe_log("Balance factor " + cast_to_str(balance), logging::logger::severity::information);
 
@@ -399,10 +398,9 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
     // _tree->after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
 
-    _tree->safe_log("_____After remove inner_____", logging::logger::severity::);
-    _tree->safe_log("___________________AVL___________________", logging::logger::severity::trace);
+    _tree->safe_log("_____After remove inner_____", logging::logger::severity::information);
     
-    _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::trace);
+    _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::information);
 
 
 
@@ -475,7 +473,7 @@ avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
         logger,
         nullptr) {
                 
-    this->safe_log("AVL tree is created", logging::logger::severity::information);
+    this->safe_log("AVL tree is created", logging::logger::severity::debug);
 
 }
 
