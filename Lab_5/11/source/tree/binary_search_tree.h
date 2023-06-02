@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stack>
 #include <sstream>
+#include <vector>
 
 #define UNUSED(expr) do { (void)(expr); } while (0)
 
@@ -362,9 +363,9 @@ public:
 
 protected:
 
-    virtual void left_rotation(tree_node *&subtree_root) const;
+    virtual void left_rotation(tree_node **subtree_root, tree_node **parent) const;
 
-    virtual void right_rotation(tree_node *&subtree_root) const;
+    virtual void right_rotation(tree_node **subtree_root, tree_node **parent) const;
 
 public:
 
@@ -394,7 +395,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container() const {
         }
 
         if (nullptr != subtree_root) {
-            print_tree(subtree_root->left_subtree_address, deep + 1);
+            print_tree(subtree_root->right_subtree_address, deep + 1);
         }
 
         std::string s;
@@ -414,7 +415,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
         std::cout << s << subtree_root->key << std::endl;
 
-        print_tree(subtree_root->right_subtree_address, deep + 1);
+        print_tree(subtree_root->left_subtree_address, deep + 1);
     };
 
     print_tree(_root, 0);
@@ -918,12 +919,23 @@ template<
     typename tkey,
     typename tvalue,
     typename tkey_comparer>
-void binary_search_tree<tkey, tvalue, tkey_comparer>::left_rotation(tree_node *&subtree_root) const {
+void binary_search_tree<tkey, tvalue, tkey_comparer>::left_rotation(
+        tree_node **subtree_root, tree_node **parent) const {
 
-    tree_node *node = subtree_root->right_subtree_address;
-    subtree_root->right_subtree_address = node->left_subtree_address;
-    node->left_subtree_address = subtree_root;
-    subtree_root = node;
+    tree_node *node = (*subtree_root)->right_subtree_address;
+    (*subtree_root)->right_subtree_address = node->left_subtree_address;
+    node->left_subtree_address = *subtree_root;
+
+    if (nullptr != parent) {
+        if ((*parent)->right_subtree_address == *subtree_root) {
+            (*parent)->right_subtree_address = node;
+        // } else if ((*parent)->left_subtree_address == *subtree_root) {
+        } else {
+            (*parent)->left_subtree_address = node;
+        }
+    }
+
+    *subtree_root = node;
 
 }
 
@@ -931,12 +943,32 @@ template<
     typename tkey,
     typename tvalue,
     typename tkey_comparer>
-void binary_search_tree<tkey, tvalue, tkey_comparer>::right_rotation(tree_node *&subtree_root) const {
+void binary_search_tree<tkey, tvalue, tkey_comparer>::right_rotation(
+        tree_node **subtree_root, tree_node **parent) const {
     
-    tree_node *node = subtree_root->left_subtree_address;
-    subtree_root->left_subtree_address = node->right_subtree_address;
-    node->right_subtree_address = subtree_root;
-    subtree_root = node;
+    safe_log("" + cast_to_str(*subtree_root), logging::logger::severity::information);
+
+    if (parent) {
+        if ((*parent)->right_subtree_address) {
+            safe_log("" + cast_to_str((*parent)->right_subtree_address), logging::logger::severity::information);
+        }
+    }
+
+    tree_node *node = (*subtree_root)->left_subtree_address;
+    (*subtree_root)->left_subtree_address = node->right_subtree_address;
+    node->right_subtree_address = *subtree_root;
+
+
+    if (nullptr != parent) {
+        if ((*parent)->right_subtree_address == *subtree_root) {
+            (*parent)->right_subtree_address = node;
+        // } else if ((*parent)->left_subtree_address == *subtree_root) {
+        } else {
+            (*parent)->left_subtree_address = node;
+        }
+    }
+
+    *subtree_root = node;
     
 }
 
@@ -1005,7 +1037,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("Created node is " + cast_to_str(new_node), logging::logger::severity::debug);
 
-        after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+        _tree->safe_log("after inner #1", logging::logger::severity::information);
+
+        after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
         return;
     }
@@ -1021,7 +1055,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
         _tree->safe_log("Key " + cast_to_str(subtree_root_address->key) + " value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         subtree_root_address->value = std::move(value);
 
-        after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+
+        // _tree->safe_log("after inner #2", logging::logger::severity::information);
+        // after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
         return;
     }
@@ -1046,12 +1082,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     path_to_subtree_root_exclusive.pop();
 
 
-_tree->safe_log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", logging::logger::severity::trace);
-    _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::trace);
-    _tree->safe_log(cast_to_str(next_node), logging::logger::severity::trace);
     // tree_node **nodenode = &next_node;
     // after_insert_inner(key, *nodenode, path_to_subtree_root_exclusive);
-
+    _tree->safe_log("after inner #3", logging::logger::severity::information);
     after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 }
 
@@ -1068,7 +1101,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     UNUSED(key);
     UNUSED(subtree_root_address);
     UNUSED(path_to_subtree_root_exclusive);
-    std::cout << "__________________ BINARY __________________\n";
 }
 
 template<
@@ -1210,18 +1242,36 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
             tree_node *left_max = subtree_root_address->left_subtree_address;
             tree_node *left_max_parent = subtree_root_address;
 
+
+
+
+            path_to_subtree_root_exclusive.push(&subtree_root_address);
+            std::stack<tree_node *> references;
+            int ii = 0;
+
             while (left_max->right_subtree_address) {
-                // TODO
-                // path_to_subtree_root_exclusive.push(&left_max);
+                ++ii;
+                references.push(left_max);
+                path_to_subtree_root_exclusive.push(&(references.top()));
+                
+
+                _tree->safe_log("=========================== added " + cast_to_str(left_max->key), logging::logger::severity::information);
+                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::information);
 
                 left_max_parent = left_max;
                 left_max = left_max->right_subtree_address;
+
+                _tree->safe_log("=== node " + cast_to_str(&(references.top())), logging::logger::severity::information);
             }
+
+            _tree->safe_log("iterations " + cast_to_str(ii), logging::logger::severity::information);
+            
+            if (!path_to_subtree_root_exclusive.empty())
+                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::information);
 
 
             subtree_root_address->key = left_max->key;
             subtree_root_address->value = std::move(left_max->value);
-
 
             if (left_max_parent->right_subtree_address == left_max) {
                 left_max_parent->right_subtree_address = left_max->left_subtree_address;
@@ -1230,18 +1280,44 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
             }
 
             left_max->~tree_node();
-
             _tree->safe_deallocate(left_max);
 
-            // std::cout << "before left rotation\n";
-            // _tree->print_container();
-            // tree_node **node = &subtree_root_address;
-            // _tree->left_rotation(*node);
+            if (!path_to_subtree_root_exclusive.empty() && ii != 0) {
+
+                tree_node *touched_node = *(path_to_subtree_root_exclusive.top());
+
+                _tree->safe_log("After remove inner removing =================================================================", logging::logger::severity::information);
+
+
+                while (touched_node->key != subtree_root_address->key) {
+                    
+                _tree->safe_log("                                                  touch " + cast_to_str(touched_node->key) + " sub " + cast_to_str(subtree_root_address->key), logging::logger::severity::information);
+
+
+                    _tree->safe_log("After remove inner removing =============== touched " + cast_to_str(touched_node->key), logging::logger::severity::information);
+
+                    path_to_subtree_root_exclusive.pop();
+                    if (touched_node->key != key) {
+                        after_remove_inner(key, touched_node, path_to_subtree_root_exclusive);
+                    }
+
+
+                    if (!path_to_subtree_root_exclusive.empty()) {
+                        touched_node = *(path_to_subtree_root_exclusive.top());
+                    } else {
+                        break;
+                    }
+                }
+                
+                _tree->safe_log("After remove inner removing completed! ===============", logging::logger::severity::information);
+            }
+
+            _tree->safe_log("Node with a key " + cast_to_str(key) + " has been removed", logging::logger::severity::information);
+
+            return std::move(value_to_remove);
+
 
         } else if (nullptr != subtree_root_address->left_subtree_address) {
-
-            // TODO
-            // Removing doesn't work below
 
             tree_node *left_node = subtree_root_address->left_subtree_address;
 
@@ -1279,14 +1355,11 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
     }
 
 
-    // works only this way:
     binary_search_tree::tree_node **next_node = &(comparation > 0 ? subtree_root_address->right_subtree_address : subtree_root_address->left_subtree_address);
-    // binary_search_tree::tree_node *next_node = (comparation > 0 ? subtree_root_address->right_subtree_address : subtree_root_address->left_subtree_address);
 
     path_to_subtree_root_exclusive.push(&subtree_root_address);
 
     tvalue &&value_to_remove = std::move(remove_inner(key, *next_node, path_to_subtree_root_exclusive));
-    // tvalue &&value_to_remove = std::move(remove_inner(key, next_node, path_to_subtree_root_exclusive));
     
     path_to_subtree_root_exclusive.pop();
     

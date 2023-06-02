@@ -3,6 +3,7 @@
 
 #include "../../../11/source/tree/binary_search_tree.h"
 #include <cstddef>
+#include <exception>
 
 template<
     typename tkey,
@@ -142,7 +143,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
         }
 
         if (nullptr != subtree_root) {
-            print_tree(subtree_root->left_subtree_address, deep + 1);
+            print_tree(subtree_root->right_subtree_address, deep + 1);
         }
 
         std::string s;
@@ -162,7 +163,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
         std::cout << s << subtree_root->key << " (" << get_height(subtree_root) << ")" << std::endl;
 
-        print_tree(subtree_root->right_subtree_address, deep + 1);
+        print_tree(subtree_root->left_subtree_address, deep + 1);
     };
 
     print_tree(this->_root, 0);
@@ -210,8 +211,7 @@ size_t avl_tree<tkey, tvalue, tkey_comparer>::get_height(
     
     this->safe_log("Get height " + cast_to_str(node ? reinterpret_cast<avl_tree_node *>(node)->height : 0), logging::logger::severity::trace);
 
-
-    return node ? reinterpret_cast<avl_tree_node *>(node)->height : 0;
+    return nullptr != node ? reinterpret_cast<avl_tree_node *>(node)->height : 0;
 }
 
 template<
@@ -235,11 +235,13 @@ template<
 void avl_tree<tkey, tvalue, tkey_comparer>::fix_height(
     typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **node) {
     
+    // TODO not every height is right
+    this->safe_log("______Fix height______", logging::logger::severity::information);
 
-    // if (nullptr != node) {
-    //     reinterpret_cast<avl_tree_node *>(node)->height = std::max(get_height((node)->left_subtree_address),
-    //         get_height((node)->right_subtree_address)) + 1;
-    // }
+    if (nullptr != *node) {
+        this->safe_log(cast_to_str((*node)->key), logging::logger::severity::information);
+    }
+
 
     size_t left;
     size_t right;
@@ -253,15 +255,15 @@ void avl_tree<tkey, tvalue, tkey_comparer>::fix_height(
     }
 
     this->safe_log("Fix height left, right {"  + cast_to_str(left) + ", " + cast_to_str(right) + "}", logging::logger::severity::information);
-
     if (nullptr != *node) {
+
+        this->safe_log("Keys left, right {"  + cast_to_str((*node)->left_subtree_address ? cast_to_str((*node)->left_subtree_address->key) : "NULL") + ", "
+            + cast_to_str((*node)->right_subtree_address ? cast_to_str((*node)->right_subtree_address->key) : "NULL") + "}", logging::logger::severity::information);
         reinterpret_cast<avl_tree_node *>(*node)->height = std::max(left, right) + 1;
 
-        this->safe_log("Height is " + cast_to_str(reinterpret_cast<avl_tree_node *>(*node)->height),
+        this->safe_log("Now height is " + cast_to_str(reinterpret_cast<avl_tree_node *>(*node)->height),
             logging::logger::severity::information);
     }
-
-    
 
 }
 
@@ -317,70 +319,89 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     UNUSED(key);
     UNUSED(path_to_subtree_root_exclusive);
 
-    _tree->safe_log("_____After insert inner_____", logging::logger::severity::information);
-    
+    _tree->safe_log("_____After insert inner_____ key " + cast_to_str(key), logging::logger::severity::information);
     _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::information);
+    
+    typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **parent = nullptr;
+
+    if (!path_to_subtree_root_exclusive.empty()) {
+        parent = path_to_subtree_root_exclusive.top();
+    }
+
+
     if (nullptr != subtree_root_address) {
         _tree->safe_log("key: " + cast_to_str(subtree_root_address->key), logging::logger::severity::information);
     }
 
-
-    
     _tree->fix_height(&subtree_root_address);
-
-    _tree->safe_log("fix height has ended", logging::logger::severity::information);
 
     int balance = _tree->balance_factor(subtree_root_address);
 
     _tree->safe_log("balance factor has ended", logging::logger::severity::information);
-
     _tree->safe_log("Balance factor " + cast_to_str(balance), logging::logger::severity::information);
 
-    if (balance == -2) {
-        // left rotation
 
+    if (balance == 2) {
 
-        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1) {
-            // right rotation
+        std::cout << "before:\n";
+        _tree->print_container();
 
-            // avl_tree_node **node = &(subtree_root_address->right_subtree_address);
-            // _tree->right_rotation(*node);
-            _tree->right_rotation(subtree_root_address->right_subtree_address);
+        if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
+        {
+                _tree->safe_log(">>>>>>> BIG left rotation", logging::logger::severity::information);
+            _tree->left_rotation(&(subtree_root_address->left_subtree_address), &subtree_root_address);
 
-            _tree->fix_height(&(subtree_root_address));
-            _tree->fix_height(&(subtree_root_address->right_subtree_address));
-
-        }
-
-        // avl_tree_node **node = &(subtree_root_address->left_subtree_address);
-        // _tree->left_rotation(*node);
-        _tree->left_rotation(subtree_root_address);
-
-        _tree->fix_height(&(subtree_root_address));
-        _tree->fix_height(&(subtree_root_address->left_subtree_address));
-
-    } else if (balance == 2) {
-        // right rotation
-
-        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1) {
-            // left rotation
-
-            // avl_tree_node **node = &(subtree_root_address->left_subtree_address);
-            // _tree->left_rotation(*node);
-            _tree->left_rotation(subtree_root_address->left_subtree_address);
-
-            _tree->fix_height(&(subtree_root_address));
+            _tree->fix_height(&(subtree_root_address->left_subtree_address->left_subtree_address));
             _tree->fix_height(&(subtree_root_address->left_subtree_address));
 
+            std::cout << "half way:\n";
+            _tree->print_container();
         }
 
-        // avl_tree_node **node = &(subtree_root_address->right_subtree_address);
-        // _tree->right_rotation(*node);
-        _tree->right_rotation(subtree_root_address);
+        _tree->safe_log(">>>>>>> right rotation", logging::logger::severity::information);
 
-        _tree->fix_height(&(subtree_root_address));
+        _tree->right_rotation(&subtree_root_address, parent);
+
         _tree->fix_height(&(subtree_root_address->right_subtree_address));
+        _tree->fix_height(&subtree_root_address);
+
+
+        std::cout << "after:\n";
+        _tree->print_container();
+
+    } else if (balance == -2) {
+
+        std::cout << "before:\n";
+        _tree->print_container();
+
+        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1)
+        {
+            _tree->safe_log(">>>>>>> BIG right rotation", logging::logger::severity::information);
+
+            _tree->right_rotation(&(subtree_root_address->right_subtree_address), &subtree_root_address);
+
+            _tree->fix_height(&(subtree_root_address->right_subtree_address->right_subtree_address));
+            _tree->fix_height(&(subtree_root_address->right_subtree_address));
+
+            std::cout << "half way:\n";
+            _tree->print_container();
+        }
+
+            _tree->safe_log(">>>>>>> left rotation", logging::logger::severity::information);
+
+        _tree->left_rotation(&subtree_root_address, parent);
+
+        _tree->fix_height(&(subtree_root_address->left_subtree_address));
+        _tree->fix_height(&subtree_root_address);
+
+        std::cout << "after:\n";
+        _tree->print_container();
     }
+
+    // if (parent != nullptr)
+    // {
+    //     path_to_subtree_root_exclusive.push(parent);
+    // }
 
 }
 
@@ -395,51 +416,92 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
 
     UNUSED(key);
     UNUSED(path_to_subtree_root_exclusive);
-    // _tree->after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+
+    if (nullptr == subtree_root_address) {
+        return;
+    }
 
 
-    _tree->safe_log("_____After remove inner_____", logging::logger::severity::information);
+    _tree->safe_log("_____After remove inner_____ key removing " + cast_to_str(key), logging::logger::severity::information);
     
     _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::information);
 
 
+    typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **parent = nullptr;
+    if (!path_to_subtree_root_exclusive.empty()) {
+        parent = path_to_subtree_root_exclusive.top();
+    }
+
+    _tree->safe_log("key: " + cast_to_str(subtree_root_address->key), logging::logger::severity::information);
+    
 
     _tree->fix_height(&subtree_root_address);
 
     int balance = _tree->balance_factor(subtree_root_address);
 
-    if (balance == -2) {
-        // left rotation
+    _tree->safe_log("Balance factor " + cast_to_str(balance), logging::logger::severity::information);
 
-        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1) {
-            // right rotation
 
-            _tree->right_rotation(subtree_root_address->right_subtree_address);
-            _tree->fix_height(&(subtree_root_address));
-            _tree->fix_height(&(subtree_root_address->right_subtree_address));
+    if (balance == 2) {
 
-        }
+        std::cout << "before:\n";
+        _tree->print_container();
 
-        _tree->left_rotation(subtree_root_address);
-        _tree->fix_height(&(subtree_root_address));
-        _tree->fix_height(&(subtree_root_address->left_subtree_address));
+        if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
+        {
+                _tree->safe_log(">>>>>>> BIG left rotation", logging::logger::severity::information);
+            _tree->left_rotation(&(subtree_root_address->left_subtree_address), &subtree_root_address);
 
-    } else if (balance == 2) {
-        // right rotation
-
-        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1) {
-            // left rotation
-
-            _tree->left_rotation(subtree_root_address->left_subtree_address);
-            _tree->fix_height(&(subtree_root_address));
+            _tree->fix_height(&(subtree_root_address->left_subtree_address->left_subtree_address));
             _tree->fix_height(&(subtree_root_address->left_subtree_address));
 
+            std::cout << "half way:\n";
+            _tree->print_container();
         }
 
-        _tree->right_rotation(subtree_root_address);
-        _tree->fix_height(&(subtree_root_address));
+
+        _tree->safe_log(">>>>>>> right rotation", logging::logger::severity::information);
+
+        _tree->right_rotation(&subtree_root_address, parent);
+
         _tree->fix_height(&(subtree_root_address->right_subtree_address));
+        _tree->fix_height(&subtree_root_address);
+
+
+        std::cout << "after:\n";
+        _tree->print_container();
+
+    } else if (balance == -2) {
+
+        std::cout << "before:\n";
+        _tree->print_container();
+
+        if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1)
+        {
+            _tree->safe_log(">>>>>>> BIG right rotation", logging::logger::severity::information);
+
+
+            _tree->right_rotation(&(subtree_root_address->right_subtree_address), &subtree_root_address);
+
+            _tree->fix_height(&(subtree_root_address->right_subtree_address->right_subtree_address));
+            _tree->fix_height(&(subtree_root_address->right_subtree_address));
+
+            std::cout << "half way:\n";
+            _tree->print_container();
+        }
+
+            _tree->safe_log(">>>>>>> left rotation", logging::logger::severity::information);
+
+        _tree->left_rotation(&subtree_root_address, parent);
+
+        _tree->fix_height(&(subtree_root_address->left_subtree_address));
+        _tree->fix_height(&subtree_root_address);
+
+        std::cout << "after:\n";
+        _tree->print_container();
     }
+
+
 }
 
 template<
