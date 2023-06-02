@@ -377,7 +377,41 @@ public:
 
     virtual void print_container() const override;
 
+    virtual void print_container_logger() const override;
+
 };
+
+
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container_logger() const {
+
+    std::function<void(tree_node *, size_t)> print_tree;
+    print_tree = [&](tree_node *subtree_root, size_t deep) {
+
+        if (deep == 0) {
+            safe_log("Tree", logging::logger::severity::information);
+        }
+
+        if (nullptr != subtree_root) {
+            print_tree(subtree_root->left_subtree_address, deep + 1);
+        }
+
+        if (subtree_root == nullptr) {
+            return;
+        }
+
+        safe_log(cast_to_str(subtree_root->key), logging::logger::severity::information);
+
+        print_tree(subtree_root->right_subtree_address, deep + 1);
+    };
+
+    print_tree(_root, 0);
+
+}
 
 
 
@@ -946,11 +980,11 @@ template<
 void binary_search_tree<tkey, tvalue, tkey_comparer>::right_rotation(
         tree_node **subtree_root, tree_node **parent) const {
     
-    safe_log("" + cast_to_str(*subtree_root), logging::logger::severity::information);
+    safe_log("" + cast_to_str(*subtree_root), logging::logger::severity::debug);
 
     if (parent) {
         if ((*parent)->right_subtree_address) {
-            safe_log("" + cast_to_str((*parent)->right_subtree_address), logging::logger::severity::information);
+            safe_log("" + cast_to_str((*parent)->right_subtree_address), logging::logger::severity::debug);
         }
     }
 
@@ -1037,7 +1071,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("Created node is " + cast_to_str(new_node), logging::logger::severity::debug);
 
-        _tree->safe_log("after inner #1", logging::logger::severity::information);
+        _tree->safe_log("after inner #1", logging::logger::severity::debug);
 
         after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
@@ -1056,7 +1090,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
         subtree_root_address->value = std::move(value);
 
 
-        // _tree->safe_log("after inner #2", logging::logger::severity::information);
+        // _tree->safe_log("after inner #2", logging::logger::severity::debug);
         // after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
         return;
@@ -1084,7 +1118,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
     // tree_node **nodenode = &next_node;
     // after_insert_inner(key, *nodenode, path_to_subtree_root_exclusive);
-    _tree->safe_log("after inner #3", logging::logger::severity::information);
+    _tree->safe_log("after inner #3", logging::logger::severity::debug);
     after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 }
 
@@ -1255,19 +1289,19 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
                 path_to_subtree_root_exclusive.push(&(references.top()));
                 
 
-                _tree->safe_log("=========================== added " + cast_to_str(left_max->key), logging::logger::severity::information);
-                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::information);
+                _tree->safe_log("=========================== added " + cast_to_str(left_max->key), logging::logger::severity::debug);
+                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::debug);
 
                 left_max_parent = left_max;
                 left_max = left_max->right_subtree_address;
 
-                _tree->safe_log("=== node " + cast_to_str(&(references.top())), logging::logger::severity::information);
+                _tree->safe_log("=== node " + cast_to_str(&(references.top())), logging::logger::severity::debug);
             }
 
-            _tree->safe_log("iterations " + cast_to_str(ii), logging::logger::severity::information);
+            _tree->safe_log("iterations " + cast_to_str(ii), logging::logger::severity::debug);
             
             if (!path_to_subtree_root_exclusive.empty())
-                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::information);
+                _tree->safe_log("top " + cast_to_str((*(path_to_subtree_root_exclusive.top()))->key), logging::logger::severity::debug);
 
 
             subtree_root_address->key = left_max->key;
@@ -1286,15 +1320,15 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
 
                 tree_node *touched_node = *(path_to_subtree_root_exclusive.top());
 
-                _tree->safe_log("After remove inner removing =================================================================", logging::logger::severity::information);
+                _tree->safe_log("After remove inner removing =================================================================", logging::logger::severity::debug);
 
 
                 while (touched_node->key != subtree_root_address->key) {
                     
-                _tree->safe_log("                                                  touch " + cast_to_str(touched_node->key) + " sub " + cast_to_str(subtree_root_address->key), logging::logger::severity::information);
+                _tree->safe_log("                                                  touch " + cast_to_str(touched_node->key) + " sub " + cast_to_str(subtree_root_address->key), logging::logger::severity::debug);
 
 
-                    _tree->safe_log("After remove inner removing =============== touched " + cast_to_str(touched_node->key), logging::logger::severity::information);
+                    _tree->safe_log("After remove inner removing =============== touched " + cast_to_str(touched_node->key), logging::logger::severity::debug);
 
                     path_to_subtree_root_exclusive.pop();
                     if (touched_node->key != key) {
@@ -1309,10 +1343,10 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
                     }
                 }
                 
-                _tree->safe_log("After remove inner removing completed! ===============", logging::logger::severity::information);
+                _tree->safe_log("After remove inner removing completed! ===============", logging::logger::severity::debug);
             }
 
-            _tree->safe_log("Node with a key " + cast_to_str(key) + " has been removed", logging::logger::severity::information);
+            _tree->safe_log("Node with a key " + cast_to_str(key) + " has been removed", logging::logger::severity::debug);
 
             return std::move(value_to_remove);
 

@@ -26,6 +26,8 @@ public:
 
     virtual void print_container() const = 0;
 
+    virtual void print_container_logger() const = 0;
+
 };
 
 #endif //SANDBOX_CPP_ASSOCIATIVE_CONTAINER_H

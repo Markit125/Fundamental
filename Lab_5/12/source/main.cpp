@@ -37,45 +37,50 @@ int main() {
 
     srand(time(NULL));
 
-    for (int i = 0; i < 200; ++i) {
+    for (int i = 0; i < 10000; ++i) {
 
-        if (rand() & 1) {
-            int key = rand() % 500;
+        // if (rand() & 1) {
+            int key = rand() % 10000;
             tree->insert(key, "kjnf");
-            std::cout << "Insert " << key << std::endl;
+            // std::cout << "Insert " << key << std::endl;
             s.insert(key);
-            std::cout << "Inserted\n";
-        } else if (!s.empty()) {
-            size_t item = rand() % s.size();
-            auto it = s.begin();
+            // std::cout << "Inserted\n";
+        // }
+        //  else if (!s.empty()) {
+        //     size_t item = rand() % s.size();
+        //     auto it = s.begin();
 
-            for (size_t k = 0; k < item; ++k, ++it);
+        //     for (size_t k = 0; k < item; ++k, ++it);
 
-            std::cout << "Remove " << *it << std::endl;
-            tree->remove(*it);
-            s.erase(*it);
-        }
-        tree->print_container();
+        //     std::cout << "Remove " << *it << std::endl;
+        //     tree->remove(*it);
+        //     s.erase(*it);
+        // }
+        // tree->print_container();
 
     }
+
+
+    tree->print_container_logger();
+
 
 
     // int a[] = {1, 3, 2};
     // int a[] = {1, 2, 3, 4, 5};
 
-    int a[] = {1, 2, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 3, 4, 5, 6, 7};
+    // int a[] = {1, 2, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 3, 4, 5, 6, 7};
 
-    for (int i : a) {
-        tree->insert(i, "dc");
-        tree->print_container();
-    }
+    // for (int i : a) {
+    //     tree->insert(i, "dc");
+    //     tree->print_container();
+    // }
 
-    int b[] = {10, 13};
+    // int b[] = {10, 13};
 
-    for (int i : b) {
-        tree->remove(i);
-        tree->print_container();
-    }
+    // for (int i : b) {
+    //     tree->remove(i);
+    //     tree->print_container();
+    // }
 
 
     // tree->insert(5, "five");
