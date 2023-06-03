@@ -1,0 +1,7 @@
+{
+    "streams":
+    {
+        "file5.txt": "trace",
+        "console": "error"
+    }
+}

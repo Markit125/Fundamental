@@ -1,0 +1,37 @@
+#ifndef ALLOCATOR_H
+#define ALLOCATOR_H
+
+#include "../memory/memory.h"
+#include "../../../../logger/source/logger/concrete/logger_concrete.h"
+#include "../../../../logger/source/logger/concrete/logger_builder_concrete.h"
+#include "../../../../logger/source/logger/prototypes/logger_builder.h"
+#include "../../../../logger/source/logger/prototypes/logger.h"
+#include <cstddef>
+
+namespace allocating {
+
+class allocator : public memory {
+
+public:
+
+    allocator(logging::logger *logger = nullptr);
+
+    ~allocator();
+
+    void *allocate(size_t const) const override;
+
+    void deallocate(void * const) const override;
+
+    size_t get_size_block(const void * const) const;
+
+private:
+
+    void *allocated_memory;
+
+    std::string get_bytes(void * const) const;
+
+};
+
+}
+
+#endif

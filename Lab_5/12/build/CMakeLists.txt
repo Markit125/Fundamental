@@ -15,6 +15,9 @@ add_executable(
         ../source/main.cpp
         ../../3/source/memory_with_list/memory_with_list.h
         ../../3/source/memory_with_list/memory_with_list.cpp
+
+        ../../4/source/memory_with_descriptors/memory_with_descriptors.h
+        ../../4/source/memory_with_descriptors/memory_with_descriptors.cpp
         
         ../../1/source/logger/concrete/json.hpp
         ../../1/source/logger/prototypes/logger.h
