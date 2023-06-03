@@ -1,0 +1,107 @@
+[06/03/23 23:45:25][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] Memory of new Allocator
+[06/03/23 23:45:25][TRACE] Start at 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] New a at 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE]   End at 0x7f2d21a21030
+[06/03/23 23:45:25][DEBUG] Tree is created
+[06/03/23 23:45:25][DEBUG] AVL tree is created
+[06/03/23 23:45:25][TRACE] New memory allocating............................................
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/03/23 23:45:25][TRACE] Start jumping beetween memory blocks
+[06/03/23 23:45:25][TRACE] >>>>>>>ptr_current: 0x7f2d2182d038
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] First block! Space for data beetween 0x7f2d2182d038 and 0x7f2d21a21030 is 2048000
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 48 at 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] _allocated_memory 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] block fit 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] 48 bytes of memory is allocated
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d038 prev 0x7f2d2182d038 block 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] cur 0x7f2d21a21030 prev 0x7f2d2182d038 block 0x7f2d2182d050
+[06/03/23 23:45:25][DEBUG] Allocated block 32 bytes of memory at 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] ALLOCATOR 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] Starts at     0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] New memory at 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] Ends at       0x7f2d21a21030
+[06/03/23 23:45:25][INFO] Memory for pool is allocated
+[06/03/23 23:45:25][TRACE] Insert inner
+[06/03/23 23:45:25][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 23:45:25][TRACE] New memory allocating............................................
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/03/23 23:45:25][TRACE] Start jumping beetween memory blocks
+[06/03/23 23:45:25][TRACE] >>>>>>>ptr_current: 0x7f2d2182d038
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] Space for data beetween 0x7f2d2182d038 and 0x7f2d2182d050 is 0
+[06/03/23 23:45:25][TRACE] Size need 80
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] ptr_current: 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] Space for data beetween 0x7f2d2182d050 and 0x7f2d21a21030 is 2047904
+[06/03/23 23:45:25][TRACE] Size need 80
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 80 at 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] _allocated_memory 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] block fit 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] 80 bytes of memory is allocated
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d038 prev 0x7f2d2182d038 block 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d050 prev 0x7f2d2182d038 block 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] cur 0x7f2d21a21030 prev 0x7f2d2182d050 block 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] Allocated block 64 bytes of memory at 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] ALLOCATOR 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] Starts at     0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] New memory at 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] Ends at       0x7f2d21a21030
+[06/03/23 23:45:25][DEBUG] Created node is 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] after inner #1
+[06/03/23 23:45:25][DEBUG] 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] ______Fix height______
+[06/03/23 23:45:25][TRACE] Get height 0
+[06/03/23 23:45:25][TRACE] Get height 0
+[06/03/23 23:45:25][DEBUG] Fix height left, right {0, 0}
+[06/03/23 23:45:25][DEBUG] Now height is 1
+[06/03/23 23:45:25][TRACE] Get height 0
+[06/03/23 23:45:25][TRACE] Get height 0
+[06/03/23 23:45:25][DEBUG] balance factor has ended
+[06/03/23 23:45:25][DEBUG] Balance factor 0
+[06/03/23 23:45:25][DEBUG] After insert inner ended
+[06/03/23 23:45:25][INFO] Pool created
+[06/03/23 23:45:25][INFO] created poll outside
+[06/03/23 23:45:25][TRACE] New memory allocating............................................
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/03/23 23:45:25][TRACE] Start jumping beetween memory blocks
+[06/03/23 23:45:25][TRACE] >>>>>>>ptr_current: 0x7f2d2182d038
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] Space for data beetween 0x7f2d2182d038 and 0x7f2d2182d050 is 0
+[06/03/23 23:45:25][TRACE] Size need 48
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] ptr_current: 0x7f2d2182d050
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] Space for data beetween 0x7f2d2182d050 and 0x7f2d2182d098 is 8
+[06/03/23 23:45:25][TRACE] Size need 48
+[06/03/23 23:45:25][TRACE] prt_next: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] ptr_current: 0x7f2d2182d098
+[06/03/23 23:45:25][TRACE] prt_end: 0x7f2d21a21030
+[06/03/23 23:45:25][TRACE] Space for data beetween 0x7f2d2182d098 and 0x7f2d21a21030 is 2047800
+[06/03/23 23:45:25][TRACE] Size need 48
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 48 at 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] _allocated_memory 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] block fit 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] 48 bytes of memory is allocated
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d038 prev 0x7f2d2182d038 block 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d050 prev 0x7f2d2182d038 block 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] cur 0x7f2d2182d098 prev 0x7f2d2182d050 block 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] cur 0x7f2d21a21030 prev 0x7f2d2182d098 block 0x7f2d2182d100
+[06/03/23 23:45:25][DEBUG] Allocated block 32 bytes of memory at 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] ALLOCATOR 0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] Starts at     0x7f2d2182d010
+[06/03/23 23:45:25][TRACE] New memory at 0x7f2d2182d100
+[06/03/23 23:45:25][TRACE] Ends at       0x7f2d21a21030
+[06/03/23 23:45:25][INFO] Memory for scheme is allocated
+[06/03/23 23:45:25][INFO] fiji
+[06/03/23 23:45:25][INFO] 0x1d9de30
+[06/03/23 23:45:25][INFO] HEEEEEEEEE
+[06/03/23 23:45:25][INFO] Scheme created
+[06/03/23 23:45:25][INFO] created scheme outside
+[06/03/23 23:45:25][INFO] EnD
+[06/03/23 23:45:25][DEBUG] Allocator is destroyed

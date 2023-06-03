@@ -1,0 +1,3 @@
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/build/CMakeFiles/lab5-11.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/build/CMakeFiles/edit_cache.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/build/CMakeFiles/rebuild_cache.dir

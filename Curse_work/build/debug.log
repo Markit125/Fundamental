@@ -1,0 +1,33 @@
+[06/03/23 23:45:25][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7f2d2182d010
+[06/03/23 23:45:25][DEBUG] Tree is created
+[06/03/23 23:45:25][DEBUG] AVL tree is created
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 48 at 0x7f2d2182d050
+[06/03/23 23:45:25][DEBUG] Allocated block 32 bytes of memory at 0x7f2d2182d050
+[06/03/23 23:45:25][INFO] Memory for pool is allocated
+[06/03/23 23:45:25][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 80 at 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] Allocated block 64 bytes of memory at 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] Created node is 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] after inner #1
+[06/03/23 23:45:25][DEBUG] 0x7f2d2182d098
+[06/03/23 23:45:25][DEBUG] ______Fix height______
+[06/03/23 23:45:25][DEBUG] Fix height left, right {0, 0}
+[06/03/23 23:45:25][DEBUG] Now height is 1
+[06/03/23 23:45:25][DEBUG] balance factor has ended
+[06/03/23 23:45:25][DEBUG] Balance factor 0
+[06/03/23 23:45:25][DEBUG] After insert inner ended
+[06/03/23 23:45:25][INFO] Pool created
+[06/03/23 23:45:25][INFO] created poll outside
+[06/03/23 23:45:25][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/03/23 23:45:25][DEBUG] Found first fit block with size 48 at 0x7f2d2182d100
+[06/03/23 23:45:25][DEBUG] Allocated block 32 bytes of memory at 0x7f2d2182d100
+[06/03/23 23:45:25][INFO] Memory for scheme is allocated
+[06/03/23 23:45:25][INFO] fiji
+[06/03/23 23:45:25][INFO] 0x1d9de30
+[06/03/23 23:45:25][INFO] HEEEEEEEEE
+[06/03/23 23:45:25][INFO] Scheme created
+[06/03/23 23:45:25][INFO] created scheme outside
+[06/03/23 23:45:25][INFO] EnD
+[06/03/23 23:45:25][DEBUG] Allocator is destroyed

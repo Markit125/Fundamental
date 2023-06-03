@@ -122,4 +122,114 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc
+ /usr/include/c++/13/bits/istream.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/memory_with_descriptors.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/memory.h \
+ /usr/include/c++/13/cstddef \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/../../../../logger/source/logger/prototypes/logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/../prototypes/logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/processing.h \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../file_opening/file_opening.h \
+ /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/database.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/pool.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/scheme.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/collection.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../../source/tree/11/source/tree/associative_container.h \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../data_type/data_type.h \
+ /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/11/source/allocator/safe_allocator.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/11/source/allocator/../../../../memory/2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../comparer/comparer.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../comparer/../data/data_type/data_type.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/avl.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/binary_search_tree.h \
+ /usr/include/c++/13/functional /usr/include/c++/13/tuple \
+ /usr/include/c++/13/bits/uses_allocator.h \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/stack \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
+ /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_stack.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../data/data_type/data_type.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/memory_with_list.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/associative_container.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../memory/2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h \
+ /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/erase_if.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/../prototypes/logger_builder.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/../prototypes/logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/json.hpp \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h \
+ /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/backward/auto_ptr.h /usr/include/c++/13/numeric \
+ /usr/include/c++/13/bits/stl_numeric.h /usr/include/c++/13/array \
+ /usr/include/c++/13/compare /usr/include/c++/13/forward_list \
+ /usr/include/c++/13/bits/forward_list.h \
+ /usr/include/c++/13/bits/forward_list.tcc \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/valarray /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h \
+ /usr/include/c++/13/bits/valarray_array.h \
+ /usr/include/c++/13/bits/valarray_array.tcc \
+ /usr/include/c++/13/bits/valarray_before.h \
+ /usr/include/c++/13/bits/slice_array.h \
+ /usr/include/c++/13/bits/valarray_after.h \
+ /usr/include/c++/13/bits/gslice.h \
+ /usr/include/c++/13/bits/gslice_array.h \
+ /usr/include/c++/13/bits/mask_array.h \
+ /usr/include/c++/13/bits/indirect_array.h /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/version /usr/include/c++/13/cassert \
+ /usr/include/assert.h /usr/include/c++/13/limits \
+ /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h \
+ /usr/include/c++/13/bits/quoted_string.h

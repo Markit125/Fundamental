@@ -1,0 +1,114 @@
+[06/03/23 20:33:42][DEBUG] Allocated allocator with 204800 bytes of memory at 0x7f07e6885010
+[06/03/23 20:33:42][DEBUG] Tree is created
+[06/03/23 20:33:42][DEBUG] Start inserting {5, five}
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e6885050
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e6885050
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e6885050
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] Start inserting {2, two}
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e68850b0
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e68850b0
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e68850b0
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] Start inserting {1, one}
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e6885110
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e6885110
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e6885110
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] Start inserting {4, four}
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Move right
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e6885170
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e6885170
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e6885170
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] Start inserting {3, three}
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Move right
+[06/03/23 20:33:42][DEBUG] Pair {4, four}
+[06/03/23 20:33:42][DEBUG] Move left
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e68851d0
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e68851d0
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e68851d0
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] Start inserting {6, six}
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Move right
+[06/03/23 20:33:42][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/03/23 20:33:42][DEBUG] Start finding memory block for allocator with size 72 bytes
+[06/03/23 20:33:42][DEBUG] Found first fit block with size 72 at 0x7f07e6885230
+[06/03/23 20:33:42][DEBUG] Allocated block 56 bytes of memory at 0x7f07e6885230
+[06/03/23 20:33:42][DEBUG] Created node is 0x7f07e6885230
+[06/03/23 20:33:42][DEBUG] after inner #1
+[06/03/23 20:33:42][DEBUG] after inner #3
+[06/03/23 20:33:42][DEBUG] Start finding the node with key 3
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Pair {4, four}
+[06/03/23 20:33:42][DEBUG] Found a value three
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 5
+[06/03/23 20:33:42][DEBUG] Found a value five
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 2
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Found a value two
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 1
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Found a value one
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 4
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Found a value four
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 3
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Pair {2, two}
+[06/03/23 20:33:42][DEBUG] Pair {4, four}
+[06/03/23 20:33:42][DEBUG] Found a value GIANT
+[06/03/23 20:33:42][DEBUG] Start getting the node with key 6
+[06/03/23 20:33:42][DEBUG] Pair {5, five}
+[06/03/23 20:33:42][DEBUG] Found a value six
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 6
+[06/03/23 20:33:42][DEBUG] Node with a key 6 has been removed
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 2
+[06/03/23 20:33:42][DEBUG] iterations 0
+[06/03/23 20:33:42][DEBUG] top 2
+[06/03/23 20:33:42][DEBUG] Node with a key 2 has been removed
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 4
+[06/03/23 20:33:42][DEBUG] Node with a key 4 has been removed
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 3
+[06/03/23 20:33:42][DEBUG] Node with a key 3 has been removed
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 5
+[06/03/23 20:33:42][DEBUG] Node with a key 5 has been removed
+[06/03/23 20:33:42][DEBUG] Start removing the node with key 1
+[06/03/23 20:33:42][DEBUG] Node with a key 1 has been removed
+[06/03/23 20:33:42][DEBUG] Deallocating tree
+[06/03/23 20:33:42][DEBUG] Deallocating complited
+[06/03/23 20:33:42][DEBUG] Allocator is destroyed

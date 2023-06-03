@@ -1,0 +1,9 @@
+{
+    "streams":
+    {
+        "debug.log": "debug",
+        "trace.log": "trace",
+        "info.log": "info",
+        "console": "error"
+    }
+}
