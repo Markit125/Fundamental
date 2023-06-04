@@ -8,7 +8,7 @@
 #include "../../tree/12/source/avl/avl.h"
 
 
-class collection {
+class collection : protected allocating::safe_allocator, protected logging::complete_logger {
 
     friend class database;
     

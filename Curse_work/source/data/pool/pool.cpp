@@ -19,5 +19,5 @@ pool::~pool() {
 pool::pool(allocating::memory *allocator, logging::logger *logger)
     : _schemes(new avl_tree<std::string, scheme *, comparers>(allocator, logger)),
      _allocator(allocator), _logger(logger) {
-
+        
 }

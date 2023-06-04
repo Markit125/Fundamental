@@ -139,7 +139,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
     print_tree = [&](typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *subtree_root, size_t deep) {
 
         if (deep == 0) {
-            // std::cout << "\nTree:\n";
+            std::cout << "\nTree ==================\n\n";
         }
 
         if (nullptr != subtree_root) {
@@ -157,17 +157,17 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
         if (subtree_root == nullptr) {
             s += "NULL (" + cast_to_str(get_height(subtree_root)) + ")\n";
-            // std::cout << s;
+            std::cout << s;
             return;
         }
 
-        // std::cout << s << subtree_root->key << " (" << get_height(subtree_root) << ")" << std::endl;
+        std::cout << s << subtree_root->key << " (" << get_height(subtree_root) << ")" << std::endl;
 
         print_tree(subtree_root->left_subtree_address, deep + 1);
     };
 
     print_tree(this->_root, 0);
-
+    std::cout << "\nTree end ==============\n";
 }
 
 
@@ -332,7 +332,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     if (balance == 2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
         {
@@ -343,7 +343,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
             _tree->fix_height(&(subtree_root_address->left_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
         _tree->safe_log(">>>>>>> right rotation", logging::logger::severity::debug);
@@ -355,12 +355,12 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
 
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
     } else if (balance == -2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1)
         {
@@ -372,7 +372,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
             _tree->fix_height(&(subtree_root_address->right_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
             _tree->safe_log(">>>>>>> left rotation", logging::logger::severity::debug);
@@ -383,7 +383,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
         _tree->fix_height(&subtree_root_address);
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
     }
 
     _tree->safe_log("After insert inner ended", logging::logger::severity::debug);

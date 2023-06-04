@@ -130,18 +130,10 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                         }
                     }
 
-
-
-
                 } else {
                     throw std::runtime_error("Input corrupted!");
                 }
             }
-
-
-
-
-
 
         } else if (word == "delete") {
             
@@ -162,7 +154,6 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                         }
                     }
 
-
                 } else if (word == "scheme") {
 
                     if (get_word(file, word)) {
@@ -181,12 +172,8 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                             } catch (std::runtime_error &ex) {
                                 std::cout << ex.what() << std::endl;
                             }
-                        
                         }
-
                     }
-
-
 
                 } else if (word == "collection") {
 
@@ -253,9 +240,68 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
             }
 
 
+        } else if (word == "read") {
 
+            if (get_word(file, word)) {
+                // pool
 
+                query[0] = word;
 
+                if (get_word(file, word)) {
+                    // scheme
+
+                    query[1] = word;
+
+                    if (get_word(file, word)) {
+                        // collecion
+
+                        query[2] = word;
+
+                        // note
+                        try {
+                            db->read_note(file, query);
+                            if (logger) logger->log("read note outside", logging::logger::severity::debug);
+                        } catch (std::runtime_error &ex) {
+                            std::cout << ex.what() << std::endl;
+                        }
+                    }
+                }
+
+            } else {
+                throw std::runtime_error("Input corrupted!");
+            }
+
+        } else if (word == "read_range") {
+
+            if (get_word(file, word)) {
+                // pool
+
+                query[0] = word;
+
+                if (get_word(file, word)) {
+                    // scheme
+
+                    query[1] = word;
+
+                    if (get_word(file, word)) {
+                        // collecion
+
+                        query[2] = word;
+
+                        // note
+                        try {
+                            db->read_note_range(file, query);
+                            if (logger) logger->log("read note range outside", logging::logger::severity::debug);
+                        } catch (std::runtime_error &ex) {
+                            std::cout << ex.what() << std::endl;
+                        }
+                    }
+                }
+                
+            } else {
+                throw std::runtime_error("Input corrupted!");
+            }
+            
 
         } else {
             std::cout << "No such command: " << word << std::endl;

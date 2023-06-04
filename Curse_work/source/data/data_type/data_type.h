@@ -27,5 +27,20 @@ struct type_value {
 
 };
 
+inline std::ostream &operator<<(std::ostream &stream, type_key const &key) { 
+    return stream << "{ " << key._user_id << ", " << key._delivery_id << " }";
+}
+
+inline std::ostream &operator<<(std::ostream &stream, type_value const &value) { 
+    return stream << "{\n\t" << value.description << ",\n\t"
+                             << value.name << ",\n\t"
+                             << value.second_name << ",\n\t"
+                             << value.last_name << ",\n\t"
+                             << value.email << ",\n\t"
+                             << value.phone_number << ",\n\t"
+                             << value.address << ",\n\t"
+                             << value.comment << ",\n\t"
+                             << value.date_time << "\n}";
+}
 
 #endif

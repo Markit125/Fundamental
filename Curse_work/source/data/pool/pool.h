@@ -1,7 +1,7 @@
 #include "../scheme/scheme.h"
 
 
-class pool {
+class pool : protected allocating::safe_allocator, protected logging::complete_logger {
 
     friend class database;
 

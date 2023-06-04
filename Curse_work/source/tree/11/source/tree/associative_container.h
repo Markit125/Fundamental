@@ -31,6 +31,8 @@ public:
         std::pair<tkey, tvalue *> *) = 0;
     
 
+    virtual void print_notes_between(tkey left_bound, tkey right_bound) = 0;
+
     virtual void print_container() const = 0;
 
     virtual void print_container_logger() const = 0;

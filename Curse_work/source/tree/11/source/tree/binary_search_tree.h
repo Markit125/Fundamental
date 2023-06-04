@@ -21,13 +21,13 @@
 
 
 
-inline std::stringstream operator<<(std::stringstream stream, const type_key) {
-    return stream;
-}
+// inline std::stringstream operator<<(std::stringstream stream, const type_key) {
+//     return stream;
+// }
 
-inline std::stringstream operator<<(std::stringstream stream, const type_value) {
-    return stream;
-}
+// inline std::stringstream operator<<(std::stringstream stream, const type_value) {
+//     return stream;
+// }
 
 template <class T>
 std::string cast_to_str(const T& object) {
@@ -85,6 +85,8 @@ public:
 
         tree_node *get_node_pointer() const;
 
+        void set_iterator(tree_node *);
+
     public:
 
         bool operator==(
@@ -108,6 +110,7 @@ public:
     private:
 
         tree_node *_tree_root;
+    public:
         std::stack<tree_node *> _way;
 
         tree_node *_current;
@@ -121,6 +124,8 @@ public:
             tree_node *begin_or_end_node);
 
         tree_node *get_node_pointer() const;
+
+        void set_iterator(tree_node *, std::stack<binary_search_tree::tree_node *> &path_to_subtree_root_exclusive);
 
     public:
 
@@ -247,6 +252,12 @@ protected:
             tree_node *&tree_root_address,
             std::pair<tkey, tvalue *> *found);
 
+        void find_left_bound(
+            tkey const &key,
+            tree_node *&tree_root_address,
+            std::stack<binary_search_tree::tree_node *> &path_to_subtree_root_exclusive,
+            tree_node *&node_need);
+
     private:
 
         tvalue const &read_inner(
@@ -362,6 +373,13 @@ public:
     bool find(
         tkey const &key, std::pair<tkey, tvalue *> *found) final override;
 
+
+private:
+
+    void find_left_bound(tkey const &key,
+        std::stack<tree_node *> &path_to_subtree_root_exclusive,
+        tree_node *&node_need);
+
 private:
 
     logging::logger *get_logger() const override;
@@ -400,7 +418,97 @@ public:
 
     virtual void print_container_logger() const override;
 
+    virtual void print_notes_between(tkey left_bound, tkey right_bound) override;
+
 };
+
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey const left_bound, tkey const right_bound) {
+
+    safe_log("START", logging::logger::severity::warning);
+
+
+    auto it = end_infix();
+
+    tree_node *node = nullptr;
+    std::stack<binary_search_tree::tree_node *> path_to_subtree_root_exclusive;
+    find_left_bound(left_bound, path_to_subtree_root_exclusive, node);
+    
+
+    if (nullptr == node) {
+        return;
+    }
+        
+    it.set_iterator(node, path_to_subtree_root_exclusive);
+
+    tkey_comparer comparer;
+    auto end = end_infix();
+
+
+
+    safe_log("left_bound " + cast_to_str(left_bound) + " right bound " + cast_to_str(right_bound), logging::logger::severity::warning);
+
+    while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
+
+        std::cout << std::get<1>(*it) << std::endl;
+        std::cout << std::get<2>(*it) << std::endl;
+        ++it;
+    }
+  
+    safe_log("ENDED", logging::logger::severity::warning);
+    
+}
+
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::find_left_bound(
+    tkey const &key,
+    binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&subtree_root_address,
+    std::stack<binary_search_tree::tree_node *> &path_to_subtree_root_exclusive,
+    binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&node_need) {
+
+    if (node_need) _tree->safe_log("Current node " + cast_to_str(node_need->key), logging::logger::severity::warning);
+
+    if (nullptr == subtree_root_address) {
+
+        // next node
+        _tree->safe_log("A value was not found", logging::logger::severity::debug);
+        return;
+    }
+
+    tkey_comparer comparer;
+
+    if (comparer(subtree_root_address->key, key) == 0) {
+
+        node_need = subtree_root_address;
+        _tree->safe_log(cast_to_str(subtree_root_address->key) + " == " + cast_to_str(node_need->key), logging::logger::severity::warning);
+        // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
+        
+        return;
+    }
+
+    tree_node *next_node;
+
+    // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
+
+    if (comparer(subtree_root_address->key, key) > 0) {
+        next_node = subtree_root_address->right_subtree_address;
+    } else {
+        node_need = subtree_root_address;
+        next_node = subtree_root_address->left_subtree_address;
+    }
+
+    path_to_subtree_root_exclusive.push(subtree_root_address);
+
+    find_left_bound(key, next_node, path_to_subtree_root_exclusive, node_need);
+}
 
 
 
@@ -442,38 +550,38 @@ template<
     typename tkey_comparer>
 void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
-    // std::function<void(tree_node *, size_t)> print_tree;
-    // print_tree = [&](tree_node *subtree_root, size_t deep) {
+    std::function<void(tree_node *, size_t)> print_tree;
+    print_tree = [&](tree_node *subtree_root, size_t deep) {
 
-    //     if (deep == 0) {
-    //         std::cout << "\nTree:\n";
-    //     }
+        if (deep == 0) {
+            std::cout << "\nTree:\n";
+        }
 
-    //     if (nullptr != subtree_root) {
-    //         print_tree(subtree_root->right_subtree_address, deep + 1);
-    //     }
+        if (nullptr != subtree_root) {
+            print_tree(subtree_root->right_subtree_address, deep + 1);
+        }
 
-    //     std::string s;
-
-
-    //     for (size_t i = 0; i < deep; ++i) {
-    //         s += "\t";
-    //     }
-    //     s += "______";
+        std::string s;
 
 
-    //     if (subtree_root == nullptr) {
-    //         s += "NULL\n";
-    //         std::cout << s;
-    //         return;
-    //     }
+        for (size_t i = 0; i < deep; ++i) {
+            s += "\t";
+        }
+        s += "______";
 
-    //     std::cout << s << cast_to_str(subtree_root->key) << std::endl;
 
-    //     print_tree(subtree_root->left_subtree_address, deep + 1);
-    // };
+        if (subtree_root == nullptr) {
+            s += "NULL\n";
+            std::cout << s;
+            return;
+        }
 
-    // print_tree(_root, 0);
+        std::cout << s << cast_to_str(subtree_root->key) << std::endl;
+
+        print_tree(subtree_root->left_subtree_address, deep + 1);
+    };
+
+    print_tree(_root, 0);
 
 }
 
@@ -575,6 +683,7 @@ template<
     typename tvalue,
     typename tkey_comparer>
 typename binary_search_tree<tkey, tvalue, tkey_comparer>::prefix_iterator &binary_search_tree<tkey, tvalue, tkey_comparer>::prefix_iterator::operator++() {
+
     if (nullptr == _current || _current == _end) {
 
         _current = nullptr;
@@ -669,6 +778,28 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *binary_sear
     return _current;
 }
 
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::prefix_iterator::set_iterator(binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *node) {
+
+    _current = node;
+}
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::set_iterator(binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *node,
+        std::stack<binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *> &path_to_subtree_root_exclusive) {
+
+    _way = path_to_subtree_root_exclusive;
+    // _way = std::move(path_to_subtree_root_exclusive);
+    _current = node;
+}
+
+
 //endregion prefix_iterator implementation
 
 //region infix_iterator implementation
@@ -748,6 +879,7 @@ template<
     typename tkey_comparer>
 typename binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator &binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::operator++() {
 
+
     if (nullptr == _current || _current == _end) {
 
         _current = nullptr;
@@ -769,7 +901,7 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator &binary
 
         return *this;
     }
-
+    
     if (nullptr != _way.top()) {
 
         if (_way.top()->left_subtree_address == _current) {
@@ -1636,10 +1768,24 @@ template<
     typename tvalue,
     typename tkey_comparer>
 bool binary_search_tree<tkey, tvalue, tkey_comparer>::find(
-    tkey const &key, std::pair<tkey, tvalue *> *found) {
+    tkey const &key,
+    std::pair<tkey, tvalue *> *found) {
 
     // safe_log("Start finding the node with key " + cast_to_str(key), logging::logger::severity::debug);
     return _reading->find(key, _root, found);
+}
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+void binary_search_tree<tkey, tvalue, tkey_comparer>::find_left_bound(
+    tkey const &key,
+    std::stack<tree_node *> &path_to_subtree_root_exclusive,
+    binary_search_tree::tree_node *&node_need) {
+
+    // safe_log("Start finding the node with key " + cast_to_str(key), logging::logger::severity::debug);
+    return _reading->find_left_bound(key, _root, path_to_subtree_root_exclusive, node_need);
 }
 
 // endregion associative_container contract implementation

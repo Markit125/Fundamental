@@ -1,15 +1,22 @@
-[06/04/23 16:55:12][INFO] Memory for pool is allocated
-[06/04/23 16:55:12][INFO] Pool created
-[06/04/23 16:55:12][INFO] Memory for scheme is allocated
-[06/04/23 16:55:12][INFO] Scheme created
-[06/04/23 16:55:12][INFO] Memory for collection is allocated
-[06/04/23 16:55:12][INFO] Collection created
-[06/04/23 16:55:12][INFO] Memory for scheme is allocated
-[06/04/23 16:55:12][INFO] Scheme created
-[06/04/23 16:55:12][INFO] Memory for collection is allocated
-[06/04/23 16:55:12][INFO] Collection created
-[06/04/23 16:55:12][INFO] Memory for collection is allocated
-[06/04/23 16:55:12][INFO] Collection created
-[06/04/23 16:55:12][INFO] Note created
-[06/04/23 16:55:12][INFO] Note created
-[06/04/23 16:55:12][INFO] Note created
+[06/04/23 22:16:52][INFO] Memory for pool is allocated
+[06/04/23 22:16:52][INFO] Pool created
+[06/04/23 22:16:52][INFO] Memory for scheme is allocated
+[06/04/23 22:16:52][INFO] Scheme created
+[06/04/23 22:16:52][INFO] Memory for collection is allocated
+[06/04/23 22:16:52][INFO] Collection created
+[06/04/23 22:16:52][INFO] Memory for scheme is allocated
+[06/04/23 22:16:52][INFO] Scheme created
+[06/04/23 22:16:52][INFO] Memory for collection is allocated
+[06/04/23 22:16:52][INFO] Collection created
+[06/04/23 22:16:52][INFO] Memory for collection is allocated
+[06/04/23 22:16:52][INFO] Collection created
+[06/04/23 22:16:52][INFO] Note created
+[06/04/23 22:16:52][INFO] Note created
+[06/04/23 22:16:52][INFO] Note created
+[06/04/23 22:16:52][INFO] Note created
+[06/04/23 22:16:52][INFO] Note created
+[06/04/23 22:16:52][WARNING] START
+[06/04/23 22:16:52][WARNING] Current node { 3, 1 }
+[06/04/23 22:16:52][WARNING] { 2, 1 } == { 2, 1 }
+[06/04/23 22:16:52][WARNING] left_bound { 2, 1 } right bound { 1, 1 }
+[06/04/23 22:16:52][WARNING] ENDED

@@ -10,7 +10,7 @@
 int database::create_pool(std::vector<std::string> &query) {
 
     pool *new_pool = reinterpret_cast<pool *>(safe_allocate(sizeof(pool)));
-    new (new_pool) pool;
+    new (new_pool) pool(_allocator, _logger);
     safe_log("Memory for pool is allocated", logging::logger::severity::information);
 
     _pools->insert(query[0], std::move(new_pool));
@@ -31,7 +31,7 @@ int database::create_scheme(std::vector<std::string> &query) {
 
 
     scheme *new_scheme = reinterpret_cast<scheme *>(safe_allocate(sizeof(scheme)));
-    new (new_scheme) scheme;
+    new (new_scheme) scheme(_allocator, _logger);
     safe_log("Memory for scheme is allocated", logging::logger::severity::information);
 
     (*pool_found.second)->_schemes->insert(query[1], std::move(new_scheme));
@@ -57,7 +57,7 @@ int database::create_collection(std::vector<std::string> &query) {
     }
 
     collection *new_collection = reinterpret_cast<collection *>(safe_allocate(sizeof(collection)));
-    new (new_collection) collection;
+    new (new_collection) collection(_allocator, _logger);
     safe_log("Memory for collection is allocated", logging::logger::severity::information);
 
     (*scheme_found.second)->_collections->insert(query[2], std::move(new_collection));
@@ -92,30 +92,102 @@ int database::create_note(std::ifstream &file, std::vector<std::string> &query) 
 
     type_key key;
 
-    try {
-        key_filling(file, key);
-    } catch (std::runtime_error &ex) {
-        std::cout << ex.what() << std::endl;
-        throw std::runtime_error("Invalid key!");
-    }
+    key_filling(file, key);
+
 
     type_value value;
 
-    try {
-        value_filling(file, value);
-    } catch (std::runtime_error &ex) {
-        std::cout << ex.what() << std::endl;
-        throw std::runtime_error("Invalid value!");
-    }
+    value_filling(file, value);
+
 
 
     (*collection_found.second)->_notes->insert(key, std::move(value));
 
     safe_log("Note created", logging::logger::severity::information);
+
+    // (*collection_found.second)->_notes->print_container();
+    
+    // (*collection_found.second)->_notes->print_notes_between(type_key {1, 2}, type_key{ 10, 4 });
+    
     
     return 0;
 }
 
+
+//reading
+
+int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, pool **> pool_found;
+
+    if (!(_pools->find(query[0], &pool_found))) {
+        throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
+    }
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    std::pair<std::string, collection **> collection_found;
+
+    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+        throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
+    }
+
+    // (*collection_found.second)->_notes->print_container();
+
+    type_key key;
+
+    key_filling(file, key);
+
+
+    type_value value;
+
+    value = (*collection_found.second)->_notes->get(key);
+    std::cout << key << std::endl << value << std::endl;
+
+    return 0;
+}
+
+
+int database::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, pool **> pool_found;
+
+    if (!(_pools->find(query[0], &pool_found))) {
+        throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
+    }
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    std::pair<std::string, collection **> collection_found;
+
+    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+        throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
+    }
+
+    // (*collection_found.second)->_notes->print_container();
+
+    type_key key_left;
+    type_key key_right;
+
+    key_filling(file, key_left);
+    key_filling(file, key_right);
+
+    (*collection_found.second)->_notes->print_notes_between(key_left, key_right);
+
+    return 0;
+}
 
 // validation
 
@@ -184,16 +256,13 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         throw std::runtime_error("Expected '==' before value");
     }
 
-    if (!get_word(file, word)) {
-        throw std::runtime_error("Expected description");
-    }
-
     while (get_word(file, word)) {
         if (word == "==") {
             break;
         }
-        value.description += word;
+        value.description += word + " ";
     }
+    value.description.pop_back();
 
     if (word != "==") {
         throw std::runtime_error("Expected '==' after description");
@@ -301,6 +370,7 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         throw std::runtime_error("Too long user's phone_number");
     }
 
+    value.phone_number = 0;
     for (int i = 0; i < word.size(); ++i) {
 
         if (word[i] < '0' && '9' < word[i] && word[i] != '+') {
@@ -312,7 +382,7 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         }
 
         if (word[i] != '+') {
-            value.phone_number = value.phone_number * 10 + word[i] - '0';
+            value.phone_number = value.phone_number * 10 + (word[i] - '0');
         }
     }    
 
@@ -330,8 +400,9 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         if (word == "==") {
             break;
         }
-        value.address += word;
+        value.address += word + " ";
     }
+    value.address.pop_back();
 
     if (word != "==") {
         throw std::runtime_error("Expected '==' after address");
@@ -347,8 +418,9 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         if (word == "==") {
             break;
         }
-        value.comment += word;
+        value.comment += word + " ";
     }
+    value.comment.pop_back();
 
     if (word != "==") {
         throw std::runtime_error("Expected '==' after address");
@@ -392,7 +464,6 @@ void database::value_filling(std::ifstream &file, type_value &value) const {
         throw std::runtime_error("Expected '==' after date_time of delivery");
     }
 }
-
 
 
 // deleting
