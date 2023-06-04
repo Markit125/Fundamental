@@ -16,11 +16,10 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     while (file >> word) {
 
-        fail = true;
 
-        std::cout << word;
+        std::cout << word << std::endl;
 
-        // if (logger) logger->log("HERE", logging::logger::severity::information);
+        // if (logger) logger->log("HERE", logging::logger::severity::debug);
 
         if (word == "create") {
 
@@ -35,8 +34,14 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                         query[0] = word;
 
                         if (validate(word)) {
-                            fail = db->create_pool(query);
-                            if (logger) logger->log("created poll outside", logging::logger::severity::information);
+
+                            try {
+                                db->create_pool(query);
+                                if (logger) logger->log("created poll outside", logging::logger::severity::debug);
+                            } catch (std::runtime_error &ex) {
+                                std::cout << ex.what();
+                            }
+
                         }
                     }
 
@@ -54,8 +59,12 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                             query[1] = word;
 
                             if (validate(word)) {
-                                fail = db->create_scheme(query);
-                                if (logger) logger->log("created scheme outside", logging::logger::severity::information);
+                                try {
+                                    db->create_scheme(query);
+                                    if (logger) logger->log("created scheme outside", logging::logger::severity::debug);
+                                } catch (std::runtime_error &ex) {
+                                    std::cout << ex.what();
+                                }
                             }
                         }
 
@@ -81,10 +90,12 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                                 query[2] = word;
 
                                 if (validate(word)) {
-
-                                    fail = db->create_collection(query);
-                                    if (logger) logger->log("created collection outside", logging::logger::severity::information);
-
+                                    try {
+                                        db->create_collection(query);
+                                        if (logger) logger->log("created collection outside", logging::logger::severity::debug);
+                                    } catch (std::runtime_error &ex) {
+                                        std::cout << ex.what();
+                                    }
                                 }
                             }
 
@@ -96,7 +107,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
 
                 } else {
-                    throw std::runtime_error("No such container!");
+                    throw std::runtime_error("Input corrupted!");
                 }
             }
 
@@ -107,7 +118,85 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
         } else if (word == "delete") {
             
+            if (file >> word) {
+                
+                if (word == "pool") {
 
+                    if (file >> word) {
+                        // pool
+
+                        query[0] = word;
+
+                        try {
+                            db->delete_pool(query);
+                            if (logger) logger->log("created poll outside", logging::logger::severity::debug);
+                        } catch (std::runtime_error &ex) {
+                            std::cout << ex.what();
+                        }
+                    }
+
+
+                } else if (word == "scheme") {
+
+                    if (file >> word) {
+                        // pool
+
+                        query[0] = word;
+
+                        if (file >> word) {
+                            // scheme
+
+                            query[1] = word;
+
+                            try {
+                                db->delete_scheme(query);
+                                if (logger) logger->log("created scheme outside", logging::logger::severity::debug);
+                            } catch (std::runtime_error &ex) {
+                                std::cout << ex.what();
+                            }
+                        
+                        }
+
+                    }
+
+
+
+                } else if (word == "collection") {
+
+                    if (file >> word) {
+                        // pool
+
+                        query[0] = word;
+
+                        if (file >> word) {
+                            // scheme
+
+                            query[1] = word;
+
+                            if (file >> word) {
+                                // collecion
+
+                                query[2] = word;
+                                try {
+                                    db->delete_collection(query);
+                                    if (logger) logger->log("created collection outside", logging::logger::severity::debug);
+                                } catch (std::runtime_error &ex) {
+                                    std::cout << ex.what();
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+
+
+
+                } else {
+                    throw std::runtime_error("Input corrupted!");
+                }
+            }
 
 
 
@@ -118,15 +207,13 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
             throw std::runtime_error("No such command!");
         }
 
-
-        if (fail) {
-            throw std::runtime_error("Invalid name!");
-        }
-
     }
 
 
-    if (logger) logger->log("EnD", logging::logger::severity::information);
+    if (logger) logger->log("EnD", logging::logger::severity::debug);
+
+
+    delete db;
 
     return 0;
 }

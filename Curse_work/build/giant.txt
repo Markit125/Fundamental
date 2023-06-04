@@ -1,2 +1,9 @@
 create pool fiji
 create scheme fiji giant
+create collection fiji giant my_new_collection
+create scheme fiji brant
+create collection fiji giant my_second_collecion
+create collection fiji brant brant_collection_one
+delete collection fiji giant my_new_collection
+delete scheme fiji giant
+delete collection fiji giant my_second_collecion

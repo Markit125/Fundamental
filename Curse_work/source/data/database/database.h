@@ -20,6 +20,13 @@ public:
     int create_collection(std::vector<std::string> &query);
 
 
+    int delete_pool(std::vector<std::string> &query);
+
+    int delete_scheme(std::vector<std::string> &query);
+
+    int delete_collection(std::vector<std::string> &query);
+
+
 private:
 
     associative_container<std::string, pool *> *_data_bases;
