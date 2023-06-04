@@ -25,7 +25,9 @@ int database::create_scheme(std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
@@ -45,13 +47,17 @@ int database::create_collection(std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
@@ -72,23 +78,30 @@ int database::create_note(std::ifstream &file, std::vector<std::string> &query) 
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, collection **> collection_found;
 
-    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+    try {
+        (*scheme_found.second)->_collections->find(query[2], &collection_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
+
 
     type_key key;
 
@@ -120,23 +133,31 @@ int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
+        
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, collection **> collection_found;
 
-    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+    try {
+        (*scheme_found.second)->_collections->find(query[2], &collection_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
+
 
     // (*collection_found.second)->_notes->print_container();
 
@@ -164,20 +185,27 @@ int database::read_note_range(std::ifstream &file, std::vector<std::string> &que
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
+
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, collection **> collection_found;
 
-    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+    try {
+        (*scheme_found.second)->_collections->find(query[2], &collection_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
@@ -479,7 +507,9 @@ int database::delete_pool(std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
@@ -495,13 +525,17 @@ int database::delete_scheme(std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
@@ -517,20 +551,26 @@ int database::delete_collection(std::vector<std::string> &query) {
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, collection **> collection_found;
 
-    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+    try {
+        (*scheme_found.second)->_collections->find(query[2], &collection_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
@@ -548,20 +588,26 @@ int database::delete_note(std::ifstream &file, std::vector<std::string> &query) 
 
     std::pair<std::string, pool **> pool_found;
 
-    if (!(_pools->find(query[0], &pool_found))) {
+    try {
+        _pools->find(query[0], &pool_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, scheme **> scheme_found;
 
-    if (!((*pool_found.second)->_schemes->find(query[1], &scheme_found))) {
+    try {
+        (*pool_found.second)->_schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
     std::pair<std::string, collection **> collection_found;
 
-    if (!((*scheme_found.second)->_collections->find(query[2], &collection_found))) {
+    try {
+        (*scheme_found.second)->_collections->find(query[2], &collection_found);
+    } catch (std::runtime_error &ex) {
         throw std::runtime_error("Collection " + cast_to_str(query[0]) + "/"
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
