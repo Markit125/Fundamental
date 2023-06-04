@@ -7,6 +7,7 @@
 #include <iostream>
 #include <stack>
 #include <sstream>
+#include <stdexcept>
 #include <utility>
 #include <vector>
 
@@ -1339,6 +1340,7 @@ bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
 
     if (nullptr == subtree_root_address) {
         _tree->safe_log("A value was not found", logging::logger::severity::debug);
+        throw std::runtime_error("A value was not found");
         return false;
     }
 
@@ -1376,7 +1378,7 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
 
     if (nullptr == subtree_root_address) {
         _tree->safe_log("A value was not found", logging::logger::severity::debug);
-        // throw std::runtime_error("No such key '" + cast_to_str(key) + "' in a tree!");
+        throw std::runtime_error("No such key in a tree!");
     }
 
     tkey_comparer comparer;

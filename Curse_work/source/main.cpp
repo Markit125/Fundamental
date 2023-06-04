@@ -26,8 +26,6 @@ int main(int argc, char *argv[]) {
 
 
 
-
-
     delete builder;
     delete allocator;
     delete logger;

@@ -147,7 +147,13 @@ int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
     type_value value;
 
-    value = (*collection_found.second)->_notes->get(key);
+    try {
+        value = (*collection_found.second)->_notes->get(key);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error(cast_to_str(ex.what()) + " " +
+            "{ " + cast_to_str(key._user_id) + ", " + cast_to_str(key._delivery_id) + " }");
+    }
+    
     std::cout << key << std::endl << value << std::endl;
 
     return 0;
@@ -562,12 +568,8 @@ int database::delete_note(std::ifstream &file, std::vector<std::string> &query) 
 
     type_key key;
 
-    try {
-        key_filling(file, key);
-    } catch (std::runtime_error &ex) {
-        std::cout << ex.what() << std::endl;
-        throw std::runtime_error("Invalid key!");
-    }
+    key_filling(file, key);
+
 
     try {
         (*collection_found.second)->_notes->remove(key);
