@@ -3,6 +3,8 @@
 
 class pool {
 
+    friend class database;
+
 public:
 
     explicit pool(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
@@ -12,9 +14,7 @@ public:
 
 private:
 
-    associative_container<std::string, scheme *> *_pools;
-
-    friend class database;
+    associative_container<std::string, scheme *> *_schemes;
 
 
 private:

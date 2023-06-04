@@ -157,4 +157,8 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/associative_container.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../logger/source/logger/complete/complete_logger.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h \
+ /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc

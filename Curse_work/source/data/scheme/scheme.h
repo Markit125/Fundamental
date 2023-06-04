@@ -3,6 +3,8 @@
 
 class scheme {
 
+    friend class database;
+
 public:
 
     explicit scheme(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
@@ -10,12 +12,9 @@ public:
     virtual ~scheme();
 
 
+private:
 
-public:
-
-    associative_container<std::string, collection *> *_schemes;
-
-    friend class pool;
+    associative_container<std::string, collection *> *_collections;
 
 
 private:

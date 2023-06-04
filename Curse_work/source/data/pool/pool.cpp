@@ -12,12 +12,12 @@ logging::logger *pool::get_logger() const {
 
 
 pool::~pool() {
-    delete _pools;
+    delete _schemes;
 }
 
 
 pool::pool(allocating::memory *allocator, logging::logger *logger)
-    : _pools(new avl_tree<std::string, scheme *, comparers>(allocator, logger)),
+    : _schemes(new avl_tree<std::string, scheme *, comparers>(allocator, logger)),
      _allocator(allocator), _logger(logger) {
 
 }

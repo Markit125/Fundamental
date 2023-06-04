@@ -10,6 +10,8 @@
 
 class collection {
 
+    friend class database;
+    
 public:
 
     explicit collection(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
@@ -19,9 +21,7 @@ public:
 
 private:
 
-    associative_container<type_key, type_value> *_collections;
-
-    friend class scheme;
+    associative_container<type_key, type_value> *_notes;
 
 
 private:

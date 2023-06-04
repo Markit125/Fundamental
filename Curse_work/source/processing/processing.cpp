@@ -14,21 +14,21 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     std::vector<std::string> query(4);
 
-    while (file >> word) {
+    while (get_word(file, word)) {
 
 
-        std::cout << word << std::endl;
+        
 
         // if (logger) logger->log("HERE", logging::logger::severity::debug);
 
         if (word == "create") {
 
 
-            if (file >> word) {
+            if (get_word(file, word)) {
                 
                 if (word == "pool") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
@@ -39,7 +39,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                                 db->create_pool(query);
                                 if (logger) logger->log("created poll outside", logging::logger::severity::debug);
                             } catch (std::runtime_error &ex) {
-                                std::cout << ex.what();
+                                std::cout << ex.what() << std::endl;
                             }
 
                         }
@@ -48,12 +48,12 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                 } else if (word == "scheme") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
 
-                        if (file >> word) {
+                        if (get_word(file, word)) {
                             // scheme
 
                             query[1] = word;
@@ -63,7 +63,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                                     db->create_scheme(query);
                                     if (logger) logger->log("created scheme outside", logging::logger::severity::debug);
                                 } catch (std::runtime_error &ex) {
-                                    std::cout << ex.what();
+                                    std::cout << ex.what() << std::endl;
                                 }
                             }
                         }
@@ -74,17 +74,17 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                 } else if (word == "collection") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
 
-                        if (file >> word) {
+                        if (get_word(file, word)) {
                             // scheme
 
                             query[1] = word;
 
-                            if (file >> word) {
+                            if (get_word(file, word)) {
                                 // collecion
 
                                 query[2] = word;
@@ -94,13 +94,40 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                                         db->create_collection(query);
                                         if (logger) logger->log("created collection outside", logging::logger::severity::debug);
                                     } catch (std::runtime_error &ex) {
-                                        std::cout << ex.what();
+                                        std::cout << ex.what() << std::endl;
                                     }
                                 }
                             }
 
                         }
 
+                    }
+                } else if (word == "note") {
+
+                    if (get_word(file, word)) {
+                        // pool
+
+                        query[0] = word;
+
+                        if (get_word(file, word)) {
+                            // scheme
+
+                            query[1] = word;
+
+                            if (get_word(file, word)) {
+                                // collecion
+
+                                query[2] = word;
+
+                                // note
+                                try {
+                                    db->create_note(file, query);
+                                    if (logger) logger->log("created note outside", logging::logger::severity::debug);
+                                } catch (std::runtime_error &ex) {
+                                    std::cout << ex.what() << std::endl;
+                                }
+                            }
+                        }
                     }
 
 
@@ -118,41 +145,41 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
         } else if (word == "delete") {
             
-            if (file >> word) {
+            if (get_word(file, word)) {
                 
                 if (word == "pool") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
 
                         try {
                             db->delete_pool(query);
-                            if (logger) logger->log("created poll outside", logging::logger::severity::debug);
+                            if (logger) logger->log("deleted poll outside", logging::logger::severity::debug);
                         } catch (std::runtime_error &ex) {
-                            std::cout << ex.what();
+                            std::cout << ex.what() << std::endl;
                         }
                     }
 
 
                 } else if (word == "scheme") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
 
-                        if (file >> word) {
+                        if (get_word(file, word)) {
                             // scheme
 
                             query[1] = word;
 
                             try {
                                 db->delete_scheme(query);
-                                if (logger) logger->log("created scheme outside", logging::logger::severity::debug);
+                                if (logger) logger->log("deleted scheme outside", logging::logger::severity::debug);
                             } catch (std::runtime_error &ex) {
-                                std::cout << ex.what();
+                                std::cout << ex.what() << std::endl;
                             }
                         
                         }
@@ -163,25 +190,25 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                 } else if (word == "collection") {
 
-                    if (file >> word) {
+                    if (get_word(file, word)) {
                         // pool
 
                         query[0] = word;
 
-                        if (file >> word) {
+                        if (get_word(file, word)) {
                             // scheme
 
                             query[1] = word;
 
-                            if (file >> word) {
+                            if (get_word(file, word)) {
                                 // collecion
 
                                 query[2] = word;
                                 try {
                                     db->delete_collection(query);
-                                    if (logger) logger->log("created collection outside", logging::logger::severity::debug);
+                                    if (logger) logger->log("deleted collection outside", logging::logger::severity::debug);
                                 } catch (std::runtime_error &ex) {
-                                    std::cout << ex.what();
+                                    std::cout << ex.what() << std::endl;
                                 }
 
                             }
@@ -190,6 +217,33 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                     }
 
+                } else if (word == "note") {
+
+                    if (get_word(file, word)) {
+                        // pool
+
+                        query[0] = word;
+
+                        if (get_word(file, word)) {
+                            // scheme
+
+                            query[1] = word;
+
+                            if (get_word(file, word)) {
+                                // collecion
+
+                                query[2] = word;
+
+                                // note
+                                try {
+                                    db->delete_note(file, query);
+                                    if (logger) logger->log("deleted note outside", logging::logger::severity::debug);
+                                } catch (std::runtime_error &ex) {
+                                    std::cout << ex.what() << std::endl;
+                                }
+                            }
+                        }
+                    }
 
 
 
@@ -204,7 +258,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
 
         } else {
-            throw std::runtime_error("No such command!");
+            std::cout << "No such command: " << word << std::endl;
         }
 
     }

@@ -1,13 +1,15 @@
 #ifndef DATA_TYPE_H
 #define DATA_TYPE_H
 
+#define MAX_SIZE_T_LEN 15
+
 #include <iostream>
 #include <sstream>
 
 struct type_key {
 
-    long _user_id;
-    long _delivery_id;
+    size_t _user_id;
+    size_t _delivery_id;
 
 };
 
@@ -21,7 +23,7 @@ struct type_value {
     size_t phone_number;
     std::string address;
     std::string comment;
-    std::string date;
+    std::string date_time;
 
 };
 

@@ -1244,7 +1244,7 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
 
     if (nullptr == subtree_root_address) {
         _tree->safe_log("A value was not found", logging::logger::severity::debug);
-        // throw std::runtime_error("No such key '" + cast_to_str(key) + "' in a tree!\n");
+        // throw std::runtime_error("No such key '" + cast_to_str(key) + "' in a tree!");
     }
 
     tkey_comparer comparer;
@@ -1318,8 +1318,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
 
 
     if (nullptr == subtree_root_address) {
-        // _tree->safe_log("Node with key " + cast_to_str(key) + " was not found", logging::logger::severity::debug);
-        throw std::runtime_error("No such key in a tree!\n");
+        throw std::runtime_error("No such key in a tree!");
     }
 
     tkey_comparer comparer;

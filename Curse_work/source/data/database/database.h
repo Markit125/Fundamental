@@ -1,4 +1,6 @@
 #include "../pool/pool.h"
+#include <fstream>
+#include <string>
 #include <vector>
 
 
@@ -19,6 +21,8 @@ public:
 
     int create_collection(std::vector<std::string> &query);
 
+    int create_note(std::ifstream &file, std::vector<std::string> &query);
+
 
     int delete_pool(std::vector<std::string> &query);
 
@@ -26,10 +30,19 @@ public:
 
     int delete_collection(std::vector<std::string> &query);
 
+    int delete_note(std::ifstream &file, std::vector<std::string> &query);
+
 
 private:
 
-    associative_container<std::string, pool *> *_data_bases;
+    void key_filling(std::ifstream &file, type_key &key) const;
+
+    void value_filling(std::ifstream &file, type_value &value) const;
+
+
+private:
+
+    associative_container<std::string, pool *> *_pools;
 
 
 private:
@@ -44,3 +57,12 @@ private:
     logging::logger *get_logger() const;
 
 };
+
+
+int get_word(std::ifstream &stream, std::string &word);
+
+int is_date(std::string &date);
+
+int is_time(std::string &time);
+
+int is_digit(char c);

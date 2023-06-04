@@ -1,60 +1,62 @@
-[06/04/23 13:38:50][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7efef142d010
-[06/04/23 13:38:50][DEBUG] Tree is created
-[06/04/23 13:38:50][DEBUG] AVL tree is created
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d050
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d050
-[06/04/23 13:38:50][INFO] Memory for pool is allocated
-[06/04/23 13:38:50][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 80 at 0x7efef142d098
-[06/04/23 13:38:50][DEBUG] Allocated block 64 bytes of memory at 0x7efef142d098
-[06/04/23 13:38:50][DEBUG] Created node is 0x7efef142d098
-[06/04/23 13:38:50][DEBUG] after inner #1
-[06/04/23 13:38:50][DEBUG] 0x7efef142d098
-[06/04/23 13:38:50][DEBUG] ______Fix height______
-[06/04/23 13:38:50][DEBUG] Fix height left, right {0, 0}
-[06/04/23 13:38:50][DEBUG] Now height is 1
-[06/04/23 13:38:50][DEBUG] balance factor has ended
-[06/04/23 13:38:50][DEBUG] Balance factor 0
-[06/04/23 13:38:50][DEBUG] After insert inner ended
-[06/04/23 13:38:50][INFO] Pool created
-[06/04/23 13:38:50][DEBUG] created poll outside
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d100
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d100
-[06/04/23 13:38:50][INFO] Memory for scheme is allocated
-[06/04/23 13:38:50][INFO] Scheme created
-[06/04/23 13:38:50][DEBUG] created scheme outside
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d148
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d148
-[06/04/23 13:38:50][INFO] Memory for collection is allocated
-[06/04/23 13:38:50][INFO] Collection created
-[06/04/23 13:38:50][DEBUG] created collection outside
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d190
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d190
-[06/04/23 13:38:50][INFO] Memory for scheme is allocated
-[06/04/23 13:38:50][INFO] Scheme created
-[06/04/23 13:38:50][DEBUG] created scheme outside
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d1d8
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d1d8
-[06/04/23 13:38:50][INFO] Memory for collection is allocated
-[06/04/23 13:38:50][INFO] Collection created
-[06/04/23 13:38:50][DEBUG] created collection outside
-[06/04/23 13:38:50][DEBUG] Start finding memory block for allocator with size 48 bytes
-[06/04/23 13:38:50][DEBUG] Found first fit block with size 48 at 0x7efef142d220
-[06/04/23 13:38:50][DEBUG] Allocated block 32 bytes of memory at 0x7efef142d220
-[06/04/23 13:38:50][INFO] Memory for collection is allocated
-[06/04/23 13:38:50][INFO] Collection created
-[06/04/23 13:38:50][DEBUG] created collection outside
-[06/04/23 13:38:50][INFO] Collection removed
-[06/04/23 13:38:50][DEBUG] created collection outside
-[06/04/23 13:38:50][INFO] Scheme removed
-[06/04/23 13:38:50][DEBUG] created scheme outside
-[06/04/23 13:38:50][DEBUG] EnD
-[06/04/23 13:38:50][DEBUG] Deallocating tree
-[06/04/23 13:38:50][DEBUG] Deallocating complited
-[06/04/23 13:38:50][DEBUG] Allocator is destroyed
+[06/04/23 16:55:12][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7ff84b328010
+[06/04/23 16:55:12][DEBUG] Tree is created
+[06/04/23 16:55:12][DEBUG] AVL tree is created
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b328050
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b328050
+[06/04/23 16:55:12][INFO] Memory for pool is allocated
+[06/04/23 16:55:12][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 80 at 0x7ff84b328098
+[06/04/23 16:55:12][DEBUG] Allocated block 64 bytes of memory at 0x7ff84b328098
+[06/04/23 16:55:12][DEBUG] Created node is 0x7ff84b328098
+[06/04/23 16:55:12][DEBUG] after inner #1
+[06/04/23 16:55:12][DEBUG] 0x7ff84b328098
+[06/04/23 16:55:12][DEBUG] ______Fix height______
+[06/04/23 16:55:12][DEBUG] Fix height left, right {0, 0}
+[06/04/23 16:55:12][DEBUG] Now height is 1
+[06/04/23 16:55:12][DEBUG] balance factor has ended
+[06/04/23 16:55:12][DEBUG] Balance factor 0
+[06/04/23 16:55:12][DEBUG] After insert inner ended
+[06/04/23 16:55:12][INFO] Pool created
+[06/04/23 16:55:12][DEBUG] created poll outside
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b328100
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b328100
+[06/04/23 16:55:12][INFO] Memory for scheme is allocated
+[06/04/23 16:55:12][INFO] Scheme created
+[06/04/23 16:55:12][DEBUG] created scheme outside
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b328148
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b328148
+[06/04/23 16:55:12][INFO] Memory for collection is allocated
+[06/04/23 16:55:12][INFO] Collection created
+[06/04/23 16:55:12][DEBUG] created collection outside
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b328190
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b328190
+[06/04/23 16:55:12][INFO] Memory for scheme is allocated
+[06/04/23 16:55:12][INFO] Scheme created
+[06/04/23 16:55:12][DEBUG] created scheme outside
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b3281d8
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b3281d8
+[06/04/23 16:55:12][INFO] Memory for collection is allocated
+[06/04/23 16:55:12][INFO] Collection created
+[06/04/23 16:55:12][DEBUG] created collection outside
+[06/04/23 16:55:12][DEBUG] Start finding memory block for allocator with size 48 bytes
+[06/04/23 16:55:12][DEBUG] Found first fit block with size 48 at 0x7ff84b328220
+[06/04/23 16:55:12][DEBUG] Allocated block 32 bytes of memory at 0x7ff84b328220
+[06/04/23 16:55:12][INFO] Memory for collection is allocated
+[06/04/23 16:55:12][INFO] Collection created
+[06/04/23 16:55:12][DEBUG] created collection outside
+[06/04/23 16:55:12][INFO] Note created
+[06/04/23 16:55:12][DEBUG] created note outside
+[06/04/23 16:55:12][INFO] Note created
+[06/04/23 16:55:12][DEBUG] created note outside
+[06/04/23 16:55:12][INFO] Note created
+[06/04/23 16:55:12][DEBUG] created note outside
+[06/04/23 16:55:12][DEBUG] EnD
+[06/04/23 16:55:12][DEBUG] Deallocating tree
+[06/04/23 16:55:12][DEBUG] Deallocating complited
+[06/04/23 16:55:12][DEBUG] Allocator is destroyed

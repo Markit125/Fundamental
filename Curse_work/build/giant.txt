@@ -4,6 +4,13 @@ create collection fiji giant my_new_collection
 create scheme fiji brant
 create collection fiji giant my_second_collecion
 create collection fiji brant brant_collection_one
-delete collection fiji giant my_new_collection
-delete scheme fiji giant
-delete collection fiji giant my_second_collecion
+
+create note fiji giant my_new_collection { 1, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus0@gmail.com == +79990969617 ==
+Dub 5 k 6 == No == 17.06.2023 15:40 ==
+
+create note fiji giant my_new_collection { 1, 4 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus0@gmail.com == +79990969617 ==
+Dub 5 k 6 == No == 17.06.2023 15:40 ==
+create note fiji giant my_new_collection { 2, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus0@gmail.com == +79990969617 ==
+Dub 5 k 6 == No == 17.06.2023 15:40 ==
+
+delete note fiji giant my_new_collection { 2, 1 }

@@ -12,12 +12,12 @@ logging::logger *collection::get_logger() const {
 
 
 collection::~collection() {
-    delete _collections;
+    delete _notes;
 }
 
 
 collection::collection(allocating::memory *allocator, logging::logger *logger)
-    : _collections(new avl_tree<type_key, type_value, comparers>(allocator, logger)),
+    : _notes(new avl_tree<type_key, type_value, comparers>(allocator, logger)),
      _allocator(allocator), _logger(logger) {
 
 }
