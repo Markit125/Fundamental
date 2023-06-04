@@ -24,9 +24,8 @@ Dub 5 k 6 == No == 17.06.2023 15:40 ==
 
 read fiji giant my_new_collection { 2, 1 }
 
+read_range fiji giant my_second_collection { 1, 100 } { 3, 101
 read_range fiji giant my_new_collection { 2, 1 } { 5, 1 }
 
 create note fiji giant my_second_collection { 3, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
 Dub 5 k 6 == No == 17.06.2023 15:40 ==
-
-read fiji giant my_second_collection { 3, 100 }

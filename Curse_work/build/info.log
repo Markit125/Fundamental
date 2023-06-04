@@ -1,25 +1,19 @@
-[06/04/23 22:27:07][INFO] Memory for pool is allocated
-[06/04/23 22:27:07][INFO] Pool created
-[06/04/23 22:27:07][INFO] Memory for scheme is allocated
-[06/04/23 22:27:07][INFO] Scheme created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][INFO] Memory for scheme is allocated
-[06/04/23 22:27:07][INFO] Scheme created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][WARNING] START
-[06/04/23 22:27:07][WARNING] Current node { 3, 1 }
-[06/04/23 22:27:07][WARNING] Current node { 3, 1 }
-[06/04/23 22:27:07][WARNING] { 2, 1 } == { 2, 1 }
-[06/04/23 22:27:07][WARNING] left_bound { 2, 1 } right bound { 5, 1 }
-[06/04/23 22:27:07][WARNING] ENDED
-[06/04/23 22:27:07][INFO] Note created
+[06/04/23 22:34:21][INFO] Memory for pool is allocated
+[06/04/23 22:34:21][INFO] Pool created
+[06/04/23 22:34:21][INFO] Memory for scheme is allocated
+[06/04/23 22:34:21][INFO] Scheme created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][INFO] Memory for scheme is allocated
+[06/04/23 22:34:21][INFO] Scheme created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][INFO] Note created

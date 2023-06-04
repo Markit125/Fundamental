@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <string>
 #include "processing.h"
 
 
@@ -305,6 +306,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
         } else {
             std::cout << "No such command: " << word << std::endl;
+            std::getline(file, word);
         }
 
     }

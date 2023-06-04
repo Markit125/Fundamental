@@ -1,385 +1,377 @@
-[06/04/23 22:27:07][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7f159a42d010
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d050
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d050
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for pool is allocated
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d0a0
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d0a0
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d0a0
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d0a0
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Pool created
-[06/04/23 22:27:07][DEBUG] created poll outside
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d108
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d108
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for scheme is allocated
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d158
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d158
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d158
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d158
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Scheme created
-[06/04/23 22:27:07][DEBUG] created scheme outside
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d1c0
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d1c0
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d210
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d210
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d210
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d210
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][DEBUG] created collection outside
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d278
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d278
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for scheme is allocated
-[06/04/23 22:27:07][DEBUG] Move left
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d2c8
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d2c8
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d2c8
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d2c8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d158
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Scheme created
-[06/04/23 22:27:07][DEBUG] created scheme outside
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d330
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d330
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d380
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d380
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d380
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d380
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d210
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][DEBUG] created collection outside
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 56 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 56 at 0x7f159a42d3e8
-[06/04/23 22:27:07][DEBUG] Allocated block 40 bytes of memory at 0x7f159a42d3e8
-[06/04/23 22:27:07][DEBUG] Tree is created
-[06/04/23 22:27:07][DEBUG] AVL tree is created
-[06/04/23 22:27:07][INFO] Memory for collection is allocated
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 80 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 80 at 0x7f159a42d438
-[06/04/23 22:27:07][DEBUG] Allocated block 64 bytes of memory at 0x7f159a42d438
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d438
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d438
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Collection created
-[06/04/23 22:27:07][DEBUG] created collection outside
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d4a0
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -2
-[06/04/23 22:27:07][DEBUG] >>>>>>> left rotation
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42da00
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42da00
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42da00
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42da00
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d750
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -2
-[06/04/23 22:27:07][DEBUG] >>>>>>> left rotation
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] Move right
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42db58
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42db58
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42db58
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42db58
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42da00
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d8a8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -1
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][DEBUG] after inner #3
-[06/04/23 22:27:07][DEBUG] 0x7f159a42d5f8
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 3}
-[06/04/23 22:27:07][DEBUG] Now height is 4
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor -2
-[06/04/23 22:27:07][DEBUG] >>>>>>> left rotation
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {1, 1}
-[06/04/23 22:27:07][DEBUG] Now height is 2
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {2, 2}
-[06/04/23 22:27:07][DEBUG] Now height is 3
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] read note outside
-[06/04/23 22:27:07][WARNING] START
-[06/04/23 22:27:07][WARNING] Current node { 3, 1 }
-[06/04/23 22:27:07][WARNING] Current node { 3, 1 }
-[06/04/23 22:27:07][WARNING] { 2, 1 } == { 2, 1 }
-[06/04/23 22:27:07][WARNING] left_bound { 2, 1 } right bound { 5, 1 }
-[06/04/23 22:27:07][WARNING] ENDED
-[06/04/23 22:27:07][DEBUG] read note range outside
-[06/04/23 22:27:07][DEBUG] subtree_root_address is nullptr. Start creating a new node
-[06/04/23 22:27:07][DEBUG] Start finding memory block for allocator with size 320 bytes
-[06/04/23 22:27:07][DEBUG] Found first fit block with size 320 at 0x7f159a42dcb0
-[06/04/23 22:27:07][DEBUG] Allocated block 304 bytes of memory at 0x7f159a42dcb0
-[06/04/23 22:27:07][DEBUG] Created node is 0x7f159a42dcb0
-[06/04/23 22:27:07][DEBUG] after inner #1
-[06/04/23 22:27:07][DEBUG] 0x7f159a42dcb0
-[06/04/23 22:27:07][DEBUG] ______Fix height______
-[06/04/23 22:27:07][DEBUG] Fix height left, right {0, 0}
-[06/04/23 22:27:07][DEBUG] Now height is 1
-[06/04/23 22:27:07][DEBUG] balance factor has ended
-[06/04/23 22:27:07][DEBUG] Balance factor 0
-[06/04/23 22:27:07][DEBUG] After insert inner ended
-[06/04/23 22:27:07][INFO] Note created
-[06/04/23 22:27:07][DEBUG] created note outside
-[06/04/23 22:27:07][DEBUG] A value was not found
-[06/04/23 22:27:07][DEBUG] EnD
-[06/04/23 22:27:07][DEBUG] Deallocating tree
-[06/04/23 22:27:07][DEBUG] Deallocating complited
-[06/04/23 22:27:07][DEBUG] Allocator is destroyed
+[06/04/23 22:34:21][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7fd0fe82d010
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d050
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d050
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for pool is allocated
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d0a0
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d0a0
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d0a0
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d0a0
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Pool created
+[06/04/23 22:34:21][DEBUG] created poll outside
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d108
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d108
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for scheme is allocated
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d158
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d158
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d158
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d158
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Scheme created
+[06/04/23 22:34:21][DEBUG] created scheme outside
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d1c0
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d1c0
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d210
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d210
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d210
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d210
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][DEBUG] created collection outside
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d278
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d278
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for scheme is allocated
+[06/04/23 22:34:21][DEBUG] Move left
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d2c8
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d2c8
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d2c8
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d2c8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d158
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Scheme created
+[06/04/23 22:34:21][DEBUG] created scheme outside
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d330
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d330
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d380
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d380
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d380
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d380
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d210
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][DEBUG] created collection outside
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 56 at 0x7fd0fe82d3e8
+[06/04/23 22:34:21][DEBUG] Allocated block 40 bytes of memory at 0x7fd0fe82d3e8
+[06/04/23 22:34:21][DEBUG] Tree is created
+[06/04/23 22:34:21][DEBUG] AVL tree is created
+[06/04/23 22:34:21][INFO] Memory for collection is allocated
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 80 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 80 at 0x7fd0fe82d438
+[06/04/23 22:34:21][DEBUG] Allocated block 64 bytes of memory at 0x7fd0fe82d438
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d438
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d438
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Collection created
+[06/04/23 22:34:21][DEBUG] created collection outside
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d4a0
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -2
+[06/04/23 22:34:21][DEBUG] >>>>>>> left rotation
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82da00
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82da00
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82da00
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82da00
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d750
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -2
+[06/04/23 22:34:21][DEBUG] >>>>>>> left rotation
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] Move right
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82db58
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82db58
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82db58
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82db58
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82da00
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d8a8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -1
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][DEBUG] after inner #3
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82d5f8
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 3}
+[06/04/23 22:34:21][DEBUG] Now height is 4
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor -2
+[06/04/23 22:34:21][DEBUG] >>>>>>> left rotation
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {1, 1}
+[06/04/23 22:34:21][DEBUG] Now height is 2
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {2, 2}
+[06/04/23 22:34:21][DEBUG] Now height is 3
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] read note outside
+[06/04/23 22:34:21][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/04/23 22:34:21][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/04/23 22:34:21][DEBUG] Found first fit block with size 320 at 0x7fd0fe82dcb0
+[06/04/23 22:34:21][DEBUG] Allocated block 304 bytes of memory at 0x7fd0fe82dcb0
+[06/04/23 22:34:21][DEBUG] Created node is 0x7fd0fe82dcb0
+[06/04/23 22:34:21][DEBUG] after inner #1
+[06/04/23 22:34:21][DEBUG] 0x7fd0fe82dcb0
+[06/04/23 22:34:21][DEBUG] ______Fix height______
+[06/04/23 22:34:21][DEBUG] Fix height left, right {0, 0}
+[06/04/23 22:34:21][DEBUG] Now height is 1
+[06/04/23 22:34:21][DEBUG] balance factor has ended
+[06/04/23 22:34:21][DEBUG] Balance factor 0
+[06/04/23 22:34:21][DEBUG] After insert inner ended
+[06/04/23 22:34:21][INFO] Note created
+[06/04/23 22:34:21][DEBUG] created note outside
+[06/04/23 22:34:21][DEBUG] EnD
+[06/04/23 22:34:21][DEBUG] Deallocating tree
+[06/04/23 22:34:21][DEBUG] Deallocating complited
+[06/04/23 22:34:21][DEBUG] Allocator is destroyed
