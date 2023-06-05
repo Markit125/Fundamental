@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ostream>
 #include <sstream>
 #include <unistd.h>
 #include <sys/types.h>
@@ -15,19 +16,20 @@
 struct MsgQueue {
     // IMPORTANT: every message structure must start with this
     long messageType;
- 
-    // these variables are optional & you can add 
-    // more or less if you wish
+
     int someNumber;
     char buff[MSG_SIZE];
  
 };
  
 // message queue flag
-const int MSG_Q_KEY_FLAG = 0664;
+const int MSG_Q_KEY_FLAG_SERVER = 0664;
+const int MSG_Q_KEY_FLAG_CLIENT = 0700;
  
 // message queue data transfer channel
-const int MSG_Q_CHANNEL = 26;
+const int MSG_Q_CHANNEL_RECEIVE = 26;
+const int MSG_Q_CHANNEL_SEND = 16;
+
  
 int main(int argc, char *argv[]) {
 
@@ -58,61 +60,98 @@ int main(int argc, char *argv[]) {
 
 
     // declare variables
-    key_t key = -1;
-    int msqid = -1;
-    MsgQueue msg;
+    key_t key_receive = -1;
+    key_t key_send = -1;
+    int msqid_receive = -1;
+    int msqid_send = -1;
+    MsgQueue msg_receive;
+    MsgQueue msg_send;
  
-    // use a random file and a random character to generate
-    // a unique key. The same parameters to this function will 
-    // always generate the same value. This is how multiple
-    // processes can connect to the same queue.
-    key = ftok("/bin/ls", 'K');
- 
-    // was the key allocation successful ?
-    if (key < 0) {
-        
+
+    key_receive = ftok("/bin/ls", 'P');
+    
+    if (key_receive < 0) {
         perror("ftok error");
         exit(1);
     }	
  
-    // allocate the message queue if it does not already exist.
-    // this function returns the id of the queue.
-    msqid = msgget(key, MSG_Q_KEY_FLAG | IPC_CREAT);
- 
-    // was the allocation a success ?
-    if (msqid < 0) {
-        
+
+    msqid_receive = msgget(key_receive, MSG_Q_KEY_FLAG_SERVER | IPC_CREAT);
+
+    if (msqid_receive < 0) {
         perror("msgget");
         exit(1);
     }
  
-    // display info to the screen
-    std::cout << "\nThe server has started!\n"
-        << "\nWaiting for someone to connect to server id #" << msqid << " with "
-        << "the key " << key << std::endl;
+ 
+    std::cout << "\nThe server has started!\n" << "\nWaiting for someone to connect to server #" << msqid_receive
+              << " with the key " << key_receive << std::endl;
 
 
-    while (1) {
+    // while (1) {
+    for (int i = 0; i < 2; ++i) {
 
-        if (msgrcv(msqid, &msg, sizeof(msg) - sizeof(long), MSG_Q_CHANNEL, 0) < 0)
+        if (msgrcv(msqid_receive, &msg_receive, sizeof(msg_receive) - sizeof(long), MSG_Q_CHANNEL_RECEIVE, 0) < 0)
         {
             perror("msgrcv");
-            exit(1);
+            return -3;
+        }
+
+        std::stringstream ss;
+        std::stringstream out;
+        ss << msg_receive.buff;
+
+        process_file(db, ss, out, logger);
+
+        std::cout << "processed\n";
+
+
+        // memset(&msg.buff, 0, sizeof(msg.buff));
+        std::string str = out.str();
+        char *ptr = const_cast<char *>(str.c_str());
+        int count = 0;
+
+        while (*ptr != '\0' && count < MSG_SIZE) {
+            msg_send.buff[count++] = *(ptr++);
+        }
+        msg_send.buff[count] = '\0';
+        
+        msg_send.messageType = MSG_Q_CHANNEL_SEND;
+        
+
+        key_send = ftok("/bin/ls", 'X');
+
+        if (key_send < 0) {
+            perror("ftok");
+            return -1;
         }
 
 
-        std::stringstream ss;
-        ss << msg.buff;
-        
-        
-        process_file(db, ss, logger);
+        msqid_send = -1;
+        msqid_send = msgget(key_send, MSG_Q_KEY_FLAG_CLIENT | IPC_CREAT);
+
+        if (msqid_send < 0) {
+            perror("msgget");
+            return -2;
+        }
+
+
+        if (msgsnd(msqid_send, &msg_send, sizeof(msg_send) - sizeof(long), 0) < 0) {
+
+            perror("msgsnd");
+            return -4;
+        }
+
+        if (logger) logger->log("Message processed", logging::logger::severity::information);
+        sleep(1);
+
     }
  
     // finally, deallocate the message queue
-    if (msgctl(msqid, IPC_RMID, NULL) < 0) {
+    if (msgctl(msqid_receive, IPC_RMID, NULL) < 0) {
         
         perror("msgctl");
-        exit(1);
+        return -5;
     }
 
     delete db;

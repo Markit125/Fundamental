@@ -73,9 +73,6 @@ int database::create_pool(std::vector<std::string> &query) {
         new (new_pool) pool(allocator, _logger);
     }
 
-
-if (_logger) _logger->log("FULL", logging::logger::severity::warning);
-
     
     safe_log("Memory for pool is allocated", logging::logger::severity::information);
 
@@ -137,7 +134,7 @@ int database::create_note(std::stringstream &file, std::vector<std::string> &que
 
 //reading
 
-int database::read_note(std::stringstream &file, std::vector<std::string> &query) {
+int database::read_note(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 
@@ -147,13 +144,13 @@ int database::read_note(std::stringstream &file, std::vector<std::string> &query
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second).read_note(file, query);
+    (*pool_found.second).read_note(file, out_stream, query);
 
     return 0;
 }
 
 
-int database::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
+int database::read_note_range(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 
@@ -163,7 +160,7 @@ int database::read_note_range(std::stringstream &file, std::vector<std::string> 
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second).read_note_range(file, query);
+    (*pool_found.second).read_note_range(file, out_stream, query);
 
     return 0;
 }

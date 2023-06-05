@@ -1,0 +1,5 @@
+read_range fiji giant my_new_collection { 2, 1 } { 5, 1 }
+
+delete note fiji giant my_new_collection { 3, 1 }
+
+read_range fiji giant my_new_collection { 2, 1 } { 5, 1 }

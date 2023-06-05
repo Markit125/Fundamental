@@ -12,7 +12,7 @@
 #include "../memory/2/source/memory/memory.h"
 
 
-int process_file(database *&db, std::stringstream &filename, logging::logger *logger);
+int process_file(database *&db, std::stringstream &in_stream, std::stringstream &out_stream, logging::logger *logger);
 
 int validate(std::string &string);
 

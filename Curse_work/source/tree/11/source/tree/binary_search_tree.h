@@ -409,7 +409,7 @@ public:
 
     virtual void print_container_logger() const override;
 
-    virtual void print_notes_between(tkey left_bound, tkey right_bound) override;
+    virtual void print_notes_between(std::stringstream &out_stream,tkey left_bound, tkey right_bound) override;
 
 };
 
@@ -418,7 +418,7 @@ template<
     typename tkey,
     typename tvalue,
     typename tkey_comparer>
-void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey const left_bound, tkey const right_bound) {
+void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(std::stringstream &out_stream, tkey const left_bound, tkey const right_bound) {
 
     safe_log("START", logging::logger::severity::information);
 
@@ -445,8 +445,8 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey c
 
     while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
 
-        std::cout << std::get<1>(*it) << std::endl;
-        std::cout << std::get<2>(*it) << std::endl;
+        out_stream << std::get<1>(*it) << std::endl;
+        out_stream << std::get<2>(*it) << std::endl;
         ++it;
     }
   

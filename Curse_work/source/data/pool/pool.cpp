@@ -81,7 +81,7 @@ int pool::create_note(std::stringstream &file, std::vector<std::string> &query) 
 
 // reading
 
-int pool::read_note(std::stringstream &file, std::vector<std::string> &query) {
+int pool::read_note(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 
@@ -92,13 +92,13 @@ int pool::read_note(std::stringstream &file, std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second).read_note(file, query);
+    (*scheme_found.second).read_note(file, out_stream, query);
 
     return 0;
 }
 
 
-int pool::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
+int pool::read_note_range(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 
@@ -109,7 +109,7 @@ int pool::read_note_range(std::stringstream &file, std::vector<std::string> &que
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second).read_note_range(file, query);
+    (*scheme_found.second).read_note_range(file, out_stream, query);
 
     return 0;
 }

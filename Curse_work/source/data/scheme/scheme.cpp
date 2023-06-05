@@ -64,7 +64,7 @@ int scheme::create_note(std::stringstream &file, std::vector<std::string> &query
 
 // reading
 
-int scheme::read_note(std::stringstream &file, std::vector<std::string> &query) {
+int scheme::read_note(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 
@@ -75,13 +75,13 @@ int scheme::read_note(std::stringstream &file, std::vector<std::string> &query) 
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
 
-    (*collection_found.second).read_note(file, query);
+    (*collection_found.second).read_note(file, out_stream, query);
 
     return 0;
 }
 
 
-int scheme::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
+int scheme::read_note_range(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 
@@ -92,7 +92,7 @@ int scheme::read_note_range(std::stringstream &file, std::vector<std::string> &q
             + cast_to_str(query[1]) + "/" + cast_to_str(query[2]) + " doesn't exists!\n");
     }
 
-    (*collection_found.second).read_note_range(file, query);
+    (*collection_found.second).read_note_range(file, out_stream, query);
 
     return 0;
 }

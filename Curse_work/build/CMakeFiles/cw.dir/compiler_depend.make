@@ -191,11 +191,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/cstddef \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /usr/include/c++/13/sstream \
-  /usr/include/c++/13/bits/sstream.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
@@ -421,11 +421,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/cstddef \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /usr/include/c++/13/sstream \
-  /usr/include/c++/13/bits/sstream.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
@@ -650,11 +650,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/cstddef \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /usr/include/c++/13/sstream \
-  /usr/include/c++/13/bits/sstream.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
@@ -878,11 +878,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/cstddef \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/sstream \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /usr/include/c++/13/sstream \
-  /usr/include/c++/13/bits/sstream.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \

@@ -35,9 +35,9 @@ public:
 
 public:
 
-    int read_note(std::stringstream &file, std::vector<std::string> &query);
+    int read_note(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query);
 
-    int read_note_range(std::stringstream &file, std::vector<std::string> &query);
+    int read_note_range(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query);
 
 
 private:

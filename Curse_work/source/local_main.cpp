@@ -62,9 +62,11 @@ int main(int argc, char *argv[]) {
 
     std::cout << ss.str();
 
-    process_file(db, ss, logger);
+    std::stringstream out_stream;
 
+    process_file(db, ss, out_stream, logger);
 
+    std::cout << out_stream.str();
 
     delete builder;
     delete logger;

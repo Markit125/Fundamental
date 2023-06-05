@@ -55,7 +55,7 @@ int collection::create_note(std::stringstream &file, std::vector<std::string> &q
 
 // reading
 
-int collection::read_note(std::stringstream &file, std::vector<std::string> &query) {
+int collection::read_note(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     type_key key;
 
@@ -71,13 +71,13 @@ int collection::read_note(std::stringstream &file, std::vector<std::string> &que
             "{ " + cast_to_str(key._user_id) + ", " + cast_to_str(key._delivery_id) + " }");
     }
     
-    std::cout << key << std::endl << value << std::endl;
+    out_stream << key << std::endl << value << std::endl;
 
     return 0;
 }
 
 
-int collection::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
+int collection::read_note_range(std::stringstream &file, std::stringstream &out_stream, std::vector<std::string> &query) {
 
     type_key key_left;
     type_key key_right;
@@ -85,7 +85,7 @@ int collection::read_note_range(std::stringstream &file, std::vector<std::string
     key_filling(file, key_left);
     key_filling(file, key_right);
 
-    _notes->print_notes_between(key_left, key_right);
+    _notes->print_notes_between(out_stream, key_left, key_right);
 
     return 0;
 }
