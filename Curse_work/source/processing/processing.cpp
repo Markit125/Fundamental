@@ -7,7 +7,14 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     std::ifstream file = open_file(filename);
 
-    database *db = new database(allocator, logger);
+    database *db;
+
+    if (nullptr != allocator) {
+        db = reinterpret_cast<database *>(allocator->allocate(sizeof(database(allocator, logger))));
+        new (db) scheme(allocator, logger);
+    } else {
+        db = new database(allocator, logger);
+    }
 
     std::string word;
 
@@ -17,13 +24,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     while (get_word(file, word)) {
 
-
-        
-
-        // if (logger) logger->log("HERE", logging::logger::severity::debug);
-
         if (word == "create") {
-
 
             if (get_word(file, word)) {
                 
@@ -45,7 +46,6 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                         }
                     }
-
 
                 } else if (word == "scheme") {
 
@@ -315,7 +315,13 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
     if (logger) logger->log("EnD", logging::logger::severity::debug);
 
 
-    delete db;
+    if (nullptr != allocator) {
+        db->~database();
+        std::cout << "Destructed?\n";
+        allocator->deallocate(db);
+    } else {
+        delete db;
+    }
 
     return 0;
 }

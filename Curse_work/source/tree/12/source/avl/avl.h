@@ -4,6 +4,7 @@
 #include "../../../11/source/tree/binary_search_tree.h"
 #include <cstddef>
 #include <exception>
+#include <iostream>
 
 template<
     typename tkey,

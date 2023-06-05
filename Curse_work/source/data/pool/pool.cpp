@@ -12,12 +12,158 @@ logging::logger *pool::get_logger() const {
 
 
 pool::~pool() {
-    delete _schemes;
+
+    safe_log("Pool destructor", logging::logger::severity::warning);
+    safe_deallocate(_schemes);
+    std::cout << "HIHIHIHIIHIIHIHIHIHI\n";
+    // delete _schemes;
 }
 
 
 pool::pool(allocating::memory *allocator, logging::logger *logger)
     : _schemes(new avl_tree<std::string, scheme *, comparers>(allocator, logger)),
      _allocator(allocator), _logger(logger) {
+
+    safe_log("Pool constructor", logging::logger::severity::warning);
         
 }
+
+
+// creating
+
+int pool::create_scheme(std::vector<std::string> &query) {
+
+    scheme *new_scheme = reinterpret_cast<scheme *>(safe_allocate(sizeof(scheme)));
+    new (new_scheme) scheme(_allocator, _logger);
+    safe_log("Memory for scheme is allocated", logging::logger::severity::information);
+
+    _schemes->insert(query[1], std::move(new_scheme));
+    safe_log("Scheme created", logging::logger::severity::information);
+
+    return 0;
+}
+
+
+int pool::create_collection(std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->create_collection(query);
+    
+    return 0;
+}
+
+
+int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->create_note(file, query);
+    
+    return 0;
+}
+
+
+// reading
+
+int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->read_note(file, query);
+
+    return 0;
+}
+
+
+int pool::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->read_note_range(file, query);
+
+    return 0;
+}
+
+
+// deleting
+
+int pool::delete_scheme(std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    _schemes->remove(query[1]);
+    safe_log("Scheme removed", logging::logger::severity::information);
+
+    return 0;
+}
+
+
+int pool::delete_collection(std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->delete_collection(query);
+
+    return 0;
+}
+
+
+int pool::delete_note(std::ifstream &file, std::vector<std::string> &query) {
+
+    std::pair<std::string, scheme **> scheme_found;
+
+    try {
+        _schemes->find(query[1], &scheme_found);
+    } catch (std::runtime_error &ex) {
+        throw std::runtime_error("Scheme " + cast_to_str(query[0]) + "/"
+            + cast_to_str(query[1]) + " doesn't exists!\n");
+    }
+
+    (*scheme_found.second)->delete_note(file, query);
+
+    return 0;
+}
+

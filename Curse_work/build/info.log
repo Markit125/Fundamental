@@ -1,25 +1,30 @@
-[06/04/23 22:45:44][INFO] Memory for pool is allocated
-[06/04/23 22:45:44][INFO] Pool created
-[06/04/23 22:45:44][INFO] Memory for scheme is allocated
-[06/04/23 22:45:44][INFO] Scheme created
-[06/04/23 22:45:44][INFO] Memory for collection is allocated
-[06/04/23 22:45:44][INFO] Collection created
-[06/04/23 22:45:44][INFO] Memory for scheme is allocated
-[06/04/23 22:45:44][INFO] Scheme created
-[06/04/23 22:45:44][INFO] Memory for collection is allocated
-[06/04/23 22:45:44][INFO] Collection created
-[06/04/23 22:45:44][INFO] Memory for collection is allocated
-[06/04/23 22:45:44][INFO] Collection created
-[06/04/23 22:45:44][INFO] Note created
-[06/04/23 22:45:44][INFO] Note created
-[06/04/23 22:45:45][INFO] Note created
-[06/04/23 22:45:45][INFO] Note created
-[06/04/23 22:45:45][INFO] Note created
-[06/04/23 22:45:45][INFO] Note created
-[06/04/23 22:45:45][WARNING] START
-[06/04/23 22:45:45][WARNING] START
-[06/04/23 22:45:45][WARNING] Current node { 3, 1 }
-[06/04/23 22:45:45][WARNING] Current node { 3, 1 }
-[06/04/23 22:45:45][WARNING] { 2, 1 } == { 2, 1 }
-[06/04/23 22:45:45][WARNING] left_bound { 2, 1 } right bound { 5, 1 }
-[06/04/23 22:45:45][WARNING] ENDED
+[06/05/23 11:25:02][WARNING] Pool constructor
+[06/05/23 11:25:02][INFO] Memory for pool is allocated
+[06/05/23 11:25:02][INFO] Pool created
+[06/05/23 11:25:02][INFO] Memory for scheme is allocated
+[06/05/23 11:25:02][INFO] Scheme created
+[06/05/23 11:25:02][INFO] Memory for collection is allocated
+[06/05/23 11:25:02][INFO] Collection created
+[06/05/23 11:25:02][INFO] Memory for scheme is allocated
+[06/05/23 11:25:02][INFO] Scheme created
+[06/05/23 11:25:02][INFO] Memory for collection is allocated
+[06/05/23 11:25:02][INFO] Collection created
+[06/05/23 11:25:02][INFO] Memory for collection is allocated
+[06/05/23 11:25:02][INFO] Collection created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][WARNING] START
+[06/05/23 11:25:02][WARNING] START
+[06/05/23 11:25:02][WARNING] Current node { 3, 1 }
+[06/05/23 11:25:02][WARNING] Current node { 3, 1 }
+[06/05/23 11:25:02][WARNING] { 2, 1 } == { 2, 1 }
+[06/05/23 11:25:02][WARNING] left_bound { 2, 1 } right bound { 5, 1 }
+[06/05/23 11:25:02][WARNING] ENDED
+[06/05/23 11:25:02][INFO] Note created
+[06/05/23 11:25:02][WARNING] Database destructor
+[06/05/23 11:25:02][WARNING] Type is PN18binary_search_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP4pool9comparersE9tree_nodeE
+[06/05/23 11:25:02][WARNING] Database destructor _pools destructed

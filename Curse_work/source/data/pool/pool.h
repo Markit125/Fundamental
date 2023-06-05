@@ -9,8 +9,33 @@ public:
 
     explicit pool(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
 
-    virtual ~pool();
+    ~pool();
 
+
+public:
+
+    int create_scheme(std::vector<std::string> &query);
+
+    int create_collection(std::vector<std::string> &query);
+
+    int create_note(std::ifstream &file, std::vector<std::string> &query);
+
+
+public:
+
+    int read_note(std::ifstream &file, std::vector<std::string> &query);
+
+    int read_note_range(std::ifstream &file, std::vector<std::string> &query);
+
+
+public:
+
+    int delete_scheme(std::vector<std::string> &query);
+
+    int delete_collection(std::vector<std::string> &query);
+
+    int delete_note(std::ifstream &file, std::vector<std::string> &query);
+    
 
 private:
 
@@ -19,9 +44,9 @@ private:
 
 private:
 
-    allocating::memory *get_allocator() const;
+    allocating::memory *get_allocator() const override;
 
-    logging::logger *get_logger() const;
+    logging::logger *get_logger() const override;
 
 
     allocating::memory *_allocator;

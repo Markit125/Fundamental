@@ -124,7 +124,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/fstream \
+ /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../logger/source/logger/complete/../prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../memory/2/source/memory/memory.h \

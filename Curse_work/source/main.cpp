@@ -20,6 +20,8 @@ int main(int argc, char *argv[]) {
             2048000, nullptr, logger, allocating::memory::fit_type::first
         );
 
+        allocator = nullptr;
+
 
     std::string filename = argv[1];
     process_file(filename, allocator, logger);

@@ -1,6 +1,4 @@
 #include "../pool/pool.h"
-#include <fstream>
-#include <string>
 #include <vector>
 
 
@@ -61,17 +59,17 @@ private:
     logging::logger *_logger;
 
 
-    allocating::memory *get_allocator() const;
+    allocating::memory *get_allocator() const override;
 
-    logging::logger *get_logger() const;
+    logging::logger *get_logger() const override;
 
 };
 
 
-int get_word(std::ifstream &stream, std::string &word);
+// int get_word(std::ifstream &stream, std::string &word);
 
-int is_date(std::string &date);
+// int is_date(std::string &date);
 
-int is_time(std::string &time);
+// int is_time(std::string &time);
 
-int is_digit(char c);
+// int is_digit(char c);

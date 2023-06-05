@@ -1717,6 +1717,8 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::~binary_search_tree() {
     auto it_end = end_postfix();
 
     for (auto it = begin_postfix(); it != it_end; ++it) {
+        safe_log("Type is " + cast_to_str(typeid(it.get_node_pointer()).name()), logging::logger::severity::warning);
+        (it.get_node_pointer())->~tree_node();
         safe_deallocate(it.get_node_pointer());
     }
     
