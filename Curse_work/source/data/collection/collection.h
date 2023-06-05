@@ -18,7 +18,7 @@ public:
 
     explicit collection(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
 
-    virtual ~collection();
+    ~collection();
 
 
 public:
@@ -52,9 +52,9 @@ private:
 
 private:
 
-    allocating::memory *get_allocator() const;
+    allocating::memory *get_allocator() const override;
 
-    logging::logger *get_logger() const;
+    logging::logger *get_logger() const override;
 
     allocating::memory *_allocator;
 

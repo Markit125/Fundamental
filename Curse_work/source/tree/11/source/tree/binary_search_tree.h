@@ -21,15 +21,6 @@
 #include "../../../11/source/allocator/safe_allocator.h"
 
 
-
-// inline std::stringstream operator<<(std::stringstream stream, const type_key) {
-//     return stream;
-// }
-
-// inline std::stringstream operator<<(std::stringstream stream, const type_value) {
-//     return stream;
-// }
-
 template <class T>
 std::string cast_to_str(const T& object) {
 
@@ -48,11 +39,11 @@ class binary_search_tree:
     public associative_container<tkey, tvalue>, protected logging::complete_logger, protected allocating::safe_allocator
 {
 
-
 protected:
 
     struct tree_node
     {
+        tree_node() = default;
 
         tkey key;
 
@@ -61,6 +52,11 @@ protected:
         tree_node *left_subtree_address;
 
         tree_node *right_subtree_address;
+
+        ~tree_node() {
+            value.~tvalue();
+        }
+
 
     };
 
@@ -430,7 +426,7 @@ template<
     typename tkey_comparer>
 void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey const left_bound, tkey const right_bound) {
 
-    safe_log("START", logging::logger::severity::warning);
+    safe_log("START", logging::logger::severity::information);
 
 
     auto it = end_infix();
@@ -451,7 +447,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey c
 
 
 
-    safe_log("left_bound " + cast_to_str(left_bound) + " right bound " + cast_to_str(right_bound), logging::logger::severity::warning);
+    safe_log("left_bound " + cast_to_str(left_bound) + " right bound " + cast_to_str(right_bound), logging::logger::severity::information);
 
     while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
 
@@ -460,7 +456,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(tkey c
         ++it;
     }
   
-    safe_log("ENDED", logging::logger::severity::warning);
+    safe_log("ENDED", logging::logger::severity::information);
     
 }
 
@@ -475,7 +471,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
     std::stack<binary_search_tree::tree_node *> &path_to_subtree_root_exclusive,
     binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&node_need) {
 
-    if (node_need) _tree->safe_log("Current node " + cast_to_str(node_need->key), logging::logger::severity::warning);
+    if (node_need) _tree->safe_log("Current node " + cast_to_str(node_need->key), logging::logger::severity::information);
 
     if (nullptr == subtree_root_address) {
 
@@ -489,7 +485,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
     if (comparer(subtree_root_address->key, key) == 0) {
 
         node_need = subtree_root_address;
-        _tree->safe_log(cast_to_str(subtree_root_address->key) + " == " + cast_to_str(node_need->key), logging::logger::severity::warning);
+        _tree->safe_log(cast_to_str(subtree_root_address->key) + " == " + cast_to_str(node_need->key), logging::logger::severity::information);
         // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         
         return;
@@ -1307,7 +1303,7 @@ template<
 void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method::initialize_new_node(
     tree_node *&new_node, tkey const &key, tvalue &&value) const {
 
-    new (new_node) tree_node{key, std::move(value), nullptr, nullptr};
+    new (new_node) tree_node{key, std::move(value), nullptr, nullptr };
 }
 
 // endregion insertion implementation
@@ -1717,12 +1713,13 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::~binary_search_tree() {
     auto it_end = end_postfix();
 
     for (auto it = begin_postfix(); it != it_end; ++it) {
-        safe_log("Type is " + cast_to_str(typeid(it.get_node_pointer()).name()), logging::logger::severity::warning);
+        // safe_log("Type is " + cast_to_str(typeid(it.get_node_pointer()).name()), logging::logger::severity::warning);
+        // safe_log("GIN " + cast_to_str((it.get_node_pointer())->key), logging::logger::severity::warning);
         (it.get_node_pointer())->~tree_node();
         safe_deallocate(it.get_node_pointer());
     }
     
-    safe_log("Deallocating complited", logging::logger::severity::debug);
+    safe_log("Deallocation complited", logging::logger::severity::debug);
 
     delete _insertion;
     delete _reading;

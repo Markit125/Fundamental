@@ -25,8 +25,8 @@ void allocating::memory_with_descriptors::deallocate(void * const target_to_deal
         return;
     }
 
-    // safe_log("Prev " + cast_to_str(prev), logging::logger::severity::trace);
 
+    safe_log("Prev " + cast_to_str(get_pointer_previous(target_to_dealloc)), logging::logger::severity::trace);
     void *next = *get_pointer_next(target_to_dealloc);
     void *prev = get_pointer_previous(target_to_dealloc);
 
@@ -615,6 +615,7 @@ void **allocating::memory_with_descriptors::get_pointer_next(const void * const 
 
 
 void *allocating::memory_with_descriptors::get_pointer_previous(const void * const block) const {
+    
     void *current = trusted_memory_to_block();
     void *previous = current;
     

@@ -11,7 +11,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     if (nullptr != allocator) {
         db = reinterpret_cast<database *>(allocator->allocate(sizeof(database(allocator, logger))));
-        new (db) scheme(allocator, logger);
+        new (db) database(allocator, logger);
     } else {
         db = new database(allocator, logger);
     }
@@ -319,6 +319,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
         db->~database();
         std::cout << "Destructed?\n";
         allocator->deallocate(db);
+        // delete db;
     } else {
         delete db;
     }

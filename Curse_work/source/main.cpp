@@ -1,5 +1,6 @@
 #include <iostream>
 #include "memory/4/source/memory_with_descriptors/memory_with_descriptors.h"
+#include "memory/3/source/memory_with_list/memory_with_list.h"
 #include "processing/processing.h"
 #include "logger/source/logger/concrete/logger_builder_concrete.h"
 
@@ -16,11 +17,15 @@ int main(int argc, char *argv[]) {
     logging::logger *logger =
         builder->construct_configuration("../source/configuration/conf.json");
 
-    allocating::memory *allocator = new allocating::memory_with_descriptors(
+    // allocating::memory *allocator = new allocating::memory_with_descriptors(
+    //         2048000, nullptr, logger, allocating::memory::fit_type::first
+    //     );
+
+    allocating::memory *allocator = new allocating::memory_with_list(
             2048000, nullptr, logger, allocating::memory::fit_type::first
         );
 
-        allocator = nullptr;
+        // allocator = nullptr;
 
 
     std::string filename = argv[1];

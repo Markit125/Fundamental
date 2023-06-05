@@ -36,11 +36,15 @@ public:
 
 protected:
 
-    struct avl_tree_node : binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node {
+    struct avl_tree_node : public binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node {
 
         // struct binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node binary_tree;
 
         size_t height = 0;
+
+        ~avl_tree_node() {
+            std::cout << "avl_tree_node destructor\n";
+        }
 
     };
 

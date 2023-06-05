@@ -11,8 +11,7 @@ public:
 
     ~pool();
 
-
-public:
+  public:
 
     int create_scheme(std::vector<std::string> &query);
 
@@ -44,9 +43,9 @@ private:
 
 private:
 
-    allocating::memory *get_allocator() const override;
+    allocating::memory *get_allocator() const ;
 
-    logging::logger *get_logger() const override;
+    logging::logger *get_logger() const ;
 
 
     allocating::memory *_allocator;

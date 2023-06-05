@@ -171,18 +171,22 @@ int database::delete_note(std::ifstream &file, std::vector<std::string> &query) 
 }
 
 
+// constructor destructor
 
 database::database(allocating::memory *allocator, logging::logger *logger)
-    : _pools(new avl_tree<std::string, pool *, comparers>(allocator, logger)),
-     _allocator(allocator), _logger(logger) {
+    : _allocator(allocator), _logger(logger) {
 
+    _pools = reinterpret_cast<avl_tree<std::string, pool *, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, pool *, comparers>)));
+    new (_pools) avl_tree<std::string, pool *, comparers>(allocator, logger);
+    
+    safe_log("Database constructor", logging::logger::severity::warning);
 }
 
 database::~database() {
-    std::cout << "GGGGGGGGGGGGGGGGGGGGGGGgg\n";
+    
+    std::cout << "Database destructor\n";
     safe_log("Database destructor", logging::logger::severity::warning);
     _pools->~associative_container();
-    safe_log("Database destructor _pools destructed", logging::logger::severity::warning);
     safe_deallocate(_pools);
     
 }

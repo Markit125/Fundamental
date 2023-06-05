@@ -2,13 +2,15 @@
 #include <vector>
 
 
-class database : protected allocating::safe_allocator, protected logging::complete_logger {
+class database : protected allocating::safe_allocator, protected logging::complete_logger
+// protected binary_search_tree<std::string, pool *, comparers>::tree_node
+{
 
 public:
 
     explicit database(allocating::memory *allocator = nullptr, logging::logger *logger = nullptr);
 
-    virtual ~database();
+    ~database() override;
 
 
 public:
