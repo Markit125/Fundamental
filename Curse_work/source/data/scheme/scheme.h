@@ -35,7 +35,7 @@ public:
 
 private:
 
-    associative_container<std::string, collection *> *_collections;
+    associative_container<std::string, collection> *_collections;
 
 
 private:
@@ -50,3 +50,8 @@ private:
     logging::logger *_logger;
 
 };
+
+
+inline std::ostream &operator<<(std::ostream &stream, scheme const &key) { 
+    return stream << "[ object scheme ]";
+}

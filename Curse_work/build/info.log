@@ -1,34 +1,39 @@
-[06/05/23 15:52:44][WARNING] Database constructor
-[06/05/23 15:52:44][WARNING] Pool constructor
-[06/05/23 15:52:44][INFO] Memory for pool is allocated
-[06/05/23 15:52:44][INFO] Pool created
-[06/05/23 15:52:44][WARNING] Scheme constructor
-[06/05/23 15:52:44][INFO] Memory for scheme is allocated
-[06/05/23 15:52:44][INFO] Scheme created
-[06/05/23 15:52:44][WARNING] Collection constructor
-[06/05/23 15:52:44][INFO] Memory for collection is allocated
-[06/05/23 15:52:44][INFO] Collection created
-[06/05/23 15:52:44][WARNING] Scheme constructor
-[06/05/23 15:52:44][INFO] Memory for scheme is allocated
-[06/05/23 15:52:44][INFO] Scheme created
-[06/05/23 15:52:44][WARNING] Collection constructor
-[06/05/23 15:52:44][INFO] Memory for collection is allocated
-[06/05/23 15:52:44][INFO] Collection created
-[06/05/23 15:52:44][WARNING] Collection constructor
-[06/05/23 15:52:44][INFO] Memory for collection is allocated
-[06/05/23 15:52:44][INFO] Collection created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][INFO] START
-[06/05/23 15:52:44][INFO] START
-[06/05/23 15:52:44][INFO] Current node { 3, 1 }
-[06/05/23 15:52:44][INFO] Current node { 3, 1 }
-[06/05/23 15:52:44][INFO] { 2, 1 } == { 2, 1 }
-[06/05/23 15:52:44][INFO] left_bound { 2, 1 } right bound { 5, 1 }
-[06/05/23 15:52:44][INFO] ENDED
-[06/05/23 15:52:44][INFO] Note created
-[06/05/23 15:52:44][WARNING] Database destructor
+[06/05/23 16:50:07][WARNING] Database constructor
+[06/05/23 16:50:07][WARNING] Pool constructor
+[06/05/23 16:50:07][INFO] Memory for pool is allocated
+[06/05/23 16:50:07][INFO] Pool created
+[06/05/23 16:50:07][WARNING] Scheme constructor
+[06/05/23 16:50:07][INFO] Memory for scheme is allocated
+[06/05/23 16:50:07][INFO] Scheme created
+[06/05/23 16:50:07][WARNING] Collection constructor
+[06/05/23 16:50:07][INFO] Memory for collection is allocated
+[06/05/23 16:50:07][INFO] Collection created
+[06/05/23 16:50:07][WARNING] Scheme constructor
+[06/05/23 16:50:07][INFO] Memory for scheme is allocated
+[06/05/23 16:50:07][INFO] Scheme created
+[06/05/23 16:50:07][WARNING] Collection constructor
+[06/05/23 16:50:07][INFO] Memory for collection is allocated
+[06/05/23 16:50:07][INFO] Collection created
+[06/05/23 16:50:07][WARNING] Collection constructor
+[06/05/23 16:50:07][INFO] Memory for collection is allocated
+[06/05/23 16:50:07][INFO] Collection created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][INFO] START
+[06/05/23 16:50:07][INFO] START
+[06/05/23 16:50:07][INFO] Current node { 3, 1 }
+[06/05/23 16:50:07][INFO] Current node { 3, 1 }
+[06/05/23 16:50:07][INFO] { 2, 1 } == { 2, 1 }
+[06/05/23 16:50:07][INFO] left_bound { 2, 1 } right bound { 5, 1 }
+[06/05/23 16:50:07][INFO] ENDED
+[06/05/23 16:50:07][INFO] Note created
+[06/05/23 16:50:07][WARNING] Database destructor
+[06/05/23 16:50:07][WARNING] Pool destructor
+[06/05/23 16:50:07][WARNING] Scheme destructor
+[06/05/23 16:50:07][WARNING] Collection destructor
+[06/05/23 16:50:07][WARNING] Scheme destructor
+[06/05/23 16:50:07][WARNING] Collection destructor

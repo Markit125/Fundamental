@@ -38,7 +38,7 @@ public:
 
 private:
 
-    associative_container<std::string, scheme *> *_schemes;
+    associative_container<std::string, scheme> *_schemes;
 
 
 private:
@@ -53,3 +53,7 @@ private:
     logging::logger *_logger;
 
 };
+
+inline std::ostream &operator<<(std::ostream &stream, pool const &key) { 
+    return stream << "[ object pool ]";
+}

@@ -63,6 +63,10 @@ private:
 };
 
 
+inline std::ostream &operator<<(std::ostream &stream, collection const &key) { 
+    return stream << "[ object collection ]";
+}
+
 int get_word(std::ifstream &stream, std::string &word);
 
 int is_date(std::string &date);

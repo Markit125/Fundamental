@@ -317,9 +317,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
     if (nullptr != allocator) {
         db->~database();
-        std::cout << "Destructed?\n";
         allocator->deallocate(db);
-        // delete db;
     } else {
         delete db;
     }

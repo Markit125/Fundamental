@@ -1,4 +1,6 @@
+dfd
 create pool fiji
+
 create scheme fiji giant
 create collection fiji giant my_new_collection
 create scheme fiji brant

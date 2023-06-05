@@ -5,6 +5,27 @@
 #include <utility>
 #include <vector>
 
+
+
+// constructor destructor
+
+database::database(allocating::memory *allocator, logging::logger *logger)
+    : _allocator(allocator), _logger(logger) {
+
+    _pools = reinterpret_cast<avl_tree<std::string, pool, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, pool, comparers>)));
+    new (_pools) avl_tree<std::string, pool, comparers>(allocator, logger);
+    
+    safe_log("Database constructor", logging::logger::severity::warning);
+}
+
+database::~database() {
+    
+    safe_log("Database destructor", logging::logger::severity::warning);
+    _pools->~associative_container();
+    safe_deallocate(_pools);
+    
+}
+
 // creating
 
 int database::create_pool(std::vector<std::string> &query) {
@@ -13,7 +34,7 @@ int database::create_pool(std::vector<std::string> &query) {
     new (new_pool) pool(_allocator, _logger);
     safe_log("Memory for pool is allocated", logging::logger::severity::information);
 
-    _pools->insert(query[0], std::move(new_pool));
+    _pools->insert(query[0], std::move(*new_pool));
 
     safe_log("Pool created", logging::logger::severity::information);
 
@@ -23,7 +44,7 @@ int database::create_pool(std::vector<std::string> &query) {
 
 int database::create_scheme(std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -31,7 +52,7 @@ int database::create_scheme(std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->create_scheme(query);
+    (*pool_found.second).create_scheme(query);
 
     return 0;
 }
@@ -39,7 +60,7 @@ int database::create_scheme(std::vector<std::string> &query) {
 
 int database::create_collection(std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -47,7 +68,7 @@ int database::create_collection(std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->create_collection(query);
+    (*pool_found.second).create_collection(query);
     
     return 0;
 }
@@ -55,7 +76,7 @@ int database::create_collection(std::vector<std::string> &query) {
 
 int database::create_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -63,7 +84,7 @@ int database::create_note(std::ifstream &file, std::vector<std::string> &query) 
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->create_note(file, query);
+    (*pool_found.second).create_note(file, query);
     
     return 0;
 }
@@ -73,7 +94,7 @@ int database::create_note(std::ifstream &file, std::vector<std::string> &query) 
 
 int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -81,7 +102,7 @@ int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->read_note(file, query);
+    (*pool_found.second).read_note(file, query);
 
     return 0;
 }
@@ -89,7 +110,7 @@ int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
 int database::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -97,7 +118,7 @@ int database::read_note_range(std::ifstream &file, std::vector<std::string> &que
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->read_note_range(file, query);
+    (*pool_found.second).read_note_range(file, query);
 
     return 0;
 }
@@ -107,7 +128,7 @@ int database::read_note_range(std::ifstream &file, std::vector<std::string> &que
 
 int database::delete_pool(std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -125,7 +146,7 @@ int database::delete_pool(std::vector<std::string> &query) {
 
 int database::delete_scheme(std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -133,7 +154,7 @@ int database::delete_scheme(std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->delete_scheme(query);
+    (*pool_found.second).delete_scheme(query);
 
     return 0;
 }
@@ -141,7 +162,7 @@ int database::delete_scheme(std::vector<std::string> &query) {
 
 int database::delete_collection(std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -149,7 +170,7 @@ int database::delete_collection(std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->delete_collection(query);
+    (*pool_found.second).delete_collection(query);
     
     return 0;
 }
@@ -157,7 +178,7 @@ int database::delete_collection(std::vector<std::string> &query) {
 
 int database::delete_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, pool **> pool_found;
+    std::pair<std::string, pool *> pool_found;
 
     try {
         _pools->find(query[0], &pool_found);
@@ -165,30 +186,9 @@ int database::delete_note(std::ifstream &file, std::vector<std::string> &query) 
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
-    (*pool_found.second)->delete_note(file, query);
+    (*pool_found.second).delete_note(file, query);
     
     return 0;
-}
-
-
-// constructor destructor
-
-database::database(allocating::memory *allocator, logging::logger *logger)
-    : _allocator(allocator), _logger(logger) {
-
-    _pools = reinterpret_cast<avl_tree<std::string, pool *, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, pool *, comparers>)));
-    new (_pools) avl_tree<std::string, pool *, comparers>(allocator, logger);
-    
-    safe_log("Database constructor", logging::logger::severity::warning);
-}
-
-database::~database() {
-    
-    std::cout << "Database destructor\n";
-    safe_log("Database destructor", logging::logger::severity::warning);
-    _pools->~associative_container();
-    safe_deallocate(_pools);
-    
 }
 
 

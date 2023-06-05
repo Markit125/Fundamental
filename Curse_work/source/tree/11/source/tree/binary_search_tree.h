@@ -43,8 +43,7 @@ protected:
 
     struct tree_node
     {
-        tree_node() = default;
-
+        
         tkey key;
 
         tvalue value;
@@ -52,11 +51,6 @@ protected:
         tree_node *left_subtree_address;
 
         tree_node *right_subtree_address;
-
-        ~tree_node() {
-            value.~tvalue();
-        }
-
 
     };
 
@@ -1146,7 +1140,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::right_rotation(
     if (nullptr != parent) {
         if ((*parent)->right_subtree_address == *subtree_root) {
             (*parent)->right_subtree_address = node;
-        // } else if ((*parent)->left_subtree_address == *subtree_root) {
         } else {
             (*parent)->left_subtree_address = node;
         }

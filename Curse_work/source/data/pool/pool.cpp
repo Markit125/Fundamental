@@ -12,22 +12,19 @@ logging::logger *pool::get_logger() const {
 
 
 pool::~pool() {
-
-    std::cout << "AAAA\nAAA\nAAAA|n\n\n\n\n";
-
+    
     safe_log("Pool destructor", logging::logger::severity::warning);
-    std::cout << "Pool destructor\n";
+    _schemes->~associative_container();
     safe_deallocate(_schemes);
-    // delete _schemes;
 }
 
 
 pool::pool(allocating::memory *allocator, logging::logger *logger)
     : _allocator(allocator), _logger(logger) {
 
-    _schemes = reinterpret_cast<avl_tree<std::string, scheme *, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, scheme *, comparers>)));
-    new (_schemes) avl_tree<std::string, scheme *, comparers>(allocator, logger);
-    
+    _schemes = reinterpret_cast<avl_tree<std::string, scheme, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, scheme, comparers>)));
+    new (_schemes) avl_tree<std::string, scheme, comparers>(allocator, logger);
+
     safe_log("Pool constructor", logging::logger::severity::warning);
 }
 
@@ -40,7 +37,7 @@ int pool::create_scheme(std::vector<std::string> &query) {
     new (new_scheme) scheme(_allocator, _logger);
     safe_log("Memory for scheme is allocated", logging::logger::severity::information);
 
-    _schemes->insert(query[1], std::move(new_scheme));
+    _schemes->insert(query[1], std::move(*new_scheme));
     safe_log("Scheme created", logging::logger::severity::information);
 
     return 0;
@@ -49,7 +46,7 @@ int pool::create_scheme(std::vector<std::string> &query) {
 
 int pool::create_collection(std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -58,7 +55,7 @@ int pool::create_collection(std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->create_collection(query);
+    (*scheme_found.second).create_collection(query);
     
     return 0;
 }
@@ -66,7 +63,7 @@ int pool::create_collection(std::vector<std::string> &query) {
 
 int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -75,7 +72,7 @@ int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->create_note(file, query);
+    (*scheme_found.second).create_note(file, query);
     
     return 0;
 }
@@ -85,7 +82,7 @@ int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
 
 int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -94,7 +91,7 @@ int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->read_note(file, query);
+    (*scheme_found.second).read_note(file, query);
 
     return 0;
 }
@@ -102,7 +99,7 @@ int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
 
 int pool::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -111,7 +108,7 @@ int pool::read_note_range(std::ifstream &file, std::vector<std::string> &query) 
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->read_note_range(file, query);
+    (*scheme_found.second).read_note_range(file, query);
 
     return 0;
 }
@@ -121,7 +118,7 @@ int pool::read_note_range(std::ifstream &file, std::vector<std::string> &query) 
 
 int pool::delete_scheme(std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -139,7 +136,7 @@ int pool::delete_scheme(std::vector<std::string> &query) {
 
 int pool::delete_collection(std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -148,7 +145,7 @@ int pool::delete_collection(std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->delete_collection(query);
+    (*scheme_found.second).delete_collection(query);
 
     return 0;
 }
@@ -156,7 +153,7 @@ int pool::delete_collection(std::vector<std::string> &query) {
 
 int pool::delete_note(std::ifstream &file, std::vector<std::string> &query) {
 
-    std::pair<std::string, scheme **> scheme_found;
+    std::pair<std::string, scheme *> scheme_found;
 
     try {
         _schemes->find(query[1], &scheme_found);
@@ -165,7 +162,7 @@ int pool::delete_note(std::ifstream &file, std::vector<std::string> &query) {
             + cast_to_str(query[1]) + " doesn't exists!\n");
     }
 
-    (*scheme_found.second)->delete_note(file, query);
+    (*scheme_found.second).delete_note(file, query);
 
     return 0;
 }

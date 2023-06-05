@@ -51,7 +51,7 @@ private:
 
 private:
 
-    associative_container<std::string, pool *> *_pools;
+    associative_container<std::string, pool> *_pools;
 
 
 private:
