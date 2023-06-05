@@ -161,4 +161,8 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/associative_container.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../logger/source/logger/complete/complete_logger.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../memory/3/source/memory_with_list/memory_with_list.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../memory/4/source/memory_with_descriptors/memory_with_descriptors.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/../pool/../scheme/../collection/../../memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/complete_logger.h

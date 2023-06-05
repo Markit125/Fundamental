@@ -1,5 +1,9 @@
-dfd
-create pool fiji
+create pool LF fiji
+
+create pool GH grambo
+
+create pool LB ganto
+D-BWF L-BWF GH
 
 create scheme fiji giant
 create collection fiji giant my_new_collection

@@ -9,11 +9,12 @@
 
 // constructor destructor
 
-database::database(allocating::memory *allocator, logging::logger *logger)
-    : _allocator(allocator), _logger(logger) {
+database::database(logging::logger *logger)
+    : _logger(logger) {
 
-    _pools = reinterpret_cast<avl_tree<std::string, pool, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, pool, comparers>)));
-    new (_pools) avl_tree<std::string, pool, comparers>(allocator, logger);
+    // _pools = reinterpret_cast<avl_tree<std::string, pool, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, pool, comparers>)));
+    // new (_pools) avl_tree<std::string, pool, comparers>(nullptr, logger);
+    _pools = new avl_tree<std::string, pool, comparers>(nullptr, logger);
     
     safe_log("Database constructor", logging::logger::severity::warning);
 }
@@ -21,8 +22,7 @@ database::database(allocating::memory *allocator, logging::logger *logger)
 database::~database() {
     
     safe_log("Database destructor", logging::logger::severity::warning);
-    _pools->~associative_container();
-    safe_deallocate(_pools);
+    delete _pools;
     
 }
 
@@ -30,8 +30,53 @@ database::~database() {
 
 int database::create_pool(std::vector<std::string> &query) {
 
-    pool *new_pool = reinterpret_cast<pool *>(safe_allocate(sizeof(pool)));
-    new (new_pool) pool(_allocator, _logger);
+
+    bool fail = true;
+
+    allocating::memory *allocator = nullptr;
+    allocating::memory::fit_type fit;
+
+    if (query[1] == "GH") {
+        fail = false;
+    } else if (query[1][0] == 'D' || query[1][0] == 'L') {
+
+        fail = false;
+
+        if (query[1][1] == 'B') {
+            fit = allocating::memory::fit_type::best;
+        } else if (query[1][1] == 'W') {
+            fit = allocating::memory::fit_type::worst;
+        } else if (query[1][1] == 'F') {
+            fit = allocating::memory::fit_type::first;
+        } else {
+            fail = true;
+        }
+
+        if (query[1][0] == 'D') {
+            allocator = new allocating::memory_with_descriptors(2048000, nullptr, _logger, fit);
+        } else if (query[1][0] == 'L') {
+            allocator = new allocating::memory_with_list(2048000, nullptr, _logger, fit);
+        }
+    }
+
+    if (fail) {
+        throw std::runtime_error("Wrong allocator type!");
+    }
+
+
+    pool *new_pool;
+
+    if (nullptr == allocator) {
+        new_pool = new pool(allocator, _logger);
+    } else {
+        new_pool = reinterpret_cast<pool *>(allocator->allocate(sizeof(pool)));
+        new (new_pool) pool(allocator, _logger);
+    }
+
+
+if (_logger) _logger->log("FULL", logging::logger::severity::warning);
+
+    
     safe_log("Memory for pool is allocated", logging::logger::severity::information);
 
     _pools->insert(query[0], std::move(*new_pool));
@@ -190,12 +235,6 @@ int database::delete_note(std::ifstream &file, std::vector<std::string> &query) 
     
     return 0;
 }
-
-
-allocating::memory *database::get_allocator() const {
-    return _allocator;
-}
-
 
 logging::logger *database::get_logger() const {
     return _logger;

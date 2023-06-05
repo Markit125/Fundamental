@@ -1,6 +1,4 @@
 #include <iostream>
-#include "memory/4/source/memory_with_descriptors/memory_with_descriptors.h"
-#include "memory/3/source/memory_with_list/memory_with_list.h"
 #include "processing/processing.h"
 #include "logger/source/logger/concrete/logger_builder_concrete.h"
 
@@ -21,21 +19,19 @@ int main(int argc, char *argv[]) {
     //         2048000, nullptr, logger, allocating::memory::fit_type::first
     //     );
 
-    allocating::memory *allocator = new allocating::memory_with_list(
-            2048000, nullptr, logger, allocating::memory::fit_type::first
-        );
+    // allocating::memory *allocator = new allocating::memory_with_list(
+    //         2048000, nullptr, logger, allocating::memory::fit_type::first
+    //     );
 
         // allocator = nullptr;
 
-
     std::string filename = argv[1];
-    process_file(filename, allocator, logger);
+    process_file(filename, logger);
 
 
 
-    delete builder;
-    delete allocator;
-    delete logger;
+    // delete builder;
+    // delete logger;
 
     return 0;
 }

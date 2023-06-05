@@ -1,39 +1,50 @@
-[06/05/23 16:50:07][WARNING] Database constructor
-[06/05/23 16:50:07][WARNING] Pool constructor
-[06/05/23 16:50:07][INFO] Memory for pool is allocated
-[06/05/23 16:50:07][INFO] Pool created
-[06/05/23 16:50:07][WARNING] Scheme constructor
-[06/05/23 16:50:07][INFO] Memory for scheme is allocated
-[06/05/23 16:50:07][INFO] Scheme created
-[06/05/23 16:50:07][WARNING] Collection constructor
-[06/05/23 16:50:07][INFO] Memory for collection is allocated
-[06/05/23 16:50:07][INFO] Collection created
-[06/05/23 16:50:07][WARNING] Scheme constructor
-[06/05/23 16:50:07][INFO] Memory for scheme is allocated
-[06/05/23 16:50:07][INFO] Scheme created
-[06/05/23 16:50:07][WARNING] Collection constructor
-[06/05/23 16:50:07][INFO] Memory for collection is allocated
-[06/05/23 16:50:07][INFO] Collection created
-[06/05/23 16:50:07][WARNING] Collection constructor
-[06/05/23 16:50:07][INFO] Memory for collection is allocated
-[06/05/23 16:50:07][INFO] Collection created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][INFO] START
-[06/05/23 16:50:07][INFO] START
-[06/05/23 16:50:07][INFO] Current node { 3, 1 }
-[06/05/23 16:50:07][INFO] Current node { 3, 1 }
-[06/05/23 16:50:07][INFO] { 2, 1 } == { 2, 1 }
-[06/05/23 16:50:07][INFO] left_bound { 2, 1 } right bound { 5, 1 }
-[06/05/23 16:50:07][INFO] ENDED
-[06/05/23 16:50:07][INFO] Note created
-[06/05/23 16:50:07][WARNING] Database destructor
-[06/05/23 16:50:07][WARNING] Pool destructor
-[06/05/23 16:50:07][WARNING] Scheme destructor
-[06/05/23 16:50:07][WARNING] Collection destructor
-[06/05/23 16:50:07][WARNING] Scheme destructor
-[06/05/23 16:50:07][WARNING] Collection destructor
+[06/05/23 18:09:14][WARNING] Database constructor
+[06/05/23 18:09:14][WARNING] Pool constructor
+[06/05/23 18:09:14][WARNING] FULL
+[06/05/23 18:09:14][INFO] Memory for pool is allocated
+[06/05/23 18:09:14][INFO] Pool created
+[06/05/23 18:09:14][WARNING] Pool constructor
+[06/05/23 18:09:14][WARNING] FULL
+[06/05/23 18:09:14][INFO] Memory for pool is allocated
+[06/05/23 18:09:14][INFO] Pool created
+[06/05/23 18:09:14][WARNING] Pool constructor
+[06/05/23 18:09:14][WARNING] FULL
+[06/05/23 18:09:14][INFO] Memory for pool is allocated
+[06/05/23 18:09:14][INFO] Pool created
+[06/05/23 18:09:14][WARNING] Scheme constructor
+[06/05/23 18:09:14][INFO] Memory for scheme is allocated
+[06/05/23 18:09:14][INFO] Scheme created
+[06/05/23 18:09:14][WARNING] Collection constructor
+[06/05/23 18:09:14][INFO] Memory for collection is allocated
+[06/05/23 18:09:14][INFO] Collection created
+[06/05/23 18:09:14][WARNING] Scheme constructor
+[06/05/23 18:09:14][INFO] Memory for scheme is allocated
+[06/05/23 18:09:14][INFO] Scheme created
+[06/05/23 18:09:14][WARNING] Collection constructor
+[06/05/23 18:09:14][INFO] Memory for collection is allocated
+[06/05/23 18:09:14][INFO] Collection created
+[06/05/23 18:09:14][WARNING] Collection constructor
+[06/05/23 18:09:14][INFO] Memory for collection is allocated
+[06/05/23 18:09:14][INFO] Collection created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][INFO] START
+[06/05/23 18:09:14][INFO] START
+[06/05/23 18:09:14][INFO] Current node { 3, 1 }
+[06/05/23 18:09:14][INFO] Current node { 3, 1 }
+[06/05/23 18:09:14][INFO] { 2, 1 } == { 2, 1 }
+[06/05/23 18:09:14][INFO] left_bound { 2, 1 } right bound { 5, 1 }
+[06/05/23 18:09:14][INFO] ENDED
+[06/05/23 18:09:14][INFO] Note created
+[06/05/23 18:09:14][WARNING] Database destructor
+[06/05/23 18:09:14][WARNING] Pool destructor
+[06/05/23 18:09:14][WARNING] Scheme destructor
+[06/05/23 18:09:14][WARNING] Collection destructor
+[06/05/23 18:09:14][WARNING] Scheme destructor
+[06/05/23 18:09:14][WARNING] Collection destructor
+[06/05/23 18:09:14][WARNING] Pool destructor
+[06/05/23 18:09:14][WARNING] Pool destructor

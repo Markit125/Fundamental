@@ -11,7 +11,7 @@
 #include "../memory/2/source/memory/memory.h"
 
 
-int process_file(std::string &filename, allocating::memory *allocator, logging::logger *logger);
+int process_file(std::string &filename, logging::logger *logger);
 
 int validate(std::string &string);
 

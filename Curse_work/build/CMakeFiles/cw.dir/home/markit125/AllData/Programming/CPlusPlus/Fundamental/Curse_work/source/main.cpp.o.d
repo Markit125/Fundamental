@@ -123,15 +123,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/memory_with_descriptors.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/memory.h \
- /usr/include/c++/13/cstddef \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/../../../../logger/source/logger/prototypes/logger.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/complete_logger.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/../prototypes/logger.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/../../../2/source/memory/memory.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/processing.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
@@ -147,7 +138,10 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/scheme.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/collection.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../logger/source/logger/complete/complete_logger.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../logger/source/logger/complete/../prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/2/source/memory/memory.h \
+ /usr/include/c++/13/cstddef \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/2/source/memory/../../../../logger/source/logger/prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../../source/tree/11/source/tree/associative_container.h \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../data_type/data_type.h \
@@ -165,9 +159,15 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_stack.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../data/data_type/data_type.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/memory_with_list.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/associative_container.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../11/source/allocator/safe_allocator.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/3/source/memory_with_list/memory_with_list.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/4/source/memory_with_descriptors/memory_with_descriptors.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/build/../source/memory/2/source/memory/memory.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/4/source/memory_with_descriptors/../../../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../memory/2/source/memory/memory.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h \

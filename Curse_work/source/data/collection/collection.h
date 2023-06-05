@@ -8,6 +8,8 @@
 #include "../../tree/11/source/allocator/safe_allocator.h"
 #include "../../comparer/comparer.h"
 #include "../../tree/12/source/avl/avl.h"
+#include "../../memory/3/source/memory_with_list/memory_with_list.h"
+#include "../../memory/4/source/memory_with_descriptors/memory_with_descriptors.h"
 
 
 class collection : protected allocating::safe_allocator, protected logging::complete_logger {

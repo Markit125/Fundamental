@@ -1194,10 +1194,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
             );
 
         initialize_new_node(new_node, key, std::move(value));
-        // new (new_node) tree_node{key, std::move(value), nullptr, nullptr};
-        // new_node->key = key;
-        // new_node->value = value;
-        // new_node->left_subtree_address = new_node->right_subtree_address = nullptr;
 
 
         if (path_to_subtree_root_exclusive.empty()) {

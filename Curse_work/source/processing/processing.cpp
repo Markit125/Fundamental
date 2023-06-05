@@ -3,22 +3,19 @@
 #include "processing.h"
 
 
-int process_file(std::string &filename, allocating::memory *allocator, logging::logger *logger) {
+int process_file(std::string &filename, logging::logger *logger) {
 
     std::ifstream file = open_file(filename);
+    database *db = new database(logger);
 
-    database *db;
 
-    if (nullptr != allocator) {
-        db = reinterpret_cast<database *>(allocator->allocate(sizeof(database(allocator, logger))));
-        new (db) database(allocator, logger);
-    } else {
-        db = new database(allocator, logger);
-    }
-
+    // if (nullptr != allocator) {
+    //     db = reinterpret_cast<database *>(allocator->allocate(sizeof(database(allocator, logger))));
+    //     new (db) database(allocator, logger);
+    // } else {
+    //     db = new database(allocator, logger);
+    // }
     std::string word;
-
-    bool fail;
 
     std::vector<std::string> query(4);
 
@@ -31,19 +28,25 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                 if (word == "pool") {
 
                     if (get_word(file, word)) {
-                        // pool
+                        // allocator
 
-                        query[0] = word;
+                        query[1] = word;
 
-                        if (validate(word)) {
+                        if (get_word(file, word)) {
+                            // pool
 
-                            try {
-                                db->create_pool(query);
-                                if (logger) logger->log("created poll outside", logging::logger::severity::debug);
-                            } catch (std::runtime_error &ex) {
-                                std::cout << ex.what() << std::endl;
+                            query[0] = word;
+
+                            if (validate(word)) {
+
+                                try {
+                                    db->create_pool(query);
+                                    if (logger) logger->log("created pool outside", logging::logger::severity::debug);
+                                } catch (std::runtime_error &ex) {
+                                    std::cout << ex.what() << std::endl;
+                                }
+
                             }
-
                         }
                     }
 
@@ -132,7 +135,8 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                     }
 
                 } else {
-                    throw std::runtime_error("Input corrupted!");
+                    std::cout << "No such container: " << word << std::endl;
+                    std::getline(file, word);
                 }
             }
 
@@ -149,7 +153,7 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
                         try {
                             db->delete_pool(query);
-                            if (logger) logger->log("deleted poll outside", logging::logger::severity::debug);
+                            if (logger) logger->log("deleted pool outside", logging::logger::severity::debug);
                         } catch (std::runtime_error &ex) {
                             std::cout << ex.what() << std::endl;
                         }
@@ -236,7 +240,8 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
 
 
                 } else {
-                    throw std::runtime_error("Input corrupted!");
+                    std::cout << "No such container: " << word << std::endl;
+                    std::getline(file, word);
                 }
             }
 
@@ -269,7 +274,8 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                 }
 
             } else {
-                throw std::runtime_error("Input corrupted!");
+                std::cout << "No such container: " << word << std::endl;
+                std::getline(file, word);
             }
 
         } else if (word == "read_range") {
@@ -300,7 +306,8 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
                 }
                 
             } else {
-                throw std::runtime_error("Input corrupted!");
+                std::cout << "No such container: " << word << std::endl;
+                std::getline(file, word);
             }
             
 
@@ -315,12 +322,12 @@ int process_file(std::string &filename, allocating::memory *allocator, logging::
     if (logger) logger->log("EnD", logging::logger::severity::debug);
 
 
-    if (nullptr != allocator) {
-        db->~database();
-        allocator->deallocate(db);
-    } else {
+    // if (nullptr != allocator) {
+    //     db->~database();
+    //     allocator->deallocate(db);
+    // } else {
         delete db;
-    }
+    // }
 
     return 0;
 }
