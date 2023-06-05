@@ -45,7 +45,7 @@ int scheme::create_collection(std::vector<std::string> &query) {
 }
 
 
-int scheme::create_note(std::ifstream &file, std::vector<std::string> &query) {
+int scheme::create_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 
@@ -64,7 +64,7 @@ int scheme::create_note(std::ifstream &file, std::vector<std::string> &query) {
 
 // reading
 
-int scheme::read_note(std::ifstream &file, std::vector<std::string> &query) {
+int scheme::read_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 
@@ -81,7 +81,7 @@ int scheme::read_note(std::ifstream &file, std::vector<std::string> &query) {
 }
 
 
-int scheme::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+int scheme::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 
@@ -119,7 +119,7 @@ int scheme::delete_collection(std::vector<std::string> &query) {
 }
 
 
-int scheme::delete_note(std::ifstream &file, std::vector<std::string> &query) {
+int scheme::delete_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, collection *> collection_found;
 

@@ -4,7 +4,6 @@
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
-using namespace std;
  
 // Compile & Run
 // g++ Server.cpp -o Server
@@ -12,15 +11,14 @@ using namespace std;
  
 // the structure representing the message queue
 // & must match the same layout as in the client.cpp
-struct MsgQueue
-{
+struct MsgQueue {
     // IMPORTANT: every message structure must start with this
     long messageType;
  
     // these variables are optional & you can add 
     // more or less if you wish
     int someNumber;
-    char buff[100];	
+    char buff[2000];	
  
 };
  
@@ -30,8 +28,7 @@ const int MSG_Q_KEY_FLAG = 0664;
 // message queue data transfer channel
 const int MSG_Q_CHANNEL = 26;
  
-int main()
-{
+int main() {
     // declare variables
     key_t key = -1;
     int msqid = -1;
@@ -44,8 +41,8 @@ int main()
     key = ftok("/bin/ls", 'K');
  
     // was the key allocation successful ?
-    if(key < 0)
-    {
+    if (key < 0) {
+        
         perror("ftok error");
         exit(1);
     }	
@@ -55,20 +52,20 @@ int main()
     msqid = msgget(key, MSG_Q_KEY_FLAG | IPC_CREAT);
  
     // was the allocation a success ?
-    if(msqid < 0)
-    {
+    if (msqid < 0) {
+        
         perror("msgget");
         exit(1);
     }
  
     // display info to the screen
-    cout <<"\nThe server has started!\n"
-        <<"\nWaiting for someone to connect to server id #"<<msqid<<" with "
-        <<"the key "<<key<<endl<<endl;
+    std::cout << "\nThe server has started!\n"
+        << "\nWaiting for someone to connect to server id #" << msqid << " with "
+        << "the key " << key << std::endl;
                 
     // recieve 10 messages from the client
-    for(int x = 0; x < 10; ++x)
-    {
+    for (int x = 0; x < 10; ++x) {
+        
         // this is where we receive messages:
         // @param: msqid - the id of the message queue
         // @param: msg - the message structure which stores the
@@ -79,24 +76,24 @@ int main()
         // @param: MSG_Q_CHANNEL - receive all messages whose type parameter
         //   is set equal to "MSG_Q_CHANNEL"
         // @param: 0 - flag values (not useful for this example).
-        if(msgrcv(msqid, &msg, sizeof(msg) - sizeof(long), MSG_Q_CHANNEL, 0) < 0)
+        if (msgrcv(msqid, &msg, sizeof(msg) - sizeof(long), MSG_Q_CHANNEL, 0) < 0)
         {
             perror("msgrcv");
             exit(1);
         }
         
         // print the received message from the client
-        cout << "someNumber = "<<msg.someNumber<<" buff = "<<msg.buff<<endl;
+        std::cout << "someNumber = " << msg.someNumber << " buff = " << msg.buff << std::endl;
     }
  
     // finally, deallocate the message queue
-    if(msgctl(msqid, IPC_RMID, NULL) < 0)
-    {
+    if (msgctl(msqid, IPC_RMID, NULL) < 0) {
+        
         perror("msgctl");
         exit(1);
     }
     
-    cout << "\nServer is now shutting down!\n";
+    std::cout << "\nServer is now shutting down!\n";
  
     return 0;
 }

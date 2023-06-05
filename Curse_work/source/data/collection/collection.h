@@ -25,26 +25,26 @@ public:
 
 public:
 
-    int create_note(std::ifstream &file, std::vector<std::string> &query);
+    int create_note(std::stringstream &file, std::vector<std::string> &query);
 
 
 public:
 
-    int read_note(std::ifstream &file, std::vector<std::string> &query);
+    int read_note(std::stringstream &file, std::vector<std::string> &query);
 
-    int read_note_range(std::ifstream &file, std::vector<std::string> &query);
+    int read_note_range(std::stringstream &file, std::vector<std::string> &query);
 
 
 public:
 
-    int delete_note(std::ifstream &file, std::vector<std::string> &query);
+    int delete_note(std::stringstream &file, std::vector<std::string> &query);
     
 
 private:
 
-    void key_filling(std::ifstream &file, type_key &key) const;
+    void key_filling(std::stringstream &file, type_key &key) const;
 
-    void value_filling(std::ifstream &file, type_value &value) const;
+    void value_filling(std::stringstream &file, type_value &value) const;
 
 
 private:
@@ -69,7 +69,7 @@ inline std::ostream &operator<<(std::ostream &stream, collection const &key) {
     return stream << "[ object collection ]";
 }
 
-int get_word(std::ifstream &stream, std::string &word);
+int get_word(std::stringstream &stream, std::string &word);
 
 int is_date(std::string &date);
 

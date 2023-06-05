@@ -1,6 +1,7 @@
 #include "logger_builder_concrete.h"
 #include "logger_concrete.h"
 #include <fstream>
+#include <stdexcept>
 
 
 logging::logger_builder *logger_builder_concrete::add_stream(
@@ -19,6 +20,11 @@ logging::logger *logger_builder_concrete::construct() const {
 logging::logger *logger_builder_concrete::construct_configuration(const std::string & filename) {
 
     std::ifstream conf_file(filename);
+
+    if (!conf_file.is_open()) {
+        throw std::runtime_error("No such configuration file!");
+    }
+    
     std::stringstream buf;
     buf << conf_file.rdbuf();
     auto json = nlohmann::json::parse(buf.str());

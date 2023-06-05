@@ -1,12 +1,14 @@
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include "processing.h"
 
 
-int process_file(std::string &filename, logging::logger *logger) {
+// int process_file(database *&db, std::string &filename, logging::logger *logger) {
+int process_file(database *&db, std::stringstream &file, logging::logger *logger) {
 
-    std::ifstream file = open_file(filename);
-    database *db = new database(logger);
+    // std::ifstream file = open_file(filename);
+    
 
 
     // if (nullptr != allocator) {
@@ -18,6 +20,7 @@ int process_file(std::string &filename, logging::logger *logger) {
     std::string word;
 
     std::vector<std::string> query(4);
+    // std::string
 
     while (get_word(file, word)) {
 
@@ -136,7 +139,7 @@ int process_file(std::string &filename, logging::logger *logger) {
 
                 } else {
                     std::cout << "No such container: " << word << std::endl;
-                    std::getline(file, word);
+                    // std::getline(file, word);
                 }
             }
 
@@ -241,7 +244,7 @@ int process_file(std::string &filename, logging::logger *logger) {
 
                 } else {
                     std::cout << "No such container: " << word << std::endl;
-                    std::getline(file, word);
+                    // std::getline(file, word);
                 }
             }
 
@@ -275,7 +278,7 @@ int process_file(std::string &filename, logging::logger *logger) {
 
             } else {
                 std::cout << "No such container: " << word << std::endl;
-                std::getline(file, word);
+                // std::getline(file, word);
             }
 
         } else if (word == "read_range") {
@@ -307,27 +310,19 @@ int process_file(std::string &filename, logging::logger *logger) {
                 
             } else {
                 std::cout << "No such container: " << word << std::endl;
-                std::getline(file, word);
+                // std::getline(file, word);
             }
             
 
         } else {
             std::cout << "No such command: " << word << std::endl;
-            std::getline(file, word);
+            // std::getline(file, word);
         }
 
     }
 
 
     if (logger) logger->log("EnD", logging::logger::severity::debug);
-
-
-    // if (nullptr != allocator) {
-    //     db->~database();
-    //     allocator->deallocate(db);
-    // } else {
-        delete db;
-    // }
 
     return 0;
 }

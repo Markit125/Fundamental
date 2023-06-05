@@ -16,21 +16,21 @@ public:
 
     int create_collection(std::vector<std::string> &query);
 
-    int create_note(std::ifstream &file, std::vector<std::string> &query);
+    int create_note(std::stringstream &file, std::vector<std::string> &query);
 
 
 public:
 
-    int read_note(std::ifstream &file, std::vector<std::string> &query);
+    int read_note(std::stringstream &file, std::vector<std::string> &query);
 
-    int read_note_range(std::ifstream &file, std::vector<std::string> &query);
+    int read_note_range(std::stringstream &file, std::vector<std::string> &query);
 
 
 public:
 
     int delete_collection(std::vector<std::string> &query);
 
-    int delete_note(std::ifstream &file, std::vector<std::string> &query);
+    int delete_note(std::stringstream &file, std::vector<std::string> &query);
 
 
 private:

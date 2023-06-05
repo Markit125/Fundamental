@@ -1,4 +1,5 @@
 #include "pool.h"
+#include <sstream>
 
 
 allocating::memory *pool::get_allocator() const {
@@ -61,7 +62,7 @@ int pool::create_collection(std::vector<std::string> &query) {
 }
 
 
-int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
+int pool::create_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 
@@ -80,7 +81,7 @@ int pool::create_note(std::ifstream &file, std::vector<std::string> &query) {
 
 // reading
 
-int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
+int pool::read_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 
@@ -97,7 +98,7 @@ int pool::read_note(std::ifstream &file, std::vector<std::string> &query) {
 }
 
 
-int pool::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+int pool::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 
@@ -151,7 +152,7 @@ int pool::delete_collection(std::vector<std::string> &query) {
 }
 
 
-int pool::delete_note(std::ifstream &file, std::vector<std::string> &query) {
+int pool::delete_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, scheme *> scheme_found;
 

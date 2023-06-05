@@ -119,7 +119,7 @@ int database::create_collection(std::vector<std::string> &query) {
 }
 
 
-int database::create_note(std::ifstream &file, std::vector<std::string> &query) {
+int database::create_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 
@@ -137,7 +137,7 @@ int database::create_note(std::ifstream &file, std::vector<std::string> &query) 
 
 //reading
 
-int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
+int database::read_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 
@@ -153,7 +153,7 @@ int database::read_note(std::ifstream &file, std::vector<std::string> &query) {
 }
 
 
-int database::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+int database::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 
@@ -221,7 +221,7 @@ int database::delete_collection(std::vector<std::string> &query) {
 }
 
 
-int database::delete_note(std::ifstream &file, std::vector<std::string> &query) {
+int database::delete_note(std::stringstream &file, std::vector<std::string> &query) {
 
     std::pair<std::string, pool *> pool_found;
 

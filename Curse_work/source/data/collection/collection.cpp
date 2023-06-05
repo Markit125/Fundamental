@@ -29,7 +29,7 @@ collection::collection(allocating::memory *allocator, logging::logger *logger)
 }
 
 
-int collection::create_note(std::ifstream &file, std::vector<std::string> &query) {
+int collection::create_note(std::stringstream &file, std::vector<std::string> &query) {
 
     type_key key;
 
@@ -55,7 +55,7 @@ int collection::create_note(std::ifstream &file, std::vector<std::string> &query
 
 // reading
 
-int collection::read_note(std::ifstream &file, std::vector<std::string> &query) {
+int collection::read_note(std::stringstream &file, std::vector<std::string> &query) {
 
     type_key key;
 
@@ -77,7 +77,7 @@ int collection::read_note(std::ifstream &file, std::vector<std::string> &query) 
 }
 
 
-int collection::read_note_range(std::ifstream &file, std::vector<std::string> &query) {
+int collection::read_note_range(std::stringstream &file, std::vector<std::string> &query) {
 
     type_key key_left;
     type_key key_right;
@@ -93,7 +93,7 @@ int collection::read_note_range(std::ifstream &file, std::vector<std::string> &q
 
 // deleting
 
-int collection::delete_note(std::ifstream &file, std::vector<std::string> &query) {
+int collection::delete_note(std::stringstream &file, std::vector<std::string> &query) {
 
     type_key key;
 
@@ -196,7 +196,7 @@ int is_digit(char c) {
 }
 
 
-int get_word(std::ifstream &stream, std::string &word) {
+int get_word(std::stringstream &stream, std::string &word) {
 
     if (stream >> word) {
         return 1;
@@ -208,7 +208,7 @@ int get_word(std::ifstream &stream, std::string &word) {
 
 // validation
 
-void collection::key_filling(std::ifstream &file, type_key &key) const {
+void collection::key_filling(std::stringstream &file, type_key &key) const {
 
     std::string word;
 
@@ -259,7 +259,7 @@ void collection::key_filling(std::ifstream &file, type_key &key) const {
 }
 
 
-void collection::value_filling(std::ifstream &file, type_value &value) const {
+void collection::value_filling(std::stringstream &file, type_value &value) const {
 
     std::string word;
 
