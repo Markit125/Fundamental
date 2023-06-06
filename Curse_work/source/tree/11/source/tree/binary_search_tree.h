@@ -14,7 +14,7 @@
 #define UNUSED(expr) do { (void)(expr); } while (0)
 
 
-#include "../../../../data/data_type/data_type.h"
+#include "../../../../data/type_data/type_data.h"
 #include "../../../../memory/3/source/memory_with_list/memory_with_list.h"
 #include "associative_container.h"
 #include "../../../../logger/source/logger/complete/complete_logger.h"
@@ -1255,7 +1255,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
                 (*path_to_subtree_root_exclusive.top())->left_subtree_address = new_node;
             }
         }
-        
+
         subtree_root_address->~tree_node();
         _tree->safe_deallocate(subtree_root_address);
 

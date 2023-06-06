@@ -1,7 +1,7 @@
 #ifndef COMPARER_H
 #define COMPARER_H
 
-#include "../data/data_type/data_type.h"
+#include "../data/type_data/type_data.h"
 
 class comparers {
 

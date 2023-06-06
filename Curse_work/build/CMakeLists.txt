@@ -55,7 +55,7 @@ add_executable(
         ../source/processing/processing.h
         ../source/processing/processing.cpp
 
-        ../source/data/data_type/data_type.h
+        ../source/data/type_data/type_data.h
 
         ../source/data/database/database.h
         ../source/data/database/database.cpp

@@ -146,11 +146,10 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../memory/2/source/memory/../../../../logger/source/logger/prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../../source/tree/11/source/tree/associative_container.h \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../data_type/data_type.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/11/source/allocator/safe_allocator.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/11/source/allocator/../../../../memory/2/source/memory/memory.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../comparer/comparer.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../comparer/../data/data_type/data_type.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../comparer/../data/type_data/type_data.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/avl.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/binary_search_tree.h \
  /usr/include/c++/13/functional /usr/include/c++/13/tuple \
@@ -158,7 +157,7 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/stack \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/bits/stl_stack.h \
- /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../data/data_type/data_type.h \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../data/type_data/type_data.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/memory_with_list.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../2/source/memory/memory.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/../data/database/../pool/../scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../../logger/source/logger/complete/complete_logger.h \
