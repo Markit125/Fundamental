@@ -117,7 +117,7 @@ int collection::delete_note(std::stringstream &file, std::vector<std::string> &q
 int is_time(std::string &time) {
 
     if (time.length() != 5) {
-        throw std::runtime_error("Wrong count of symbols!");
+        throw std::runtime_error("Wrong time length! Should be 'mm:hh'");
     }
 
     int digits[] = { 0, 1, 3, 4 };
@@ -149,7 +149,7 @@ int is_time(std::string &time) {
 int is_date(std::string &date) {
     
     if (date.length() != 10) {
-        throw std::runtime_error("Wrong date length!");
+        throw std::runtime_error("Wrong date length! Should be 'dd/mm/yy'");
     }
 
     int digits[] = { 0, 1, 3, 4, 6, 7, 8, 9 };

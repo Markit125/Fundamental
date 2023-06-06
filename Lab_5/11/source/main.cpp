@@ -59,6 +59,14 @@ int main() {
 
     // }
 
+    tree->insert(2, "two");
+    tree->print_container();
+    tree->insert(1, "one");
+    tree->print_container();
+    tree->insert(1, "one");
+    tree->print_container();
+    tree->insert(3, "three");
+
     tree->print_container();
     tree->insert(5, "five");
     tree->print_container();

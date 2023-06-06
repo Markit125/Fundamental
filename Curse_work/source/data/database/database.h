@@ -2,7 +2,7 @@
 #include <vector>
 
 
-class database : protected logging::complete_logger {
+class database : protected allocating::safe_allocator, protected logging::complete_logger {
 
 public:
 
@@ -54,17 +54,12 @@ private:
 
 private:
 
+    allocating::memory *_allocator;
+
     logging::logger *_logger;
+
+    allocating::memory *get_allocator() const override;
 
     logging::logger *get_logger() const override;
 
 };
-
-
-// int get_word(std::stringstream &stream, std::string &word);
-
-// int is_date(std::string &date);
-
-// int is_time(std::string &time);
-
-// int is_digit(char c);

@@ -1,0 +1,32 @@
+create pool DF Pool
+
+create scheme Pool Scheme
+
+create collection Pool Scheme Collection
+
+create note Pool Scheme Collection { 01, 01 }
+== Standart delivery
+== Mark
+== Tarabukin
+== Ivanovich
+== tamarkus0@gmail.com
+== +79990969617
+== Moscow Dub 5
+== comment in note
+== 10/10/2023 11:20
+==
+
+
+create note Pool Scheme Collection { 01, 02 }
+== Standart delivery #2
+== Kram
+== Nikubarat
+== Hcivonavi
+== sukramat0@gmail.com
+== 71696909997
+== 5 Bud Wocsom
+== comment in note
+== 12/11/2023 02:11
+==
+
+read_range Pool Scheme Collection { 0, 0 } { 2, 0 }

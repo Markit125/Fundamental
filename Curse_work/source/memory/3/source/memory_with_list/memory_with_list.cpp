@@ -20,7 +20,9 @@ void allocating::memory_with_list::deallocate(void * const target_to_dealloc) co
     if (target_to_dealloc == trusted_memory_to_block()) {
 
         memory *outer_allocator = get_outer_allocator();
+        safe_log("Deallocating allocator from another allocator", logging::logger::severity::information);
         outer_allocator->deallocate(target_to_dealloc);
+        safe_log("Allocator deallocated from another allocator", logging::logger::severity::information);
 
         return;
     }

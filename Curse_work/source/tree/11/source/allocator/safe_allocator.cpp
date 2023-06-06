@@ -23,6 +23,4 @@ void allocating::safe_allocator::safe_deallocate(void *object) const {
     } else {
         ::operator delete(object);
     }
-
-
 }

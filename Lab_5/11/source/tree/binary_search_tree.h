@@ -454,6 +454,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
     print_tree(_root, 0);
 
+    print_infix();
 }
 
 

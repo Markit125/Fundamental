@@ -165,8 +165,8 @@ int database::read_note_range(std::stringstream &file, std::stringstream &out_st
     return 0;
 }
 
-// deleting
 
+// deleting
 
 int database::delete_pool(std::vector<std::string> &query) {
 
@@ -178,7 +178,13 @@ int database::delete_pool(std::vector<std::string> &query) {
         throw std::runtime_error("Pool " + cast_to_str(query[0]) + " doesn't exists!\n");
     }
 
+    allocating::memory *allocator = (*pool_found.second)._allocator;
+
     _pools->remove(query[0]);
+
+    if (nullptr != allocator) {
+        safe_deallocate(allocator);
+    }
 
     safe_log("Pool removed", logging::logger::severity::information);
 
@@ -235,4 +241,8 @@ int database::delete_note(std::stringstream &file, std::vector<std::string> &que
 
 logging::logger *database::get_logger() const {
     return _logger;
+}
+
+allocating::memory *database::get_allocator() const {
+    return _allocator;
 }

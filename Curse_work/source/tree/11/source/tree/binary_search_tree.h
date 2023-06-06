@@ -439,15 +439,33 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(std::s
     tkey_comparer comparer;
     auto end = end_infix();
 
+    print_container();
 
+    
 
     safe_log("left_bound " + cast_to_str(left_bound) + " right bound " + cast_to_str(right_bound), logging::logger::severity::information);
 
+    auto iii = end;
+
     while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
 
-        out_stream << std::get<1>(*it) << std::endl;
-        out_stream << std::get<2>(*it) << std::endl;
+
+        if (iii != end ? comparer(std::get<1>(*it), std::get<1>(*iii)) : 1) {
+            out_stream << std::get<1>(*it) << std::endl;
+            out_stream << std::get<2>(*it) << std::endl;
+            
+        }
+            out_stream << it._current << std::endl;
+
+        iii = it;
         ++it;
+
+        
+        // if (it != end) {
+        //     out_stream << std::get<1>(*it) << "   " << comparer(std::get<1>(*it), std::get<1>(*iii)) << std::endl;
+        //     out_stream << std::get<2>(*it) << std::endl;
+        // }
+        // out_stream << "=======================================================\n";
     }
   
     safe_log("ENDED", logging::logger::severity::information);
@@ -470,7 +488,19 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
     if (nullptr == subtree_root_address) {
 
         // next node
-        _tree->safe_log("A value was not found", logging::logger::severity::debug);
+        _tree->safe_log("Leaf", logging::logger::severity::debug);
+        
+        if (path_to_subtree_root_exclusive.empty()) {
+            return;
+        }
+
+        while (path_to_subtree_root_exclusive.top() != node_need) {
+            path_to_subtree_root_exclusive.pop();
+
+            if (path_to_subtree_root_exclusive.empty()) {
+                break;
+            }
+        }
         return;
     }
 
@@ -478,7 +508,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
 
     if (comparer(subtree_root_address->key, key) == 0) {
 
+        // path_to_subtree_root_exclusive.pop();
         node_need = subtree_root_address;
+        path_to_subtree_root_exclusive.push(subtree_root_address);
         _tree->safe_log(cast_to_str(subtree_root_address->key) + " == " + cast_to_str(node_need->key), logging::logger::severity::information);
         // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         
@@ -786,7 +818,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator::set_iterat
         std::stack<binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *> &path_to_subtree_root_exclusive) {
 
     _way = path_to_subtree_root_exclusive;
-    // _way = std::move(path_to_subtree_root_exclusive);
     _current = node;
 }
 
@@ -893,7 +924,7 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator &binary
         return *this;
     }
     
-    if (nullptr != _way.top()) {
+    if (!_way.empty()) {
 
         if (_way.top()->left_subtree_address == _current) {
 
@@ -915,11 +946,11 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::infix_iterator &binary
         return *this;
     }
 
-    if (_way.empty()) {
+    // if (_way.empty()) {
 
-        _way.push(_tree_root);
+    //     _way.push(_tree_root);
 
-    }
+    // }
 
     return *this;
 
