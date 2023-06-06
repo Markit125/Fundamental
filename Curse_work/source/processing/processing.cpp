@@ -128,7 +128,6 @@ int process_file(database *&db, std::stringstream &in_stream, std::stringstream 
                     db->create_note(in_stream, query);
                     if (logger) logger->log("created note outside", logging::logger::severity::debug);
                 } catch (std::runtime_error &ex) {
-                    out_stream << "\n-----------------\n\n";
                     out_stream << ex.what() << std::endl;
                 }
 
