@@ -1,0 +1,6 @@
+Server logger
+source/logger/source/server_logger/build
+
+
+Client sender
+client_main.cpp
