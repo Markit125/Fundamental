@@ -3,16 +3,41 @@
 
 #include "../prototypes/logger.h"
 #include "logger_builder_concrete.h"
+#include "../../time/my_time.h"
 #include <map>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+#include <cstdlib>
+#include <cstring>
 
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+
+
+
+
+const int MSG_Q_KEY_FLAG_LOGGER = 0600;
+
+const int MSG_Q_CHANNEL_SEND_LOG = 36;
+
+const int MSG_SIZE = 2000;
+
+struct MsgQueue {
+
+    long messageType;
+    logging::logger::severity severity;
+    char buff[MSG_SIZE];
+
+};
 
 namespace logging {
 
 
 class logger_concrete final : public logging::logger {
-
-    // friend class logger_builder_concrete;
-    // friend class configurator;
 
 private:
 

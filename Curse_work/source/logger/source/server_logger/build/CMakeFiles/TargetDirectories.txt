@@ -1,0 +1,3 @@
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/server_logger/build/CMakeFiles/server_logger.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/server_logger/build/CMakeFiles/edit_cache.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/server_logger/build/CMakeFiles/rebuild_cache.dir

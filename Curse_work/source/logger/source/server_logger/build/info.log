@@ -1,0 +1,50 @@
+[06/06/23 19:42:43][WARNING] Database constructor
+[06/06/23 19:43:01][WARNING] Pool constructor
+[06/06/23 19:43:01][INFO] Memory for pool is allocated
+[06/06/23 19:43:01][INFO] Pool created
+[06/06/23 19:43:01][WARNING] Scheme constructor
+[06/06/23 19:43:01][INFO] Memory for scheme is allocated
+[06/06/23 19:43:01][INFO] Scheme created
+[06/06/23 19:43:01][WARNING] Collection constructor
+[06/06/23 19:43:01][INFO] Memory for collection is allocated
+[06/06/23 19:43:01][INFO] Collection created
+[06/06/23 19:43:01][INFO] Note created
+[06/06/23 19:43:01][INFO] Note created
+[06/06/23 19:43:01][INFO] START
+[06/06/23 19:43:01][INFO] Current node { 1, 1 }
+[06/06/23 19:43:01][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 19:43:01][INFO] ENDED
+[06/06/23 19:43:01][INFO] Message processed
+[06/06/23 19:43:06][INFO] START
+[06/06/23 19:43:06][INFO] { 1, 2 } == { 1, 2 }
+[06/06/23 19:43:06][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/06/23 19:43:06][INFO] ENDED
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] START
+[06/06/23 19:43:06][INFO] Current node { 1, 1 }
+[06/06/23 19:43:06][INFO] Current node { 1, 0 }
+[06/06/23 19:43:06][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 19:43:06][INFO] ENDED
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] START
+[06/06/23 19:43:06][INFO] Current node { 1, 5 }
+[06/06/23 19:43:06][INFO] Current node { 1, 1 }
+[06/06/23 19:43:06][INFO] Current node { 1, 0 }
+[06/06/23 19:43:06][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 19:43:06][INFO] ENDED
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] Note created
+[06/06/23 19:43:06][INFO] START
+[06/06/23 19:43:06][INFO] Current node { 1, 5 }
+[06/06/23 19:43:06][INFO] Current node { 1, 1 }
+[06/06/23 19:43:06][INFO] Current node { 1, 0 }
+[06/06/23 19:43:06][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 19:43:06][INFO] ENDED
+[06/06/23 19:43:06][INFO] Message processed
+[06/06/23 19:43:07][WARNING] Database destructor
+[06/06/23 19:43:07][WARNING] Pool destructor
+[06/06/23 19:43:07][WARNING] Scheme destructor
+[06/06/23 19:43:07][WARNING] Collection destructor

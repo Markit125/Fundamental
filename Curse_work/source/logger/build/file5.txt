@@ -1,2 +1,0 @@
-[06/03/23 14:27:00][ERROR] GRANDI
-[06/03/23 14:27:00][TRACE] Configurated

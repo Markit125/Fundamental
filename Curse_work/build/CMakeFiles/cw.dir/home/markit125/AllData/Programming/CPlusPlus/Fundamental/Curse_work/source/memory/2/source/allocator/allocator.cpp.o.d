@@ -205,6 +205,16 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
+ /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/../../../../logger/source/logger/concrete/../../time/my_time.h \
+ /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+ /usr/include/bits/environments.h /usr/include/bits/confname.h \
+ /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
+ /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
+ /usr/include/sys/ipc.h /usr/include/bits/ipctypes.h \
+ /usr/include/bits/ipc.h /usr/include/bits/ipc-perm.h \
+ /usr/include/sys/msg.h /usr/include/bits/msq.h \
+ /usr/include/bits/types/struct_msqid_ds.h \
+ /usr/include/bits/types/struct_msqid64_ds.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/../../../../logger/source/logger/concrete/logger_builder_concrete.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/../../../../logger/source/logger/prototypes/logger_builder.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/../../../../logger/source/logger/prototypes/logger.h

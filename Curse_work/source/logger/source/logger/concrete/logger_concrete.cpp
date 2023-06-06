@@ -1,10 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <algorithm>
-
 #include "logger_concrete.h"
-#include "../../time/my_time.h"
 
 
 std::map<std::string, std::pair<std::ofstream *, size_t>> logging::logger_concrete::_streams =
@@ -72,19 +66,43 @@ std::string get_severity(logging::logger::severity severity) {
     }
 }
 
+
 logging::logger const *logging::logger_concrete::log(
     const std::string &to_log,
     logging::logger::severity severity) const {
-    for (auto & logger_stream : _logger_streams) {
-        if (logger_stream.second.second > severity) {
-            continue;
-        }
-        
-        if (logger_stream.second.first == nullptr) {
-            std::cout << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
-        } else {
-            (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
-        }
+
+    key_t key = -1;
+    int msqid = -1;
+    MsgQueue msg;
+
+    key = ftok("/bin/ls", 'E');
+    if (key < 0) {
+
+        perror("ftok");
+        exit(1);
+    }
+
+    msqid = msgget(key, MSG_Q_KEY_FLAG_LOGGER | IPC_CREAT);
+    if (msqid < 0) {
+
+        perror("msgget");
+        exit(1);	
+    }
+
+    char *ptr = const_cast<char *>(to_log.c_str());
+    int count = 0;
+
+    while (*ptr != '\0' && count < MSG_SIZE) {
+        msg.buff[count++] = *(ptr++);
+    }
+    msg.buff[count] = '\0';
+    msg.messageType = MSG_Q_CHANNEL_SEND_LOG;
+    msg.severity = severity;
+
+
+    if (msgsnd(msqid, &msg, sizeof(msg) - sizeof(long), 0) < 0) {
+        perror("msgsnd");
+        exit(1);
     }
 
     return this;

@@ -440,19 +440,15 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(std::s
 
     print_container();
 
-    
-
     safe_log("left_bound " + cast_to_str(left_bound) + " right bound " + cast_to_str(right_bound), logging::logger::severity::information);
 
     auto iii = end;
 
     while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
 
-
         if (iii != end ? comparer(std::get<1>(*it), std::get<1>(*iii)) : 1) {
             out_stream << std::get<1>(*it) << std::endl;
-            out_stream << std::get<2>(*it) << std::endl;
-            
+            out_stream << std::get<2>(*it) << std::endl << std::endl;
         }
 
         iii = it;
@@ -1209,10 +1205,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("subtree_root_address is nullptr. Start creating a new node", logging::logger::severity::debug);
 
-
         tree_node *new_node = reinterpret_cast<tree_node *>(
-                _tree->safe_allocate(get_size_node())
-            );
+            _tree->safe_allocate(get_size_node())
+        );
 
         initialize_new_node(new_node, key, std::move(value));
 
@@ -1231,27 +1226,47 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("Created node is " + cast_to_str(new_node), logging::logger::severity::debug);
 
-        _tree->safe_log("after inner #1", logging::logger::severity::debug);
-
         after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
         return;
     }
 
-    _tree->safe_log("Not nullptr", logging::logger::severity::trace);
-
-    // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
-
     int comparation = comparer(subtree_root_address->key, key);
     
     if (comparation == 0) {
+        // replacing node by new one
 
-        // _tree->safe_log("Key " + cast_to_str(subtree_root_address->key) + " value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
-        subtree_root_address->value = std::move(value);
+        _tree->safe_log("node with existing key. Start creating a replacement node", logging::logger::severity::debug);
+
+        tree_node *new_node = reinterpret_cast<tree_node *>(
+            _tree->safe_allocate(get_size_node())
+        );
+
+        initialize_new_node(new_node, key, std::move(value));
+
+        new_node->left_subtree_address = subtree_root_address->left_subtree_address;
+        new_node->right_subtree_address = subtree_root_address->right_subtree_address;
+
+        if (path_to_subtree_root_exclusive.empty()) {
+            subtree_root_address = new_node;
+        } else {
+
+            if (comparer((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
+                (*path_to_subtree_root_exclusive.top())->right_subtree_address = new_node;
+            } else {
+                (*path_to_subtree_root_exclusive.top())->left_subtree_address = new_node;
+            }
+        }
+
+        subtree_root_address->~tree_node();
+        _tree->safe_deallocate(subtree_root_address);
+
+        subtree_root_address = new_node;
 
 
-        // _tree->safe_log("after inner #2", logging::logger::severity::debug);
-        // after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+        _tree->safe_log("Replaced node is " + cast_to_str(new_node), logging::logger::severity::debug);
+
+        after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
         return;
     }

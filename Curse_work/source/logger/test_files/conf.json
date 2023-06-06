@@ -1,7 +1,9 @@
 {
     "streams":
     {
-        "file5.txt": "trace",
-        "console": "error"
+        "info.log": "info",
+        "trace.log": "trace",
+        "debug.log": "debug",
+        "console": "error"f
     }
 }

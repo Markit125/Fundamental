@@ -1,5 +1,8 @@
 read_range Pool Scheme Collection { 1, 2 } { 1, 100 }
 
+
+read Pool Scheme Collection { 1, 12 }
+
 create note Pool Scheme Collection { 01, 00 }
 == Standart delivery #3
 == Kram
@@ -64,6 +67,8 @@ create note Pool Scheme Collection { 01, 013 }
 == 12/12/2025 10:12
 ==
 
+read_range Pool Scheme Collection { 0, 0 } { 2, 0 }
+
 create note Pool Scheme Collection { 01, 4 }
 == Standart delivery #3
 == Kram
@@ -77,4 +82,17 @@ create note Pool Scheme Collection { 01, 4 }
 ==
 
 
+create note Pool Scheme Collection { 1, 13 }
+== Standart delivery #3
+== Kram
+== Nikubarat
+== Hcivonavi
+== sukramat0@gmail.com
+== 71696909997
+== 5 Bud Wocsom
+== comment in note
+== 12/12/2025 20:12
+==
+
 read_range Pool Scheme Collection { 0, 0 } { 2, 0 }
+read Pool Scheme Collection { 1, 13 }
