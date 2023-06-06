@@ -78,15 +78,16 @@ logging::logger const *logging::logger_concrete::log(
     key = ftok("/bin/ls", 'E');
     if (key < 0) {
 
-        perror("ftok");
-        exit(1);
+        // perror("ftok");
+        return this;
     }
 
     msqid = msgget(key, MSG_Q_KEY_FLAG_LOGGER | IPC_CREAT);
     if (msqid < 0) {
 
-        perror("msgget");
-        exit(1);	
+        // perror("msgget");
+        
+        return this;
     }
 
     char *ptr = const_cast<char *>(to_log.c_str());
@@ -99,11 +100,24 @@ logging::logger const *logging::logger_concrete::log(
     msg.messageType = MSG_Q_CHANNEL_SEND_LOG;
     msg.severity = severity;
 
+    if (msgsnd(msqid, &msg, sizeof(msg) - sizeof(long), IPC_NOWAIT) < 0) {
+        
+        for (auto & logger_stream : _logger_streams) {
+            if (logger_stream.second.second > severity) {
+                continue;
+            }
+            
+            if (logger_stream.second.first == nullptr) {
+                std::cout << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
+            } else {
+                (*logger_stream.second.first) << "[" << get_time() << "]" << get_severity(severity) << " " << to_log << std::endl;
+            }
+        }
 
-    if (msgsnd(msqid, &msg, sizeof(msg) - sizeof(long), 0) < 0) {
-        perror("msgsnd");
-        exit(1);
+        return this;
     }
 
     return this;
 }
+
+

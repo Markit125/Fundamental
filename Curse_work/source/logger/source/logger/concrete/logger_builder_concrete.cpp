@@ -25,16 +25,20 @@ logging::logger *logger_builder_concrete::construct_configuration(const std::str
         throw std::runtime_error("No such configuration file!");
     }
     
-    std::stringstream buf;
-    buf << conf_file.rdbuf();
-    auto json = nlohmann::json::parse(buf.str());
+    try {
+        std::stringstream buf;
+        buf << conf_file.rdbuf();
+        auto json = nlohmann::json::parse(buf.str());
 
-
-    std::stringstream path;
-    for (auto &item : json["streams"].items()) {
-        this->add_stream(item.key(), str_to_severity(item.value()));
-
+        std::stringstream path;
+        for (auto &item : json["streams"].items()) {
+            this->add_stream(item.key(), str_to_severity(item.value()));
+        }            
+    } catch (std::exception &ex) {
+        std::cout << ex.what() << std::endl << "JSON file corrupted" << std::endl;
+        return nullptr;
     }
+
 
     return this->construct();
 }

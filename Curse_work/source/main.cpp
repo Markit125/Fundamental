@@ -43,12 +43,7 @@ int main(int argc, char *argv[]) {
 
     logging::logger *logger;
 
-    try {
-        logger = builder->construct_configuration("../source/configuration/conf.json");
-    } catch (std::runtime_error &ex) {
-        std::cout << ex.what() << std::endl;
-        return -2;
-    }
+    logger = builder->construct_configuration("../source/configuration/conf.json");
 
 
     database *db = new database(logger);

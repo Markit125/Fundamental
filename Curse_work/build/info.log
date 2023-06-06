@@ -1,0 +1,55 @@
+[06/06/23 21:30:10][WARNING] Database constructor
+[06/06/23 21:30:12][WARNING] Pool constructor
+[06/06/23 21:30:12][INFO] Memory for pool is allocated
+[06/06/23 21:30:12][INFO] Pool created
+[06/06/23 21:30:12][WARNING] Scheme constructor
+[06/06/23 21:30:12][INFO] Memory for scheme is allocated
+[06/06/23 21:30:12][INFO] Scheme created
+[06/06/23 21:30:12][WARNING] Collection constructor
+[06/06/23 21:30:12][INFO] Memory for collection is allocated
+[06/06/23 21:30:12][INFO] Collection created
+[06/06/23 21:30:12][INFO] Note created
+[06/06/23 21:30:12][INFO] Note created
+[06/06/23 21:30:12][INFO] START
+[06/06/23 21:30:12][INFO] Current node { 1, 1 }
+[06/06/23 21:30:12][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 21:30:12][INFO] ENDED
+[06/06/23 21:30:12][INFO] Message processed
+[06/06/23 21:30:14][WARNING] Pool constructor
+[06/06/23 21:30:14][INFO] Memory for pool is allocated
+[06/06/23 21:30:14][WARNING] SHIT 
+[06/06/23 21:30:14][WARNING] Pool destructor
+[06/06/23 21:30:14][WARNING] Type is 0x7f7888a2d1d0
+[06/06/23 21:30:14][WARNING] GIN Scheme
+[06/06/23 21:30:14][WARNING] Scheme destructor
+[06/06/23 21:30:14][WARNING] Type is 0x7f7888a2d318
+[06/06/23 21:30:14][WARNING] GIN Collection
+[06/06/23 21:30:14][WARNING] Collection destructor
+[06/06/23 21:30:14][WARNING] Type is 0x7f7888a2d3a0
+[06/06/23 21:30:14][WARNING] GIN { 1, 1 }
+[06/06/23 21:30:14][INFO] Pool created
+[06/06/23 21:30:14][WARNING] Scheme constructor
+[06/06/23 21:30:14][INFO] Memory for scheme is allocated
+[06/06/23 21:30:14][INFO] Scheme created
+[06/06/23 21:30:14][WARNING] Collection constructor
+[06/06/23 21:30:14][INFO] Memory for collection is allocated
+[06/06/23 21:30:14][INFO] Collection created
+[06/06/23 21:30:14][INFO] Note created
+[06/06/23 21:30:14][INFO] Note created
+[06/06/23 21:30:14][INFO] START
+[06/06/23 21:30:14][INFO] Current node { 1, 1 }
+[06/06/23 21:30:14][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/06/23 21:30:14][INFO] ENDED
+[06/06/23 21:30:14][INFO] Message processed
+[06/06/23 21:30:15][WARNING] Database destructor
+[06/06/23 21:30:15][WARNING] Type is 0x14c3de0
+[06/06/23 21:30:15][WARNING] GIN Pool
+[06/06/23 21:30:15][WARNING] Pool destructor
+[06/06/23 21:30:15][WARNING] Type is 0x7f78888381d0
+[06/06/23 21:30:15][WARNING] GIN Scheme
+[06/06/23 21:30:15][WARNING] Scheme destructor
+[06/06/23 21:30:15][WARNING] Type is 0x7f7888838318
+[06/06/23 21:30:15][WARNING] GIN Collection
+[06/06/23 21:30:15][WARNING] Collection destructor
+[06/06/23 21:30:15][WARNING] Type is 0x7f78888383a0
+[06/06/23 21:30:15][WARNING] GIN { 1, 1 }

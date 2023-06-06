@@ -341,9 +341,6 @@ int process_file(database *&db, std::stringstream &in_stream, std::stringstream 
 }
 
 
-
-
-
 int validate(std::string &string) {
 
     for (char c : string) {

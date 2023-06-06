@@ -1563,10 +1563,29 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/time/my_time.h \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/sys/ipc.h \
+  /usr/include/bits/ipctypes.h \
+  /usr/include/bits/ipc.h \
+  /usr/include/bits/ipc-perm.h \
+  /usr/include/sys/msg.h \
+  /usr/include/bits/msq.h \
+  /usr/include/bits/types/struct_msqid_ds.h \
+  /usr/include/bits/types/struct_msqid64_ds.h
 
 CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.cpp.o: /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.cpp \
   /usr/include/stdc-predef.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++config.h \
@@ -1743,19 +1762,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/bits/istream.tcc \
-  /usr/include/c++/13/fstream \
-  /usr/include/c++/13/bits/codecvt.h \
-  /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
-  /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
-  /usr/include/c++/13/bits/fstream.tcc \
-  /usr/include/c++/13/algorithm \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/algorithmfwd.h \
-  /usr/include/c++/13/bits/stl_heap.h \
-  /usr/include/c++/13/bits/uniform_int_dist.h \
-  /usr/include/c++/13/bits/stl_tempbuf.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h \
   /usr/include/c++/13/map \
   /usr/include/c++/13/bits/stl_tree.h \
@@ -1768,6 +1774,12 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger_builder.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/json.hpp \
+  /usr/include/c++/13/algorithm \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/bits/std_function.h \
@@ -1843,12 +1855,33 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
   /usr/include/libintl.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/bits/sstream.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/time/my_time.h
+  /usr/include/c++/13/fstream \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
+  /usr/include/c++/13/bits/fstream.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/time/my_time.h \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/sys/ipc.h \
+  /usr/include/bits/ipctypes.h \
+  /usr/include/bits/ipc.h \
+  /usr/include/bits/ipc-perm.h \
+  /usr/include/sys/msg.h \
+  /usr/include/bits/msq.h \
+  /usr/include/bits/types/struct_msqid_ds.h \
+  /usr/include/bits/types/struct_msqid64_ds.h
 
 CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.cpp.o: /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.cpp \
   /usr/include/stdc-predef.h \
@@ -3011,6 +3044,23 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/time/my_time.h \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/sys/ipc.h \
+  /usr/include/bits/ipctypes.h \
+  /usr/include/bits/ipc.h \
+  /usr/include/bits/ipc-perm.h \
+  /usr/include/sys/msg.h \
+  /usr/include/bits/msq.h \
+  /usr/include/bits/types/struct_msqid_ds.h \
+  /usr/include/bits/types/struct_msqid64_ds.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger_builder.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h
@@ -4211,6 +4261,10 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/processing/processing.h:
 
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/main.cpp:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.cpp:
+
 /usr/include/bits/types/struct_msqid_ds.h:
 
 /usr/include/sys/msg.h:
@@ -4239,11 +4293,7 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/unistd.h:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/main.cpp:
-
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/time/my_time.h:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.cpp:
 
 /usr/include/c++/13/bits/quoted_string.h:
 

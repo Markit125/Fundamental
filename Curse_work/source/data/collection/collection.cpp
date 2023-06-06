@@ -14,6 +14,8 @@ logging::logger *collection::get_logger() const {
 collection::~collection() {
 
     safe_log("Collection destructor", logging::logger::severity::warning);
+
+    _notes->print_container();
     _notes->~associative_container();
     safe_deallocate(_notes);
 }

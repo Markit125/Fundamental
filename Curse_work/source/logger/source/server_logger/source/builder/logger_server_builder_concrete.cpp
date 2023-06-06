@@ -31,7 +31,6 @@ logging::logger *logger_server_builder_concrete::construct_configuration(const s
         buf << conf_file.rdbuf();
         auto json = nlohmann::json::parse(buf.str());
 
-
         std::stringstream path;
         for (auto &item : json["streams"].items()) {
             this->add_stream(item.key(), str_to_severity(item.value()));

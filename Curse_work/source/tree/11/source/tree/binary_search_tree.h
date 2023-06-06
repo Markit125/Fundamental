@@ -1236,7 +1236,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     if (comparation == 0) {
         // replacing node by new one
 
-        _tree->safe_log("node with existing key. Start creating a replacement node", logging::logger::severity::debug);
+        _tree->safe_log("node with existing key. Start creating a replacement node key: " + cast_to_str(key), logging::logger::severity::debug);
 
         tree_node *new_node = reinterpret_cast<tree_node *>(
             _tree->safe_allocate(get_size_node())
@@ -1247,21 +1247,21 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
         new_node->left_subtree_address = subtree_root_address->left_subtree_address;
         new_node->right_subtree_address = subtree_root_address->right_subtree_address;
 
-        if (path_to_subtree_root_exclusive.empty()) {
-            subtree_root_address = new_node;
-        } else {
-
+        if (!path_to_subtree_root_exclusive.empty()) {
+            
             if (comparer((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
                 (*path_to_subtree_root_exclusive.top())->right_subtree_address = new_node;
             } else {
                 (*path_to_subtree_root_exclusive.top())->left_subtree_address = new_node;
             }
         }
-
+        
         subtree_root_address->~tree_node();
         _tree->safe_deallocate(subtree_root_address);
 
         subtree_root_address = new_node;
+
+        subtree_root_address->value = std::move(value);
 
 
         _tree->safe_log("Replaced node is " + cast_to_str(new_node), logging::logger::severity::debug);
@@ -1732,14 +1732,15 @@ template<
     typename tkey_comparer>
 binary_search_tree<tkey, tvalue, tkey_comparer>::~binary_search_tree() {
     
-    safe_log("Deallocating tree", logging::logger::severity::debug);
+    safe_log("[BST] Deallocating tree", logging::logger::severity::debug);
 
-    
     auto it_end = end_postfix();
+
+    safe_log("Type is " + cast_to_str(begin_postfix().get_node_pointer()), logging::logger::severity::warning);
 
     for (auto it = begin_postfix(); it != it_end; ++it) {
         // safe_log("Type is " + cast_to_str(typeid(it.get_node_pointer()).name()), logging::logger::severity::warning);
-        // safe_log("GIN " + cast_to_str((it.get_node_pointer())->key), logging::logger::severity::warning);
+        safe_log("GIN " + cast_to_str((it.get_node_pointer())->key), logging::logger::severity::warning);
         (it.get_node_pointer())->~tree_node();
         safe_deallocate(it.get_node_pointer());
     }

@@ -15,6 +15,7 @@ logging::logger *pool::get_logger() const {
 pool::~pool() {
     
     safe_log("Pool destructor", logging::logger::severity::warning);
+    _schemes->print_container();
     _schemes->~associative_container();
     safe_deallocate(_schemes);
 }

@@ -43,14 +43,14 @@ int main(int argc, char *argv[]) {
     if (key < 0) {
 
         perror("ftok");
-        exit(1);
+        return -1;
     }
 
     msqid = msgget(key, MSG_Q_KEY_FLAG_LOGGER | IPC_CREAT);
     if (msqid < 0) {
 
         perror("msgget");
-        exit(1);	
+        return -2;
     }
 
     while (1) {
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
         if (msgrcv(msqid, &msg, sizeof(msg) - sizeof(long), MSG_Q_CHANNEL_RECEIVE_LOG, 0) < 0)
         {
             perror("msgrcv");
-            exit(1);
+            return -3;
         }
 
         std::string message(msg.buff);
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     if (msgctl(msqid, IPC_RMID, NULL) < 0) {
         
         perror("msgctl");
-        exit(1);
+        return -4;
     }
 
     std::cout << "\nServer is now shutting down!\n";

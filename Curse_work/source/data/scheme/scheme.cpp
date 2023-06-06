@@ -14,6 +14,7 @@ logging::logger *scheme::get_logger() const {
 scheme::~scheme() {
 
     safe_log("Scheme destructor", logging::logger::severity::warning);
+    _collections->print_container();
     _collections->~associative_container();
     safe_deallocate(_collections);
 }

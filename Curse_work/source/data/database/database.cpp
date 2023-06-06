@@ -22,6 +22,8 @@ database::database(logging::logger *logger)
 database::~database() {
     
     safe_log("Database destructor", logging::logger::severity::warning);
+    _pools->print_container();
+    
     delete _pools;
     
 }
