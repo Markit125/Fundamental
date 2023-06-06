@@ -128,14 +128,51 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /usr/include/c++/13/bits/codecvt.h \
  /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/regex \
+ /usr/include/c++/13/bitset /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/stack \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
+ /usr/include/c++/13/bits/stl_stack.h \
+ /usr/include/c++/13/bits/uses_allocator.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/bits/unique_ptr.h /usr/include/c++/13/tuple \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc \
+ /usr/include/c++/13/bits/regex_constants.h \
+ /usr/include/c++/13/bits/regex_error.h \
+ /usr/include/c++/13/bits/regex_automaton.h \
+ /usr/include/c++/13/bits/regex_automaton.tcc \
+ /usr/include/c++/13/bits/regex_scanner.h \
+ /usr/include/c++/13/bits/regex_scanner.tcc \
+ /usr/include/c++/13/bits/regex_compiler.h \
+ /usr/include/c++/13/bits/regex_compiler.tcc \
+ /usr/include/c++/13/bits/regex.h /usr/include/c++/13/bits/regex.tcc \
+ /usr/include/c++/13/bits/regex_executor.h \
+ /usr/include/c++/13/bits/regex_executor.tcc \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../logger/source/logger/complete/complete_logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../logger/source/logger/complete/../prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../memory/2/source/memory/memory.h \
  /usr/include/c++/13/cstddef \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../memory/2/source/memory/../../../../logger/source/logger/prototypes/logger.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../../source/tree/11/source/tree/associative_container.h \
- /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/11/source/allocator/safe_allocator.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/11/source/allocator/../../../../memory/2/source/memory/memory.h \
@@ -143,15 +180,7 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../comparer/../data/type_data/type_data.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/12/source/avl/avl.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/binary_search_tree.h \
- /usr/include/c++/13/functional /usr/include/c++/13/tuple \
- /usr/include/c++/13/bits/uses_allocator.h \
- /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/stack \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/bits/stl_stack.h /usr/include/c++/13/vector \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc \
+ /usr/include/c++/13/functional /usr/include/c++/13/vector \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../data/type_data/type_data.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/memory_with_list.h \
  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/../collection/../../tree/12/source/avl/../../../11/source/tree/../../../../memory/3/source/memory_with_list/../../../2/source/memory/memory.h \

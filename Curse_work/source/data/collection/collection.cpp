@@ -197,7 +197,6 @@ int is_digit(char c) {
     return '0' <= c && c <= '9';
 }
 
-
 int get_word(std::stringstream &stream, std::string &word) {
 
     if (stream >> word) {
@@ -205,6 +204,12 @@ int get_word(std::stringstream &stream, std::string &word) {
     }
 
     return 0;
+}
+
+bool is_email_valid(const std::string& email)
+{
+   const std::regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+   return std::regex_match(email, pattern);
 }
 
 
@@ -363,10 +368,8 @@ void collection::value_filling(std::stringstream &file, type_value &value) const
         throw std::runtime_error("Expected user's email");
     }
 
-    for (char c : word) {
-        if ((c < 'a' || 'z' < c) && (c < 'A' || 'Z' < c) && c != '.' && c != '@' && c != '_' && (c < '0' || '9' < c)) {
-            throw std::runtime_error("Invalid user's email");
-        }
+    if (!is_email_valid(word)) {
+        throw std::runtime_error("Invalid user's email");
     }
     value.email = word;
     

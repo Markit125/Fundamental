@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <regex>
 #include "../../logger/source/logger/complete/complete_logger.h"
 #include "../../memory/2/source/memory/memory.h"
 #include "../../../source/tree/11/source/tree/associative_container.h"
@@ -75,3 +76,5 @@ int is_date(std::string &date);
 int is_time(std::string &time);
 
 int is_digit(char c);
+
+bool is_email_valid(const std::string& email);

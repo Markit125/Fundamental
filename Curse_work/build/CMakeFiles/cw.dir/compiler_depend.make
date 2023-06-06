@@ -185,38 +185,72 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /usr/include/c++/13/cstddef \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/bits/sstream.tcc \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
-  /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/stl_stack.h \
-  /usr/include/c++/13/vector \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/vector.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /usr/include/c++/13/cstddef \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/vector \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -415,38 +449,72 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /usr/include/c++/13/cstddef \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/bits/sstream.tcc \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
-  /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/stl_stack.h \
-  /usr/include/c++/13/vector \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/vector.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /usr/include/c++/13/cstddef \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/vector \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -644,38 +712,72 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /usr/include/c++/13/cstddef \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/bits/sstream.tcc \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
-  /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/stl_stack.h \
-  /usr/include/c++/13/vector \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/vector.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /usr/include/c++/13/cstddef \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/vector \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -872,38 +974,72 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
   /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
   /usr/include/c++/13/bits/fstream.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /usr/include/c++/13/cstddef \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/bits/sstream.tcc \
-  /usr/include/c++/13/utility \
-  /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
-  /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/stl_stack.h \
-  /usr/include/c++/13/vector \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/vector.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /usr/include/c++/13/cstddef \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
+  /usr/include/c++/13/utility \
+  /usr/include/c++/13/bits/stl_relops.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
+  /usr/include/c++/13/functional \
+  /usr/include/c++/13/vector \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -2636,6 +2772,49 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/pool/pool.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/scheme.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/collection/collection.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
+  /usr/include/c++/13/stack \
+  /usr/include/c++/13/deque \
+  /usr/include/c++/13/bits/stl_deque.h \
+  /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/stl_stack.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
@@ -2644,23 +2823,14 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/stack \
-  /usr/include/c++/13/deque \
-  /usr/include/c++/13/bits/stl_deque.h \
-  /usr/include/c++/13/bits/deque.tcc \
-  /usr/include/c++/13/bits/stl_stack.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -2675,20 +2845,12 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h \
   /usr/include/c++/13/map \
-  /usr/include/c++/13/bits/stl_tree.h \
-  /usr/include/c++/13/ext/aligned_buffer.h \
-  /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/erase_if.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger_builder.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/json.hpp \
   /usr/include/c++/13/algorithm \
-  /usr/include/c++/13/bits/stl_algo.h \
-  /usr/include/c++/13/bits/algorithmfwd.h \
-  /usr/include/c++/13/bits/stl_heap.h \
-  /usr/include/c++/13/bits/uniform_int_dist.h \
-  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/bits/stream_iterator.h \
   /usr/include/c++/13/memory \
@@ -2697,11 +2859,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/bits/stdint-uintn.h \
-  /usr/include/c++/13/bits/unique_ptr.h \
-  /usr/include/c++/13/bits/shared_ptr.h \
-  /usr/include/c++/13/bits/shared_ptr_base.h \
-  /usr/include/c++/13/bits/allocated_ptr.h \
-  /usr/include/c++/13/ext/concurrence.h \
   /usr/include/c++/13/bits/shared_ptr_atomic.h \
   /usr/include/c++/13/bits/atomic_base.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
@@ -2748,14 +2905,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/c++/13/iomanip \
-  /usr/include/c++/13/locale \
-  /usr/include/c++/13/bits/locale_facets_nonio.h \
-  /usr/include/c++/13/ctime \
-  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
-  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/quoted_string.h
 
 CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/allocator.cpp.o: /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/allocator/allocator.cpp \
@@ -3817,6 +3966,49 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/pool/pool.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/scheme/scheme.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/collection/collection.h \
+  /usr/include/c++/13/regex \
+  /usr/include/c++/13/bitset \
+  /usr/include/c++/13/locale \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/ctime \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
+  /usr/include/c++/13/stack \
+  /usr/include/c++/13/deque \
+  /usr/include/c++/13/bits/stl_deque.h \
+  /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/stl_stack.h \
+  /usr/include/c++/13/bits/uses_allocator.h \
+  /usr/include/c++/13/ext/aligned_buffer.h \
+  /usr/include/c++/13/bits/shared_ptr.h \
+  /usr/include/c++/13/bits/shared_ptr_base.h \
+  /usr/include/c++/13/bits/allocated_ptr.h \
+  /usr/include/c++/13/bits/unique_ptr.h \
+  /usr/include/c++/13/tuple \
+  /usr/include/c++/13/ext/concurrence.h \
+  /usr/include/c++/13/bits/std_function.h \
+  /usr/include/c++/13/bits/stl_algo.h \
+  /usr/include/c++/13/bits/algorithmfwd.h \
+  /usr/include/c++/13/bits/stl_heap.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
+  /usr/include/c++/13/bits/stl_tree.h \
+  /usr/include/c++/13/bits/stl_map.h \
+  /usr/include/c++/13/bits/regex_constants.h \
+  /usr/include/c++/13/bits/regex_error.h \
+  /usr/include/c++/13/bits/regex_automaton.h \
+  /usr/include/c++/13/bits/regex_automaton.tcc \
+  /usr/include/c++/13/bits/regex_scanner.h \
+  /usr/include/c++/13/bits/regex_scanner.tcc \
+  /usr/include/c++/13/bits/regex_compiler.h \
+  /usr/include/c++/13/bits/regex_compiler.tcc \
+  /usr/include/c++/13/bits/regex.h \
+  /usr/include/c++/13/bits/regex.tcc \
+  /usr/include/c++/13/bits/regex_executor.h \
+  /usr/include/c++/13/bits/regex_executor.tcc \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
@@ -3825,23 +4017,14 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h \
   /usr/include/c++/13/utility \
   /usr/include/c++/13/bits/stl_relops.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/12/source/avl/avl.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/binary_search_tree.h \
   /usr/include/c++/13/functional \
-  /usr/include/c++/13/tuple \
-  /usr/include/c++/13/bits/uses_allocator.h \
-  /usr/include/c++/13/bits/std_function.h \
-  /usr/include/c++/13/stack \
-  /usr/include/c++/13/deque \
-  /usr/include/c++/13/bits/stl_deque.h \
-  /usr/include/c++/13/bits/deque.tcc \
-  /usr/include/c++/13/bits/stl_stack.h \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h \
@@ -4236,7 +4419,7 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/vector.tcc \
-  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h \
+  /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/3/source/memory_with_list/memory_with_list.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/2/source/memory/memory.h \
   /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger.h \
@@ -4264,8 +4447,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/main.cpp:
 
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.cpp:
-
-/usr/include/bits/types/struct_msqid_ds.h:
 
 /usr/include/sys/msg.h:
 
@@ -4297,12 +4478,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/quoted_string.h:
 
-/usr/include/c++/13/bits/locale_facets_nonio.h:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/memory_with_descriptors.cpp:
-
-/usr/include/c++/13/locale:
-
 /usr/include/c++/13/iomanip:
 
 /usr/include/strings.h:
@@ -4319,8 +4494,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/indirect_array.h:
 
-/usr/include/c++/13/bits/mask_array.h:
-
 /usr/include/c++/13/bits/gslice.h:
 
 /usr/include/c++/13/bits/valarray_before.h:
@@ -4328,6 +4501,8 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /usr/include/c++/13/bits/valarray_array.tcc:
 
 /usr/include/bits/iscanonical.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/bits/flt-eval-method.h:
 
@@ -4355,6 +4530,30 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/stl_numeric.h:
 
+/usr/include/bits/msq.h:
+
+/usr/include/c++/13/numeric:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/c++/13/memory:
+
+/usr/include/c++/13/bits/stream_iterator.h:
+
+/usr/include/c++/13/algorithm:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger_builder.h:
+
+/usr/include/c++/13/bits/erase_if.h:
+
+/usr/include/c++/13/bits/stl_multimap.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.cpp:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.cpp:
+
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/bits/types/struct_timeval.h:
@@ -4380,8 +4579,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/comparer/comparer.h:
 
 /usr/include/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h:
 
@@ -4412,10 +4609,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /usr/include/sys/types.h:
 
 /usr/include/bits/wctype-wchar.h:
-
-/usr/include/c++/13/bits/locale_facets_nonio.tcc:
-
-/usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -4463,6 +4656,10 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/pthread.h:
 
+/usr/include/c++/13/bits/align.h:
+
+/usr/include/c++/13/x86_64-redhat-linux/bits/gthr.h:
+
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/bits/types/mbstate_t.h:
@@ -4470,10 +4667,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/include/c++/13/iosfwd:
-
-/usr/include/libintl.h:
-
-/usr/include/bits/endianness.h:
 
 /usr/include/bits/floatn-common.h:
 
@@ -4484,6 +4677,10 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /usr/include/c++/13/map:
 
 /usr/include/bits/libc-header-start.h:
+
+/usr/include/c++/13/bits/stl_raw_storage_iter.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/13/include/stdarg.h:
 
 /usr/include/bits/time.h:
 
@@ -4541,8 +4738,6 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
-/usr/include/c++/13/bits/atomic_base.h:
-
 /usr/include/c++/13/ostream:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
@@ -4553,7 +4748,15 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/basic_string.h:
 
-/usr/include/gnu/stubs.h:
+/usr/include/bits/endianness.h:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/13/bits/regex.tcc:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/stdc-predef.h:
 
@@ -4576,6 +4779,8 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /usr/include/bits/cpu-set.h:
 
 /usr/include/c++/13/bits/stl_vector.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/type_data/type_data.h:
 
 /usr/include/c++/13/sstream:
 
@@ -4635,17 +4840,11 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/sstream.tcc:
 
-/usr/include/c++/13/x86_64-redhat-linux/bits/os_defines.h:
-
 /usr/include/bits/fp-fast.h:
 
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.cpp:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.cpp:
 
 /usr/include/c++/13/x86_64-redhat-linux/bits/cpu_defines.h:
 
@@ -4655,13 +4854,9 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
-/usr/include/c++/13/bits/locale_conv.h:
+/usr/include/c++/13/bits/mask_array.h:
 
-/usr/include/bits/errno.h:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/include/c++/13/bits/stl_multimap.h:
+/usr/include/c++/13/bits/regex_automaton.h:
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
@@ -4687,11 +4882,21 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
+/usr/include/c++/13/iterator:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h:
+
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/c++/13/x86_64-redhat-linux/bits/gthr-default.h:
 
 /usr/include/c++/13/type_traits:
+
+/usr/include/c++/13/x86_64-redhat-linux/bits/os_defines.h:
+
+/usr/include/c++/13/bitset:
 
 /usr/include/bits/sched.h:
 
@@ -4723,21 +4928,23 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/bits/waitflags.h:
 
-/usr/include/c++/13/cstdlib:
-
 /usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/std_function.h:
 
 /usr/include/stdlib.h:
 
-/usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h:
+/usr/include/stdint.h:
 
-/usr/include/c++/13/bits/streambuf.tcc:
+/usr/include/endian.h:
 
 /usr/include/c++/13/cwctype:
 
 /usr/include/bits/uintn-identity.h:
+
+/usr/include/c++/13/bits/regex.h:
+
+/usr/include/c++/13/bits/regex_compiler.h:
 
 /usr/include/bits/wordsize.h:
 
@@ -4787,6 +4994,8 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/stdexcept:
 
+/usr/include/c++/13/bits/regex_error.h:
+
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
@@ -4807,31 +5016,45 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/bits/ostream.tcc:
 
+/usr/include/c++/13/bits/regex_scanner.tcc:
+
 /usr/include/c++/13/istream:
 
 /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
 
-/usr/include/bits/types.h:
+/usr/include/c++/13/bits/stl_algobase.h:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h:
+/usr/include/c++/13/regex:
 
-/usr/include/bits/thread-shared-types.h:
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/memory/4/source/memory_with_descriptors/memory_with_descriptors.cpp:
 
-/usr/include/c++/13/cstddef:
+/usr/include/c++/13/locale:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.h:
+/usr/include/c++/13/bits/new_allocator.h:
 
-/usr/include/bits/struct_rwlock.h:
+/usr/include/c++/13/bits/stl_uninitialized.h:
 
-/usr/include/c++/13/bits/stl_algo.h:
+/usr/include/c++/13/bits/stl_map.h:
 
-/usr/include/c++/13/bits/valarray_array.h:
+/usr/include/c++/13/cstdlib:
 
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+/usr/include/c++/13/bits/regex_scanner.h:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h:
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/json.hpp:
+
+/usr/include/c++/13/deque:
+
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/x86_64-redhat-linux/bits/time_members.h:
+
+/usr/include/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/13/bits/stl_heap.h:
 
@@ -4839,29 +5062,69 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 
 /usr/include/c++/13/utility:
 
-/usr/include/c++/13/stack:
+/usr/include/bits/errno.h:
 
-/usr/include/c++/13/bits/stl_relops.h:
+/usr/include/c++/13/bits/istream.tcc:
 
-/usr/include/bits/mathcalls-helper-functions.h:
+/usr/include/c++/13/bits/locale_conv.h:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/data_type/data_type.h:
+/usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h:
+/usr/include/c++/13/bits/deque.tcc:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
+/usr/include/c++/13/bits/regex_executor.h:
 
 /usr/include/c++/13/bits/nested_exception.h:
 
 /usr/include/c++/13/tuple:
 
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/json.hpp:
+/usr/include/c++/13/ext/concurrence.h:
 
-/usr/include/c++/13/deque:
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_concrete.h:
 
-/usr/include/c++/13/bits/new_allocator.h:
+/usr/include/bits/struct_rwlock.h:
 
-/usr/include/c++/13/bits/stl_uninitialized.h:
+/usr/include/c++/13/bits/stl_algo.h:
 
-/usr/include/c++/13/bits/stl_map.h:
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/c++/13/cstddef:
+
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/c++/13/bits/regex_constants.h:
+
+/usr/include/bits/types/struct_msqid_ds.h:
+
+/usr/include/c++/13/bits/regex_automaton.tcc:
+
+/usr/include/c++/13/bits/regex_compiler.tcc:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/c++/13/bits/regex_executor.tcc:
+
+/usr/include/bits/types.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/complete/complete_logger.h:
+
+/usr/include/c++/13/bits/valarray_array.h:
+
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/tree/associative_container.h:
+
+/usr/include/c++/13/stack:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/tree/11/source/allocator/safe_allocator.h:
 
 /usr/include/c++/13/vector:
 
@@ -4878,55 +5141,3 @@ CMakeFiles/cw.dir/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/database.cpp:
 
 /home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/data/database/database.h:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/concrete/logger_builder_concrete.h:
-
-/usr/include/c++/13/bits/codecvt.h:
-
-/usr/include/c++/13/bits/stl_tree.h:
-
-/usr/include/c++/13/bits/erase_if.h:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
-
-/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/logger/source/logger/prototypes/logger_builder.h:
-
-/usr/include/c++/13/algorithm:
-
-/usr/include/c++/13/bits/algorithmfwd.h:
-
-/usr/include/c++/13/x86_64-redhat-linux/bits/messages_members.h:
-
-/usr/include/c++/13/bits/ios_base.h:
-
-/usr/include/c++/13/iterator:
-
-/usr/include/c++/13/bits/stream_iterator.h:
-
-/usr/include/c++/13/memory:
-
-/usr/lib/gcc/x86_64-redhat-linux/13/include/stdarg.h:
-
-/usr/include/c++/13/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/13/x86_64-redhat-linux/bits/gthr.h:
-
-/usr/include/c++/13/bits/align.h:
-
-/usr/include/c++/13/bits/unique_ptr.h:
-
-/usr/include/c++/13/bits/deque.tcc:
-
-/usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
-/usr/include/c++/13/ext/concurrence.h:
-
-/usr/include/bits/msq.h:
-
-/usr/include/c++/13/numeric:

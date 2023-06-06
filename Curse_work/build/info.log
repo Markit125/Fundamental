@@ -1,8 +1,17 @@
-[06/06/23 23:07:06][WARNING] Database constructor
-[06/06/23 23:07:14][INFO] Message processed
-[06/06/23 23:07:33][INFO] Message processed
-[06/06/23 23:07:41][INFO] Message processed
-[06/06/23 23:07:52][INFO] Message processed
-[06/06/23 23:08:01][INFO] Message processed
-[06/06/23 23:11:53][INFO] Message processed
-[06/06/23 23:12:08][INFO] Message processed
+[06/07/23 00:00:16][WARNING] Database constructor
+[06/07/23 00:00:19][WARNING] Pool constructor
+[06/07/23 00:00:19][INFO] Memory for pool is allocated
+[06/07/23 00:00:19][INFO] Pool created
+[06/07/23 00:00:19][WARNING] Scheme constructor
+[06/07/23 00:00:19][INFO] Memory for scheme is allocated
+[06/07/23 00:00:19][INFO] Scheme created
+[06/07/23 00:00:19][WARNING] Collection constructor
+[06/07/23 00:00:19][INFO] Memory for collection is allocated
+[06/07/23 00:00:19][INFO] Collection created
+[06/07/23 00:00:19][INFO] Note created
+[06/07/23 00:00:19][INFO] Note created
+[06/07/23 00:00:19][INFO] START
+[06/07/23 00:00:19][INFO] Current node { 1, 1 }
+[06/07/23 00:00:19][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 00:00:19][INFO] ENDED
+[06/07/23 00:00:19][INFO] Message processed
