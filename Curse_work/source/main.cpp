@@ -83,8 +83,8 @@ int main(int argc, char *argv[]) {
               << " with the key " << key_receive << std::endl;
 
 
-    // while (1) {
-    for (int i = 0; i < 2; ++i) {
+    while (1) {
+    // for (int i = 0; i < 2; ++i) {
 
         if (msgrcv(msqid_receive, &msg_receive, sizeof(msg_receive) - sizeof(long), MSG_Q_CHANNEL_RECEIVE, 0) < 0)
         {
