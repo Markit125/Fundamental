@@ -11,9 +11,9 @@ int process_file(database *&db, std::stringstream &in_stream, std::stringstream 
 
     std::vector<std::string> query(4);
 
-    out_stream << "\n-----------------\n\n";
 
     while (get_word(in_stream, word)) {
+
 
         if (word == "create") {
 
@@ -259,6 +259,7 @@ int process_file(database *&db, std::stringstream &in_stream, std::stringstream 
 
             // note
             try {
+                out_stream << "\n-----------------\n\n";
                 db->read_note(in_stream, out_stream, query);
                 if (logger) logger->log("read note outside", logging::logger::severity::debug);
             } catch (std::runtime_error &ex) {
@@ -287,6 +288,7 @@ int process_file(database *&db, std::stringstream &in_stream, std::stringstream 
 
             // note
             try {
+                out_stream << "\n-----------------\n\n";
                 db->read_note_range(in_stream, out_stream, query);
                 if (logger) logger->log("read note range outside", logging::logger::severity::debug);
             } catch (std::runtime_error &ex) {

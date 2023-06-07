@@ -47,13 +47,13 @@ void allocating::memory_with_descriptors::deallocate(void * const target_to_deal
     safe_log("Outer next " + cast_to_str(*get_pointer_next(trusted_memory_to_block())), logging::logger::severity::trace);
     safe_log("Outer end  " + cast_to_str(get_end_allocator()), logging::logger::severity::trace);
     
-    // size_t size = get_size_block(target_to_dealloc);
-    // unsigned char *ptr;
 
-    // ptr = reinterpret_cast<unsigned char *>(reinterpret_cast<size_t *>(target_to_dealloc) - 2);
-    // for (size_t i = 0; i < size; ++i) {
-    //     *(ptr++) = 0;
-    // }
+
+
+
+
+
+
 
     safe_log("Deallocation completed!", logging::logger::severity::trace);
 }
@@ -120,8 +120,8 @@ void *allocating::memory_with_descriptors::allocate(const size_t target_size) co
     safe_log("Allocated block " + std::to_string(target_size) + " bytes of memory at "
                     + cast_to_str(new_memory), logging::logger::severity::debug);
 
-    // safe_log("new_memory " + print_memory(new_memory), logging::logger::severity::trace);
-    // safe_log("_allocated_memory " + print_allocator(this), logging::logger::severity::trace);
+
+
 
     safe_log("ALLOCATOR " + cast_to_str(_trusted_memory), logging::logger::severity::trace);
     safe_log("Starts at     " + cast_to_str(_trusted_memory), logging::logger::severity::trace);
@@ -133,7 +133,6 @@ void *allocating::memory_with_descriptors::allocate(const size_t target_size) co
 }
 
 
-// ONLY FOR ALLOCATOR
 allocating::memory_with_descriptors::memory_with_descriptors(
         size_t size, memory *outer_allocator, logging::logger *memory_logger,
         allocating::memory_with_descriptors::fit_type fit = allocating::memory_with_descriptors::fit_type::first
@@ -196,7 +195,7 @@ allocating::memory_with_descriptors::memory_with_descriptors(
     }
 
   
-    // safe_log("New allocator _allocated_memory " + print_allocator(this), logging::logger::severity::trace);
+
 
 }
 
@@ -236,14 +235,14 @@ void *allocating::memory_with_descriptors::allocate_fit(size_t size, allocating:
 
     
 
-    // safe_log("Block is inserted to the list", logging::logger::severity::trace);
-
-    // safe_log("block fit after " + cast_to_str(fit_memory_block), logging::logger::severity::trace);
 
 
-    // safe_log("Next block at " + cast_to_str(*get_pointer_next(fit_memory_block)), logging::logger::severity::trace);
-    // safe_log("New memory at " + cast_to_str(fit_memory_block), logging::logger::severity::trace);
-    // safe_log("Prev block at " + cast_to_str(*get_pointer_previous(fit_memory_block)), logging::logger::severity::trace);
+
+
+
+
+
+
 
     return fit_memory_block;
 }
@@ -284,14 +283,9 @@ void allocating::memory_with_descriptors::set_pointer_to_next_block(void *block,
 }
 
 
-// Allocator
-//      0                 1                     2               3                    4
-// | logger | pointer to outer allocator | size of all | pointer to next | allocated memory for use | *end |
-//                                                  ^                          ^
-//                        pointer to next points to |           or          to | 
 
 void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
-    //                          size of block plus service block
+
 
 
     void **ptr_next = get_pointer_next(trusted_memory_to_block());
@@ -323,8 +317,8 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
             current_memory = reinterpret_cast<void *>(reinterpret_cast<size_t *>(*ptr_current) + 3);
             fit = &current_memory;
 
-            // *(reinterpret_cast<void **>(current_memory) - 1) = *ptr_next;
-            // *(reinterpret_cast<void **>(current_memory) - 2) = *ptr_current;
+
+
         } else {
             ptr_current = get_pointer_next(*ptr_current);
         }
@@ -346,23 +340,23 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
 
             if (free_space >= size) {
                 
-                // current_memory = reinterpret_cast<void *>(reinterpret_cast<unsigned char *>(*ptr_current) + get_size_block(*ptr_current) + 2);
+
                 current_memory = reinterpret_cast<void *>(reinterpret_cast<unsigned char *>(*ptr_current) +
                     get_size_block(*ptr_current) + sizeof(size_t *) + sizeof(void **) * 2);
                 fit = &current_memory;
 
-                // *(reinterpret_cast<void **>(current_memory) - 1) = *ptr_next;
-                // *(reinterpret_cast<void **>(current_memory) - 2) = *ptr_current;
+
+
                 break;
             }
 
-            // safe_log("----->>>ptr_current: " + cast_to_str(*ptr_current), logging::logger::severity::trace);
-            // safe_log("prt_next: " + cast_to_str(*ptr_next), logging::logger::severity::trace);
+
+
 
             ptr_current = get_pointer_next(*ptr_current);
             ptr_next = get_pointer_next(*ptr_current);
 
-            // safe_log("----->>>ptr_current: " + cast_to_str(*ptr_current), logging::logger::severity::trace);
+
 
             
             safe_log("prt_next: " + cast_to_str(*ptr_next), logging::logger::severity::trace);
@@ -396,7 +390,7 @@ void *allocating::memory_with_descriptors::find_first_fit(size_t size) const {
 
 
 void *allocating::memory_with_descriptors::find_best_fit(size_t size) const {
-    //                          size of block plus service block
+
 
 
     void **ptr_next = get_pointer_next(trusted_memory_to_block());
@@ -493,7 +487,7 @@ void *allocating::memory_with_descriptors::find_best_fit(size_t size) const {
 
 
 void *allocating::memory_with_descriptors::find_worst_fit(size_t size) const {
-    //                          size of block plus service block
+
 
 
     void **ptr_next = get_pointer_next(trusted_memory_to_block());

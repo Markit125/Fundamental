@@ -1,3 +1,5 @@
+#include "../logger/source/logger/concrete/logger_builder_concrete.h"
+#include "../logger/source/logger/prototypes/logger.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
@@ -26,7 +28,9 @@ std::ifstream open_file(std::string &filename) {
     return file;
 }
 
+
 struct MsgQueue {
+
     long messageType;
     
     char buff[MSG_SIZE];	
@@ -35,13 +39,33 @@ struct MsgQueue {
 
 const int MSG_Q_KEY_FLAG_SERVER = 0664;
 const int MSG_Q_KEY_FLAG_CLIENT = 0700;
-
+ 
 const int MSG_Q_CHANNEL_SEND = 26;
 const int MSG_Q_CHANNEL_RECEIVE = 16;
 
 
  
 int main(int argc, char *argv[]) {
+
+    logging::logger *logger;
+    
+    if (argc == 3) {
+    
+        std::string filename(argv[2]);
+
+        logging::logger_builder *builder = new logger_builder_concrete();
+
+        if (nullptr == builder) {
+            std::cout << "Cannot allocate memory for builder" << std::endl;
+            return -1;
+        }
+        logger = builder->construct_configuration(filename);
+    }
+
+    if (argc < 2) {
+        std::cout << "You should pass filename with commands" << std::endl;
+        return 1;
+    }
 
     std::string filename = argv[1];
     std::ifstream file;
@@ -101,6 +125,7 @@ int main(int argc, char *argv[]) {
     }
 
 
+    if (logger) logger->log("User connected to server", logging::logger::severity::information);
     std::cout << "\nSuccessfully connected to server #" << msqid_send << " with the key " << key_send << std::endl;
 
     
@@ -131,6 +156,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     
+    if (logger) logger->log("Message sent by user", logging::logger::severity::information);
     std::cout << "Sending complete!" << std::endl;
     sleep(1);
 
@@ -143,6 +169,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
+    if (logger) logger->log("Message resieved by user", logging::logger::severity::information);
     std::cout << "Recieved message:" << std::endl;
     std::cout << msg_send.buff;
     

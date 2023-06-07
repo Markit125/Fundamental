@@ -46,10 +46,6 @@ int collection::create_note(std::stringstream &file, std::vector<std::string> &q
     _notes->insert(key, std::move(value));
 
     safe_log("Note created", logging::logger::severity::information);
-
-    // (*collection_found.second)->_notes->print_container();
-    
-    // (*collection_found.second)->_notes->print_notes_between(type_key {1, 2}, type_key{ 10, 4 });
     
     
     return 0;

@@ -1,0 +1,3 @@
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/client_app/build/CMakeFiles/client.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/client_app/build/CMakeFiles/edit_cache.dir
+/home/markit125/AllData/Programming/CPlusPlus/Fundamental/Curse_work/source/client_app/build/CMakeFiles/rebuild_cache.dir

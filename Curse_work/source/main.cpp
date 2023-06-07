@@ -11,39 +11,36 @@
 
 #define MSG_SIZE 5000
  
-// the structure representing the message queue
-// & must match the same layout as in the client.cpp
 struct MsgQueue {
-    // IMPORTANT: every message structure must start with this
-    long messageType;
 
-    int someNumber;
+    long messageType;
     char buff[MSG_SIZE];
  
 };
- 
-// message queue flag
+
 const int MSG_Q_KEY_FLAG_SERVER = 0664;
 const int MSG_Q_KEY_FLAG_CLIENT = 0700;
- 
-// message queue data transfer channel
+
 const int MSG_Q_CHANNEL_RECEIVE = 26;
 const int MSG_Q_CHANNEL_SEND = 16;
 
  
 int main(int argc, char *argv[]) {
 
-    logging::logger_builder *builder = new logger_builder_concrete();
-
-    if (nullptr == builder) {
-        std::cout << "Cannot allocate memory for builder" << std::endl;
-        return -1;
-    }
-
-
     logging::logger *logger;
+    
+    if (argc == 2) {
+    
+        std::string filename(argv[1]);
 
-    logger = builder->construct_configuration("../source/configuration/conf.json");
+        logging::logger_builder *builder = new logger_builder_concrete();
+
+        if (nullptr == builder) {
+            std::cout << "Cannot allocate memory for builder" << std::endl;
+            return -1;
+        }
+        logger = builder->construct_configuration(filename);
+    }
 
 
     database *db = new database(logger);
@@ -84,7 +81,7 @@ int main(int argc, char *argv[]) {
 
 
     while (1) {
-    // for (int i = 0; i < 2; ++i) {
+    // for (int i = 0; i < 1; ++i) {
 
         if (msgrcv(msqid_receive, &msg_receive, sizeof(msg_receive) - sizeof(long), MSG_Q_CHANNEL_RECEIVE, 0) < 0)
         {
@@ -100,8 +97,6 @@ int main(int argc, char *argv[]) {
 
         std::cout << "processed\n";
 
-
-        // memset(&msg.buff, 0, sizeof(msg.buff));
         std::string str = out.str();
         char *ptr = const_cast<char *>(str.c_str());
         int count = 0;
@@ -142,7 +137,6 @@ int main(int argc, char *argv[]) {
 
     }
  
-    // finally, deallocate the message queue
     if (msgctl(msqid_receive, IPC_RMID, NULL) < 0) {
         
         perror("msgctl");
