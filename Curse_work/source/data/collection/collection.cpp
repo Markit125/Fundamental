@@ -13,7 +13,7 @@ logging::logger *collection::get_logger() const {
 
 collection::~collection() {
 
-    safe_log("Collection destructor", logging::logger::severity::warning);
+    safe_log("Collection destructor", logging::logger::severity::information);
 
     _notes->print_container();
     _notes->~associative_container();
@@ -27,7 +27,7 @@ collection::collection(allocating::memory *allocator, logging::logger *logger)
     _notes = reinterpret_cast<avl_tree<type_key, type_value, comparers> *>(safe_allocate(sizeof(avl_tree<type_key, type_value, comparers>)));
     new (_notes) avl_tree<type_key, type_value, comparers>(allocator, logger);
 
-    safe_log("Collection constructor", logging::logger::severity::warning);
+    safe_log("Collection constructor", logging::logger::severity::information);
 }
 
 

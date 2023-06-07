@@ -1,38 +1,43 @@
 create pool LF fiji
 
-create pool GH grambo
-
-create pool LB ganto
-D-BWF L-BWF GH
 
 create scheme fiji giant
 create collection fiji giant my_new_collection
-create scheme fiji brant
-create collection fiji giant my_second_collection
-create collection fiji brant brant_collection_one
 
-create note fiji giant my_new_collection { 1, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
+create note fiji giant my_new_collection { 1, 1 } == hi,  == Mark == Tarabukin == Ivanovich == tamarkus@gma.com == +79994617 ==
+Dub 5 k 6 == No == 17.01.2023 15:43 ==
 
-create note fiji giant my_new_collection { 1, 4 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
-create note fiji giant my_new_collection { 2, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
+create note fiji giant my_new_collection { 2, 4 } == desc == Vaa == Cas == Ivanovich == tamardcdkus@gmail.com == +7999496000000 ==
 Dub 5 k 6 == No == 17.06.2023 15:40 ==
 
-create note fiji giant my_new_collection { 3, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
+create note fiji giant my_new_collection { 2, 1 } == rerer == Las == PPPAS == Ivanovich == tamaaaaakus@gmail.com == +7999496963 ==
+Dub 22  == No == 17.06.2023 15:40 ==
 
-create note fiji giant my_new_collection { 4, 5 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
+create note fiji giant my_new_collection { 2, 4 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994961111 ==
+Dub 2 == No == 17.06.2023 15:40 ==
 
-create note fiji giant my_new_collection { 10, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
+create note fiji giant my_new_collection { 4, 5 } == desction == Vil == Vol == Ila == tus@mail.ru == +79994961543 ==
+Dub 44 k 6 == No == 17.06.2023 15:40 ==
+
+create note fiji giant my_new_collection { 10, 1 } == Description here == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +7999 ==
+Dub 12 k 6 == comm == 17.06.2023 15:40 ==
 
 read fiji giant my_new_collection { 2, 1 }
 
-read_range fiji giant my_second_collection { 1, 100 } { 3, 101 }
+read_range fiji giant my_new_collection { 1, 100 } { 10, 1 }
+
+delete note fiji giant my_new_collection { 4, 5 }
 
 read_range fiji giant my_new_collection { 2, 1 } { 5, 1 }
 
-create note fiji giant my_second_collection { 3, 1 } == hi, I'm Mark == Mark == Tarabukin == Ivanovich == tamarkus@gmail.com == +79994969617 ==
-Dub 5 k 6 == No == 17.06.2023 15:40 ==
+
+
+
+
+
+
+
+
+
+
+

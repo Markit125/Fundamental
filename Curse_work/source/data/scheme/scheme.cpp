@@ -13,7 +13,7 @@ logging::logger *scheme::get_logger() const {
 
 scheme::~scheme() {
 
-    safe_log("Scheme destructor", logging::logger::severity::warning);
+    safe_log("Scheme destructor", logging::logger::severity::information);
     _collections->print_container();
     _collections->~associative_container();
     safe_deallocate(_collections);
@@ -26,7 +26,7 @@ scheme::scheme(allocating::memory *allocator, logging::logger *logger)
     _collections = reinterpret_cast<avl_tree<std::string, collection, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, collection, comparers>)));
     new (_collections) avl_tree<std::string, collection, comparers>(allocator, logger);
 
-    safe_log("Scheme constructor", logging::logger::severity::warning);
+    safe_log("Scheme constructor", logging::logger::severity::information);
 }
 
 

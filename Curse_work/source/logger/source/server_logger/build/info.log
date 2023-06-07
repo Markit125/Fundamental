@@ -1,1 +1,92 @@
-[06/07/23 07:29:50][WARNING] Database constructor
+[06/07/23 08:00:51][INFO] Database constructor
+[06/07/23 08:00:57][INFO] User connected to server
+[06/07/23 08:00:57][INFO] Message sent by user
+[06/07/23 08:00:57][INFO] Memory for pool is allocated
+[06/07/23 08:00:57][INFO] Scheme constructor
+[06/07/23 08:00:57][INFO] Collection constructor
+[06/07/23 08:00:57][INFO] Note created
+[06/07/23 08:00:57][INFO] Note created
+[06/07/23 08:00:57][INFO] Current node { 1, 1 }
+[06/07/23 08:00:57][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:00:57][INFO] ENDED
+[06/07/23 08:00:57][INFO] Message processed
+[06/07/23 08:00:58][INFO] Message resieved by user
+[06/07/23 08:01:34][INFO] User connected to server
+[06/07/23 08:01:34][INFO] Message sent by user
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:34][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][INFO] Note created
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] Current node { 1, 1 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][INFO] Note created
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] Current node { 1, 5 }
+[06/07/23 08:01:34][INFO] Current node { 1, 0 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][INFO] Message processed
+[06/07/23 08:01:35][INFO] Message resieved by user
+[06/07/23 08:01:43][INFO] User connected to server
+[06/07/23 08:01:43][INFO] Message sent by user
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:43][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][INFO] Current node { 1, 0 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][INFO] Message processed
+[06/07/23 08:01:44][INFO] Message resieved by user
+[06/07/23 08:01:45][INFO] User connected to server
+[06/07/23 08:01:45][INFO] Message sent by user
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:45][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 1 }
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 1 }
+[06/07/23 08:01:45][INFO] Current node { 1, 0 }
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][INFO] Note created
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 0 }
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][INFO] Message processed
+[06/07/23 08:01:46][INFO] Message resieved by user
+[06/07/23 08:01:48][INFO] User connected to server
+[06/07/23 08:01:48][INFO] Message sent by user
+[06/07/23 08:01:48][INFO] Note removed
+[06/07/23 08:01:48][INFO] Note removed
+[06/07/23 08:01:48][INFO] Message processed
+[06/07/23 08:01:49][INFO] Message resieved by user

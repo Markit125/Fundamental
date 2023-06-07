@@ -9,7 +9,7 @@ create note Pool Scheme Collection { 01, 00 }
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
+== 12
 == 5 Bud Wocsom
 == comment in note
 == 12/12/2025 10:12
@@ -23,19 +23,7 @@ create note Pool Scheme Collection { 01, 05 }
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
-== 5 Bud Wocsom
-== comment in note
-== 12/12/2025 10:12
-==
-
-create note Pool Scheme Collection { 01, 06 }
-== Standart delivery #3
-== Kram
-== Nikubarat
-== Hcivonavi
-== sukramat0@gmail.com
-== 71696909997
+== 2
 == 5 Bud Wocsom
 == comment in note
 == 12/12/2025 10:12
@@ -48,7 +36,7 @@ create note Pool Scheme Collection { 01, 010 }
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
+== 10
 == 5 Bud Wocsom
 == comment in note
 == 12/12/2025 10:12
@@ -61,7 +49,7 @@ create note Pool Scheme Collection { 01, 013 }
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
+== 13
 == 5 Bud Wocsom
 == comment in note
 == 12/12/2025 10:12
@@ -75,24 +63,24 @@ create note Pool Scheme Collection { 01, 4 }
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
+== 4
 == 5 Bud Wocsom
 == comment in note
 == 12/12/2025 10:12
 ==
 
-
-create note Pool Scheme Collection { 1, 13 }
+create note Pool Scheme Collection { 01, 010 }
 == Standart delivery #3
 == Kram
 == Nikubarat
 == Hcivonavi
 == sukramat0@gmail.com
-== 71696909997
+== 10
 == 5 Bud Wocsom
 == comment in note
-== 12/12/2025 20:12
+== 12/12/2025 10:12
 ==
+
 
 read_range Pool Scheme Collection { 0, 0 } { 2, 0 }
 read Pool Scheme Collection { 1, 13 }

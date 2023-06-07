@@ -1,8 +1,2386 @@
-[06/07/23 07:29:50][DEBUG] Tree is created
-[06/07/23 07:29:50][DEBUG] AVL tree is created
-[06/07/23 07:29:50][WARNING] Database constructor
-[06/07/23 07:29:50][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7f4fd474c010
-[06/07/23 07:29:50][TRACE] Memory of new Allocator
-[06/07/23 07:29:50][TRACE] Start at 0x7f4fd474c010
-[06/07/23 07:29:50][TRACE] New a at 0x7f4fd474c010
-[06/07/23 07:29:50][TRACE]   End at 0x7f4fd4940030
+[06/07/23 08:00:51][DEBUG] Tree is created
+[06/07/23 08:00:51][DEBUG] AVL tree is created
+[06/07/23 08:00:51][INFO] Database constructor
+[06/07/23 08:00:57][INFO] User connected to server
+[06/07/23 08:00:57][INFO] Message sent by user
+[06/07/23 08:00:57][DEBUG] Allocated allocator with 2048000 bytes of memory at 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Memory of new Allocator
+[06/07/23 08:00:57][TRACE] Start at 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New a at 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE]   End at 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][DEBUG] Start finding memory block for allocator with size 56 bytes
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] First block! Space for data beetween 0x7fe261c2d038 and 0x7fe261e21030 is 2048000
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 56 at 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] 56 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d038 block 0x7fe261c2d050
+[06/07/23 08:00:57][DEBUG] Allocated block 40 bytes of memory at 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][DEBUG] Start finding memory block for allocator with size 88 bytes
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261e21030 is 2047896
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 88 at 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] 88 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d050 block 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d0a0
+[06/07/23 08:00:57][DEBUG] Tree is created
+[06/07/23 08:00:57][DEBUG] AVL tree is created
+[06/07/23 08:00:57][INFO] Memory for pool is allocated
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] Created node is 0xb94f80
+[06/07/23 08:00:57][DEBUG] 0xb94f80
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Now height is 1
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Balance factor 0
+[06/07/23 08:00:57][DEBUG] created pool outside
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:00:57][TRACE] Size need 56
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 56 at 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] block fit 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] 56 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d0a0 block 0x7fe261c2d110
+[06/07/23 08:00:57][DEBUG] Allocated block 40 bytes of memory at 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261e21030 is 2047704
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] 88 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d110 block 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:00:57][DEBUG] Tree is created
+[06/07/23 08:00:57][INFO] Scheme constructor
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261e21030 is 2047592
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 112 at 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] 112 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d160 block 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d1d0
+[06/07/23 08:00:57][DEBUG] Created node is 0x7fe261c2d1d0
+[06/07/23 08:00:57][DEBUG] ______Fix height______
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:00:57][DEBUG] Now height is 1
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Balance factor 0
+[06/07/23 08:00:57][DEBUG] After insert inner ended
+[06/07/23 08:00:57][DEBUG] created scheme outside
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Size need 56
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261e21030 is 2047456
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 56 at 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] block fit 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] 56 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d1d0 block 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][DEBUG] Start finding memory block for allocator with size 88 bytes
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 88
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261e21030 is 2047376
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 88 at 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] block fit 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d2a8
+[06/07/23 08:00:57][DEBUG] Allocated block 72 bytes of memory at 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d2a8
+[06/07/23 08:00:57][DEBUG] Tree is created
+[06/07/23 08:00:57][DEBUG] AVL tree is created
+[06/07/23 08:00:57][INFO] Collection constructor
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 112
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261e21030 is 2047264
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 112 at 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] block fit 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:00:57][DEBUG] 0x7fe261c2d318
+[06/07/23 08:00:57][DEBUG] ______Fix height______
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Balance factor 0
+[06/07/23 08:00:57][DEBUG] After insert inner ended
+[06/07/23 08:00:57][DEBUG] created collection outside
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261e21030 is 2047128
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 320 at 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:00:57][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Now height is 1
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] balance factor has ended
+[06/07/23 08:00:57][DEBUG] After insert inner ended
+[06/07/23 08:00:57][INFO] Note created
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] Move right
+[06/07/23 08:00:57][TRACE] Insert inner
+[06/07/23 08:00:57][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:00:57][TRACE] New memory allocating............................................
+[06/07/23 08:00:57][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:00:57][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:00:57][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Size need 320
+[06/07/23 08:00:57][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:00:57][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:00:57][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261e21030 is 2046784
+[06/07/23 08:00:57][DEBUG] Found first fit block with size 320 at 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] block fit 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d3a0 block 0x7fe261c2d4f8
+[06/07/23 08:00:57][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:00:57][TRACE] New memory at 0x7fe261c2d4f8
+[06/07/23 08:00:57][DEBUG] Created node is 0x7fe261c2d4f8
+[06/07/23 08:00:57][DEBUG] ______Fix height______
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][DEBUG] Balance factor 0
+[06/07/23 08:00:57][DEBUG] After insert inner ended
+[06/07/23 08:00:57][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:00:57][TRACE] Get height 1
+[06/07/23 08:00:57][DEBUG] Now height is 2
+[06/07/23 08:00:57][TRACE] Get height 1
+[06/07/23 08:00:57][DEBUG] Balance factor -1
+[06/07/23 08:00:57][INFO] Note created
+[06/07/23 08:00:57][DEBUG] created note outside
+[06/07/23 08:00:57][INFO] Current node { 1, 1 }
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 1
+[06/07/23 08:00:57][TRACE] Get height 0
+[06/07/23 08:00:57][TRACE] Get height 2
+[06/07/23 08:00:57][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:00:57][INFO] ENDED
+[06/07/23 08:00:57][INFO] Message processed
+[06/07/23 08:00:58][INFO] Message resieved by user
+[06/07/23 08:01:34][INFO] User connected to server
+[06/07/23 08:01:34][INFO] Message sent by user
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][DEBUG] A value was not found
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move left
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:34][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:34][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d4f8 block 0x7fe261c2d650
+[06/07/23 08:01:34][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] New memory at 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d650
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Balance factor 0
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Fix height left, right {1, 1}
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][INFO] Note created
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] Current node { 1, 1 }
+[06/07/23 08:01:34][DEBUG] Leaf
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][DEBUG] read note range outside
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:34][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261e21030 is 2046096
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] block fit 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d650 block 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] New memory at 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][DEBUG] Now height is 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] Balance factor 0
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {1, 2}
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] created note outside
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:34][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] block fit 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d7a8 block 0x7fe261c2d900
+[06/07/23 08:01:34][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] New memory at 0x7fe261c2d900
+[06/07/23 08:01:34][DEBUG] Created node is 0x7fe261c2d900
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][DEBUG] Now height is 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Balance factor -1
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d4f8
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 2}
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] left rotation
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Fix height left, right {1, 1}
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Now height is 3
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] created note outside
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2d900 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] block fit 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2d900 block 0x7fe261c2da58
+[06/07/23 08:01:34][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2da58
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Balance factor 0
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 1}
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][DEBUG] Fix height left, right {1, 2}
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] Balance factor -1
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][DEBUG] Now height is 4
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] left rotation
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {2, 2}
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][INFO] Note created
+[06/07/23 08:01:34][INFO] START
+[06/07/23 08:01:34][INFO] Current node { 1, 5 }
+[06/07/23 08:01:34][INFO] Current node { 1, 0 }
+[06/07/23 08:01:34][DEBUG] Leaf
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][DEBUG] read note range outside
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move left
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] subtree_root_address is nullptr. Start creating a new node
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:34][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d900 and 0x7fe261c2da58 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2da58 and 0x7fe261e21030 is 2045064
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2da58 prev 0x7fe261c2d900 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2da58 block 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] New memory at 0x7fe261c2dbb0
+[06/07/23 08:01:34][DEBUG] Created node is 0x7fe261c2dbb0
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] Balance factor 0
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Balance factor -1
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {1, 2}
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Balance factor -1
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Balance factor 1
+[06/07/23 08:01:34][DEBUG] After insert inner ended
+[06/07/23 08:01:34][DEBUG] created note outside
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] Move right
+[06/07/23 08:01:34][TRACE] Insert inner
+[06/07/23 08:01:34][DEBUG] node with existing key. Start creating a replacement node key: { 1, 10 }
+[06/07/23 08:01:34][TRACE] New memory allocating............................................
+[06/07/23 08:01:34][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:34][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:34][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2d900 and 0x7fe261c2da58 is 8
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2da58
+[06/07/23 08:01:34][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2da58 and 0x7fe261c2dbb0 is 8
+[06/07/23 08:01:34][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:34][TRACE] ptr_current: 0x7fe261c2dbb0
+[06/07/23 08:01:34][TRACE] Space for data beetween 0x7fe261c2dbb0 and 0x7fe261e21030 is 2044720
+[06/07/23 08:01:34][TRACE] Size need 320
+[06/07/23 08:01:34][DEBUG] Found first fit block with size 320 at 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] block fit 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d7a8 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261c2dbb0 prev 0x7fe261c2da58 block 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] cur 0x7fe261e21030 prev 0x7fe261c2dbb0 block 0x7fe261c2dd08
+[06/07/23 08:01:34][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:34][TRACE] New memory at 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Prev 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] Prev 0x7fe261c2d7a8
+[06/07/23 08:01:34][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:34][TRACE] Curr 0x7fe261c2d900
+[06/07/23 08:01:34][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:34][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:34][DEBUG] Replaced node is 0x7fe261c2dd08
+[06/07/23 08:01:34][DEBUG] 0x7fe261c2dd08
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] Fix height left, right {0, 1}
+[06/07/23 08:01:34][DEBUG] Now height is 2
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][DEBUG] balance factor has ended
+[06/07/23 08:01:34][DEBUG] Balance factor -1
+[06/07/23 08:01:34][DEBUG] after inner #3
+[06/07/23 08:01:34][DEBUG] ______Fix height______
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][DEBUG] Leaf
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 4
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 2
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 3
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][TRACE] Get height 1
+[06/07/23 08:01:34][TRACE] Get height 0
+[06/07/23 08:01:34][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:34][INFO] ENDED
+[06/07/23 08:01:34][DEBUG] read note range outside
+[06/07/23 08:01:34][DEBUG] read note outside
+[06/07/23 08:01:34][DEBUG] EnD
+[06/07/23 08:01:34][INFO] Message processed
+[06/07/23 08:01:35][INFO] Message resieved by user
+[06/07/23 08:01:43][INFO] User connected to server
+[06/07/23 08:01:43][INFO] Message sent by user
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 4
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][DEBUG] read note range outside
+[06/07/23 08:01:43][DEBUG] A value was not found
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move left
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move left
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 0 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][DEBUG] Found first fit block with size 320 at 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2d900
+[06/07/23 08:01:43][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Deallocating...................
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] Next 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Curr 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][DEBUG] Replaced node is 0x7fe261c2d900
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:43][DEBUG] Now height is 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] Balance factor 0
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Now height is 3
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Balance factor -1
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:43][DEBUG] Now height is 4
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] Balance factor 1
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 5 }
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][DEBUG] Leaf
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][DEBUG] read note range outside
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 5 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d7a8 is 352
+[06/07/23 08:01:43][DEBUG] Found first fit block with size 320 at 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] block fit 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d650
+[06/07/23 08:01:43][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Deallocating...................
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Curr 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d650
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Now height is 4
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 10 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][DEBUG] Found first fit block with size 320 at 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] block fit 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d650 block 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] New memory at 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Deallocating...................
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Next 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Next 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][DEBUG] Replaced node is 0x7fe261c2d7a8
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][DEBUG] Fix height left, right {0, 1}
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d650
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:43][DEBUG] Now height is 4
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] Balance factor 1
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 13 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2d900 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2da58 and 0x7fe261c2dbb0 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2dbb0 and 0x7fe261e21030 is 2044720
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] block fit 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2da58 prev 0x7fe261c2d900 block 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2dbb0 prev 0x7fe261c2da58 block 0x7fe261c2dd08
+[06/07/23 08:01:43][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] New memory at 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] Deallocating...................
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] Next 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Curr 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][DEBUG] Replaced node is 0x7fe261c2dd08
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:43][DEBUG] Now height is 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Balance factor 0
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Fix height left, right {0, 1}
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] created note outside
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][DEBUG] Leaf
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 4
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][DEBUG] read note range outside
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move left
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 4 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2d900 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d900 and 0x7fe261c2dbb0 is 352
+[06/07/23 08:01:43][DEBUG] Found first fit block with size 320 at 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2dbb0 prev 0x7fe261c2d900 block 0x7fe261c2da58
+[06/07/23 08:01:43][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Deallocating...................
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] Next 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Curr 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Deallocation completed!
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2da58
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:43][DEBUG] Now height is 1
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Now height is 2
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] Balance factor -1
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Now height is 3
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Balance factor -1
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][DEBUG] ______Fix height______
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Now height is 4
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Balance factor 1
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][DEBUG] created note outside
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] Move right
+[06/07/23 08:01:43][TRACE] Insert inner
+[06/07/23 08:01:43][DEBUG] node with existing key. Start creating a replacement node key: { 1, 10 }
+[06/07/23 08:01:43][TRACE] New memory allocating............................................
+[06/07/23 08:01:43][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:43][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:43][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2d900 is 8
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] prt_next: 0x7fe261c2dd08
+[06/07/23 08:01:43][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Size need 320
+[06/07/23 08:01:43][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] block fit 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d7a8 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] cur 0x7fe261c2da58 prev 0x7fe261c2d900 block 0x7fe261c2dbb0
+[06/07/23 08:01:43][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:43][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][TRACE] Prev 0x7fe261c2d650
+[06/07/23 08:01:43][TRACE] Next 0x7fe261c2d900
+[06/07/23 08:01:43][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:43][DEBUG] Replaced node is 0x7fe261c2dbb0
+[06/07/23 08:01:43][DEBUG] 0x7fe261c2dbb0
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][DEBUG] Now height is 2
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][DEBUG] balance factor has ended
+[06/07/23 08:01:43][DEBUG] After insert inner ended
+[06/07/23 08:01:43][DEBUG] after inner #3
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][DEBUG] Balance factor 1
+[06/07/23 08:01:43][INFO] Note created
+[06/07/23 08:01:43][INFO] START
+[06/07/23 08:01:43][INFO] Current node { 1, 1 }
+[06/07/23 08:01:43][INFO] Current node { 1, 0 }
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 1
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][TRACE] Get height 2
+[06/07/23 08:01:43][TRACE] Get height 3
+[06/07/23 08:01:43][TRACE] Get height 0
+[06/07/23 08:01:43][INFO] ENDED
+[06/07/23 08:01:43][DEBUG] read note range outside
+[06/07/23 08:01:43][DEBUG] read note outside
+[06/07/23 08:01:43][DEBUG] EnD
+[06/07/23 08:01:43][INFO] Message processed
+[06/07/23 08:01:44][INFO] Message resieved by user
+[06/07/23 08:01:45][INFO] User connected to server
+[06/07/23 08:01:45][INFO] Message sent by user
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] { 1, 2 } == { 1, 2 }
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 4
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][INFO] left_bound { 1, 2 } right bound { 1, 100 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][DEBUG] read note range outside
+[06/07/23 08:01:45][DEBUG] A value was not found
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move left
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move left
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 0 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][DEBUG] Found first fit block with size 320 at 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d650 block 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] New memory at 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Deallocating...................
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Curr 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][DEBUG] Replaced node is 0x7fe261c2d7a8
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:45][DEBUG] Now height is 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] Balance factor 0
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Now height is 3
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Balance factor 1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] created note outside
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 1 }
+[06/07/23 08:01:45][DEBUG] Leaf
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 4
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][DEBUG] read note range outside
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 5 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2da58 is 352
+[06/07/23 08:01:45][DEBUG] Found first fit block with size 320 at 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] block fit 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2da58 prev 0x7fe261c2d7a8 block 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] New memory at 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Deallocation completed!
+[06/07/23 08:01:45][DEBUG] Replaced node is 0x7fe261c2d900
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][DEBUG] Now height is 4
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] created note outside
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 10 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d7a8 is 352
+[06/07/23 08:01:45][DEBUG] Found first fit block with size 320 at 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] block fit 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d050 prev 0x7fe261c2d038 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d4f8 block 0x7fe261c2d650
+[06/07/23 08:01:45][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] New memory at 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Deallocation completed!
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d650
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][DEBUG] Now height is 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] created note outside
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 13 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d900 and 0x7fe261c2da58 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2da58 and 0x7fe261c2dd08 is 352
+[06/07/23 08:01:45][DEBUG] Found first fit block with size 320 at 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d7a8 prev 0x7fe261c2d650 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d7a8 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2dd08 prev 0x7fe261c2da58 block 0x7fe261c2dbb0
+[06/07/23 08:01:45][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] New memory at 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Next 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Next 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Deallocation completed!
+[06/07/23 08:01:45][DEBUG] Replaced node is 0x7fe261c2dbb0
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] Now height is 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][DEBUG] Now height is 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][DEBUG] Now height is 4
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Balance factor 1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] created note outside
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 1 }
+[06/07/23 08:01:45][INFO] Current node { 1, 0 }
+[06/07/23 08:01:45][DEBUG] Leaf
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][DEBUG] read note range outside
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move left
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 4 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d038 and 0x7fe261c2d050 is 0
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d1d0 and 0x7fe261c2d258 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d900 and 0x7fe261c2da58 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2da58 and 0x7fe261c2dbb0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2dbb0 and 0x7fe261e21030 is 2044720
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] block fit 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d258 prev 0x7fe261c2d1d0 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d318 prev 0x7fe261c2d2a8 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d7a8 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2da58 prev 0x7fe261c2d900 block 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2dbb0 prev 0x7fe261c2da58 block 0x7fe261c2dd08
+[06/07/23 08:01:45][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] ALLOCATOR 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Deallocating...................
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][DEBUG] Replaced node is 0x7fe261c2dd08
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2dd08
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:45][DEBUG] Now height is 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][DEBUG] Now height is 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] after inner #3
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Fix height left, right {1, 2}
+[06/07/23 08:01:45][DEBUG] Now height is 3
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Balance factor -1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Balance factor 1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] created note outside
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] Move right
+[06/07/23 08:01:45][TRACE] Insert inner
+[06/07/23 08:01:45][DEBUG] node with existing key. Start creating a replacement node key: { 1, 10 }
+[06/07/23 08:01:45][TRACE] New memory allocating............................................
+[06/07/23 08:01:45][DEBUG] Start finding memory block for allocator with size 320 bytes
+[06/07/23 08:01:45][TRACE] Start jumping beetween memory blocks
+[06/07/23 08:01:45][TRACE] >>>>>>>ptr_current: 0x7fe261c2d038
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d050 and 0x7fe261c2d0a0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d110
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d0a0
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d0a0 and 0x7fe261c2d110 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d160
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d110 and 0x7fe261c2d160 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d160 and 0x7fe261c2d1d0 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d258
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d1d0
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d258 and 0x7fe261c2d2a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d2a8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d2a8 and 0x7fe261c2d318 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d3a0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d318
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d318 and 0x7fe261c2d3a0 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d3a0 and 0x7fe261c2d4f8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d4f8 and 0x7fe261c2d650 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d650
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d650 and 0x7fe261c2d7a8 is 8
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Space for data beetween 0x7fe261c2d7a8 and 0x7fe261c2d900 is 8
+[06/07/23 08:01:45][TRACE] prt_next: 0x7fe261c2dbb0
+[06/07/23 08:01:45][TRACE] ptr_current: 0x7fe261c2d900
+[06/07/23 08:01:45][TRACE] prt_end: 0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Size need 320
+[06/07/23 08:01:45][DEBUG] Found first fit block with size 320 at 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] _allocated_memory 0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] 320 bytes of memory is allocated
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d038 prev 0x7fe261c2d038 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d0a0 prev 0x7fe261c2d050 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d110 prev 0x7fe261c2d0a0 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d160 prev 0x7fe261c2d110 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d1d0 prev 0x7fe261c2d160 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d2a8 prev 0x7fe261c2d258 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d3a0 prev 0x7fe261c2d318 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d4f8 prev 0x7fe261c2d3a0 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d650 prev 0x7fe261c2d4f8 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2d900 prev 0x7fe261c2d7a8 block 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] cur 0x7fe261c2dbb0 prev 0x7fe261c2d900 block 0x7fe261c2da58
+[06/07/23 08:01:45][DEBUG] Allocated block 304 bytes of memory at 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Starts at     0x7fe261c2d010
+[06/07/23 08:01:45][TRACE] New memory at 0x7fe261c2da58
+[06/07/23 08:01:45][TRACE] Ends at       0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Prev 0x7fe261c2d4f8
+[06/07/23 08:01:45][TRACE] Next 0x7fe261c2d7a8
+[06/07/23 08:01:45][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:45][TRACE] Deallocation completed!
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2da58
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] Fix height left, right {0, 1}
+[06/07/23 08:01:45][DEBUG] Now height is 2
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][DEBUG] balance factor has ended
+[06/07/23 08:01:45][DEBUG] Balance factor -1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:45][DEBUG] ______Fix height______
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][DEBUG] Fix height left, right {3, 2}
+[06/07/23 08:01:45][DEBUG] Now height is 4
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][DEBUG] Balance factor 1
+[06/07/23 08:01:45][DEBUG] After insert inner ended
+[06/07/23 08:01:45][INFO] Note created
+[06/07/23 08:01:45][INFO] START
+[06/07/23 08:01:45][INFO] Current node { 1, 5 }
+[06/07/23 08:01:45][INFO] Current node { 1, 0 }
+[06/07/23 08:01:45][DEBUG] Leaf
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 4
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 2
+[06/07/23 08:01:45][TRACE] Get height 3
+[06/07/23 08:01:45][TRACE] Get height 1
+[06/07/23 08:01:45][TRACE] Get height 0
+[06/07/23 08:01:45][INFO] left_bound { 0, 0 } right bound { 2, 0 }
+[06/07/23 08:01:45][INFO] ENDED
+[06/07/23 08:01:45][DEBUG] read note range outside
+[06/07/23 08:01:45][DEBUG] read note outside
+[06/07/23 08:01:45][DEBUG] EnD
+[06/07/23 08:01:45][INFO] Message processed
+[06/07/23 08:01:46][INFO] Message resieved by user
+[06/07/23 08:01:48][INFO] User connected to server
+[06/07/23 08:01:48][INFO] Message sent by user
+[06/07/23 08:01:48][TRACE] Deallocating...................
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2d3a0
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2d3a0
+[06/07/23 08:01:48][TRACE] Next 0x7fe261c2d7a8
+[06/07/23 08:01:48][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:48][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2d3a0
+[06/07/23 08:01:48][TRACE] Curr 0x7fe261c2d4f8
+[06/07/23 08:01:48][TRACE] Next 0x7fe261c2d7a8
+[06/07/23 08:01:48][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:48][TRACE] Outer end  0x7fe261e21030
+[06/07/23 08:01:48][TRACE] Deallocation completed!
+[06/07/23 08:01:48][DEBUG] 0x7fe261c2dd08
+[06/07/23 08:01:48][DEBUG] ______Fix height______
+[06/07/23 08:01:48][TRACE] Get height 0
+[06/07/23 08:01:48][DEBUG] Fix height left, right {0, 0}
+[06/07/23 08:01:48][DEBUG] Now height is 1
+[06/07/23 08:01:48][TRACE] Get height 0
+[06/07/23 08:01:48][TRACE] Get height 0
+[06/07/23 08:01:48][DEBUG] Balance factor 0
+[06/07/23 08:01:48][DEBUG] After remove inner ended
+[06/07/23 08:01:48][DEBUG] 0x7fe261c2d3a0
+[06/07/23 08:01:48][DEBUG] ______Fix height______
+[06/07/23 08:01:48][TRACE] Get height 1
+[06/07/23 08:01:48][DEBUG] Fix height left, right {1, 1}
+[06/07/23 08:01:48][TRACE] Get height 1
+[06/07/23 08:01:48][TRACE] Get height 1
+[06/07/23 08:01:48][DEBUG] Balance factor 0
+[06/07/23 08:01:48][DEBUG] ______Fix height______
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][DEBUG] Fix height left, right {2, 2}
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][DEBUG] After remove inner ended
+[06/07/23 08:01:48][INFO] Note removed
+[06/07/23 08:01:48][TRACE] Deallocating...................
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:48][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:48][TRACE] Prev 0x7fe261c2dbb0
+[06/07/23 08:01:48][TRACE] Curr 0x7fe261c2dd08
+[06/07/23 08:01:48][TRACE] Outer next 0x7fe261c2d050
+[06/07/23 08:01:48][TRACE] Deallocation completed!
+[06/07/23 08:01:48][DEBUG] ______Fix height______
+[06/07/23 08:01:48][TRACE] Get height 1
+[06/07/23 08:01:48][TRACE] Get height 0
+[06/07/23 08:01:48][DEBUG] Fix height left, right {1, 0}
+[06/07/23 08:01:48][TRACE] Get height 1
+[06/07/23 08:01:48][TRACE] Get height 0
+[06/07/23 08:01:48][DEBUG] Balance factor 1
+[06/07/23 08:01:48][DEBUG] After remove inner ended
+[06/07/23 08:01:48][DEBUG] 0x7fe261c2d900
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][DEBUG] Fix height left, right {2, 2}
+[06/07/23 08:01:48][DEBUG] Now height is 3
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][TRACE] Get height 2
+[06/07/23 08:01:48][DEBUG] After remove inner ended
+[06/07/23 08:01:48][INFO] Note removed
+[06/07/23 08:01:48][DEBUG] read note outside
+[06/07/23 08:01:48][DEBUG] EnD
+[06/07/23 08:01:48][INFO] Message processed
+[06/07/23 08:01:49][INFO] Message resieved by user

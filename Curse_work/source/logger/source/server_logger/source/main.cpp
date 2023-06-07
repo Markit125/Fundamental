@@ -25,11 +25,17 @@ int main(int argc, char *argv[]) {
 
     logging::logger *logger;
 
-    logger = builder->construct_configuration(filename);
+    try {
+        logger = builder->construct_configuration(filename);
+    } catch (std::runtime_error &ex) {
+        std::cout << ex.what() << std::endl;
+        return -2;
+    }
+
 
 
     if (nullptr == logger) {
-        std::cout << "Logger falled" << std::endl;
+        std::cout << "Logger doesn't exist" << std::endl;
         return -3;
     }
 

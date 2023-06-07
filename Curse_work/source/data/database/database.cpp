@@ -16,12 +16,12 @@ database::database(logging::logger *logger)
     // new (_pools) avl_tree<std::string, pool, comparers>(nullptr, logger);
     _pools = new avl_tree<std::string, pool, comparers>(nullptr, logger);
     
-    safe_log("Database constructor", logging::logger::severity::warning);
+    safe_log("Database constructor", logging::logger::severity::information);
 }
 
 database::~database() {
     
-    safe_log("Database destructor", logging::logger::severity::warning);
+    safe_log("Database destructor", logging::logger::severity::information);
     _pools->print_container();
     
     delete _pools;

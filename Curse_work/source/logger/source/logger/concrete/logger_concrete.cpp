@@ -78,14 +78,14 @@ logging::logger const *logging::logger_concrete::log(
     key = ftok("/bin/ls", 'E');
     if (key < 0) {
 
-        // perror("ftok");
+        perror("ftok");
         return this;
     }
 
     msqid = msgget(key, MSG_Q_KEY_FLAG_LOGGER | IPC_CREAT);
     if (msqid < 0) {
 
-        // perror("msgget");
+        perror("msgget");
         
         return this;
     }
@@ -101,7 +101,6 @@ logging::logger const *logging::logger_concrete::log(
     msg.severity = severity;
 
     if (msgsnd(msqid, &msg, sizeof(msg) - sizeof(long), IPC_NOWAIT) < 0) {
-        
         for (auto & logger_stream : _logger_streams) {
             if (logger_stream.second.second > severity) {
                 continue;

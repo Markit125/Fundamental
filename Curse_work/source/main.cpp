@@ -28,19 +28,29 @@ const int MSG_Q_CHANNEL_SEND = 16;
 int main(int argc, char *argv[]) {
 
     logging::logger *logger;
+    logging::logger_builder *builder = new logger_builder_concrete();
+    
+    if (nullptr == builder) {
+        std::cout << "Cannot allocate memory for builder" << std::endl;
+        return -1;
+    }
     
     if (argc == 2) {
     
         std::string filename(argv[1]);
 
-        logging::logger_builder *builder = new logger_builder_concrete();
-
-        if (nullptr == builder) {
-            std::cout << "Cannot allocate memory for builder" << std::endl;
-            return -1;
-        }
         logger = builder->construct_configuration(filename);
+
+    } else if (argc == 1) {
+
+        logger = builder
+        ->add_stream("info.log", logging::logger::severity::information)
+        ->add_stream("debug.log", logging::logger::severity::debug)
+        ->add_stream("trace.log", logging::logger::severity::trace)
+        ->construct();
     }
+
+    delete builder;
 
 
     database *db = new database(logger);
@@ -80,8 +90,8 @@ int main(int argc, char *argv[]) {
               << " with the key " << key_receive << std::endl;
 
 
-    while (1) {
-    // for (int i = 0; i < 1; ++i) {
+    // while (1) {
+    for (int i = 0; i < 3; ++i) {
 
         if (msgrcv(msqid_receive, &msg_receive, sizeof(msg_receive) - sizeof(long), MSG_Q_CHANNEL_RECEIVE, 0) < 0)
         {

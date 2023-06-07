@@ -2,6 +2,7 @@
 #include "../logger/server_logger.h"
 #include <exception>
 #include <fstream>
+#include <sstream>
 #include <stdexcept>
 
 
@@ -37,8 +38,8 @@ logging::logger *logger_server_builder_concrete::construct_configuration(const s
         }
         
     } catch (std::exception &ex) {
-        std::cout << ex.what() << std::endl << "JSON file corrupted" << std::endl;
-        return nullptr;
+        std::stringstream ss; ss << ex.what() << std::endl << "JSON file corrupted" << std::endl;
+        throw std::runtime_error(ss.str());
     }
 
     return this->construct();

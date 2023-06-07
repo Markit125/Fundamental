@@ -48,18 +48,25 @@ const int MSG_Q_CHANNEL_RECEIVE = 16;
 int main(int argc, char *argv[]) {
 
     logging::logger *logger;
+    logging::logger_builder *builder = new logger_builder_concrete();
+
+    if (nullptr == builder) {
+        std::cout << "Cannot allocate memory for builder" << std::endl;
+        return -1;
+    }
     
     if (argc == 3) {
-    
-        std::string filename(argv[2]);
 
-        logging::logger_builder *builder = new logger_builder_concrete();
-
-        if (nullptr == builder) {
-            std::cout << "Cannot allocate memory for builder" << std::endl;
-            return -1;
-        }
+        std::string filename(argv[2]);        
         logger = builder->construct_configuration(filename);
+
+    } else if (argc == 2) {
+
+        logger = builder
+        ->add_stream("info.log", logging::logger::severity::information)
+        ->add_stream("debug.log", logging::logger::severity::debug)
+        ->add_stream("trace.log", logging::logger::severity::trace)
+        ->construct();
     }
 
     if (argc < 2) {

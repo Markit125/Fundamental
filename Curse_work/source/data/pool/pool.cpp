@@ -14,7 +14,7 @@ logging::logger *pool::get_logger() const {
 
 pool::~pool() {
     
-    safe_log("Pool destructor", logging::logger::severity::warning);
+    safe_log("Pool destructor", logging::logger::severity::information);
     _schemes->print_container();
     _schemes->~associative_container();
     safe_deallocate(_schemes);
@@ -27,7 +27,7 @@ pool::pool(allocating::memory *allocator, logging::logger *logger)
     _schemes = reinterpret_cast<avl_tree<std::string, scheme, comparers> *>(safe_allocate(sizeof(avl_tree<std::string, scheme, comparers>)));
     new (_schemes) avl_tree<std::string, scheme, comparers>(allocator, logger);
 
-    safe_log("Pool constructor", logging::logger::severity::warning);
+    safe_log("Pool constructor", logging::logger::severity::information);
 }
 
 
