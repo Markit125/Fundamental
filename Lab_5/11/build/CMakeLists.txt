@@ -38,29 +38,11 @@ add_executable(
         ../../2/source/allocator/allocator.h
         ../../2/source/allocator/allocator.cpp
 
-        ../source/allocator/safe_allocator.h
-        ../source/allocator/safe_allocator.cpp
+        ../../2/source/safe_allocator/safe_allocator.h
+        ../../2/source/safe_allocator/safe_allocator.cpp
+
         
         ../source/tree/binary_search_tree.h
-        ../source/tree/binary_search_tree.cpp
         ../source/tree/associative_container.h
 
-)
-
-target_include_directories(
-    lab5-11
-    PRIVATE
-        ../../1/source/logger/complete/
-        ../../1/source/logger/concrete/
-        ../../1/source/logger/prototypes/
-        ../../1/source/time/
-        ../../1/source/logger/
-        ../../2/source/memory/
-        ../../2/source/allocator/
-        ../../3/source/memory_with_list/
-        ../../4/source/memory_with_descriptors/
-        ../source/tree/
-        ../source/exception/
-        ../source/allocator/
-        ../source
 )

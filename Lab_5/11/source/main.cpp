@@ -1,10 +1,10 @@
 #include <iostream>
 #include <set>
 
-#include "binary_search_tree.h"
-#include "logger_builder_concrete.h"
-#include "memory_with_list.h"
-#include "memory_with_descriptors.h"
+#include "tree/binary_search_tree.h"
+#include "../../1/source/logger/concrete/logger_builder_concrete.h"
+#include "../../3/source/memory_with_list/memory_with_list.h"
+#include "../../4/source/memory_with_descriptors/memory_with_descriptors.h"
 
 
 class integer_comparator
@@ -41,7 +41,7 @@ int main() {
 
     // srand(time(NULL));
 
-    // for (int i = 0; i < 10000; ++i) {
+    // for (int i = 0; i < 100; ++i) {
 
     //     if (rand() & 1) {
     //         int key = rand() % 20000;
@@ -112,11 +112,6 @@ int main() {
     tree->remove(1);
     std::cout << "\nremoved " << 1;
     tree->print_container();
-
-    // for (int i = 0; i < 1000; ++i) {
-    //     tree->insert(10, "jfngjfngfdknggjroqegijmrgcjqperogcer,gjfogeqroigjcogj");
-    //     tree->remove(10);
-    // }
 
 
     delete tree;

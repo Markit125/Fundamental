@@ -1,6 +1,10 @@
 #ifndef SANDBOX_CPP_ASSOCIATIVE_CONTAINER_H
 #define SANDBOX_CPP_ASSOCIATIVE_CONTAINER_H
 
+#include <sstream>
+#include <utility>
+
+
 template<
     typename tkey,
     typename tvalue>
@@ -22,7 +26,13 @@ public:
 
     virtual tvalue&& remove(
         tkey const &key) = 0;
+
+    virtual bool find(
+        tkey const &key,
+        std::pair<tkey, tvalue *> *) = 0;
     
+
+    virtual void print_notes_between(std::stringstream &out_stream, tkey left_bound, tkey right_bound) = 0;
 
     virtual void print_container() const = 0;
 
