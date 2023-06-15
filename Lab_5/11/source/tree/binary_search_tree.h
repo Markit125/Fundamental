@@ -167,7 +167,7 @@ public:
 
 protected:
 
-    class insertion_template_method// : private allocating::safe_allocator, private logging::complete_logger
+    class insertion_template_method
     {
 
     public:
@@ -203,10 +203,6 @@ protected:
 
         binary_search_tree<tkey, tvalue, tkey_comparer> *_tree;
 
-        // logging::logger *get_logger() const override;
-
-        // allocating::memory *get_allocator() const override;
-
     protected:
 
         virtual size_t get_size_node() const;
@@ -216,7 +212,7 @@ protected:
 
     };
 
-    class reading_template_method// : private allocating::safe_allocator, private logging::complete_logger
+    class reading_template_method
     {
 
     public:
@@ -245,7 +241,6 @@ protected:
 
     private:
 
-
         tvalue const &read_inner(
             tkey const &key,
             tree_node *&subtree_root_address,
@@ -262,13 +257,9 @@ protected:
 
         binary_search_tree<tkey, tvalue, tkey_comparer> *_tree;
 
-        // logging::logger *get_logger() const override;
-
-        // allocating::memory *get_allocator() const override;
-
     };
 
-    class removing_template_method // : private allocating::safe_allocator, private logging::complete_logger
+    class removing_template_method
     {
 
     public:
@@ -301,10 +292,6 @@ protected:
 
         binary_search_tree<tkey, tvalue, tkey_comparer> *_tree;
 
-        // logging::logger *get_logger() const override;
-
-        // allocating::memory *get_allocator() const override;
-
     };
 
 protected:
@@ -312,6 +299,7 @@ protected:
     insertion_template_method *_insertion;
     reading_template_method *_reading;
     removing_template_method *_removing;
+    tkey_comparer _comparator;
     allocating::memory *_allocator;
     logging::logger *_logger;
     tree_node *_root;
@@ -322,6 +310,7 @@ protected:
         insertion_template_method *insertion,
         reading_template_method *reading,
         removing_template_method *removing,
+        tkey_comparer comparator,
         allocating::memory *allocator = nullptr,
         logging::logger *logger = nullptr, 
         tree_node *root = nullptr);
@@ -432,7 +421,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(std::s
         
     it.set_iterator(node, path_to_subtree_root_exclusive);
 
-    tkey_comparer comparer;
     auto end = end_infix();
 
     print_container();
@@ -441,9 +429,9 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_notes_between(std::s
 
     auto iii = end;
 
-    while (it != end && comparer(std::get<1>(*it), right_bound) >= 0) {
+    while (it != end && _comparator(std::get<1>(*it), right_bound) >= 0) {
 
-        if (iii != end ? comparer(std::get<1>(*it), std::get<1>(*iii)) : 1) {
+        if (iii != end ? _comparator(std::get<1>(*it), std::get<1>(*iii)) : 1) {
             out_stream << std::get<1>(*it) << std::endl;
             out_stream << std::get<2>(*it) << std::endl << std::endl;
         }
@@ -489,9 +477,8 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
         return;
     }
 
-    tkey_comparer comparer;
 
-    if (comparer(subtree_root_address->key, key) == 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) == 0) {
 
         node_need = subtree_root_address;
         path_to_subtree_root_exclusive.push(subtree_root_address);
@@ -504,7 +491,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
 
     // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
 
-    if (comparer(subtree_root_address->key, key) > 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) > 0) {
         next_node = subtree_root_address->right_subtree_address;
     } else {
         node_need = subtree_root_address;
@@ -1193,7 +1180,6 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     binary_search_tree::tree_node *&subtree_root_address,
     std::stack<binary_search_tree::tree_node **> &path_to_subtree_root_exclusive) {
 
-    tkey_comparer comparer;
     _tree->safe_log("Insert inner", logging::logger::severity::trace);
 
 
@@ -1213,7 +1199,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
             subtree_root_address = new_node;
         } else {
 
-            if (comparer((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
+            if (_tree->_comparator((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
                 (*path_to_subtree_root_exclusive.top())->right_subtree_address = new_node;
             } else {
                 (*path_to_subtree_root_exclusive.top())->left_subtree_address = new_node;
@@ -1228,7 +1214,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
         return;
     }
 
-    int comparation = comparer(subtree_root_address->key, key);
+    int comparation = _tree->_comparator(subtree_root_address->key, key);
     
     if (comparation == 0) {
         // replacing node by new one
@@ -1246,7 +1232,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         if (!path_to_subtree_root_exclusive.empty()) {
             
-            if (comparer((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
+            if (_tree->_comparator((*path_to_subtree_root_exclusive.top())->key, key) > 0) {
                 (*path_to_subtree_root_exclusive.top())->right_subtree_address = new_node;
             } else {
                 (*path_to_subtree_root_exclusive.top())->left_subtree_address = new_node;
@@ -1362,9 +1348,8 @@ bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
         return false;
     }
 
-    tkey_comparer comparer;
 
-    if (comparer(subtree_root_address->key, key) == 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) == 0) {
         // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         found->first = subtree_root_address->key;
         found->second = &(subtree_root_address->value);
@@ -1375,7 +1360,7 @@ bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
 
     // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
 
-    if (comparer(subtree_root_address->key, key) > 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) > 0) {
         next_node = subtree_root_address->right_subtree_address;
     } else {
         next_node = subtree_root_address->left_subtree_address;
@@ -1399,9 +1384,8 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
         throw std::runtime_error("No such key in a tree!");
     }
 
-    tkey_comparer comparer;
 
-    if (comparer(subtree_root_address->key, key) == 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) == 0) {
         // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         after_read_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
         return subtree_root_address->value;
@@ -1412,7 +1396,7 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
 
     // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
 
-    if (comparer(subtree_root_address->key, key) > 0) {
+    if (_tree->_comparator(subtree_root_address->key, key) > 0) {
         next_node = subtree_root_address->right_subtree_address;
     } else {
         next_node = subtree_root_address->left_subtree_address;
@@ -1473,8 +1457,7 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
         throw std::runtime_error("No such key in a tree!");
     }
 
-    tkey_comparer comparer;
-    int comparation = comparer(subtree_root_address->key, key);
+    int comparation = _tree->_comparator(subtree_root_address->key, key);
 
     if (comparation == 0) {
 
@@ -1524,10 +1507,10 @@ tvalue &&binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_meth
                 _tree->safe_log("After remove inner removing =================================================================", logging::logger::severity::debug);
 
 
-                while (comparer(touched_node->key, subtree_root_address->key)) {
+                while (_tree->_comparator(touched_node->key, subtree_root_address->key)) {
                     
                     path_to_subtree_root_exclusive.pop();
-                    if (comparer(touched_node->key, key)) {
+                    if (_tree->_comparator(touched_node->key, key)) {
                         after_remove_inner(key, touched_node, path_to_subtree_root_exclusive);
                     }
 
@@ -1622,12 +1605,14 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
     binary_search_tree::insertion_template_method *insertion,
     binary_search_tree::reading_template_method *reading,
     binary_search_tree::removing_template_method *removing,
+    tkey_comparer comparator,
     allocating::memory *allocator,
     logging::logger *logger,
     tree_node *root)
     : _insertion(insertion),
       _reading(reading),
       _removing(removing),
+      _comparator(comparator),
       _allocator(allocator),
       _logger(logger),
       _root(root) {
@@ -1645,6 +1630,7 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
     _insertion(new insertion_template_method(this)),
     _reading(new reading_template_method(this)),
     _removing(new removing_template_method(this)),
+    _comparator(),
     _allocator(allocator),
     _logger(logger),
     _root(nullptr) {
@@ -1657,9 +1643,29 @@ template<
     typename tvalue,
     typename tkey_comparer>
 binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
-    const binary_search_tree &other)
+    const binary_search_tree &other) : 
+    _insertion(new insertion_template_method(this)),
+    _reading(new reading_template_method(this)),
+    _removing(new removing_template_method(this)),
+    _comparator(other._comparator),
+    _allocator(other._allocator),
+    _logger(other._logger),
+    _root(nullptr)
 {
-    UNUSED(other);
+    safe_log("Tree is coping", logging::logger::severity::information);
+    
+    auto item = other.begin_prefix();
+    auto end = other.end_prefix();
+
+    for (; item != end; ++item) {
+
+        auto node = item.get_node_pointer();
+        tvalue value = node->value;
+
+        this->insert(node->key, std::move(value));
+    }
+
+    safe_log("Tree is copied", logging::logger::severity::information);
 }
 
 template<
@@ -1667,9 +1673,23 @@ template<
     typename tvalue,
     typename tkey_comparer>
 binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
-    binary_search_tree &&other) noexcept
+    binary_search_tree &&other) noexcept :
+    _insertion(other._insertion),
+    _reading(other._reading),
+    _removing(other._removing),
+    _comparator(other._comparator),
+    _allocator(other._allocator),
+    _logger(other._logger),
+    _root(other._root)
 {
-    UNUSED(other);
+    std::cout << "move tree" << std::endl;
+    safe_log("Tree is moved", logging::logger::severity::information);
+
+    other._root = nullptr;
+    other._insertion = nullptr;
+    other._reading = nullptr;
+    other._removing = nullptr;
+    
 }
 
 template<
@@ -1679,13 +1699,22 @@ template<
 binary_search_tree<tkey, tvalue, tkey_comparer> &binary_search_tree<tkey, tvalue, tkey_comparer>::operator=(
     const binary_search_tree &other)
 {
-    UNUSED(other);
-    // if (this == &other)
-    // {
-    //     return *this;
-    // }
+    safe_log("Tree is coping by '='", logging::logger::severity::information);
+    
+    auto item = other.begin_prefix();
+    auto end = other.end_prefix();
 
-    // return *this;
+    for (; item != end; ++item) {
+
+        auto node = item.get_node_pointer();
+        tvalue value = node->value;
+
+        this->insert(node->key, std::move(value));
+    }
+
+    safe_log("Tree is copied", logging::logger::severity::information);
+    
+    return *this;
 }
 
 template<
@@ -1695,13 +1724,20 @@ template<
 binary_search_tree<tkey, tvalue, tkey_comparer> &binary_search_tree<tkey, tvalue, tkey_comparer>::operator=(
     binary_search_tree &&other) noexcept
 {
-    UNUSED(other);
-    // if (this == &other)
-    // {
-    //     return *this;
-    // }
+    _insertion = other._insertion;
+    _reading = other._reading;
+    _removing = other._removing;
+    _comparator = other._comparator;
+    _allocator = other._allocator;
+    _logger = other._logger;
+    _root = other.root;
 
-    // return *this;
+    other._root = nullptr;
+    other._insertion = nullptr;
+    other._reading = nullptr;
+    other._removing = nullptr;
+
+    return *this;
 }
 
 template<
@@ -1802,33 +1838,6 @@ logging::logger *binary_search_tree<tkey, tvalue, tkey_comparer>::get_logger() c
     return _logger;
 }
 
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// logging::logger *binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method::get_logger() const {
-
-//     return _tree->_logger;
-// }
-
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// logging::logger *binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::get_logger() const {
-
-//     return _tree->_logger;
-// }
-
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// logging::logger *binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_method::get_logger() const {
-
-//     return _tree->_logger;
-// }
-
 // endregion logger_holder contract implementation
 
 // region allocator_holder contract implementation
@@ -1842,32 +1851,6 @@ allocating::memory *binary_search_tree<tkey, tvalue, tkey_comparer>::get_allocat
     return _allocator;
 }
 
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// allocating::memory *binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method::get_allocator() const {
-
-//     return _tree->_allocator;
-// }
-
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// allocating::memory *binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::get_allocator() const {
-
-//     return _tree->_allocator;
-// }
-
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// allocating::memory *binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_method::get_allocator() const {
-
-//     return _tree->_allocator;
-// }
 
 // endregion allocator_holder contract implementation
 
@@ -1928,6 +1911,6 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::postfix_iterator binar
 }
 
 
-// // endregion iterators requesting implementation
+// endregion iterators requesting implementation
 
 #endif //SANDBOX_CPP_BINARY_SEARCH_TREE_H

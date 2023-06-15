@@ -28,21 +28,20 @@ int main() {
         ->construct();
 
 
-    // allocating::memory *allocator = new allocating::memory_with_list(204800, nullptr, logger, allocating::memory::fit_type::first);
     allocating::memory *allocator = new allocating::memory_with_descriptors(204800, nullptr, logger, allocating::memory::fit_type::first);
 
-    // allocator = nullptr;
 
     associative_container<int, std::string> *tree =
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
 
+    // binary_search_tree<int, std::string, integer_comparator> tree =
+    //         binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
+
+
     // std::set<int> s;
-
     // srand(time(NULL));
-
     // for (int i = 0; i < 100; ++i) {
-
     //     if (rand() & 1) {
     //         int key = rand() % 20000;
     //         tree->insert(key, "kjnf");
@@ -50,13 +49,10 @@ int main() {
     //     } else if (!s.empty()) {
     //         size_t item = rand() % s.size();
     //         auto it = s.begin();
-
     //         for (size_t k = 0; k < item; ++k, ++it);
-
     //         tree->remove(*it);
     //         s.erase(*it);
     //     }
-
     // }
 
     tree->insert(2, "two");
@@ -67,18 +63,27 @@ int main() {
     tree->print_container();
     tree->insert(3, "three");
 
+
+
     tree->print_container();
+    
     tree->insert(5, "five");
     tree->print_container();
+    
     tree->insert(2, "two");
     tree->print_container();
+    
     tree->insert(1, "one");
     tree->print_container();
+    
     tree->insert(4, "four");
     tree->print_container();
+    
     tree->insert(3, "three");
     tree->print_container();
+    
     tree->insert(6, "six");
+
 
     std::cout << "get:\n";
 
@@ -92,11 +97,9 @@ int main() {
 
 
     tree->print_container();
-
     tree->remove(6);
     std::cout << "\nremoved " << 6;
     tree->print_container();
-
     tree->remove(2);
     std::cout << "\nremoved " << 2;
     tree->print_container();
@@ -119,4 +122,3 @@ int main() {
     delete logger;
     delete builder;
 }
-
