@@ -35,25 +35,21 @@ int main() {
             new binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
 
 
-    // binary_search_tree<int, std::string, integer_comparator> tree =
-    //         binary_search_tree<int, std::string, integer_comparator>(allocator, logger);
-
-
-    // std::set<int> s;
-    // srand(time(NULL));
-    // for (int i = 0; i < 100; ++i) {
-    //     if (rand() & 1) {
-    //         int key = rand() % 20000;
-    //         tree->insert(key, "kjnf");
-    //         s.insert(key);
-    //     } else if (!s.empty()) {
-    //         size_t item = rand() % s.size();
-    //         auto it = s.begin();
-    //         for (size_t k = 0; k < item; ++k, ++it);
-    //         tree->remove(*it);
-    //         s.erase(*it);
-    //     }
-    // }
+    std::set<int> s;
+    srand(time(NULL));
+    for (int i = 0; i < 20000; ++i) {
+        if (rand() & 1) {
+            int key = rand() % 30001 - 15000;
+            tree->insert(key, "kjnf");
+            s.insert(key);
+        } else if (!s.empty()) {
+            size_t item = rand() % s.size();
+            auto it = s.begin();
+            for (size_t k = 0; k < item; ++k, ++it);
+            tree->remove(*it);
+            s.erase(*it);
+        }
+    }
 
     tree->insert(2, "two");
     tree->print_container();

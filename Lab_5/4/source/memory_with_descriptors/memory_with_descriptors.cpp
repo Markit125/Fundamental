@@ -133,7 +133,6 @@ void *allocating::memory_with_descriptors::allocate(const size_t target_size) co
 }
 
 
-// ONLY FOR ALLOCATOR
 allocating::memory_with_descriptors::memory_with_descriptors(
         size_t size, memory *outer_allocator, logging::logger *memory_logger,
         allocating::memory_with_descriptors::fit_type fit = allocating::memory_with_descriptors::fit_type::first

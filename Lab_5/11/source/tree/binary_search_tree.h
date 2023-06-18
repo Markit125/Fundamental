@@ -515,7 +515,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container_logger() c
     print_tree = [&](tree_node *subtree_root, size_t deep) {
 
         if (deep == 0) {
-            safe_log("Tree", logging::logger::severity::information);
+            safe_log("Tree", logging::logger::severity::critical);
         }
 
         if (nullptr != subtree_root) {
@@ -526,7 +526,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::print_container_logger() c
             return;
         }
 
-        // safe_log(cast_to_str(subtree_root->key), logging::logger::severity::information);
+        safe_log(cast_to_str(subtree_root->key), logging::logger::severity::critical);
 
         print_tree(subtree_root->right_subtree_address, deep + 1);
     };
@@ -1682,7 +1682,6 @@ binary_search_tree<tkey, tvalue, tkey_comparer>::binary_search_tree(
     _logger(other._logger),
     _root(other._root)
 {
-    std::cout << "move tree" << std::endl;
     safe_log("Tree is moved", logging::logger::severity::information);
 
     other._root = nullptr;
@@ -1697,9 +1696,17 @@ template<
     typename tvalue,
     typename tkey_comparer>
 binary_search_tree<tkey, tvalue, tkey_comparer> &binary_search_tree<tkey, tvalue, tkey_comparer>::operator=(
-    const binary_search_tree &other)
+    binary_search_tree const &other)
 {
     safe_log("Tree is coping by '='", logging::logger::severity::information);
+
+    _insertion = new insertion_template_method(this);
+    _reading = new reading_template_method(this);
+    _removing = new removing_template_method(this);
+    _comparator = other._comparator;
+    _allocator = other._allocator;
+    _logger = other._logger;
+
     
     auto item = other.begin_prefix();
     auto end = other.end_prefix();
@@ -1724,6 +1731,8 @@ template<
 binary_search_tree<tkey, tvalue, tkey_comparer> &binary_search_tree<tkey, tvalue, tkey_comparer>::operator=(
     binary_search_tree &&other) noexcept
 {
+    safe_log("Tree is moving", logging::logger::severity::information);
+
     _insertion = other._insertion;
     _reading = other._reading;
     _removing = other._removing;
@@ -1736,6 +1745,8 @@ binary_search_tree<tkey, tvalue, tkey_comparer> &binary_search_tree<tkey, tvalue
     other._insertion = nullptr;
     other._reading = nullptr;
     other._removing = nullptr;
+
+    safe_log("Tree is moved", logging::logger::severity::information);
 
     return *this;
 }

@@ -18,26 +18,23 @@ public:
         allocating::memory *allocator = nullptr,
         logging::logger *logger = nullptr);
 
-    // avl_tree(
-    //     avl_tree const &other);
+    avl_tree(
+        avl_tree const &other);
 
-    // avl_tree(
-    //     avl_tree &&other) noexcept;
+    avl_tree(
+        avl_tree &&other) noexcept;
 
-    // avl_tree &operator=(
-    //     avl_tree const &other);
+    avl_tree &operator=(
+        avl_tree const &other);
 
-    // avl_tree &operator=(
-    //     avl_tree &&other) noexcept;
+    avl_tree &operator=(
+        avl_tree &&other) noexcept;
 
-    ~avl_tree();
 
 
 protected:
 
     struct avl_tree_node : binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node {
-
-        // struct binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node binary_tree;
 
         size_t height = 0;
 
@@ -51,7 +48,9 @@ private:
     int balance_factor(typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *node) const;
 
     void fix_height(typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **node);
-    
+
+public:
+
     void print_container() const override;
 
 
@@ -139,7 +138,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
     print_tree = [&](typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *subtree_root, size_t deep) {
 
         if (deep == 0) {
-            // std::cout << "\nTree:\n";
+            std::cout << "\nTree:\n";
         }
 
         if (nullptr != subtree_root) {
@@ -157,11 +156,11 @@ void avl_tree<tkey, tvalue, tkey_comparer>::print_container() const {
 
         if (subtree_root == nullptr) {
             s += "NULL (" + cast_to_str(get_height(subtree_root)) + ")\n";
-            // std::cout << s;
+            std::cout << s;
             return;
         }
 
-        // std::cout << s << subtree_root->key << " (" << get_height(subtree_root) << ")" << std::endl;
+        std::cout << s << subtree_root->key << " (" << get_height(subtree_root) << ")" << std::endl;
 
         print_tree(subtree_root->left_subtree_address, deep + 1);
     };
@@ -188,19 +187,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::initi
     typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node *&new_node, tkey const &key, tvalue &&value) const {
 
     new (new_node) typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node {key, std::move(value), nullptr, nullptr};
-    // new (reinterpret_cast<avl_tree_node *>(new_node)) avl_tree_node {key, std::move(value), nullptr, nullptr, 0};
 }
-
-// template<
-//     typename tkey,
-//     typename tvalue,
-//     typename tkey_comparer>
-// avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
-//     allocating::memory *allocator,
-//     logging::logger *logger): binary_search_tree<tkey, tvalue, tkey_comparer>(allocator, logger) {
-    
-    
-// }
 
 template<
     typename tkey,
@@ -235,7 +222,6 @@ template<
 void avl_tree<tkey, tvalue, tkey_comparer>::fix_height(
     typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **node) {
     
-    // TODO not every height is right
     this->safe_log("______Fix height______", logging::logger::severity::debug);
 
     if (nullptr != *node) {
@@ -275,10 +261,7 @@ template<
 avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::insertion_template_method_avl(
         avl_tree<tkey, tvalue, tkey_comparer> *tree) :
         binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method(tree),
-        _tree(tree)
-{
-
-}
+        _tree(tree) { }
 
 
 template<
@@ -288,10 +271,7 @@ template<
 avl_tree<tkey, tvalue, tkey_comparer>::reading_template_method_avl::reading_template_method_avl(
         avl_tree<tkey, tvalue, tkey_comparer> *tree) :
         binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method(tree),
-        _tree(tree)
-{
-
-}
+        _tree(tree) { }
 
 
 template<
@@ -301,10 +281,7 @@ template<
 avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::removing_template_method_avl(
         avl_tree<tkey, tvalue, tkey_comparer> *tree) :
         binary_search_tree<tkey, tvalue, tkey_comparer>::removing_template_method(tree),
-        _tree(tree)
-{
-
-}
+        _tree(tree) { }
 
 
 template<
@@ -344,7 +321,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     if (balance == 2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
         {
@@ -355,7 +332,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
             _tree->fix_height(&(subtree_root_address->left_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
         _tree->safe_log(">>>>>>> right rotation", logging::logger::severity::debug);
@@ -367,12 +344,12 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
 
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
     } else if (balance == -2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1)
         {
@@ -384,7 +361,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
             _tree->fix_height(&(subtree_root_address->right_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
             _tree->safe_log(">>>>>>> left rotation", logging::logger::severity::debug);
@@ -395,14 +372,8 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
         _tree->fix_height(&subtree_root_address);
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
     }
-
-    // if (parent != nullptr)
-    // {
-    //     path_to_subtree_root_exclusive.push(parent);
-    // }
-
 }
 
 template<
@@ -445,7 +416,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
     if (balance == 2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
         {
@@ -456,7 +427,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
             _tree->fix_height(&(subtree_root_address->left_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
 
@@ -469,12 +440,12 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
 
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
     } else if (balance == -2) {
 
         // std::cout << "before:\n";
-        _tree->print_container();
+        // _tree->print_container();
 
         if (_tree->balance_factor(subtree_root_address->right_subtree_address) == 1)
         {
@@ -487,7 +458,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
             _tree->fix_height(&(subtree_root_address->right_subtree_address));
 
             // std::cout << "half way:\n";
-            _tree->print_container();
+            // _tree->print_container();
         }
 
             _tree->safe_log(">>>>>>> left rotation", logging::logger::severity::debug);
@@ -498,7 +469,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::removing_template_method_avl::after_
         _tree->fix_height(&subtree_root_address);
 
         // std::cout << "after:\n";
-        _tree->print_container();
+        // _tree->print_container();
     }
 
 
@@ -531,6 +502,7 @@ avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
         new insertion_template_method_avl(this),
         new reading_template_method_avl(this),
         new removing_template_method_avl(this),
+        this->_comparator,
         allocator,
         logger,
         nullptr) {
@@ -541,11 +513,119 @@ avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
 
 
 template<
-        typename tkey,
-        typename tvalue,
-        typename tkey_comparer>
-avl_tree<tkey, tvalue, tkey_comparer>::~avl_tree() {
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
+    const avl_tree<tkey, tvalue, tkey_comparer> &other) :
+    binary_search_tree<tkey, tvalue, tkey_comparer>(
+        new insertion_template_method_avl(this),
+        new reading_template_method_avl(this),
+        new removing_template_method_avl(this),
+        other._comparator,
+        other._allocator,
+        other._logger,
+        nullptr)
+{
+    this->safe_log("AVL tree is coping", logging::logger::severity::information);
+    
+    auto item = other.begin_prefix();
+    auto end = other.end_prefix();
 
+    for (; item != end; ++item) {
+
+        auto node = item.get_node_pointer();
+        tvalue value = node->value;
+
+        this->insert(node->key, std::move(value));
+    }
+
+    this->safe_log("AVL tree is copied", logging::logger::severity::information);
+}
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+avl_tree<tkey, tvalue, tkey_comparer>::avl_tree(
+    avl_tree<tkey, tvalue, tkey_comparer> &&other) noexcept
+{
+    this->safe_log("AVL tree is moving", logging::logger::severity::information);
+    
+    this->_insertion = other._insertion;
+    this->_reading = other._reading;
+    this->_removing = other._removing;
+    this->_comparator = other._comparator;
+    this->_allocator = other._allocator;
+    this->_logger = other._logger;
+    this->_root = other._root;
+
+    other._root = nullptr;
+    other._insertion = nullptr;
+    other._reading = nullptr;
+    other._removing = nullptr;
+
+    this->safe_log("AVL tree is moved", logging::logger::severity::information);
+}
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+avl_tree<tkey, tvalue, tkey_comparer> &avl_tree<tkey, tvalue, tkey_comparer>::operator=(
+    avl_tree const &other)
+{
+    this->safe_log("AVL tree is coping by '='", logging::logger::severity::information);
+
+    this->_insertion = new insertion_template_method_avl(this);
+    this->_reading = new reading_template_method_avl(this);
+    this->_removing = new removing_template_method_avl(this);
+    this->_comparator = other._comparator;
+    this->_allocator = other._allocator;
+    this->_logger = other._logger;
+
+    
+    auto item = other.begin_prefix();
+    auto end = other.end_prefix();
+
+    for (; item != end; ++item) {
+
+        auto node = item.get_node_pointer();
+        tvalue value = node->value;
+
+        this->insert(node->key, std::move(value));
+    }
+
+    this->safe_log("AVL tree is copied", logging::logger::severity::information);
+
+    return *this;
+}
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+avl_tree<tkey, tvalue, tkey_comparer> &avl_tree<tkey, tvalue, tkey_comparer>::operator=(
+    avl_tree &&other) noexcept
+{
+    this->safe_log("AVL tree is moving by '='", logging::logger::severity::information);
+    
+    this->_insertion = other._insertion;
+    this->_reading = other._reading;
+    this->_removing = other._removing;
+    this->_comparator = other._comparator;
+    this->_allocator = other._allocator;
+    this->_logger = other._logger;
+    this->_root = other._root;
+
+    other._root = nullptr;
+    other._insertion = nullptr;
+    other._reading = nullptr;
+    other._removing = nullptr;
+
+    this->safe_log("AVL tree is moved", logging::logger::severity::information);
+
+    return *this;
 }
 
 #endif

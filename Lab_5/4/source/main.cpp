@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include "allocator.h"
+#include "../../2/source/allocator/allocator.h"
 // #include "memory_with_descriptors.h"
-#include "logger.h"
+#include "../../1/source/logger/prototypes/logger.h"
 #include "memory_with_descriptors/memory_with_descriptors.h"
 
 
@@ -100,7 +100,7 @@ void my_test();
 
 int main() {
 
-    my_test();
+    // my_test();
 
     testing_allocator();
 
@@ -122,6 +122,8 @@ void my_test() {
     allocating::memory *allocator = new allocating::memory_with_descriptors(2048, nullptr, constructed_logger, allocating::memory::fit_type::worst);
     allocating::memory *inherit_allocator = new allocating::memory_with_descriptors(1024, allocator, constructed_logger, allocating::memory::fit_type::worst);
     
+
+
     size_t array_size = 10;
     int *array = reinterpret_cast<int *>(inherit_allocator->allocate(sizeof(int) * array_size));
     
@@ -140,9 +142,11 @@ void my_test() {
     *dd = 99999;
     std::cout << "Double: " << *dd << std::endl;
 
-    allocator->deallocate(dd);    
+    allocator->deallocate(dd);
 
-    inherit_allocator->deallocate(array);
+    allocator->deallocate(array);
+
+    // inherit_allocator->deallocate(array);
 
     // constructed_logger->log("HERE 1", logging::logger::severity::trace);
 

@@ -38,15 +38,13 @@ add_executable(
         ../../2/source/allocator/allocator.h
         ../../2/source/allocator/allocator.cpp
 
-        ../../11/source/allocator/safe_allocator.h
-        ../../11/source/allocator/safe_allocator.cpp
+        ../../2/source/safe_allocator/safe_allocator.h
+        ../../2/source/safe_allocator/safe_allocator.cpp
         
         ../../11/source/tree/binary_search_tree.h
-        ../../11/source/tree/binary_search_tree.cpp
         ../../11/source/tree/associative_container.h
 
         ../source/avl/avl.h
-        ../source/avl/avl.cpp
 
 )
 

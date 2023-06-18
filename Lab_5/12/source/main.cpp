@@ -1,9 +1,9 @@
 #include <iostream>
 #include <set>
 
-#include "logger_builder_concrete.h"
-#include "memory_with_list.h"
-#include "memory_with_descriptors.h"
+#include "../../1/source/logger/concrete/logger_builder_concrete.h"
+#include "../../3/source/memory_with_list/memory_with_list.h"
+#include "../../4/source/memory_with_descriptors/memory_with_descriptors.h"
 #include "avl/avl.h"
 
 
@@ -21,9 +21,10 @@ int main() {
     logging::logger_builder *builder = new logger_builder_concrete();
 
     logging::logger *logger = builder
-        ->add_stream("log.log", logging::logger::severity::information)
-        ->add_stream("trace.log", logging::logger::severity::trace)
-        ->add_stream("debug.log", logging::logger::severity::debug)
+        // ->add_stream("log.log", logging::logger::severity::information)
+        // ->add_stream("trace.log", logging::logger::severity::trace)
+        // ->add_stream("debug.log", logging::logger::severity::debug)
+        ->add_stream("tree.log", logging::logger::severity::critical)
         ->construct();
 
     // allocating::memory *allocator = new allocating::memory_with_list(2048000, nullptr, logger, allocating::memory::fit_type::first);
@@ -63,9 +64,11 @@ int main() {
 
     tree->print_container_logger();
 
+
+
     delete tree;
-    delete builder;
     delete allocator;
+    delete builder;
 
 
 }
