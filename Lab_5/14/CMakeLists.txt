@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Lab-5-12 C CXX)
+project(Lab-5-14 C CXX)
 
 if (MSVC)
 add_compile_options(/W4 /WX)
@@ -11,7 +11,7 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(
-    lab5-12
+    lab5-14
         ../source/main.cpp
         ../../3/source/memory_with_list/memory_with_list.h
         ../../3/source/memory_with_list/memory_with_list.cpp
@@ -44,6 +44,6 @@ add_executable(
         ../../11/source/tree/binary_search_tree.h
         ../../11/source/tree/associative_container.h
 
-        ../source/avl/avl.h
+        ../source/splay/splay.h
 
 )

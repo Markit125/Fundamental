@@ -237,9 +237,16 @@ protected:
             tree_node *&tree_root_address,
             std::stack<binary_search_tree::tree_node *> &path_to_subtree_root_exclusive,
             tree_node *&node_need);
-            
+
 
     private:
+        
+        bool find_inner(
+            tkey const &key,
+            tree_node *&tree_root_address,
+            std::stack<tree_node **> &path_to_subtree_root_exclusive,
+            std::pair<tkey, tvalue *> *found);
+
 
         tvalue const &read_inner(
             tkey const &key,
@@ -276,7 +283,7 @@ protected:
 
     private:
 
-        tvalue &&remove_inner(
+        virtual tvalue &&remove_inner(
             tkey const &key,
             tree_node *&subtree_root_address,
             std::stack<binary_search_tree::tree_node **> &path_to_subtree_root_exclusive);
@@ -712,7 +719,7 @@ typename binary_search_tree<tkey, tvalue, tkey_comparer>::prefix_iterator &binar
             _way.pop();
         }
         
-        _current = _current->right_subtree_address;        
+        _current = _current->right_subtree_address;
     }
 
     
@@ -1209,6 +1216,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("Created node is " + cast_to_str(new_node), logging::logger::severity::debug);
 
+        _tree->safe_log("after inner #1", logging::logger::severity::debug);
         after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
         return;
@@ -1249,6 +1257,7 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
 
         _tree->safe_log("Replaced node is " + cast_to_str(new_node), logging::logger::severity::debug);
 
+        _tree->safe_log("after inner #2", logging::logger::severity::debug);
         after_insert_inner(key, new_node, path_to_subtree_root_exclusive);
 
         return;
@@ -1271,11 +1280,8 @@ void binary_search_tree<tkey, tvalue, tkey_comparer>::insertion_template_method:
     }
 
     insert_inner(key, std::move(value), next_node, path_to_subtree_root_exclusive);
-    path_to_subtree_root_exclusive.pop();
 
 
-    // tree_node **nodenode = &next_node;
-    // after_insert_inner(key, *nodenode, path_to_subtree_root_exclusive);
     _tree->safe_log("after inner #3", logging::logger::severity::debug);
     after_insert_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 }
@@ -1326,7 +1332,8 @@ tvalue const &binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_
     tkey const &key,
     tree_node *&tree_root_address) {
 
-        UNUSED(tree_root_address);
+    UNUSED(tree_root_address);
+
     std::stack<tree_node **> path_to_subtree_root_exclusive;
 
     return read_inner(key, _tree->_root, path_to_subtree_root_exclusive);
@@ -1339,12 +1346,30 @@ template<
     typename tkey_comparer>
 bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::find(
     tkey const &key,
+    tree_node *&tree_root_address,
+    std::pair<tkey, tvalue *> *found) {
+
+    UNUSED(tree_root_address);
+
+    std::stack<tree_node **> path_to_subtree_root_exclusive;
+
+    return find_inner(key, _tree->_root, path_to_subtree_root_exclusive, found);
+}
+
+
+template<
+    typename tkey,
+    typename tvalue,
+    typename tkey_comparer>
+bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::find_inner(
+    tkey const &key,
     tree_node *&subtree_root_address,
+    std::stack<tree_node **> &path_to_subtree_root_exclusive,
     std::pair<tkey, tvalue *> *found) {
 
     if (nullptr == subtree_root_address) {
         _tree->safe_log("A value was not found", logging::logger::severity::debug);
-        throw std::runtime_error("A value was not found");
+        
         return false;
     }
 
@@ -1353,9 +1378,13 @@ bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
         // _tree->safe_log("Found a value " + cast_to_str(subtree_root_address->value), logging::logger::severity::debug);
         found->first = subtree_root_address->key;
         found->second = &(subtree_root_address->value);
+
+        after_read_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
+
         return true;
     }
 
+    path_to_subtree_root_exclusive.push(&subtree_root_address);
     tree_node *next_node;
 
     // _tree->safe_log("Pair {" + cast_to_str(subtree_root_address->key) + ", " + cast_to_str(subtree_root_address->value) + "}", logging::logger::severity::debug);
@@ -1365,6 +1394,8 @@ bool binary_search_tree<tkey, tvalue, tkey_comparer>::reading_template_method::f
     } else {
         next_node = subtree_root_address->left_subtree_address;
     }
+
+    after_read_inner(key, subtree_root_address, path_to_subtree_root_exclusive);
 
     return find(key, next_node, found);
 }

@@ -294,7 +294,6 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
     std::stack<typename binary_search_tree<tkey, tvalue, tkey_comparer>::tree_node **> &path_to_subtree_root_exclusive) {
 
     UNUSED(key);
-    UNUSED(path_to_subtree_root_exclusive);
 
     _tree->safe_log("_____After insert inner_____ key " + cast_to_str(key), logging::logger::severity::debug);
     _tree->safe_log(cast_to_str(subtree_root_address), logging::logger::severity::debug);
@@ -325,7 +324,7 @@ void avl_tree<tkey, tvalue, tkey_comparer>::insertion_template_method_avl::after
 
         if (_tree->balance_factor(subtree_root_address->left_subtree_address) == -1)
         {
-                _tree->safe_log(">>>>>>> BIG left rotation", logging::logger::severity::debug);
+            _tree->safe_log(">>>>>>> BIG left rotation", logging::logger::severity::debug);
             _tree->left_rotation(&(subtree_root_address->left_subtree_address), &subtree_root_address);
 
             _tree->fix_height(&(subtree_root_address->left_subtree_address->left_subtree_address));
